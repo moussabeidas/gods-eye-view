@@ -293,6 +293,8 @@ async function ask(question) {
   renderChatPanel();
   let res;
   try {
+    // Static hosting (e.g. GitHub Pages) has no API: answer in the browser directly.
+    if (app.llm?.static) throw new Error('static');
     const r = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -309,7 +311,7 @@ async function ask(question) {
     res = await r.json();
   } catch {
     ensureComputed();
-    res = { ...offlineAnswer(app.session, question, { stage: app.stage }), notice: 'API unreachable; answered in the browser' };
+    res = { ...offlineAnswer(app.session, question, { stage: app.stage }), ...(app.llm?.static ? {} : { notice: 'API unreachable; answered in the browser' }) };
   }
   app.chat.pop();
   app.chat.push({ role: 'assistant', ...res, actions: [] });
@@ -655,6 +657,7 @@ fetch('/api/health')
       : 'Set ANTHROPIC_API_KEY on the server to enable Claude; the offline analyst answers from retrieved evidence';
   })
   .catch(() => {
+    app.llm = { static: true };
     $('llm-pill').textContent = 'Assistant: in-browser analyst';
     $('llm-pill').classList.add('off');
   });

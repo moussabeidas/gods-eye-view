@@ -2,7 +2,7 @@
   "name": "gods-eye-view",
   "private": true,
   "version": "1.0.0",
-  "description": "Investment Agentic AI prototype — a map-centric decision-support platform that takes a Dubai Municipality plot from asset intelligence through Highest & Best Use, investment structuring, financial feasibility, recommendation, human review and Commercial Assets Portfolio capture.",
+  "description": "Investment Agentic AI prototype \u2014 a map-centric decision-support platform that takes a Dubai Municipality plot from asset intelligence through Highest & Best Use, investment structuring, financial feasibility, recommendation, human review and Commercial Assets Portfolio capture.",
   "type": "module",
   "license": "MIT",
   "engines": {
@@ -16,7 +16,8 @@
     "build:artifact": "node scripts/build-artifact.mjs",
     "test": "node --test test/*.test.mjs",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "build:pages": "vite build --base=/gods-eye-view/ --outDir dist-pages && node -e \"require('fs').writeFileSync('dist-pages/.nojekyll', '')\""
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.128.0",
