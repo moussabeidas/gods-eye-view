@@ -18,6 +18,17 @@ function send(res, status, body) {
 }
 
 function readJson(req) {
+  // Serverless platforms (e.g. Vercel) may have parsed the body already.
+  if (req.body !== undefined && req.body !== null) {
+    if (typeof req.body === 'object' && !Buffer.isBuffer(req.body)) return Promise.resolve(req.body);
+    const text = String(req.body);
+    if (text.length > MAX_BODY) return Promise.reject(Object.assign(new Error('Request body too large'), { status: 413 }));
+    try {
+      return Promise.resolve(JSON.parse(text || '{}'));
+    } catch {
+      return Promise.reject(Object.assign(new Error('Invalid JSON'), { status: 400 }));
+    }
+  }
   return new Promise((resolve, reject) => {
     let size = 0;
     const chunks = [];

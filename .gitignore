@@ -6,4 +6,3 @@ dist
 *.log
 .DS_Store
 dist-artifact
-dist-pages

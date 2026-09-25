@@ -16,8 +16,7 @@
     "build:artifact": "node scripts/build-artifact.mjs",
     "test": "node --test test/*.test.mjs",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "build:pages": "vite build --base=/gods-eye-view/ --outDir dist-pages && node -e \"require('fs').writeFileSync('dist-pages/.nojekyll', '')\""
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.128.0",

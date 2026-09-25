@@ -30,6 +30,14 @@ Single-file static build (JS, CSS and assets inlined; tile basemaps hidden; the 
 npm run build:artifact # dist-artifact/gods-eye-view.html
 ```
 
+### Deploy on Vercel
+
+The repository is ready for Vercel: `vercel.json` builds the Vite front end, and `api/health.js` and `api/chat.js` run the API as serverless functions.
+
+1. On vercel.com choose **Add New… → Project**, then import this GitHub repository. The settings are read from `vercel.json`.
+2. Optional: add the environment variable `ANTHROPIC_API_KEY` to turn on the Claude assistant. Without it, the offline analyst answers.
+3. Deploy. Production deployments are public. Preview deployments of other branches may sit behind Vercel's deployment protection.
+
 To enable the Claude-powered assistant, copy `.env.example` to `.env` and set `ANTHROPIC_API_KEY`. Without a key, the **offline analyst** answers instead. It is deterministic and retrieval-grounded, and it still cites evidence and can apply modify-and-rerun commands. The header pill shows which mode is active.
 
 ## What you can do
