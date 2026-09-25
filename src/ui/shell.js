@@ -215,8 +215,8 @@ function capDetail(p) {
 export function renderLayers(app, map) {
   if (!app.layersOpen) return `<button type="button" class="layers-fab" data-action="toggle-layers">Layers</button>`;
   return `<div class="panel-head"><b>Map layers</b><button type="button" class="icon-btn" data-action="toggle-layers" aria-label="Close layers">✕</button></div>
-  <div class="basemaps">${['schematic', 'imagery', 'streets'].map((b) => `<button type="button" class="${map.basemap === b ? 'on' : ''}" data-action="basemap" data-b="${b}">${b[0].toUpperCase() + b.slice(1)}</button>`).join('')}</div>
-  <p class="muted tiny">The schematic basemap is drawn from the representative dataset. Imagery and street tiles are for orientation only.</p>
+  <div class="basemaps">${(import.meta.env.VITE_STATIC ? ['schematic'] : ['schematic', 'imagery', 'streets']).map((b) => `<button type="button" class="${map.basemap === b ? 'on' : ''}" data-action="basemap" data-b="${b}">${b[0].toUpperCase() + b.slice(1)}</button>`).join('')}</div>
+  <p class="muted tiny">The schematic basemap is drawn from the representative dataset.${import.meta.env.VITE_STATIC ? '' : ' Imagery and street tiles are for orientation only.'}</p>
   ${LAYER_GROUPS.map((g) => `<label class="layer-row"><input type="checkbox" data-layer="${g.id}" ${map.visible[g.id] ? 'checked' : ''} ${app.session ? '' : 'disabled'} />${esc(g.label)}</label>`).join('')}
   <div class="poi-legend">${Object.entries(POI_CATEGORIES)
     .map(([, c]) => `<span><i style="--c:${c.color}"></i>${esc(c.label)}</span>`)

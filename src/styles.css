@@ -2313,3 +2313,11 @@ ol.plain-ol li {
     min-height: 100%;
   }
 }
+
+.note-dialog .note,
+.note-dialog .decision-actions {
+  padding: 0 16px;
+}
+.note-dialog .note {
+  margin-top: 12px;
+}

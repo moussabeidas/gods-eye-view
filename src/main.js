@@ -417,7 +417,7 @@ document.addEventListener('click', async (e) => {
     case 'challenge': {
       const stage = el.dataset.stage;
       const label = STAGES.find((s) => s.id === stage).label;
-      const note = window.prompt(`What do you challenge in ${label}?`, '');
+      const note = await askNote(`What do you challenge in ${label}?`);
       if (note === null) return;
       setReview(stage, 'challenged', note);
       renderAll({ keepScroll: true });
@@ -555,8 +555,11 @@ document.addEventListener('change', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     if (!$('evidence').hidden) $('evidence').hidden = true;
-    else if (!$('legend').hidden) $('legend').hidden = true;
-    else if (app.capOpen) {
+    else if (!$('legend').hidden) {
+      const cancel = $('legend').querySelector('[data-cancel]');
+      if (cancel) cancel.click();
+      else $('legend').hidden = true;
+    } else if (app.capOpen) {
       app.capOpen = false;
       renderCapOverlay();
     }
@@ -566,6 +569,31 @@ document.addEventListener('keydown', (e) => {
     e.target.form.requestSubmit();
   }
 });
+
+/** In-page note dialog (browser prompt() is unavailable in sandboxed viewers). */
+function askNote(title) {
+  return new Promise((resolve) => {
+    const m = $('legend');
+    m.innerHTML = `<form class="modal-card note-dialog" role="dialog" aria-label="${title.replace(/"/g, '&quot;')}"><div class="panel-head"><b></b></div><label class="note" for="challenge-note"><span>Your challenge is recorded on the stage and sent to the assistant.</span><textarea id="challenge-note" rows="3" placeholder="e.g. The school demand looks understated"></textarea></label><div class="decision-actions"><button type="submit" class="btn btn-primary">Record challenge</button><button type="button" class="btn btn-ghost" data-cancel>Cancel</button></div></form>`;
+    m.querySelector('b').textContent = title;
+    m.hidden = false;
+    const done = (v) => {
+      m.hidden = true;
+      m.innerHTML = '';
+      resolve(v);
+    };
+    m.querySelector('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      done(m.querySelector('textarea').value.trim());
+    });
+    m.querySelector('[data-cancel]').addEventListener('click', (e) => {
+      e.stopPropagation();
+      done(null);
+    });
+    m.querySelector('textarea').focus();
+  });
+}
 
 function toast(msg) {
   const t = document.createElement('div');

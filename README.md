@@ -24,6 +24,12 @@ npm run build
 npm start              # http://127.0.0.1:4173 (serves dist/ and the API)
 ```
 
+Single-file static build (JS, CSS and assets inlined; tile basemaps hidden; the assistant runs in the browser as the offline analyst). It suits sandboxed static hosting such as a claude.ai artifact:
+
+```bash
+npm run build:artifact # dist-artifact/gods-eye-view.html
+```
+
 To enable the Claude-powered assistant, copy `.env.example` to `.env` and set `ANTHROPIC_API_KEY`. Without a key, the **offline analyst** answers instead. It is deterministic and retrieval-grounded, and it still cites evidence and can apply modify-and-rerun commands. The header pill shows which mode is active.
 
 ## What you can do
