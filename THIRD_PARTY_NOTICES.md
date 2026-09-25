@@ -1,21 +1,13 @@
 # Third-party software notices
 
-The project depends on third-party npm packages whose own licenses apply. This
-file records the packages added for the browser-local SDR feature; the complete
-resolved dependency inventory remains in `package-lock.json`.
+Runtime dependencies (see `package-lock.json` for the full resolved inventory):
 
-## Web RTL-SDR
+- **maplibre-gl**: BSD-3-Clause, © MapLibre contributors. <https://github.com/maplibre/maplibre-gl-js>
+- **pptxgenjs**: MIT. <https://github.com/gitbrent/PptxGenJS>
+- **jspdf**: MIT. <https://github.com/parallax/jsPDF>
+- **IBM Plex Sans Arabic** (embedded in PDF exports): SIL Open Font License 1.1, © IBM Corp. <https://github.com/IBM/plex>
+- **@anthropic-ai/sdk**: MIT, © Anthropic. <https://github.com/anthropics/anthropic-sdk-typescript>
 
-- Package: `@jtarrio/webrtlsdr` 3.0.6
-- Author: Jacobo Tarrio Barreiro; portions copyright Google Inc.
-- Source: <https://github.com/jtarrio/webrtlsdr>
-- License: Apache License 2.0
-- License text: <https://www.apache.org/licenses/LICENSE-2.0>
+Bundled map data (`src/data/geo/`): © OpenStreetMap contributors, available under the Open Database License (ODbL); © Overture Maps Foundation and contributors (CDLA Permissive 2.0 where applicable). See `src/data/geo/ATTRIBUTION.md`.
 
-## Signals
-
-- Package: `@jtarrio/signals` 0.10.1
-- Author: Jacobo Tarrio Barreiro
-- Source: <https://github.com/jtarrio/signals>
-- License: Apache License 2.0
-- License text: <https://www.apache.org/licenses/LICENSE-2.0>
+Optional runtime basemap tiles: Esri World Imagery (© Esri and its data providers) and the CARTO dark basemap (© OpenStreetMap contributors, © CARTO), used under each provider's terms.

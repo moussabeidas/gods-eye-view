@@ -22,41 +22,22 @@ SOFTWARE.
 
 ---
 
-NOTE ON THIRD-PARTY DATA AND ASSETS — THE MIT LICENSE ABOVE COVERS THE SOURCE
-CODE ONLY.
+NOTE ON DATA — THE MIT LICENSE ABOVE COVERS THE SOURCE CODE.
 
-The datasets bundled under src/data/local_data/, and all data fetched from
-third-party providers at runtime, are owned by their respective sources and
-are NOT licensed under MIT. They are included/visualized for convenience and
-remain subject to their own licenses and terms. Notably:
+The map data in src/data/geo/ (community boundaries, roads, Dubai Metro,
+water, land use, building footprints and named places) is real open data from
+Overture Maps: © OpenStreetMap contributors, available under the Open Database
+License (ODbL), and © Overture Maps Foundation and contributors. It is not
+covered by the MIT licence above; see src/data/geo/ATTRIBUTION.md.
 
-  - TeleGeography Submarine Cable Map (src/data/local_data/
-    telegeography_submarine_cables/): CC BY-NC-SA 3.0 — NonCommercial +
-    ShareAlike. NOT for commercial use. If you use this project commercially,
-    remove these files or obtain a commercial license from TeleGeography.
-  - Datacenters and Dams (OpenStreetMap / Open Infrastructure Map extracts):
-    Open Database License (ODbL) 1.0 — attribution + share-alike on the data.
-  - NASA FIRMS active-fire snapshot: CC0 / U.S. public domain (citation
-    requested).
-  - Bhote Koshi event imagery and derived river centerline
-    (public/events/bhote-koshi-2026/ and the coordinate dataset in
-    src/data/bhoteKoshiFloodPath.js): Vantor / GeoPera, CC BY-NC 4.0.
-    NOT for commercial use without separate permission. Source-linked witness
-    posts retain their owners' terms; no witness clips are bundled. See the
-    folder README for attribution and modification notices. The derived
-    coordinates remain third-party data even though they are embedded in a
-    JavaScript source file; the MIT grant does not cover that dataset.
+All plot numbers, planning, affection-plan, demographic, market, transaction,
+facility-capacity and portfolio data bundled in src/data/ is representative or
+simulated for demonstration. It is not an extract from Dubai Municipality,
+Dubai Land Department, RERA or any other system, and it must not be relied
+upon for investment decisions. Names of public bodies are used only to label
+the kind of source each simulated record represents.
 
-Live sources (Google Maps, OpenSky, adsb.lol, AISStream, CelesTrak, USGS,
-OSM Overpass, City of Austin, GBFS) are fetched at runtime under each
-provider's terms; some (e.g. Google Maps, OpenSky) restrict commercial use
-and require you to supply your own credentials.
-
-In short: the MIT grant does not extend to any third-party data. See
-DATA_SOURCES.md for the full per-source license + attribution summary, and
-remove any dataset whose terms don't fit your use.
-
-The 3D models under public/models/ are also third-party works and are NOT
-licensed under MIT. They remain under their individual licenses. See
-public/models/README.md for the author, source, license, modification notice,
-and attribution covering each model file.
+Optional basemap tiles are fetched at runtime under each provider's terms:
+Esri World Imagery (Esri and its data providers) and CARTO dark basemap
+(© OpenStreetMap contributors, © CARTO). The conversational assistant can call
+the Claude API under Anthropic's terms when the operator supplies credentials.
