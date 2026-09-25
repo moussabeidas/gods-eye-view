@@ -583,6 +583,16 @@ textarea {
 .poi-legend i.sq {
   border-radius: 2px;
 }
+.poi-legend i.ring {
+  background: transparent;
+  box-shadow: inset 0 0 0 2px var(--c);
+}
+.poi-legend .legend-title {
+  width: 100%;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+}
 
 .chat {
   right: 12px;
@@ -789,6 +799,36 @@ textarea {
   font-style: italic;
   letter-spacing: 0.04em;
   text-shadow: 0 1px 3px #000;
+}
+.map-label-station {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #c9d4e2;
+  font-size: 10.5px;
+  font-weight: 600;
+  text-shadow:
+    0 1px 3px #000,
+    0 0 6px #000;
+}
+.map-label-station i {
+  width: 8px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--c);
+}
+.map-label-station em {
+  color: var(--ink-2);
+  font-style: normal;
+  font-weight: 400;
+}
+.map-zoomed-out .map-label-minor {
+  display: none;
+}
+.map-label-community.map-label-minor {
+  color: #71849b;
+  font-size: 9px;
+  letter-spacing: 0.08em;
 }
 .map-label-community {
   color: #8fa3bb;
@@ -1023,7 +1063,7 @@ h3.sub {
 }
 .grid-2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 12px;
 }
 .grid-2 > .card {
@@ -1173,6 +1213,9 @@ h3.sub {
   cursor: pointer;
   color: var(--ink-2);
   white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .src-pill:hover {
   border-color: var(--k-sourced);
@@ -2295,7 +2338,7 @@ ol.plain-ol li {
   .assump-list,
   .cap-grid,
   .cap-fields {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .journey-list {
     columns: 1;

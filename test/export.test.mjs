@@ -13,7 +13,7 @@ const fonts = {
 };
 const ARABIC = /[؀-ۿ]/;
 
-const session = computeFrom(createSession('332-0914'));
+const session = computeFrom(createSession('326-0914'));
 session.overrides.assumptions['midscale-hotel'] = { discountRate: 0.1 };
 computeFrom(session, 'structuring');
 session.reviews.recommendation = { status: 'accepted', note: 'Proceed', at: '2026-09-25' };
@@ -39,7 +39,7 @@ test('Arabic pack is written in Arabic, not translated English sentences', () =>
     assert.match(text, ARABIC, text);
   }
   assert.doesNotMatch(ar.narrative, /\b(the|and|with|under)\b/i);
-  assert.equal(reportFilename(ar, 'pdf'), 'Investment-Recommendation_332-0914_AR.pdf');
+  assert.equal(reportFilename(ar, 'pdf'), 'Investment-Recommendation_326-0914_AR.pdf');
 });
 
 test('English pack never presents the AI output as an approval (FR-069)', () => {

@@ -24,12 +24,18 @@ SOFTWARE.
 
 NOTE ON DATA — THE MIT LICENSE ABOVE COVERS THE SOURCE CODE.
 
-All plot, planning, demographic, market, transaction, facility and portfolio
-data bundled in src/data/ is representative or simulated for demonstration.
-It is not an extract from Dubai Municipality, Dubai Land Department, RERA or
-any other system, and it must not be relied upon for investment decisions.
-Names of public bodies are used only to label the kind of source each
-simulated record represents.
+The map data in src/data/geo/ (community boundaries, roads, Dubai Metro,
+water, land use, building footprints and named places) is real open data from
+Overture Maps: © OpenStreetMap contributors, available under the Open Database
+License (ODbL), and © Overture Maps Foundation and contributors. It is not
+covered by the MIT licence above; see src/data/geo/ATTRIBUTION.md.
+
+All plot numbers, planning, affection-plan, demographic, market, transaction,
+facility-capacity and portfolio data bundled in src/data/ is representative or
+simulated for demonstration. It is not an extract from Dubai Municipality,
+Dubai Land Department, RERA or any other system, and it must not be relied
+upon for investment decisions. Names of public bodies are used only to label
+the kind of source each simulated record represents.
 
 Optional basemap tiles are fetched at runtime under each provider's terms:
 Esri World Imagery (Esri and its data providers) and CARTO dark basemap

@@ -6,7 +6,7 @@ import { answer, parseActions, flipWeight } from '../src/engine/analyst.js';
 import { handleApi, sanitiseOverrides } from '../server/api.js';
 import { setClient } from '../server/claude.js';
 
-const session = computeFrom(createSession('426-0318'));
+const session = computeFrom(createSession('421-0318'));
 
 test('parses modify-and-rerun instructions into actions (FR-066, FR-067)', () => {
   assert.deepEqual(parseActions('What if the discount rate is 10%?', session), [{ type: 'setAssumption', key: 'discountRate', value: 0.1 }]);
@@ -29,7 +29,7 @@ test('explains why one alternative ranks above another with a criterion table (F
 
 test('answers stay grounded in retrieved, cited records (FR-077, FR-078)', () => {
   const res = answer(session, 'What is this plot zoned for?', { stage: 'asset' });
-  assert.ok(res.citations.includes('DM-PLAN:ZONE-426-0318'));
+  assert.ok(res.citations.includes('DM-PLAN:ZONE-421-0318'));
   assert.equal(res.mode, 'offline');
 });
 
@@ -45,7 +45,7 @@ test('flip-weight analysis finds the weight that ties two alternatives', () => {
   const c = hbu.criteria.find((x) => second.scores[x.id] > lead.scores[x.id]);
   const x = flipWeight(hbu, lead, second, c.id);
   assert.ok(x > c.effectiveWeight && x < 100);
-  const s = createSession('426-0318');
+  const s = createSession('421-0318');
   s.overrides.weights = Object.fromEntries(hbu.criteria.map((k) => [k.id, k.id === c.id ? x + 1 : (k.effectiveWeight * (100 - x - 1)) / (100 - c.effectiveWeight)]));
   computeFrom(s);
   assert.notEqual(s.results.hbu.alternatives[0].use.id, lead.use.id, 'the ranking flips just past the computed weight');
@@ -68,8 +68,8 @@ test('API health and offline chat', async () => {
   delete process.env.ANTHROPIC_AUTH_TOKEN;
   const h = await (await fetch(`${base}/api/health`)).json();
   assert.equal(h.ok, true);
-  assert.deepEqual(h.plots, ['426-0318', '332-0914']);
-  const r = await fetch(`${base}/api/chat`, { method: 'POST', body: JSON.stringify({ plotNumber: '332-0914', question: 'What are the NPV and IRR?', stage: 'Financial Feasibility' }) });
+  assert.deepEqual(h.plots, ['421-0318', '326-0914']);
+  const r = await fetch(`${base}/api/chat`, { method: 'POST', body: JSON.stringify({ plotNumber: '326-0914', question: 'What are the NPV and IRR?', stage: 'Financial Feasibility' }) });
   const body = await r.json();
   assert.equal(body.mode, 'offline');
   assert.match(body.text, /NPV/);
@@ -91,18 +91,18 @@ test('Claude path: server-side evidence search, queued actions and citation filt
     {
       stop_reason: 'end_turn',
       model: 'claude-test',
-      content: [{ type: 'text', text: 'Zoning is C-2 [[DM-PLAN:ZONE-426-0318]] and an invented record [[FAKE:1]].\n\nAI interpretation: retail fits.' }],
+      content: [{ type: 'text', text: 'Zoning is C-2 [[DM-PLAN:ZONE-421-0318]] and an invented record [[FAKE:1]].\n\nAI interpretation: retail fits.' }],
     },
   ];
   setClient({ beta: { messages: { create: async (params) => (calls.push(params), turns.shift()) } } });
   const r = await fetch(`${base}/api/chat`, {
     method: 'POST',
-    body: JSON.stringify({ plotNumber: '426-0318', question: 'Test discount rate 10%', stage: 'Financial Feasibility', history: [{ role: 'assistant', text: 'hello' }] }),
+    body: JSON.stringify({ plotNumber: '421-0318', question: 'Test discount rate 10%', stage: 'Financial Feasibility', history: [{ role: 'assistant', text: 'hello' }] }),
   });
   const body = await r.json();
   assert.equal(body.mode, 'claude');
   assert.deepEqual(body.actions, [{ type: 'setAssumption', key: 'discountRate', value: 0.1 }]);
-  assert.deepEqual(body.citations, ['DM-PLAN:ZONE-426-0318'], 'unknown record ids are dropped');
+  assert.deepEqual(body.citations, ['DM-PLAN:ZONE-421-0318'], 'unknown record ids are dropped');
   assert.ok(
     body.retrieved.some((x) => /SUPERMARKET/.test(x.id)),
     'tool search results are exposed as retrieved evidence',

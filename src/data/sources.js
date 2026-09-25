@@ -1,9 +1,12 @@
 // Represented source systems (BRD FR-010) and the evidence corpus used for
 // retrieval-augmented generation. No live integration exists (FR-011): each
-// record is a simulated extract carrying the source metadata of BRD §24.17.
+// record is an extract carrying the source metadata of BRD §24.17. Map facts
+// (geometry, names, locations) come from real open map data; the attributes
+// the represented government systems would hold are simulated.
 
 import { PLOTS } from './plots.js';
 import { getContext, POI_CATEGORIES } from './context.js';
+import { MAP_DATA_RELEASE } from './geo/index.js';
 import { HBU_CRITERIA, USE_CATALOGUE, SERVICE_BENCHMARKS, STRUCTURES } from './methodology.js';
 
 export const SOURCE_SYSTEMS = {
@@ -52,6 +55,12 @@ export const SOURCE_SYSTEMS = {
     owner: 'Approved third-party consultant',
     type: 'Approved third-party source',
     description: 'Vacancy, pipeline and revenue benchmarks.',
+  },
+  OSM: {
+    name: 'OpenStreetMap / Overture Maps — open map data',
+    owner: 'OpenStreetMap contributors · Overture Maps Foundation',
+    type: 'Open data (real)',
+    description: 'Community boundaries, roads, Dubai Metro, land use, building footprints and named places (ODbL / CDLA Permissive 2.0).',
   },
   METHOD: {
     name: 'Prototype methodology register (predefined)',
@@ -122,8 +131,10 @@ function buildPlotCorpus(plot) {
           .map(([k, v]) => `${k}: ${v}%`)
           .join(', ')}. Segments: ${Object.entries(c.segments)
           .map(([k, v]) => `${k} ${v}%`)
-          .join(', ')}. Income band: ${c.incomeBand}.${c.daytimeWorkers ? ` Daytime workers: ${fmt(c.daytimeWorkers)}.` : ''} Centroid ${fmt(c.distanceM)} m from plot ${p}.`,
-        citation: `Dubai Statistics Center, community population table 2026 Q1 — ${c.name} (simulated)`,
+          .join(
+            ', ',
+          )}. Income band: ${c.incomeBand}.${c.daytimeWorkers ? ` Daytime workers: ${fmt(c.daytimeWorkers)}.` : ''} ${Math.round(c.catchmentShare * 100)}% of the community lies inside the catchment of plot ${p}, centred ${fmt(c.distanceM)} m away.`,
+        citation: `Dubai Statistics Center, community population table 2026 Q1 — ${c.name} (simulated; boundary from open map data)`,
       }),
     );
   }
@@ -139,7 +150,8 @@ function buildPlotCorpus(plot) {
         date: '2026-06-30',
         category: 'Commercial & community activity',
         relation: ['location', 'supply-demand', 'comparables'],
-        content: `${list.length} ${label.toLowerCase()} facilities recorded within ${fmt(plot.catchmentRadiusM)} m of plot ${p}: ${list
+        content: `${list.length} ${label.toLowerCase()} facilities recorded within ${fmt(plot.catchmentRadiusM)} m of plot ${p}. Names and locations are real open map data; capacity figures are simulated. Nearest: ${list
+          .slice(0, 25)
           .map((x) => {
             const attrs = [
               x.gla && `GLA ${fmt(x.gla)} m²`,
@@ -151,21 +163,37 @@ function buildPlotCorpus(plot) {
             ].filter(Boolean);
             return `${x.name} (${fmt(x.distanceM)} m${attrs.length ? `; ${attrs.join('; ')}` : ''})`;
           })
-          .join('; ')}.`,
-        citation: `${SOURCE_SYSTEMS[src].name}, extract ${cat.toUpperCase()}-${p} (simulated, 30 Jun 2026)`,
+          .join('; ')}${list.length > 25 ? `; and ${list.length - 25} more` : ''}.`,
+        citation: `${SOURCE_SYSTEMS[src].name}, extract ${cat.toUpperCase()}-${p} (locations from open map data; capacities simulated)`,
       }),
     );
   }
 
-  const roads = ctx.roads.filter((r) => r.nearestM < 1600);
+  const roads = ctx.roads.filter((r) => r.nearestM < 1600 && (r.cls !== 'local' || r.nearestM < 300)).slice(0, 14);
+  const busStops = ctx.pois.filter((x) => x.category === 'bus');
   docs.push(
     doc(p, 'RTA-NET', `ACCESS-${p}`, {
       title: `Road & transit accessibility — ${p}`,
       date: '2026-05-31',
       category: 'Infrastructure & accessibility',
       relation: ['location', 'hbu'],
-      content: `Road network near plot ${p}: ${roads.map((r) => `${r.name} (${r.cls}, ${r.lanes} lanes, ${fmt(r.nearestM)} m)`).join('; ')}. ${ctx.metro ? `Metro: ${ctx.metro.stations.map((s) => s.name).join(', ')} on the ${ctx.metro.name}; nearest station ${fmt(ctx.pois.find((x) => x.category === 'metro').distanceM)} m.` : 'No metro station within 2.5 km; bus services only.'} ${ctx.market.footfall.label}: ${fmt(ctx.market.footfall.value)} ${ctx.market.footfall.unit}.`,
-      citation: `RTA road & transit network extract ACCESS-${p} (simulated)`,
+      content: `Road network near plot ${p} (distance from the plot boundary): ${roads.map((r) => `${r.name} (${r.classLabel}, ${fmt(r.nearestM)} m)`).join('; ')}. Dubai Metro: ${ctx.stations.map((s) => `${s.name} (${s.placeType}) ${fmt(s.distanceM)} m`).join('; ')}. Bus stops within the catchment: ${busStops.length}, of which ${busStops.filter((x) => x.distanceM <= 800).length} within 800 m. ${ctx.market.footfall.label}: ${fmt(ctx.market.footfall.value)} ${ctx.market.footfall.unit} (simulated).`,
+      citation: `RTA road & transit network extract ACCESS-${p}; network geometry from open map data, traffic count simulated`,
+    }),
+    doc(p, 'OSM', `MAP-${p}`, {
+      title: `Open map context — ${p}`,
+      date: '2026-09-23',
+      category: 'Plot & asset',
+      relation: ['asset', 'location'],
+      simulated: false,
+      content: `Plot ${p} is drawn on a real vacant parcel of ${fmt(ctx.area.parcelAreaM2)} m² in open land-use data (${plot.community}). Communities overlapping the ${fmt(plot.catchmentRadiusM)} m catchment: ${ctx.communities.map((c) => `${c.name} (${Math.round(c.catchmentShare * 100)}% of its area inside)`).join(', ')}. Nearest named roads: ${roads
+        .slice(0, 6)
+        .map((r) => `${r.name} ${fmt(r.nearestM)} m`)
+        .join(', ')}. Nearest Dubai Metro stations: ${ctx.stations
+        .slice(0, 3)
+        .map((s) => `${s.name} ${fmt(s.distanceM)} m`)
+        .join(', ')}. ${ctx.pois.filter((x) => x.category !== 'bus' && x.category !== 'metro').length} named facilities mapped within the catchment.`,
+      citation: `OpenStreetMap contributors / Overture Maps release ${MAP_DATA_RELEASE} (real open data)`,
     }),
   );
 
@@ -213,7 +241,7 @@ function buildPlotCorpus(plot) {
         date: t.date,
         category: 'Transactions',
         relation: ['location', 'comparables'],
-        content: `DLD transaction ${t.id} on ${t.date}: ${t.type} of ${t.property.toLowerCase()}, ${fmt(t.areaM2)} m², value AED ${fmt(t.valueAed)} (AED ${fmt(t.aedPerM2)}/m²). Located ${fmt(t.distanceM)} m from plot ${p}.`,
+        content: `DLD transaction ${t.id} on ${t.date}: ${t.type} of ${t.property.toLowerCase()} in ${t.community}, ${fmt(t.areaM2)} m², value AED ${fmt(t.valueAed)} (AED ${fmt(t.aedPerM2)}/m²). Located ${fmt(t.distanceM)} m from plot ${p}.`,
         citation: `Dubai Land Department transaction ${t.id} (simulated)`,
       }),
     );

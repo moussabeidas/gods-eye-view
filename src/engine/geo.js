@@ -99,3 +99,94 @@ export function seededRandom(seed) {
     return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
   };
 }
+
+/** Signed planar area in m² (positive when the ring runs counter-clockwise). */
+function signedAreaM2(ring) {
+  const kx = M_PER_DEG_LAT * Math.cos(toRad(ring[0][1]));
+  let sum = 0;
+  for (let i = 0; i < ring.length - 1; i++) sum += ring[i][0] * kx * ring[i + 1][1] * M_PER_DEG_LAT - ring[i + 1][0] * kx * ring[i][1] * M_PER_DEG_LAT;
+  return sum / 2;
+}
+
+/** Area-weighted centroid of a closed [lon, lat] ring. */
+export function ringAreaCentroid(ring) {
+  let a = 0;
+  let cx = 0;
+  let cy = 0;
+  const [ox, oy] = ring[0];
+  for (let i = 0; i < ring.length - 1; i++) {
+    const x1 = ring[i][0] - ox;
+    const y1 = ring[i][1] - oy;
+    const x2 = ring[i + 1][0] - ox;
+    const y2 = ring[i + 1][1] - oy;
+    const f = x1 * y2 - x2 * y1;
+    a += f;
+    cx += (x1 + x2) * f;
+    cy += (y1 + y2) * f;
+  }
+  return a ? [ox + cx / (3 * a), oy + cy / (3 * a)] : ringCentroid(ring);
+}
+
+/**
+ * A strip `widthM` wide running inside a closed ring along edges `from`..`to`
+ * (edge i joins vertex i to vertex i + 1): an easement or reservation band.
+ */
+export function edgeBand(ring, from, to, widthM) {
+  const lat0 = toRad(ring[0][1]);
+  const kx = M_PER_DEG_LAT * Math.cos(lat0);
+  const inward = signedAreaM2(ring) > 0 ? 1 : -1;
+  const pts = ring.slice(from, to + 2).map(([lon, lat]) => [lon * kx, lat * M_PER_DEG_LAT]);
+  const normals = pts.slice(1).map((b, i) => {
+    const a = pts[i];
+    const len = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1;
+    return [(-(b[1] - a[1]) / len) * inward, ((b[0] - a[0]) / len) * inward];
+  });
+  const inner = pts.map((p, i) => {
+    const n1 = normals[Math.max(0, i - 1)];
+    const n2 = normals[Math.min(normals.length - 1, i)];
+    const m = [n1[0] + n2[0], n1[1] + n2[1]];
+    const len = Math.hypot(m[0], m[1]) || 1;
+    const scale = widthM / Math.max(0.35, (m[0] / len) * n1[0] + (m[1] / len) * n1[1]);
+    return [p[0] + (m[0] / len) * scale, p[1] + (m[1] / len) * scale];
+  });
+  const out = [...pts, ...inner.reverse()].map(([x, y]) => [x / kx, y / M_PER_DEG_LAT]);
+  return [...out, out[0]];
+}
+
+/** True when a [lon, lat] position lies inside a closed ring (ray casting). */
+export function pointInRing([x, y], ring) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [xi, yi] = ring[i];
+    const [xj, yj] = ring[j];
+    if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+  }
+  return inside;
+}
+
+/** True when a position lies inside a polygon given as [outer, ...holes]. */
+export function pointInPolygon(pt, rings) {
+  return pointInRing(pt, rings[0]) && !rings.slice(1).some((h) => pointInRing(pt, h));
+}
+
+/** Distance in metres from a position to the segment a–b (local plane). */
+export function pointToSegmentM(p, a, b) {
+  const kx = M_PER_DEG_LAT * Math.cos(toRad(p[1]));
+  const ax = (a[0] - p[0]) * kx;
+  const ay = (a[1] - p[1]) * M_PER_DEG_LAT;
+  const bx = (b[0] - p[0]) * kx;
+  const by = (b[1] - p[1]) * M_PER_DEG_LAT;
+  const dx = bx - ax;
+  const dy = by - ay;
+  const t = dx || dy ? Math.max(0, Math.min(1, -(ax * dx + ay * dy) / (dx * dx + dy * dy))) : 0;
+  return Math.hypot(ax + t * dx, ay + t * dy);
+}
+
+/** Shortest distance in metres between a polyline and a closed ring (0 if they touch). */
+export function lineToRingM(line, ring) {
+  if (line.some((p) => pointInRing(p, ring))) return 0;
+  let best = Infinity;
+  for (const p of line) for (let i = 0; i < ring.length - 1; i++) best = Math.min(best, pointToSegmentM(p, ring[i], ring[i + 1]));
+  for (const p of ring) for (let i = 0; i < line.length - 1; i++) best = Math.min(best, pointToSegmentM(p, line[i], line[i + 1]));
+  return best;
+}

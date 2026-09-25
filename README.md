@@ -8,7 +8,25 @@ You start from a DM plot number. Specialised AI agents take the plot through a s
 
 You then review, challenge and decide, and capture the opportunity in a simulated **Commercial Assets Portfolio (CAP)**.
 
-> Prototype. All data is representative or simulated, and source retrieval from DM, DLD, RERA, public and approved third-party systems is simulated. Outputs are illustrative and are **not** investment approvals: the investment specialist keeps final authority.
+> Prototype. The map is real open data; everything a government system would hold is simulated. Source retrieval from DM, DLD, RERA, public and approved third-party systems is simulated. Outputs are illustrative and are **not** investment approvals: the investment specialist keeps final authority.
+
+## The map: real Dubai, from open data
+
+The map is built from [Overture Maps](https://overturemaps.org) (OpenStreetMap and other open sources), so it shows Dubai as it is:
+
+- **Real:** community boundaries (Al Warqa 1–5, Al Jaddaf, Culture Village, Umm Hurair and others), major roads and local streets, Dubai Metro Red and Green Lines with their stations, the Blue Line under construction, Dubai Creek and other water, DXB runways, land use, about 3,300 building footprints in 3D, and named facilities (schools, clinics, hotels, supermarkets and more).
+- **Real parcels:** both prototype plots are drawn on real vacant parcels from open land-use data. Plot **421-0318** is an 18,950 m² parcel in Al Warqa 1, inside the community's private-school cluster and about 850 m from the Blue Line's Al Warqa'a station. Plot **326-0914** is an 8,800 m² waterfront parcel in Culture Village on the Al Jaddaf waterfront, about 700 m from Al Jadaf Metro Station.
+- **Simulated:** plot numbers, zoning and affection-plan records, demographics, facility capacities, market benchmarks, DLD transactions and comparable-plot records. Heights the source does not record are estimated.
+
+Official DM cadastral plot boundaries (GeoDubai / Dubai Plot Finder) are not open data, so the prototype does not claim to reproduce them. Swapping in the licensed DM plot layer is a data change: `src/data/geo/` holds the geometry, and `tools/` rebuilds it:
+
+```bash
+pip install pyarrow shapely
+python tools/overture_extract.py   # fetch the Overture extract into .cache/overture/
+python tools/build_geo.py          # compact it into src/data/geo/*.js
+```
+
+Map data © OpenStreetMap contributors (ODbL) and © Overture Maps Foundation. See `src/data/geo/ATTRIBUTION.md`.
 
 ## Quick start
 
@@ -44,10 +62,10 @@ To enable the Claude-powered assistant, copy `.env.example` to `.env` and set `A
 
 | Journey step           | What the platform shows                                                                                                                                                                                                                                                                                                                                              |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1. Plot selection      | Enter `426-0318` (Al Warqa’a Third, community facilities) or `332-0914` (Al Jaddaf, mixed use), or click a plot on the map. Review core plot facts before starting.                                                                                                                                                                                                  |
-| 2. Plot identification | The plot is highlighted on the interactive map, with a 3D extrusion of its maximum permitted height and affection-plan constraints drawn on the plot.                                                                                                                                                                                                                |
+| 1. Plot selection      | Enter `421-0318` (Al Warqa 1, community facilities) or `326-0914` (Al Jaddaf waterfront, mixed use), or click a plot on the map. Review core plot facts before starting.                                                                                                                                                                                             |
+| 2. Plot identification | The plot is highlighted on the real map among 3D building footprints, with a 3D extrusion of its maximum permitted height and affection-plan constraints drawn along its edges.                                                                                                                                                                                      |
 | 3. Asset Intelligence  | Plot, planning, zoning, development controls, constraints and structured affection-map fields, retrieved from several represented sources, each with inspectable evidence.                                                                                                                                                                                           |
-| 4. Location & Market   | Demographics, accessibility, commercial and community activity (drawn on the map), RERA benchmarks, DLD transactions and market trend.                                                                                                                                                                                                                               |
+| 4. Location & Market   | Demographics by real community (weighted by distance and by the share of each community inside the catchment), accessibility from the real road and Metro network, real named facilities on the map, RERA benchmarks, DLD transactions and market trend.                                                                                                             |
 | 5. Comparables         | Comparable plots scored on six predefined factors, with “why comparable” and “why excluded” explanations, shown on the map.                                                                                                                                                                                                                                          |
 | 6. Supply-demand       | Demand from population, worker or visitor indicators against recorded supply and pipeline, expressed as a gap index with its evidence.                                                                                                                                                                                                                               |
 | 7–8. HBU               | Alternative uses screened for legal permissibility, scored 0–10 on seven weighted criteria, ranked, and explained. Weights can be edited.                                                                                                                                                                                                                            |
@@ -69,7 +87,7 @@ Throughout the journey:
 
 ```
 index.html, src/main.js     Application controller (state, events, rendering)
-src/ui/                     Map (MapLibre GL), panels, charts, chat, evidence, CAP
+src/ui/                     Map (MapLibre GL, drawn from open data), panels, charts, chat, evidence, CAP
 src/engine/                 Analysis engine, runs in the browser and in Node
   orchestrator.js           Agents, stage pipeline, rerun semantics
   asset.js, location.js     Stage 1 and 2 agents
@@ -83,12 +101,14 @@ src/engine/                 Analysis engine, runs in the browser and in Node
   analyst.js                Offline conversational analyst and action parser
   digest.js                 Grounding digest handed to the LLM
   provenance.js             Sourced / assumption / user / calculated / AI tags
-src/data/                   Representative dataset and predefined methodology
-  plots.js, context.js      Plots, communities, roads, facilities, market, comparables
+src/data/                   Dataset and predefined methodology
+  geo/                      Real open map data (Overture / OpenStreetMap), compact and delta-encoded
+  plots.js, context.js      Plots on real parcels; communities, roads, facilities, market, comparables
   sources.js                Source systems and the evidence corpus (§24.17 metadata)
   methodology.js            HBU criteria and weights, benchmarks, structures, templates
   portfolio.js              Simulated CAP records and capture
 server/                     API: /api/health, /api/chat (Claude or offline analyst)
+tools/                      Map data pipeline (Overture extract and compaction)
 test/                       Node test suite mapped to BRD requirements
 ```
 
@@ -107,4 +127,4 @@ npm run build
 
 ## Licence
 
-MIT for the source code (see `LICENSE`). Bundled data is simulated and is for demonstration only.
+MIT for the source code (see `LICENSE`). Map data © OpenStreetMap contributors (ODbL) and © Overture Maps Foundation (see `src/data/geo/ATTRIBUTION.md`). All other bundled data is simulated and is for demonstration only.

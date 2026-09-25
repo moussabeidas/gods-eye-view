@@ -1,49 +1,47 @@
 // Representative Dubai Municipality plots for the prototype (BRD AC-01: one to
-// two plots). Every value here is simulated or illustrative and is attributed
-// to the represented source system through `sources` (see sources.js).
+// two plots). Each plot is drawn on a real vacant parcel from open land-use
+// data (OpenStreetMap via Overture Maps, see geo/ATTRIBUTION.md). Plot
+// numbers, planning controls and affection-plan fields are simulated and
+// attributed to the represented source system through `sources` (sources.js).
 
-import { ringAreaM2, ringFromOffsets, rectangle, offset } from '../engine/geo.js';
+import { getArea } from './geo/index.js';
+import { ringAreaM2, ringAreaCentroid, edgeBand } from '../engine/geo.js';
 
-const WARQAA_CENTER = [55.4262, 25.1936];
-const JADDAF_CENTER = [55.3372, 25.2206];
+// Al Warqa 1: a rectangular parcel mapped as a construction site, inside the
+// community's private-school cluster. Edges: 0 west, 1 south, 2 east (21 Street), 3 north.
+const warqaa = getArea('warqaa');
+const warqaaRing = warqaa.parcel;
+const WARQAA_CENTER = ringAreaCentroid(warqaaRing);
 
-const warqaaRing = ringFromOffsets(WARQAA_CENTER, [
-  [-76, -62],
-  [76, -62],
-  [79, 54],
-  [22, 66],
-  [-76, 62],
-]);
-
-const jaddafRing = rectangle(JADDAF_CENTER, 105, 90, 28);
-
-function strip(center, offsets) {
-  return ringFromOffsets(center, offsets);
-}
+// Al Jaddaf waterfront: an irregular greenfield parcel beside the creek-side
+// lagoon. Edges 0–1 face the access road (south); edges 6–8 face the water (west).
+const jaddaf = getArea('jaddaf');
+const jaddafRing = jaddaf.parcel;
+const JADDAF_CENTER = ringAreaCentroid(jaddafRing);
 
 export const PLOTS = [
   {
-    id: '426-0318',
-    plotNumber: '426-0318',
-    name: 'Al Warqa’a Third — Community Facilities Plot',
-    community: 'Al Warqa’a Third',
-    communityCode: '426',
+    id: '421-0318',
+    plotNumber: '421-0318',
+    name: 'Al Warqa 1 — Community Facilities Plot',
+    community: 'Al Warqa 1',
+    communityCode: '421',
     sector: 'Dubai — Deira hinterland (east)',
     center: WARQAA_CENTER,
     geometry: warqaaRing,
     areaM2: Math.round(ringAreaM2(warqaaRing) / 10) * 10,
-    currentUse: 'Vacant government land (fenced, unimproved)',
+    currentUse: 'Vacant land (mapped as a construction site in open map data)',
     assetClassification: 'Government land bank — Commercial / Community Facilities',
     ownership: 'Dubai Municipality (freehold, land bank)',
     description:
-      'Corner plot on the community distributor road serving Al Warqa’a Third villa neighbourhoods. The plot is flat, vacant and fenced, with frontage to a 4-lane distributor and a local access street. It was reserved in the community master plan for neighbourhood facilities.',
+      'Near-square plot in Al Warqa 1, inside the community’s private-school and services cluster. It fronts 21 Street to the east and a local access street to the north. Sheikh Mohammed Bin Zayed Road (E311) is about 400 m away and the Blue Line’s Al Warqa’a Metro station, under construction, about 850 m. The community master plan reserves the plot for neighbourhood facilities.',
     physical: {
-      shape: 'Irregular pentagon (near-rectangular)',
-      frontageM: 152,
-      depthM: 124,
-      topography: 'Flat, compacted sand; no structures',
-      access: 'Primary frontage to distributor road (south); secondary to local street (west)',
-      utilities: 'Power, water, sewer and telecom available at plot boundary',
+      shape: 'Near-square (rotated rectangle)',
+      frontageM: 140,
+      depthM: 135,
+      topography: 'Flat, compacted sand; no permanent structures',
+      access: 'Frontage to 21 Street (east) and a local access street (north)',
+      utilities: 'Power, water, sewer and telecom available at plot boundary; DEWA substation about 390 m south-west',
     },
     planning: {
       zoningCode: 'C-2 / CF',
@@ -59,46 +57,36 @@ export const PLOTS = [
         setbacks: 'Front 6 m · Sides 3 m · Rear 3 m',
         parking: '1 space / 50 m² retail GFA · 1 / 4 staff (education)',
       },
-      restrictions: ['Active frontage required to distributor road', 'Servicing and deliveries from local street only', 'Building height must step down within 12 m of the transmission-line easement'],
+      restrictions: ['Active frontage required to 21 Street', 'Servicing and deliveries from the northern access street only', 'Traffic impact study required for any use generating school-run peaks'],
     },
     affection: {
-      affectionPlanNo: 'AP-426-0318-2025-117',
+      affectionPlanNo: 'AP-421-0318-2025-117',
       issueDate: '2025-11-04',
       landUseCode: 'CF-2',
-      roadReservation: '4 m road-widening reservation along southern frontage',
-      easements: ['132 kV overhead transmission line easement, 14 m strip along northern edge', 'Stormwater drainage line, 6 m strip along western edge'],
-      utilitiesNotes: 'DEWA NOC required for any structure within 20 m of the 132 kV line',
-      notes: 'Plot boundary verified by DM Survey (simulated record). No encumbrances registered.',
+      roadReservation: '4 m road-widening reservation along the 21 Street frontage (east)',
+      easements: ['DEWA 11 kV cable corridor, 6 m strip along the southern edge', 'Stormwater drainage line, 6 m strip along the western edge'],
+      utilitiesNotes: 'DEWA NOC required for works within the cable corridor',
+      notes: 'Plot boundary follows the mapped parcel; DM survey verification pending (simulated record). No encumbrances registered.',
     },
     constraints: [
       {
         id: 'C1',
         type: 'power-easement',
-        label: '132 kV transmission easement',
-        description: 'No-build strip of 14 m along the northern boundary; sensitive uses (education, residential) discouraged within 50 m of the line.',
-        severity: 'high',
+        label: 'DEWA cable corridor (11 kV)',
+        description:
+          '6 m underground cable corridor along the southern boundary, feeding the DEWA substation about 390 m south-west; no structures or deep foundations, only landscaping and surface parking.',
+        severity: 'medium',
         noBuild: true,
-        geometry: strip(WARQAA_CENTER, [
-          [-76, 48],
-          [79, 40],
-          [79, 54],
-          [22, 66],
-          [-76, 62],
-        ]),
+        geometry: edgeBand(warqaaRing, 1, 1, 6),
       },
       {
         id: 'C2',
         type: 'road-reservation',
         label: 'Road-widening reservation',
-        description: '4 m strip along the southern frontage reserved for future widening.',
+        description: '4 m strip along the 21 Street frontage reserved for future widening.',
         severity: 'low',
         noBuild: true,
-        geometry: strip(WARQAA_CENTER, [
-          [-76, -62],
-          [76, -62],
-          [76, -58],
-          [-76, -58],
-        ]),
+        geometry: edgeBand(warqaaRing, 2, 2, 4),
       },
       {
         id: 'C3',
@@ -107,38 +95,34 @@ export const PLOTS = [
         description: '6 m strip along the western edge; landscaping and surface parking only.',
         severity: 'medium',
         noBuild: true,
-        geometry: strip(WARQAA_CENTER, [
-          [-76, -58],
-          [-70, -58],
-          [-70, 48],
-          [-76, 48],
-        ]),
+        geometry: edgeBand(warqaaRing, 0, 0, 6),
       },
     ],
     catchmentRadiusM: 2500,
     candidateUses: ['community-retail', 'private-school', 'sports-wellness', 'polyclinic', 'residential-villas'],
+    mapArea: 'warqaa',
   },
   {
-    id: '332-0914',
-    plotNumber: '332-0914',
-    name: 'Al Jaddaf — Creekside Mixed-Use Plot',
+    id: '326-0914',
+    plotNumber: '326-0914',
+    name: 'Al Jaddaf Waterfront — Creekside Mixed-Use Plot',
     community: 'Al Jaddaf',
-    communityCode: '332',
+    communityCode: '326',
     sector: 'Dubai — Creek corridor (Bur Dubai side)',
     center: JADDAF_CENTER,
     geometry: jaddafRing,
     areaM2: Math.round(ringAreaM2(jaddafRing) / 10) * 10,
-    currentUse: 'Temporary surface car park (short-term DM licence)',
+    currentUse: 'Vacant greenfield land',
     assetClassification: 'Government land bank — Mixed-Use Development',
     ownership: 'Dubai Municipality (freehold, land bank)',
     description:
-      'Rectangular plot about 400 m from Al Jaddaf Metro Station, between the Creek-side tower cluster and the healthcare district. It is used on an interim basis as a licensed surface car park. The master plan designates it for mixed-use development.',
+      'Irregular waterfront plot in Culture Village on the Al Jaddaf waterfront, next to the Jameel Arts Centre and the creek-side hotel cluster, with water along its north-western side and Dubai Creek about 50 m to the north-east. Al Jadaf Metro Station (Green Line) is about 700 m away and Al Garhoud Bridge (Sheikh Rashid Road) about 300 m. The master plan designates it for mixed-use development.',
     physical: {
-      shape: 'Rectangular',
-      frontageM: 105,
-      depthM: 90,
-      topography: 'Level, asphalt-surfaced parking',
-      access: 'Frontage to Al Jaddaf main collector (east); service lane (west)',
+      shape: 'Irregular (waterfront)',
+      frontageM: 56,
+      depthM: 125,
+      topography: 'Level reclaimed land; unimproved',
+      access: 'Frontage to the waterfront access road (south); waterfront promenade (north-west)',
       utilities: 'Full utilities at boundary; district cooling connection available',
     },
     planning: {
@@ -152,33 +136,33 @@ export const PLOTS = [
         maxHeightM: 68,
         maxFloors: 'B+G+15',
         plotCoverage: 0.6,
-        setbacks: 'Front 5 m · Sides 4 m · Rear 4 m',
-        parking: 'Per DM parking regulation; 20% reduction within 500 m of Metro',
+        setbacks: 'Front 5 m · Sides 4 m · Waterfront 8 m',
+        parking: 'Per DM parking regulation; 20% reduction within 800 m of Metro',
       },
       restrictions: [
-        'RTA NOC required for works within the Metro protection zone',
+        'Continuous public promenade to be kept along the waterfront edge',
         'Aviation obstacle limitation: structure ≤ 75 m AMSL (DCAA)',
         'Minimum 20% of GFA as active/non-residential uses at podium',
       ],
     },
     affection: {
-      affectionPlanNo: 'AP-332-0914-2026-042',
+      affectionPlanNo: 'AP-326-0914-2026-042',
       issueDate: '2026-02-18',
       landUseCode: 'MU-3',
       roadReservation: 'None',
-      easements: ['Metro protection zone, 25 m from western boundary (no basement)', 'Sewer line easement, 5 m along northern edge'],
+      easements: ['Waterfront promenade access, 8 m along the north-western (water) edge', 'Sewer line easement, 5 m along the southern road edge'],
       utilitiesNotes: 'District cooling capacity reserved (simulated DEWA/Empower record)',
-      notes: 'Interim car-park licence terminable on 6 months’ notice.',
+      notes: 'Plot boundary follows the mapped parcel; DM survey verification pending (simulated record).',
     },
     constraints: [
       {
         id: 'C1',
-        type: 'metro-protection',
-        label: 'Metro protection zone',
-        description: 'No basement within the 25 m protection corridor; limits below-grade parking and raises foundation cost.',
+        type: 'waterfront-promenade',
+        label: 'Waterfront promenade easement',
+        description: '8 m public-access strip along the north-western water edge for the waterfront promenade; landscaping, seating and outdoor dining only.',
         severity: 'medium',
-        noBuild: false,
-        geometry: rectangle(offset(JADDAF_CENTER, -32, -18), 42, 92, 28),
+        noBuild: true,
+        geometry: edgeBand(jaddafRing, 6, 8, 8),
       },
       {
         id: 'C2',
@@ -193,14 +177,15 @@ export const PLOTS = [
         id: 'C3',
         type: 'sewer-easement',
         label: 'Sewer line easement',
-        description: '5 m easement along the northern edge; landscaping and driveway only.',
+        description: '5 m easement along the southern road edge; landscaping and driveway only.',
         severity: 'low',
         noBuild: true,
-        geometry: rectangle(offset(JADDAF_CENTER, 19, 38), 106, 6, 28),
+        geometry: edgeBand(jaddafRing, 0, 1, 5),
       },
     ],
     catchmentRadiusM: 2000,
     candidateUses: ['midscale-hotel', 'serviced-apartments', 'grade-a-office', 'build-to-rent', 'logistics'],
+    mapArea: 'jaddaf',
   },
 ];
 

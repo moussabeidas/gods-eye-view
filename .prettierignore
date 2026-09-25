@@ -3,3 +3,7 @@ node_modules
 package-lock.json
 dist-artifact
 .claude
+.cache
+src/data/geo/region.js
+src/data/geo/warqaa.js
+src/data/geo/jaddaf.js

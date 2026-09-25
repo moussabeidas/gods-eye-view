@@ -184,7 +184,7 @@ function topicAnswer(q, session) {
     const c = plot.planning.controls;
     return `**Planning & zoning — plot ${p}** (sourced)\n- Zoning **${plot.planning.zoningCode}** — ${plot.planning.zoningName} ${cite(zone)}\n- Permitted: ${plot.planning.permittedUses.join(', ')} ${cite(zone)}\n- Conditional: ${plot.planning.conditionalUses.join(', ')}; prohibited: ${plot.planning.prohibitedUses.join(', ')} ${cite(zone)}\n- FAR ${c.far}, max height ${c.maxHeightM} m (${c.maxFloors}), coverage ${Math.round(c.plotCoverage * 100)}%, setbacks ${c.setbacks} ${cite(zone)}\n\n**Calculated:** max GFA ${n(a.metrics.maxGfa)} m² (area × FAR); developable area ${n(a.metrics.developable)} m² after no-build easements ${cite(gis, aff)}`;
   }
-  if (/constraint|easement|affection|restriction|power line|transmission|metro protection|aviation|noc/.test(q)) {
+  if (/constraint|easement|affection|restriction|power line|cable|transmission|promenade|waterfront|aviation|noc/.test(q)) {
     return `**Constraints recorded for plot ${p}** (sourced from the affection plan)\n${plot.constraints.map((c) => `- **${c.label}** (${c.severity}): ${c.description} ${cite(aff)}`).join('\n')}\n\n*AI interpretation:* ${
       plot.constraints
         .filter((c) => c.severity !== 'low')

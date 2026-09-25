@@ -11,12 +11,21 @@ export function poiDocId(plot, category, source) {
   return `${source}:${category.toUpperCase()}-${plot.plotNumber}`;
 }
 
+function transitText(metro, planned, R) {
+  const parts = [];
+  if (metro && metro.distanceM <= R) parts.push(`${metro.name} (${metro.placeType}) — ${metro.distanceM.toLocaleString('en-US')} m`);
+  else parts.push(`No operational metro in the catchment${metro ? `; nearest ${metro.name}, ${metro.distanceM.toLocaleString('en-US')} m` : ''}`);
+  if (planned && planned.distanceM <= R) parts.push(`${planned.name} (Blue Line, under construction) — ${planned.distanceM.toLocaleString('en-US')} m`);
+  return parts.join('; ');
+}
+
 export function analyseLocation(plot, ctx) {
   const p = plot.plotNumber;
   const R = plot.catchmentRadiusM;
 
   // Demographics — distance-weighted catchment (no fixed methodology required, §11.2).
-  const weighted = ctx.communities.map((c) => ({ ...c, weight: round(catchmentWeight(c.distanceM, R), 2) }));
+  // Weight = distance factor × share of the community's area inside the catchment.
+  const weighted = ctx.communities.map((c) => ({ ...c, weight: round(catchmentWeight(c.distanceM, R) * (c.catchmentShare ?? 1), 2) }));
   const residents = weighted.reduce((s, c) => s + c.population * c.weight, 0);
   const workers = weighted.reduce((s, c) => s + (c.daytimeWorkers ?? 0) * c.weight, 0);
   const households = weighted.reduce((s, c) => s + c.households * c.weight, 0);
@@ -71,12 +80,14 @@ export function analyseLocation(plot, ctx) {
   const nearest = (cls) => ctx.roads.filter((r) => cls.includes(r.cls)).sort((a, b) => a.nearestM - b.nearestM)[0];
   const frontRoad = nearest(['secondary', 'primary']);
   const arterial = nearest(['primary', 'motorway']);
-  const metro = ctx.pois.find((x) => x.category === 'metro');
+  const metro = ctx.pois.find((x) => x.category === 'metro' && x.status !== 'construction');
+  const planned = ctx.pois.find((x) => x.category === 'metro' && x.status === 'construction');
   const busStops800 = ctx.pois.filter((x) => x.category === 'bus' && x.distanceM <= 800).length;
+  const metroScore = metro && metro.distanceM <= 1500 ? (metro.distanceM <= 500 ? 10 : metro.distanceM <= 800 ? 8 : 5) : planned && planned.distanceM <= 1000 ? 5 : 2;
   const components = [
     { label: 'Frontage to distributor or collector road', score: frontRoad && frontRoad.nearestM <= 150 ? 10 : frontRoad && frontRoad.nearestM <= 500 ? 6 : 3, weight: 0.35 },
     { label: 'Arterial / highway within 1.5 km', score: arterial && arterial.nearestM <= 1500 ? (arterial.nearestM <= 800 ? 9 : 7) : 4, weight: 0.25 },
-    { label: 'Metro station within 800 m', score: metro ? (metro.distanceM <= 500 ? 10 : metro.distanceM <= 800 ? 8 : 5) : 2, weight: 0.25 },
+    { label: 'Metro station within 800 m', score: metroScore, weight: 0.25 },
     { label: 'Bus stops within 800 m', score: Math.min(10, 3 + busStops800 * 2), weight: 0.15 },
   ];
   const accessScore = round(
@@ -86,9 +97,9 @@ export function analyseLocation(plot, ctx) {
   const accessibility = {
     score: calculated(accessScore, 'Weighted accessibility components (0–10)', { sources: [accessDoc] }),
     components,
-    frontRoad: frontRoad && sourced(`${frontRoad.name} — ${frontRoad.lanes} lanes, ${frontRoad.nearestM} m`, [accessDoc]),
-    arterial: arterial && sourced(`${arterial.name} — ${arterial.nearestM.toLocaleString('en-US')} m`, [accessDoc]),
-    transit: sourced(metro ? `${metro.name} — ${metro.distanceM} m` : 'No metro within catchment; bus only', [accessDoc]),
+    frontRoad: frontRoad && sourced(`${frontRoad.name} (${frontRoad.classLabel}) — ${frontRoad.nearestM.toLocaleString('en-US')} m`, [accessDoc]),
+    arterial: arterial && sourced(`${arterial.name} (${arterial.classLabel}) — ${arterial.nearestM.toLocaleString('en-US')} m`, [accessDoc]),
+    transit: sourced(transitText(metro, planned, R), [accessDoc]),
     busStops800: sourced(busStops800, [accessDoc]),
     traffic: sourced(`${ctx.market.footfall.value.toLocaleString('en-US')} ${ctx.market.footfall.unit}`, [`RTA-NET:ACCESS-${p}`], { label: ctx.market.footfall.label }),
     roads: ctx.roads.filter((r) => r.nearestM < 2500).sort((a, b) => a.nearestM - b.nearestM),
@@ -132,8 +143,14 @@ export function analyseLocation(plot, ctx) {
 
   const topCommunity = weighted[0];
   const dominantSeg = Object.entries(segments).sort((a, z) => z[1] - a[1])[0];
+  const metroNote =
+    metro && metro.distanceM <= 1500
+      ? `, helped by ${metro.name} at ${metro.distanceM} m`
+      : planned && planned.distanceM <= 1500
+        ? `, with ${planned.name} (Blue Line, under construction) ${planned.distanceM} m away`
+        : ', road-led with no metro in the catchment';
   const summary = aiText(
-    `The catchment has about ${Math.round(residents).toLocaleString('en-US')} residents${workers ? ` and ${Math.round(workers).toLocaleString('en-US')} daytime workers` : ''}, growing ${growthPct}% a year and led by ${dominantSeg[0]} (${dominantSeg[1]}%). ${topCommunity.name} is ${topCommunity.incomeBand.toLowerCase()} income with an average household of ${topCommunity.householdSize}. Accessibility scores ${accessScore}/10${metro ? `, helped by ${metro.name} at ${metro.distanceM} m` : ', road-led with no metro in the catchment'}. The ${idx.label.replace(/^./, (c) => c.toLowerCase())} is up ${market.index.change}% since ${idx.start} (${market.index.yoy}% over the last 4 quarters), which signals ${market.index.yoy > 5 ? 'firm' : 'stable'} market momentum.`,
+    `The catchment has about ${Math.round(residents).toLocaleString('en-US')} residents${workers ? ` and ${Math.round(workers).toLocaleString('en-US')} daytime workers` : ''}, growing ${growthPct}% a year and led by ${dominantSeg[0]} (${dominantSeg[1]}%). ${topCommunity.name} is ${topCommunity.incomeBand.toLowerCase()} income with an average household of ${topCommunity.householdSize}. Accessibility scores ${accessScore}/10${metroNote}. The ${idx.label.replace(/^./, (c) => c.toLowerCase())} is up ${market.index.change}% since ${idx.start} (${market.index.yoy}% over the last 4 quarters), which signals ${market.index.yoy > 5 ? 'firm' : 'stable'} market momentum.`,
     [...popDocs.slice(0, 2), accessDoc, market.index.sourceId],
   );
 

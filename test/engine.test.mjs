@@ -12,9 +12,9 @@ const sessions = Object.fromEntries(PLOTS.map((p) => [p.plotNumber, computeFrom(
 
 test('BRD AC-01: one to two representative plots, located by DM plot number (FR-001, FR-002)', () => {
   assert.ok(PLOTS.length >= 1 && PLOTS.length <= 2);
-  assert.equal(getPlot('426-0318').plotNumber, '426-0318');
-  assert.equal(getPlot('Plot 332-0914').plotNumber, '332-0914');
-  assert.equal(getPlot('4260318').plotNumber, '426-0318');
+  assert.equal(getPlot('421-0318').plotNumber, '421-0318');
+  assert.equal(getPlot('Plot 326-0914').plotNumber, '326-0914');
+  assert.equal(getPlot('4210318').plotNumber, '421-0318');
   assert.equal(getPlot('999-9999'), null);
   for (const p of PLOTS) {
     assert.ok(p.geometry.length >= 4, 'plot has a polygon');
@@ -33,7 +33,7 @@ test('NPV and IRR are computed correctly on known cash flows (FR-046, FR-047)', 
 });
 
 test('financial model reports NPV, IRR, ROI and payback and reacts to assumptions (FR-048 – FR-053)', () => {
-  const plot = getPlot('426-0318');
+  const plot = getPlot('421-0318');
   const use = USE_CATALOGUE['community-retail'];
   const inputs = toInputs(buildAssumptions(plot, use, getContext(plot.plotNumber)));
   const base = runModel(plot, use, inputs);
@@ -47,7 +47,7 @@ test('financial model reports NPV, IRR, ROI and payback and reacts to assumption
 });
 
 test('user-modified assumptions stay distinguishable from originals (FR-073)', () => {
-  const plot = getPlot('426-0318');
+  const plot = getPlot('421-0318');
   const use = USE_CATALOGUE['community-retail'];
   const list = buildAssumptions(plot, use, getContext(plot.plotNumber), { discountRate: 0.11 });
   const dr = list.find((a) => a.key === 'discountRate');
@@ -77,19 +77,19 @@ test('HBU: multiple alternatives, screened for permissibility, weighted, scored 
 });
 
 test('changing HBU weights and rerunning changes scores and marks weights user-modified (FR-066, FR-067)', () => {
-  const s = createSession('426-0318');
+  const s = createSession('421-0318');
   s.overrides.weights = { gap: 60 };
   computeFrom(s);
   assert.equal(s.results.hbu.weightsModified, true);
   const gap = s.results.hbu.criteria.find((c) => c.id === 'gap');
   assert.ok(gap.modified && gap.effectiveWeight > 20);
-  const base = sessions['426-0318'].results.hbu.alternatives.find((a) => a.use.id === 'sports-wellness').total.value;
+  const base = sessions['421-0318'].results.hbu.alternatives.find((a) => a.use.id === 'sports-wellness').total.value;
   const now = s.results.hbu.alternatives.find((a) => a.use.id === 'sports-wellness').total.value;
   assert.notEqual(now, base);
 });
 
 test('the specialist can carry a different use forward (human authority)', () => {
-  const s = createSession('332-0914');
+  const s = createSession('326-0914');
   s.overrides.selectedUseId = 'build-to-rent';
   computeFrom(s);
   assert.equal(s.results.financial.useId, 'build-to-rent');
@@ -108,7 +108,7 @@ test('supply-demand gap index follows its formula and cites evidence (FR-025 –
 });
 
 test('comparables are selected with explanations and shown on the map (FR-020 – FR-023)', () => {
-  const C = sessions['426-0318'].results.comparables;
+  const C = sessions['421-0318'].results.comparables;
   assert.ok(C.selected.length >= 2);
   for (const c of C.selected) {
     assert.ok(c.reasons.length > 0, 'each comparable says why');
@@ -152,14 +152,16 @@ test('evidence corpus carries BRD §24.17 source metadata for every record (DP-0
   for (const k of ['DM-GIS', 'DM-PLAN', 'DM-AFF', 'DLD-TXN', 'RERA-RENT', 'DSC-POP', 'TP-MARKET']) assert.ok(kinds.has(k), `represents ${k}`);
   for (const d of corpus) {
     for (const f of ['id', 'sourceName', 'sourceType', 'recordId', 'content', 'date', 'citation', 'category', 'relation']) assert.ok(d[f], `${d.id} has ${f}`);
-    assert.equal(d.simulated, true);
+    // Only open map data records are real; every represented government record is simulated.
+    assert.equal(d.simulated, d.sourceKey !== 'OSM', `${d.id} simulated flag`);
   }
+  assert.ok(kinds.has('OSM'), 'open map data is cited as a real source');
 });
 
 test('retrieval finds the zoning record for a planning question (FR-075)', () => {
-  const index = buildIndex(getPlotCorpus('426-0318'));
+  const index = buildIndex(getPlotCorpus('421-0318'));
   const hits = search(index, 'what uses are permitted under the zoning?', { k: 3 });
-  assert.equal(hits[0].doc.id, 'DM-PLAN:ZONE-426-0318');
+  assert.equal(hits[0].doc.id, 'DM-PLAN:ZONE-421-0318');
   assert.ok(hits[0].snippet.length > 10);
 });
 
@@ -183,7 +185,7 @@ test('all cited sources in stage outputs exist in the corpus (FR-070, FR-071)', 
 });
 
 test('orchestrator emits visible activity for every specialised agent and resets reviews on rerun (FR-081 – FR-083)', async () => {
-  const s = createSession('426-0318');
+  const s = createSession('421-0318');
   const events = [];
   await runPipeline(s, { delay: 0, onEvent: (e) => events.push(e) });
   const agents = new Set(events.filter((e) => e.type === 'agent').map((e) => e.agent));

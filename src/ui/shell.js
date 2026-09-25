@@ -6,7 +6,7 @@ import { KIND_LABEL } from '../engine/provenance.js';
 import { getDoc, getPlotCorpus, SOURCE_SYSTEMS } from '../data/sources.js';
 import { POI_CATEGORIES } from '../data/context.js';
 import { CAP_STATUSES, CAP_STAGES, CAP_PRIORITIES } from '../data/portfolio.js';
-import { LAYER_GROUPS } from './map.js';
+import { LAYER_GROUPS, LANDUSE_STYLE, METRO_COLORS, BASEMAP_LABELS } from './map.js';
 import { esc, pct, aedM, yrs, renderMarkdown, chip } from './format.js';
 
 // ---------------------------------------------------------------------------
@@ -114,7 +114,7 @@ export function renderEvidence(app) {
 function docCard(d) {
   const sys = SOURCE_SYSTEMS[d.sourceKey];
   return `<article class="doc">
-    <div class="doc-src"><span class="doc-type">${esc(d.sourceType)}</span><span class="sim">Simulated extract</span></div>
+    <div class="doc-src"><span class="doc-type">${esc(d.sourceType)}</span><span class="sim">${d.simulated ? 'Simulated extract' : 'Real open data'}</span></div>
     <h4>${esc(d.title)}</h4>
     <dl class="doc-meta"><div><dt>Source</dt><dd>${esc(d.sourceName)}</dd></div><div><dt>Owner</dt><dd>${esc(sys.owner)}</dd></div><div><dt>Record ID</dt><dd class="mono">${esc(d.recordId)}</dd></div><div><dt>Date</dt><dd>${esc(d.date)}</dd></div><div><dt>Category</dt><dd>${esc(d.category)}</dd></div><div><dt>Used by</dt><dd>${esc(d.relation.map((r) => STAGES.find((s) => s.id === r)?.label ?? r).join(', '))}</dd></div></dl>
     <p class="doc-content">${esc(d.content)}</p>
@@ -215,12 +215,17 @@ function capDetail(p) {
 export function renderLayers(app, map) {
   if (!app.layersOpen) return `<button type="button" class="layers-fab" data-action="toggle-layers">Layers</button>`;
   return `<div class="panel-head"><b>Map layers</b><button type="button" class="icon-btn" data-action="toggle-layers" aria-label="Close layers">✕</button></div>
-  <div class="basemaps">${(import.meta.env.VITE_STATIC ? ['schematic'] : ['schematic', 'imagery', 'streets']).map((b) => `<button type="button" class="${map.basemap === b ? 'on' : ''}" data-action="basemap" data-b="${b}">${b[0].toUpperCase() + b.slice(1)}</button>`).join('')}</div>
-  <p class="muted tiny">The schematic basemap is drawn from the representative dataset.${import.meta.env.VITE_STATIC ? '' : ' Imagery and street tiles are for orientation only.'}</p>
+  <div class="basemaps">${(import.meta.env.VITE_STATIC ? ['vector'] : ['vector', 'imagery', 'streets']).map((b) => `<button type="button" class="${map.basemap === b ? 'on' : ''}" data-action="basemap" data-b="${b}">${esc(BASEMAP_LABELS[b])}</button>`).join('')}</div>
+  <p class="muted tiny">The map is drawn from real open data: © OpenStreetMap contributors via Overture Maps. Plot outlines sit on real vacant parcels; official DM cadastral boundaries are not open data.${import.meta.env.VITE_STATIC ? '' : ' Imagery and street tiles are for orientation only.'}</p>
   ${LAYER_GROUPS.map((g) => `<label class="layer-row"><input type="checkbox" data-layer="${g.id}" ${map.visible[g.id] ? 'checked' : ''} ${app.session ? '' : 'disabled'} />${esc(g.label)}</label>`).join('')}
   <div class="poi-legend">${Object.entries(POI_CATEGORIES)
     .map(([, c]) => `<span><i style="--c:${c.color}"></i>${esc(c.label)}</span>`)
-    .join('')}<span><i class="sq" style="--c:#e66767"></i>Constraint</span><span><i class="sq" style="--c:#eda100"></i>Comparable</span><span><i style="--c:#e87ba4"></i>DLD transaction</span></div>`;
+    .join('')}<span><i class="sq" style="--c:#e66767"></i>Constraint</span><span><i class="sq" style="--c:#eda100"></i>Comparable</span><span><i style="--c:#e87ba4"></i>DLD transaction</span></div>
+  <div class="poi-legend"><b class="legend-title">Land use</b>${Object.values(LANDUSE_STYLE)
+    .filter((l, i, all) => all.findIndex((x) => x.label === l.label) === i)
+    .map((l) => `<span><i class="sq" style="--c:${l.color}"></i>${esc(l.label)}</span>`)
+    .join('')}</div>
+  <div class="poi-legend"><b class="legend-title">Dubai Metro</b><span><i style="--c:${METRO_COLORS.red}"></i>Red Line</span><span><i style="--c:${METRO_COLORS.green}"></i>Green Line</span><span><i class="ring" style="--c:${METRO_COLORS.blue}"></i>Blue Line (under construction)</span></div>`;
 }
 
 export function renderLegend() {
@@ -236,5 +241,5 @@ export function renderLegend() {
   <p class="muted">Every material value carries a tag showing where it came from (BRD §20):</p>
   <ul class="legend-list">${kinds.map((k) => `<li>${chip(k)}<div><b>${esc(KIND_LABEL[k])}</b><span>${esc(desc[k])}</span></div></li>`).join('')}</ul>
   <p class="muted small">Specialist review: every stage can be accepted, challenged, rejected or rerun. The recommendation needs your explicit decision, and the AI never approves an investment.</p>
-  <p class="muted small">Data: representative and simulated for demonstration. Simulated retrieval stands in for future DM, DLD and RERA integrations.</p></div>`;
+  <p class="muted small">Data: the map is real open data (© OpenStreetMap contributors via Overture Maps): community boundaries, roads, Dubai Metro, land use, building footprints and named facilities. Plot numbers, planning records, demographics, facility capacities, market figures and transactions are simulated for demonstration, and simulated retrieval stands in for future DM, DLD and RERA integrations.</p></div>`;
 }

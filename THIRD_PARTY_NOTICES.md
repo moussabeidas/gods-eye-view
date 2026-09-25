@@ -8,4 +8,6 @@ Runtime dependencies (see `package-lock.json` for the full resolved inventory):
 - **IBM Plex Sans Arabic** (embedded in PDF exports): SIL Open Font License 1.1, © IBM Corp. <https://github.com/IBM/plex>
 - **@anthropic-ai/sdk**: MIT, © Anthropic. <https://github.com/anthropics/anthropic-sdk-typescript>
 
+Bundled map data (`src/data/geo/`): © OpenStreetMap contributors, available under the Open Database License (ODbL); © Overture Maps Foundation and contributors (CDLA Permissive 2.0 where applicable). See `src/data/geo/ATTRIBUTION.md`.
+
 Optional runtime basemap tiles: Esri World Imagery (© Esri and its data providers) and the CARTO dark basemap (© OpenStreetMap contributors, © CARTO), used under each provider's terms.
