@@ -43,7 +43,7 @@ const app = {
   stageStatus: {},
   running: false,
   agentLog: [],
-  agentsOpen: true,
+  agentsOpen: false,
   chat: [],
   chatOpen: false,
   chatBusy: false,
@@ -159,6 +159,7 @@ async function selectPlot(plotNumber) {
     return;
   }
   app.session = createSession(plot.plotNumber);
+  app.agentsOpen = innerWidth >= 900;
   app.stage = 'plot';
   app.stageStatus = {};
   app.agentLog = [];
@@ -390,6 +391,7 @@ document.addEventListener('click', async (e) => {
       return selectPlot(el.dataset.plot);
     case 'clear-plot':
       app.session = null;
+      app.agentsOpen = false;
       app.agentLog = [];
       app.stageStatus = {};
       app.stage = 'plot';

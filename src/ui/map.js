@@ -4,7 +4,8 @@
 
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import { POI_CATEGORIES } from '../data/context.js';
+import { POI_CATEGORIES, getContext } from '../data/context.js';
+import { REGION } from '../data/region.js';
 import { circle, bounds } from '../engine/geo.js';
 import { esc, num } from './format.js';
 
@@ -85,6 +86,30 @@ export class InvestmentMap {
     const src = ['communities', 'water', 'roads', 'metro', 'neighbours', 'plot', 'constraints', 'catchment', 'pois', 'comparables', 'transactions', 'plots-all'];
     for (const s of src) m.addSource(s, { type: 'geojson', data: EMPTY });
 
+    // Regional schematic: context at city scale, fading out once a plot fills the view.
+    m.addSource('region-water', { type: 'geojson', data: fc(REGION.water.map((w) => poly(w.ring, { name: w.name }))) });
+    m.addSource('region-airport', { type: 'geojson', data: fc([poly(REGION.airport.ring, { name: REGION.airport.name })]) });
+    m.addSource('region-runways', { type: 'geojson', data: fc(REGION.airport.runways.map((r) => line(r))) });
+    m.addSource('region-roads', { type: 'geojson', data: fc(REGION.roads.map((r) => line(r.coords, { name: r.name, cls: r.cls }))) });
+    const fade = (from, to) => ['interpolate', ['linear'], ['zoom'], 12.6, from, 13.8, to];
+    m.addLayer({ id: 'region-water', type: 'fill', source: 'region-water', paint: { 'fill-color': '#0f2a3d', 'fill-opacity': fade(0.95, 0) } });
+    m.addLayer({ id: 'region-airport', type: 'fill', source: 'region-airport', paint: { 'fill-color': '#161d27', 'fill-outline-color': '#2a3544', 'fill-opacity': fade(1, 0) } });
+    m.addLayer({ id: 'region-runways', type: 'line', source: 'region-runways', paint: { 'line-color': '#3a4656', 'line-width': 4, 'line-opacity': fade(1, 0) } });
+    m.addLayer({
+      id: 'region-roads-casing',
+      type: 'line',
+      source: 'region-roads',
+      layout: { 'line-cap': 'round', 'line-join': 'round' },
+      paint: { 'line-color': '#0c1016', 'line-width': ['match', ['get', 'cls'], 'motorway', 7, 5], 'line-opacity': fade(1, 0) },
+    });
+    m.addLayer({
+      id: 'region-roads',
+      type: 'line',
+      source: 'region-roads',
+      layout: { 'line-cap': 'round', 'line-join': 'round' },
+      paint: { 'line-color': ['match', ['get', 'cls'], 'motorway', '#9c7a3f', '#5d6d82'], 'line-width': ['match', ['get', 'cls'], 'motorway', 3.5, 2.2], 'line-opacity': fade(0.9, 0) },
+    });
+
     m.addLayer({ id: 'water', type: 'fill', source: 'water', paint: { 'fill-color': '#0f2a3d', 'fill-opacity': 0.9 } });
     m.addLayer({ id: 'communities-fill', type: 'fill', source: 'communities', paint: { 'fill-color': ['case', ['get', 'host'], '#1b2a3a', '#141c26'], 'fill-opacity': 0.55 } });
     m.addLayer({ id: 'communities-line', type: 'line', source: 'communities', paint: { 'line-color': '#3b4b5e', 'line-width': 1, 'line-dasharray': [3, 2] } });
@@ -94,7 +119,19 @@ export class InvestmentMap {
       type: 'line',
       source: 'roads',
       layout: { 'line-cap': 'round', 'line-join': 'round' },
-      paint: { 'line-color': '#0c1016', 'line-width': ['match', ['get', 'cls'], 'motorway', 11, 'primary', 8, 'secondary', 6, 3] },
+      paint: {
+        'line-color': '#0c1016',
+        // Street-level widths when zoomed in, hairlines at city scale.
+        'line-width': [
+          'interpolate',
+          ['linear'],
+          ['zoom'],
+          12,
+          ['match', ['get', 'cls'], 'motorway', 3, 'primary', 2.4, 'secondary', 1.8, 1],
+          15,
+          ['match', ['get', 'cls'], 'motorway', 11, 'primary', 8, 'secondary', 6, 3],
+        ],
+      },
     });
     m.addLayer({
       id: 'roads',
@@ -103,7 +140,15 @@ export class InvestmentMap {
       layout: { 'line-cap': 'round', 'line-join': 'round' },
       paint: {
         'line-color': ['match', ['get', 'cls'], 'motorway', '#b98a3e', 'primary', '#8b9bb0', 'secondary', '#65758a', '#3a4656'],
-        'line-width': ['match', ['get', 'cls'], 'motorway', 7, 'primary', 5, 'secondary', 3.5, 1.6],
+        'line-width': [
+          'interpolate',
+          ['linear'],
+          ['zoom'],
+          12,
+          ['match', ['get', 'cls'], 'motorway', 1.6, 'primary', 1.3, 'secondary', 1, 0.6],
+          15,
+          ['match', ['get', 'cls'], 'motorway', 7, 'primary', 5, 'secondary', 3.5, 1.6],
+        ],
       },
     });
     m.addLayer({ id: 'metro-line', type: 'line', source: 'metro', paint: { 'line-color': '#1baf7a', 'line-width': 3, 'line-dasharray': [2, 1] } });
@@ -177,11 +222,56 @@ export class InvestmentMap {
   }
 
   /** Show the prototype plots before one is selected. */
+  /** Communities, water, roads, metro and surrounding plots for one or more plots. */
+  setContext(entries) {
+    const m = this.map;
+    m.getSource('communities').setData(
+      fc(
+        entries.flatMap(({ ctx }) =>
+          ctx.communities.map((c, i) =>
+            poly(c.ring, { kind: 'community', host: i === 0, name: c.name, population: c.population, growth: c.growthPct, density: c.density, source: `DSC-POP:POP-${c.id}` }),
+          ),
+        ),
+      ),
+    );
+    m.getSource('water').setData(fc(entries.filter(({ ctx }) => ctx.water).map(({ ctx }) => poly(ctx.water))));
+    m.getSource('roads').setData(fc(entries.flatMap(({ ctx }) => ctx.roads.map((r) => line(r.coords, { name: r.name, cls: r.cls })))));
+    m.getSource('metro').setData(fc(entries.filter(({ ctx }) => ctx.metro).map(({ ctx }) => line(ctx.metro.coords, { name: ctx.metro.name }))));
+    m.getSource('neighbours').setData(
+      fc(
+        entries.flatMap(({ plot, ctx }) => {
+          const nh = plot.plotNumber === '426-0318' ? () => 7 : (i) => 18 + ((i * 37) % 50);
+          return ctx.neighbours.map((n, i) => poly(n.ring, { kind: 'neighbour', use: n.use, plotNumber: n.plotNumber, h: n.use === 'Open space' ? 0 : nh(i) }));
+        }),
+      ),
+    );
+  }
+
+  /** Homepage view: both prototype plots in their city context. */
   async showOverview(plots) {
     await this.ready;
     if (!this.map) return;
+    this.plot = null;
+    this.ctx = null;
+    this.setContext(plots.map((plot) => ({ plot, ctx: getContext(plot.plotNumber) })));
+    for (const id of ['plot', 'constraints', 'catchment', 'pois', 'comparables', 'transactions']) this.map.getSource(id).setData(EMPTY);
+    for (const g of LAYER_GROUPS) this.setGroup(g.id, g.id === 'context' || g.id === 'plots');
     this.map.getSource('plots-all').setData(fc(plots.map((p) => poly(p.geometry, { plotNumber: p.plotNumber }))));
     this.clearMarkers();
+    for (const l of REGION.labels) {
+      const el = document.createElement('div');
+      el.className = 'map-label map-label-district';
+      el.textContent = l.name;
+      this.addMarker(l.coord, el, 'center');
+    }
+    for (const p of plots) {
+      for (const c of getContext(p.plotNumber).communities.slice(0, 1)) {
+        const ce = document.createElement('div');
+        ce.className = 'map-label map-label-community';
+        ce.textContent = c.name;
+        this.addMarker(c.centroid, ce, 'top', [0, 14]);
+      }
+    }
     for (const p of plots) {
       const el = document.createElement('button');
       el.className = 'map-label map-label-plot map-label-pick';
@@ -189,7 +279,8 @@ export class InvestmentMap {
       el.addEventListener('click', () => this.onSelectPlot?.(p.plotNumber));
       this.addMarker(p.center, el, 'bottom');
     }
-    this.map.fitBounds(bounds(plots.map((p) => p.center)), { padding: 80, duration: 900, pitch: 0, maxZoom: 12 });
+    const extent = plots.flatMap((p) => getContext(p.plotNumber).communities.flatMap((c) => c.ring));
+    this.map.fitBounds(bounds(extent), { padding: 40, duration: 900, pitch: 0, bearing: 0, maxZoom: 12.5 });
   }
 
   async setPlot(plot, ctx) {
@@ -199,18 +290,7 @@ export class InvestmentMap {
     this.plot = plot;
     this.ctx = ctx;
     m.getSource('plots-all').setData(EMPTY);
-    m.getSource('communities').setData(
-      fc(
-        ctx.communities.map((c, i) =>
-          poly(c.ring, { kind: 'community', host: i === 0, name: c.name, population: c.population, growth: c.growthPct, density: c.density, source: `DSC-POP:POP-${c.id}` }),
-        ),
-      ),
-    );
-    m.getSource('water').setData(ctx.water ? fc([poly(ctx.water)]) : EMPTY);
-    m.getSource('roads').setData(fc(ctx.roads.map((r) => line(r.coords, { name: r.name, cls: r.cls }))));
-    m.getSource('metro').setData(ctx.metro ? fc([line(ctx.metro.coords, { name: ctx.metro.name })]) : EMPTY);
-    const nh = plot.plotNumber === '426-0318' ? () => 7 : (i) => 18 + ((i * 37) % 50);
-    m.getSource('neighbours').setData(fc(ctx.neighbours.map((n, i) => poly(n.ring, { kind: 'neighbour', use: n.use, plotNumber: n.plotNumber, h: n.use === 'Open space' ? 0 : nh(i) }))));
+    this.setContext([{ plot, ctx }]);
     m.getSource('plot').setData(
       fc([
         poly(plot.geometry, {

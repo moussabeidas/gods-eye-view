@@ -783,6 +783,13 @@ textarea {
 .map-label-comp {
   border-color: #eda100;
 }
+.map-label-district {
+  color: #6f8196;
+  font-size: 11px;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 3px #000;
+}
 .map-label-community {
   color: #8fa3bb;
   text-transform: uppercase;
