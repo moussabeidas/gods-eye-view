@@ -33,7 +33,7 @@ export async function buildPptx(report) {
   const pres = new pptxgen();
   pres.layout = 'LAYOUT_WIDE';
   pres.title = `${t.docTitle} — ${report.meta.plotNumber}`;
-  pres.company = 'God’s Eye View';
+  pres.company = 'Municipal Eye View';
   pres.subject = report.headline.use;
   if (ar) pres.rtlMode = true;
 

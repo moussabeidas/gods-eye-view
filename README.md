@@ -1,4 +1,4 @@
-# God’s Eye View — Investment Agentic AI
+# Municipal Eye View — Investment Agentic AI
 
 A map-centric decision-support platform for Dubai Municipality investment specialists. It is built to the **Business Requirements Document: Investment Agentic AI Prototype**.
 

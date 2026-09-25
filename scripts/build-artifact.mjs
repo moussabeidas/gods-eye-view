@@ -18,7 +18,7 @@ const css = [...html.matchAll(/<link rel="stylesheet" crossorigin href="([^"]+)"
 const logo = `data:image/svg+xml;base64,${Buffer.from(fs.readFileSync('public/logo.svg')).toString('base64')}`;
 
 const head = html.match(/<head>([\s\S]*?)<\/head>/)[1];
-const title = '<title>God’s Eye View</title>';
+const title = '<title>Municipal Eye View</title>';
 const fonts = [...head.matchAll(/<link[^>]+fonts\.googleapis\.com\/css2[^>]+>/g)].map((m) => m[0]).join('\n');
 const body = html
   .match(/<body>([\s\S]*?)<\/body>/)[1]

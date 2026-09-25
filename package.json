@@ -1,8 +1,8 @@
 {
-  "name": "gods-eye-view",
+  "name": "municipal-eye-view",
   "private": true,
   "version": "1.0.0",
-  "description": "Investment Agentic AI prototype \u2014 a map-centric decision-support platform that takes a Dubai Municipality plot from asset intelligence through Highest & Best Use, investment structuring, financial feasibility, recommendation, human review and Commercial Assets Portfolio capture.",
+  "description": "Investment Agentic AI prototype — a map-centric decision-support platform that takes a Dubai Municipality plot from asset intelligence through Highest & Best Use, investment structuring, financial feasibility, recommendation, human review and Commercial Assets Portfolio capture.",
   "type": "module",
   "license": "MIT",
   "engines": {

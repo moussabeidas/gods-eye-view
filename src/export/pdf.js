@@ -40,7 +40,7 @@ export function buildPdf(report, fonts) {
   doc.addFont('Plex-Regular.ttf', 'Plex', 'normal');
   doc.addFont('Plex-Bold.ttf', 'Plex', 'bold');
   doc.setFont('Plex', 'normal');
-  doc.setProperties({ title: `${t.docTitle} — ${report.meta.plotNumber}`, subject: report.headline.use, creator: 'God’s Eye View Investment Agentic AI' });
+  doc.setProperties({ title: `${t.docTitle} — ${report.meta.plotNumber}`, subject: report.headline.use, creator: 'Municipal Eye View Investment Agentic AI' });
   if (ar) doc.setLanguage?.('ar');
 
   const X = (x, w = 0) => (ar ? PW - x - w : x);
