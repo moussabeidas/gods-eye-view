@@ -16,7 +16,8 @@
     "build:artifact": "node scripts/build-artifact.mjs",
     "test": "node --test test/*.test.mjs",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "build:protected": "node scripts/build-artifact.mjs && node scripts/protect.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.128.0",

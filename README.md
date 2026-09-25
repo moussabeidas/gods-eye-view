@@ -56,6 +56,16 @@ The repository is ready for Vercel: `vercel.json` builds the Vite front end, and
 2. Optional: add the environment variable `ANTHROPIC_API_KEY` to turn on the Claude assistant. Without it, the offline analyst answers.
 3. Deploy. Production deployments are public. Preview deployments of other branches may sit behind Vercel's deployment protection.
 
+### Password protection
+
+Set the Vercel environment variable `SITE_PASSWORD` (at least 12 characters) and redeploy. The build then publishes only a password page: the whole app is gzipped and encrypted with AES-256-GCM under a key derived from the password (PBKDF2-SHA256, 600,000 iterations), so nothing readable is served until the password is entered. In this mode the app runs as the static build with the in-browser analyst, so leave `ANTHROPIC_API_KEY` unset. The same page can be built locally for any static host:
+
+```bash
+SITE_PASSWORD='…' npm run build:protected   # dist-artifact/gods-eye-view-protected.html
+```
+
+The password is read from the environment only and is never written to the repository.
+
 To enable the Claude-powered assistant, copy `.env.example` to `.env` and set `ANTHROPIC_API_KEY`. Without a key, the **offline analyst** answers instead. It is deterministic and retrieval-grounded, and it still cites evidence and can apply modify-and-rerun commands. The header pill shows which mode is active.
 
 ## What you can do
