@@ -3,6 +3,9 @@
 Runtime dependencies (see `package-lock.json` for the full resolved inventory):
 
 - **maplibre-gl**: BSD-3-Clause, © MapLibre contributors. <https://github.com/maplibre/maplibre-gl-js>
+- **pptxgenjs**: MIT. <https://github.com/gitbrent/PptxGenJS>
+- **jspdf**: MIT. <https://github.com/parallax/jsPDF>
+- **IBM Plex Sans Arabic** (embedded in PDF exports): SIL Open Font License 1.1, © IBM Corp. <https://github.com/IBM/plex>
 - **@anthropic-ai/sdk**: MIT, © Anthropic. <https://github.com/anthropics/anthropic-sdk-typescript>
 
 Optional runtime basemap tiles: Esri World Imagery (© Esri and its data providers) and the CARTO dark basemap (© OpenStreetMap contributors, © CARTO), used under each provider's terms.

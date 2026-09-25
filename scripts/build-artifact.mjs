@@ -9,7 +9,7 @@ import path from 'node:path';
 
 const outDir = 'dist-artifact/bundle';
 process.env.VITE_STATIC = '1';
-await build({ base: './', logLevel: 'warn', build: { outDir, emptyOutDir: true, modulePreload: false } });
+await build({ base: './', logLevel: 'warn', build: { outDir, emptyOutDir: true, modulePreload: false, rollupOptions: { output: { inlineDynamicImports: true } } } });
 
 const html = fs.readFileSync(path.join(outDir, 'index.html'), 'utf8');
 const read = (href) => fs.readFileSync(path.join(outDir, href.replace(/^\.\//, '')), 'utf8');

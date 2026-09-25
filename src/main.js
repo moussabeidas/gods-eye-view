@@ -52,6 +52,9 @@ const app = {
   capOpen: false,
   capFilter: 'all',
   capSelected: null,
+  exportLang: 'en',
+  exportBusy: null,
+  exportStatus: null,
   portfolio: loadPortfolio(),
   llm: null,
 };
@@ -332,6 +335,30 @@ function setReview(stage, status, note) {
   logEvent({ type: 'agent', agent: 'orchestrator', status: 'done', message: `Specialist ${status} ${STAGES.find((s) => s.id === stage).label}${note ? `: “${note}”` : ''}` });
 }
 
+async function exportPack(format) {
+  if (app.exportBusy || !app.session?.results.recommendation) return;
+  const label = `${format === 'pptx' ? 'PowerPoint deck' : 'PDF report'} (${app.exportLang === 'ar' ? 'Arabic' : 'English'})`;
+  app.exportBusy = label;
+  app.exportStatus = null;
+  renderDashboard({ keepScroll: true });
+  try {
+    const { exportRecommendation } = await import('./export/index.js');
+    const { status, filename } = await exportRecommendation(app.session, { format, lang: app.exportLang });
+    app.exportStatus =
+      status === 'saved'
+        ? { ok: true, text: `${filename} is ready.` }
+        : status === 'declined'
+          ? { ok: false, text: 'The download was declined. Choose a format to try again.' }
+          : { ok: false, text: 'Another download is waiting for confirmation. Finish it, then try again.' };
+    if (status === 'saved') logEvent({ type: 'agent', agent: 'recommendation', status: 'done', message: `Exported ${label}: ${filename}` });
+  } catch (error) {
+    console.error(error);
+    app.exportStatus = { ok: false, text: `The ${label} could not be created. Try again, or try the other format.` };
+  }
+  app.exportBusy = null;
+  renderAll({ keepScroll: true });
+}
+
 function capture() {
   const s = app.session;
   const existing = app.portfolio.find((p) => p.fromSession && p.plotNumber === s.plot.plotNumber);
@@ -446,6 +473,12 @@ document.addEventListener('click', async (e) => {
     }
     case 'capture':
       return capture();
+    case 'export-lang':
+      app.exportLang = el.dataset.lang;
+      app.exportStatus = null;
+      return renderDashboard({ keepScroll: true });
+    case 'export':
+      return exportPack(el.dataset.format);
     case 'open-cap':
       app.capOpen = true;
       if (el.dataset.id) app.capSelected = el.dataset.id;

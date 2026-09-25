@@ -2321,3 +2321,40 @@ ol.plain-ol li {
 .note-dialog .note {
   margin-top: 12px;
 }
+
+.export-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.seg button {
+  border: 0;
+  background: var(--surface-2);
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.seg button.on {
+  background: var(--accent-2);
+  color: #fff;
+}
+.seg button[lang='ar'] {
+  font-family: 'IBM Plex Sans Arabic', var(--font);
+}
+.export-status {
+  margin: 8px 0 0;
+  color: var(--ink-2);
+}
+.export-status.ok {
+  color: #7ee07e;
+}
+.export-status.warn {
+  color: #f7cf7d;
+}

@@ -50,5 +50,25 @@ export function renderRecommendation(app) {
       ${captured ? `<span class="chosen-tag">Captured as ${esc(captured.id)}</span><button type="button" class="btn btn-ghost" data-action="open-cap" data-id="${esc(captured.id)}">View in portfolio</button><button type="button" class="btn btn-link" data-action="capture">Update CAP record</button>` : `<button type="button" class="btn btn-cap" data-action="capture">Capture opportunity in CAP</button><span class="muted small">${decided ? 'The record will carry your decision.' : 'You can capture now as “Under assessment” or decide first.'}</span>`}
     </div>
   </section>
+  ${exportCard(app)}
   <p class="disclaimer">${esc(rec.disclaimer)}</p>`;
+}
+
+function exportCard(app) {
+  const lang = app.exportLang ?? 'en';
+  const busy = app.exportBusy;
+  const st = app.exportStatus;
+  return `<section class="card export-card">
+    <div class="card-head"><h3>Export recommendation pack</h3></div>
+    <p class="muted small">A designed PowerPoint deck or PDF report of this recommendation, carrying the figures, evidence sources, assumptions and your decision as they stand now.</p>
+    <div class="export-row">
+      <div class="seg" role="radiogroup" aria-label="Export language">
+        <button type="button" role="radio" aria-checked="${lang === 'en'}" class="${lang === 'en' ? 'on' : ''}" data-action="export-lang" data-lang="en">English</button>
+        <button type="button" role="radio" aria-checked="${lang === 'ar'}" class="${lang === 'ar' ? 'on' : ''}" data-action="export-lang" data-lang="ar" lang="ar">العربية</button>
+      </div>
+      <button type="button" class="btn btn-primary" data-action="export" data-format="pptx" ${busy ? 'disabled' : ''}>PowerPoint (.pptx)</button>
+      <button type="button" class="btn btn-ghost" data-action="export" data-format="pdf" ${busy ? 'disabled' : ''}>PDF report</button>
+    </div>
+    ${busy ? `<p class="small export-status">Preparing ${esc(busy)}…</p>` : st ? `<p class="small export-status ${st.ok ? 'ok' : 'warn'}">${esc(st.text)}</p>` : ''}
+  </section>`;
 }
