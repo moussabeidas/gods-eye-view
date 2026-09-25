@@ -157,7 +157,7 @@ export class InvestmentMap {
       data: fc(areas.flatMap((a) => a.buildings.map((b) => poly([b.ring], { kind: 'building', h: b.h, estimated: b.estimated })))),
     });
     // Plot-specific layers.
-    for (const s of ['catchment-communities', 'plot', 'constraints', 'catchment', 'pois', 'comparables', 'transactions', 'plots-all']) m.addSource(s, { type: 'geojson', data: EMPTY });
+    for (const s of ['catchment-communities', 'plot', 'constraints', 'catchment', 'pois', 'comparables', 'transactions', 'plots-all', 'landbank']) m.addSource(s, { type: 'geojson', data: EMPTY });
 
     const fadeIn = (z0, z1, to = 1) => ['interpolate', ['linear'], ['zoom'], z0, 0, z1, to];
     m.addLayer({ id: 'landuse-fill', type: 'fill', source: 'landuse', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': fadeIn(12.8, 14, 0.5) } });
@@ -254,6 +254,18 @@ export class InvestmentMap {
       layout: { visibility: 'none' },
       paint: { 'line-color': '#eda100', 'line-width': ['case', ['get', 'selected'], 2.2, 1], 'line-opacity': ['case', ['get', 'selected'], 1, 0.5] },
     });
+    m.addLayer({
+      id: 'landbank-fill',
+      type: 'fill',
+      source: 'landbank',
+      paint: { 'fill-color': ['case', ['get', 'recategorise'], '#e0a526', '#7c8ea5'], 'fill-opacity': ['case', ['get', 'focus'], 0.6, 0.35] },
+    });
+    m.addLayer({
+      id: 'landbank-line',
+      type: 'line',
+      source: 'landbank',
+      paint: { 'line-color': ['case', ['get', 'recategorise'], '#f2c14e', '#a9b8ca'], 'line-width': ['case', ['get', 'focus'], 3, 1.6] },
+    });
     m.addLayer({ id: 'plots-all', type: 'fill', source: 'plots-all', paint: { 'fill-color': '#3987e5', 'fill-opacity': 0.45 } });
     m.addLayer({ id: 'plots-all-line', type: 'line', source: 'plots-all', paint: { 'line-color': '#9ccbff', 'line-width': 2 } });
     m.addLayer({ id: 'plot-glow', type: 'line', source: 'plot', paint: { 'line-color': '#58a6ff', 'line-width': 10, 'line-blur': 8, 'line-opacity': 0.7 } });
@@ -298,6 +310,7 @@ export class InvestmentMap {
       'transactions',
       'stations',
       'plots-all',
+      'landbank-fill',
       'plot-fill',
       'constraints-fill',
       'comparables-fill',
@@ -348,6 +361,7 @@ export class InvestmentMap {
     if (!this.map) return;
     this.plot = null;
     this.ctx = null;
+    this.clearLandBank();
     const entries = plots.map((plot) => ({ plot, ctx: getContext(plot.plotNumber) }));
     this.setCatchment(entries.map(({ plot, ctx }) => ({ plot, ctx: { communities: ctx.communities.filter((c) => c.host) } })));
     for (const id of ['plot', 'constraints', 'catchment', 'pois', 'comparables', 'transactions']) this.map.getSource(id).setData(EMPTY);
@@ -374,6 +388,7 @@ export class InvestmentMap {
     const m = this.map;
     this.plot = plot;
     this.ctx = ctx;
+    this.clearLandBank();
     m.setPadding(this.padding());
     m.getSource('plots-all').setData(EMPTY);
     this.setCatchment([{ plot, ctx }]);
@@ -489,6 +504,45 @@ export class InvestmentMap {
   updateLabelZoom() {
     const c = this.map?.getContainer();
     if (c) c.classList.toggle('map-zoomed-out', this.map.getZoom() < 12.6);
+  }
+
+  /** Land-bank parcels with their recategorisation rank; optionally fly to one. */
+  async showLandBank(rows, focus) {
+    await this.ready;
+    if (!this.map || !rows) return;
+    this.clearLandBank();
+    this.map.getSource('landbank').setData(
+      fc(
+        rows.map((r) =>
+          poly([r.geometry], {
+            kind: 'landbank',
+            plotNumber: r.plotNumber,
+            rank: r.rank,
+            zoning: r.zoning,
+            to: r.recategorise ? r.best.zoning : 'no change',
+            use: r.best.useName,
+            uplift: r.upliftNpv > 0 ? `NPV +AED ${(r.upliftNpv / 1e6).toFixed(1)}M` : 'Keep current zoning',
+            recategorise: r.recategorise,
+            focus: r.plotNumber === focus,
+          }),
+        ),
+      ),
+    );
+    this.landMarkers = rows.map((r) => {
+      const el = document.createElement('div');
+      el.className = `map-label map-label-rank${r.recategorise ? '' : ' keep'}${r.plotNumber === focus ? ' focus' : ''}`;
+      el.innerHTML = `<b>${r.rank}</b><span>${esc(r.plotNumber)}</span>`;
+      return new maplibregl.Marker({ element: el, anchor: 'bottom', offset: [0, -4] }).setLngLat(r.center).addTo(this.map);
+    });
+    const target = rows.find((r) => r.plotNumber === focus);
+    if (target) this.map.flyTo({ center: target.center, zoom: 16, pitch: 45, bearing: -15, duration: 1400, essential: true });
+    else if (!this.plot) this.map.fitBounds(bounds(rows.flatMap((r) => r.geometry)), { padding: 60, duration: 1000, pitch: 0, bearing: 0, maxZoom: 14 });
+  }
+
+  clearLandBank() {
+    this.landMarkers?.forEach((mk) => mk.remove());
+    this.landMarkers = [];
+    this.map?.getSource('landbank')?.setData(EMPTY);
   }
 
   setComparables(comparables) {
@@ -629,6 +683,8 @@ function popupHtml(f) {
       return `<div class="pop"><div class="pop-k" style="--c:#e87ba4">DLD transaction</div><b>${esc(p.type)} · ${esc(p.property)}</b><div>${esc(p.community)} · ${esc(p.date)} · ${num(p.area)} m²</div><div>AED ${num(p.value)} (AED ${num(p.rate)}/m²)</div>${src}</div>`;
     case 'comparable':
       return `<div class="pop"><div class="pop-k" style="--c:#eda100">Comparable plot${p.selected ? ` · ${p.score}/100` : ''}</div><b>${esc(p.plotNumber)} — ${esc(p.community)}</b><div>${esc(p.landUse)}</div><div>${esc(p.performance)}</div>${p.reasons ? `<div class="pop-note">Why comparable: ${esc(p.reasons)}</div>` : ''}${src}</div>`;
+    case 'landbank':
+      return `<div class="pop"><div class="pop-k" style="--c:#e0a526">Rank ${esc(p.rank)} · recategorisation screening</div><b>Plot ${esc(p.plotNumber)}</b><div>${esc(p.zoning)} → ${esc(p.to)} · ${esc(p.use)}</div><div>${esc(p.uplift)}</div><button type="button" class="src-pill" data-action="open-opps">Open opportunities</button></div>`;
     case 'plot':
       return `<div class="pop"><div class="pop-k" style="--c:#58a6ff">Selected plot</div><b>${esc(p.plotNumber)}</b><div>${esc(p.zoning)} · ${num(p.area)} m²</div><div class="pop-note">Drawn on a real vacant parcel from open land-use data. Extrusion shows the maximum permitted height envelope.</div>${src}</div>`;
     case 'constraint':

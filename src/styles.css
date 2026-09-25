@@ -2408,3 +2408,134 @@ ol.plain-ol li {
 .export-status.warn {
   color: #f7cf7d;
 }
+
+/* ---------------------------------------------------------------- recategorisation opportunities */
+.btn-opp {
+  border-color: #8a6a1f;
+  color: #f2c14e;
+  background: rgba(224, 165, 38, 0.1);
+}
+.btn-opp:hover {
+  background: rgba(224, 165, 38, 0.2);
+}
+.opp-callout {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+  margin: 16px 0 4px;
+  padding: 14px 16px;
+  border: 1px solid #8a6a1f;
+  border-radius: 10px;
+  background: rgba(224, 165, 38, 0.08);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.opp-callout b {
+  color: #f2c14e;
+}
+.opp-callout span {
+  color: var(--ink-2);
+  font-size: 13px;
+}
+.opp-callout:hover {
+  background: rgba(224, 165, 38, 0.15);
+}
+.opp-intro {
+  margin: 0 0 12px;
+  max-width: 90ch;
+}
+.opp-tbl td small {
+  display: block;
+}
+.opp-tbl td.pos,
+.opp-tbl th.r {
+  white-space: nowrap;
+}
+.opp-tbl td.pos {
+  color: #4cc38a;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.zone-tag {
+  display: inline-block;
+  font: 600 11px var(--mono, ui-monospace, monospace);
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--line-2);
+  color: var(--ink-2);
+}
+.zone-tag.to {
+  border-color: #8a6a1f;
+  color: #f2c14e;
+}
+.keep {
+  color: var(--muted);
+  font-size: 12px;
+}
+.dm {
+  display: inline-block;
+  font-size: 11px;
+  padding: 1px 7px;
+  border-radius: 99px;
+  border: 1px solid var(--line-2);
+  color: var(--ink-2);
+}
+.dm-good {
+  border-color: #2f7d58;
+  color: #4cc38a;
+}
+.dm-bad {
+  border-color: #8a3a3a;
+  color: #ee7b7b;
+}
+.opp-headline {
+  margin: 4px 0 10px;
+}
+.opp-facts {
+  margin-bottom: 10px;
+}
+.opp-detail tr.best td {
+  color: #f2c14e;
+  font-weight: 600;
+}
+.opp-detail tr.now td {
+  color: var(--ink);
+}
+.opp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.map-label-rank {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px 3px 3px;
+  border-radius: 99px;
+  background: rgba(9, 12, 16, 0.9);
+  border: 1px solid #e0a526;
+  font-size: 11px;
+  color: var(--ink);
+}
+.map-label-rank b {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #e0a526;
+  color: #111;
+  font-size: 11px;
+}
+.map-label-rank.keep {
+  border-color: #7c8ea5;
+}
+.map-label-rank.keep b {
+  background: #7c8ea5;
+}
+.map-label-rank.focus {
+  box-shadow: 0 0 0 3px rgba(224, 165, 38, 0.35);
+}

@@ -8,6 +8,8 @@ import { createSession, runPipeline, computeStage, STAGES, AGENTS } from './engi
 import { answer as offlineAnswer, describeAction } from './engine/analyst.js';
 import { InvestmentMap } from './ui/map.js';
 import { installTooltip } from './ui/charts.js';
+import { renderOpportunities } from './ui/opportunities.js';
+import { rankRecategorisation } from './engine/recategorise.js';
 import { renderStepper, renderAgents, renderChat, renderEvidence, renderCap, renderLayers, renderLegend } from './ui/shell.js';
 import { renderPlotSelection, renderAsset } from './ui/panels/asset.js';
 import { renderLocation } from './ui/panels/location.js';
@@ -52,6 +54,9 @@ const app = {
   capOpen: false,
   capFilter: 'all',
   capSelected: null,
+  oppsOpen: false,
+  opps: null,
+  oppSelected: null,
   exportLang: 'en',
   exportBusy: null,
   exportStatus: null,
@@ -123,6 +128,15 @@ function openLibrary() {
   const el = $('evidence');
   el.hidden = false;
   el.innerHTML = renderEvidence(app);
+}
+
+function renderOppsOverlay() {
+  const el = $('opps');
+  el.hidden = !app.oppsOpen;
+  if (app.oppsOpen) {
+    app.opps ??= rankRecategorisation();
+    el.innerHTML = renderOpportunities(app);
+  }
 }
 
 function renderCapOverlay() {
@@ -483,6 +497,26 @@ document.addEventListener('click', async (e) => {
       return renderDashboard({ keepScroll: true });
     case 'export':
       return exportPack(el.dataset.format);
+    case 'open-opps':
+      app.oppsOpen = true;
+      renderOppsOverlay();
+      return map.showLandBank(app.opps);
+    case 'close-opps':
+      app.oppsOpen = false;
+      return renderOppsOverlay();
+    case 'opp-select':
+      app.oppSelected = el.dataset.plot;
+      return renderOppsOverlay();
+    case 'opp-map':
+      app.oppsOpen = false;
+      renderOppsOverlay();
+      return map.showLandBank(app.opps, el.dataset.plot);
+    case 'opp-analyse':
+      app.oppsOpen = false;
+      renderOppsOverlay();
+      map.clearLandBank();
+      await selectPlot(el.dataset.plot);
+      return run('asset', { delay: 120 });
     case 'open-cap':
       app.capOpen = true;
       if (el.dataset.id) app.capSelected = el.dataset.id;
@@ -596,6 +630,9 @@ document.addEventListener('keydown', (e) => {
       const cancel = $('legend').querySelector('[data-cancel]');
       if (cancel) cancel.click();
       else $('legend').hidden = true;
+    } else if (app.oppsOpen) {
+      app.oppsOpen = false;
+      renderOppsOverlay();
     } else if (app.capOpen) {
       app.capOpen = false;
       renderCapOverlay();

@@ -200,3 +200,20 @@ test('orchestrator emits visible activity for every specialised agent and resets
   assert.equal(s.reviews.hbu.status, 'pending');
   assert.equal(s.reviews.asset.status, 'accepted', 'upstream reviews are kept');
 });
+
+test('recategorisation ranking suggests value-adding zoning changes the market can absorb', async () => {
+  const { rankRecategorisation } = await import('../src/engine/recategorise.js');
+  const rows = rankRecategorisation();
+  assert.ok(rows.length >= 5, 'screens the land bank, not just the two analysed plots');
+  for (let i = 1; i < rows.length; i++) assert.ok(rows[i - 1].upliftNpv >= rows[i].upliftNpv, 'ranked by NPV uplift');
+  for (const r of rows) {
+    assert.ok(r.geometry.length >= 4 && r.areaM2 > 1000, `${r.plotNumber} is a real parcel`);
+    if (r.recategorise) {
+      assert.notEqual(r.best.zoning, r.zoning);
+      assert.ok(r.upliftNpv > 0 && r.best.npv > r.current.npv);
+      assert.notEqual(r.best.demand.tone, 'bad', `${r.plotNumber} suggestion is not in an exhausted or oversupplied market`);
+      assert.ok(r.conditions.some((c) => /DM Planning approval/.test(c)));
+    } else assert.equal(r.upliftNpv, 0);
+  }
+  assert.ok(rows.some((r) => r.recategorise));
+});

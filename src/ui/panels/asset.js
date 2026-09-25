@@ -21,6 +21,7 @@ export function renderPlotSelection(app) {
           <span class="muted">${esc(p.currentUse)}</span>
         </button>`,
       ).join('')}</div>
+      <button type="button" class="opp-callout" data-action="open-opps"><b>Recategorisation opportunities</b><span>See the land bank ranked by the value a change of zoning category would add, with a suggested category and use for each plot.</span></button>
       <h3 class="sub">The journey</h3>
       <ol class="journey-list">${STAGES.map((s) => `<li><b>${s.n}. ${esc(s.label)}</b></li>`).join('')}<li><b>Human review → Portfolio capture</b></li></ol>
       <h3 class="sub">Specialised agents</h3>
