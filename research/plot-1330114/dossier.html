@@ -1,0 +1,538 @@
+<title>Plot 133-0114 Hor Al Anz East</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: a survey title block up top, then single-column sections on a cool drafting-paper ground, charts drawn to one scale each. */
+:root {
+  --bg: #f3f6f5;
+  --paper: #ffffff;
+  --ink: #12211d;
+  --ink-2: #485955;
+  --muted: #74837f;
+  --rule: #d3ddda;
+  --rule-strong: #a9b7b3;
+  --accent: #0d6b58;
+  --accent-soft: #dcece7;
+  --metro: #2f9a4c;
+  --band: rgba(13, 107, 88, 0.10);
+  --s1: #2a78d6;
+  --s2: #eb6834;
+  --s3: #1baf7a;
+  --bar: #b9c6c2;
+  --f-display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --f-ar: "IBM Plex Sans Arabic", "Geeza Pro", "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1513; --paper: #141d1a; --ink: #e5edea; --ink-2: #a8b7b2; --muted: #7f8e8a;
+    --rule: #26332f; --rule-strong: #3a4945; --accent: #58c3a8; --accent-soft: #19302a;
+    --metro: #4cbf6b; --band: rgba(88, 195, 168, 0.14);
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --bar: #3a4945;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1513; --paper: #141d1a; --ink: #e5edea; --ink-2: #a8b7b2; --muted: #7f8e8a;
+  --rule: #26332f; --rule-strong: #3a4945; --accent: #58c3a8; --accent-soft: #19302a;
+  --metro: #4cbf6b; --band: rgba(88, 195, 168, 0.14);
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --bar: #3a4945;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 64px; display: grid; gap: 40px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; letter-spacing: 0.005em; }
+h2 { font-size: 1.55rem; font-weight: 600; }
+h3 { font-size: 1.05rem; font-weight: 600; }
+p { margin: 0; max-width: 68ch; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ar { font-family: var(--f-ar); direction: rtl; unicode-bidi: isolate; }
+.mono, .num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.eyebrow { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); }
+.lede { color: var(--ink-2); font-size: 1.02rem; }
+section { display: grid; gap: 16px; min-width: 0; }
+.sec-head { display: grid; gap: 6px; border-top: 1px solid var(--rule-strong); padding-top: 14px; }
+
+/* Title block, after the block on a site plan */
+.titleblock { background: var(--paper); border: 1.5px solid var(--ink); display: grid; grid-template-columns: 1.35fr 1fr; }
+.tb-main { padding: 22px 24px; border-right: 1.5px solid var(--ink); display: grid; gap: 10px; align-content: start; }
+.tb-main .plotno { font-family: var(--f-display); font-weight: 700; font-size: clamp(3rem, 9vw, 5.4rem); line-height: 0.95; letter-spacing: -0.01em; }
+.tb-main .where { font-size: 1.05rem; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+.tb-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.tb-cell { padding: 10px 14px; border-bottom: 1px solid var(--rule-strong); border-left: 1px solid var(--rule-strong); display: grid; gap: 2px; min-width: 0; }
+.tb-cell:nth-child(odd) { border-left: 0; }
+.tb-cell .k { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.tb-cell .v { font-family: var(--f-display); font-size: 1.15rem; font-weight: 600; overflow-wrap: anywhere; }
+.tb-cell .v small { font-family: var(--f-body); font-weight: 400; font-size: 0.82rem; color: var(--ink-2); }
+.tb-foot { grid-column: 1 / -1; border-top: 1.5px solid var(--ink); padding: 8px 14px; font-size: 0.8rem; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 4px 18px; }
+@media (max-width: 760px) {
+  .titleblock { grid-template-columns: 1fr; }
+  .tb-main { border-right: 0; border-bottom: 1.5px solid var(--ink); }
+}
+
+.findings { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border-block: 1px solid var(--rule-strong); }
+.finding { padding: 14px 16px 14px 0; display: grid; gap: 4px; align-content: start; }
+.finding + .finding { padding-left: 16px; border-left: 1px solid var(--rule); }
+.finding b { font-family: var(--f-display); font-size: 1.05rem; font-weight: 600; }
+.finding span { color: var(--ink-2); font-size: 0.92rem; }
+@media (max-width: 520px) { .finding + .finding { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); } }
+
+.panel { background: var(--paper); border: 1px solid var(--rule); padding: 16px; min-width: 0; }
+.two { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 820px) { .two { grid-template-columns: 1fr; } }
+svg { display: block; width: 100%; height: auto; overflow: visible; }
+svg text { font-family: var(--f-body); fill: var(--ink-2); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.85rem; color: var(--ink-2); align-items: center; }
+.legend i { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; }
+.note { font-size: 0.85rem; color: var(--ink-2); }
+.key { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 0.88rem; }
+.key li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; align-items: baseline; }
+.key .badge { width: 20px; height: 20px; border-radius: 50%; background: var(--ink); color: var(--paper); font-family: var(--f-mono); font-size: 0.7rem; display: grid; place-items: center; }
+.key .st { background: var(--metro); }
+
+.tablewrap { overflow-x: auto; border: 1px solid var(--rule); background: var(--paper); }
+table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+th, td { padding: 7px 12px; text-align: left; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+th { font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); font-weight: 500; background: var(--paper); }
+td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; }
+tr.me td { background: var(--accent-soft); font-weight: 600; }
+tbody tr:last-child td { border-bottom: 0; }
+
+.value { display: grid; grid-template-columns: auto 1fr; gap: 6px 20px; align-items: baseline; padding: 16px; border: 1.5px solid var(--accent); background: var(--paper); }
+.value .big { font-family: var(--f-display); font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 700; color: var(--accent); line-height: 1; }
+@media (max-width: 560px) { .value { grid-template-columns: 1fr; } }
+
+.stat { display: grid; gap: 2px; }
+.stat .n { font-family: var(--f-display); font-size: 2rem; font-weight: 700; line-height: 1.05; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px 24px; }
+.bars { display: grid; gap: 6px; font-size: 0.88rem; }
+.bars .row { display: grid; grid-template-columns: minmax(130px, 11rem) 1fr 2.5rem; gap: 10px; align-items: center; }
+.bars .track { height: 8px; background: transparent; }
+.bars .fill { height: 8px; background: var(--accent); border-radius: 0 4px 4px 0; }
+
+.steps { counter-reset: s; list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 2rem 1fr; gap: 10px; }
+.steps li::before { content: counter(s); font-family: var(--f-mono); font-size: 0.8rem; border: 1px solid var(--rule-strong); width: 1.6rem; height: 1.6rem; display: grid; place-items: center; border-radius: 50%; color: var(--ink-2); }
+.steps code, .inline-code { font-family: var(--f-mono); font-size: 0.86em; background: var(--accent-soft); padding: 1px 5px; }
+.pill { display: inline-block; font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.05em; padding: 2px 7px; border: 1px solid currentColor; border-radius: 999px; white-space: nowrap; }
+.ok { color: var(--accent); }
+.no { color: var(--muted); }
+details { border: 1px solid var(--rule); background: var(--paper); }
+details > summary { cursor: pointer; padding: 10px 14px; font-size: 0.9rem; color: var(--ink-2); }
+details[open] > summary { border-bottom: 1px solid var(--rule); }
+details .tablewrap { border: 0; }
+
+.tip { position: fixed; pointer-events: none; z-index: 10; background: var(--ink); color: var(--paper); font-size: 0.8rem; line-height: 1.4; padding: 7px 10px; max-width: 260px; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
+.tip b { font-weight: 600; }
+.hit { fill: transparent; cursor: default; }
+footer { font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 12px; }
+@media (prefers-reduced-motion: no-preference) { .fill { transition: width .4s ease; } }
+</style>
+
+<div class="wrap">
+  <header class="titleblock" aria-label="Plot record">
+    <div class="tb-main">
+      <span class="eyebrow">Dubai Municipality plot · DLD land register</span>
+      <div class="plotno">133-0114</div>
+      <div class="where"><span>Hor Al Anz East, Deira</span><span class="ar" lang="ar">هور العنز شرق</span></div>
+      <p class="lede">Commercial land of 5,370 m², the 10th largest of 75 commercial plots in the community. Non-freehold, registered, and with no recorded sale, mortgage or grant since 1997.</p>
+    </div>
+    <div class="tb-grid">
+      <div class="tb-cell"><span class="k">Parcel ID</span><span class="v mono">1330114</span></div>
+      <div class="tb-cell"><span class="k">DLD land no.</span><span class="v mono">1928 / 0</span></div>
+      <div class="tb-cell"><span class="k">Land type</span><span class="v">Commercial <small class="ar" lang="ar">تجارى</small></span></div>
+      <div class="tb-cell"><span class="k">Sub-type</span><span class="v">Commercial <small class="ar" lang="ar">تجارية</small></span></div>
+      <div class="tb-cell"><span class="k">Area</span><span class="v">5,370.32 m² <small>57,806 sq ft</small></span></div>
+      <div class="tb-cell"><span class="k">Tenure</span><span class="v">Non-freehold</span></div>
+      <div class="tb-cell"><span class="k">Community / DLD area</span><span class="v mono">133 / 234</span></div>
+      <div class="tb-cell"><span class="k">Status</span><span class="v">Registered · Ready</span></div>
+      <div class="tb-foot"><span>Source: DLD open-data <span class="mono">lands</span> register, area 234</span><span>Retrieved 13 Oct 2026</span></div>
+    </div>
+  </header>
+
+  <div class="findings" aria-label="Key findings">
+    <div class="finding"><b>Large commercial plot</b><span>Over five times the community's median parcel of 1,022 m² (a standard 11,000 sq ft villa plot).</span></div>
+    <div class="finding"><b>UAE and GCC buyers</b><span>All 386 parcels in Hor Al Anz East are non-freehold. Foreign buyers need an eligible structure.</span></div>
+    <div class="finding"><b>Never traded on record</b><span>No DLD sale, mortgage or grant of a 5,370 m² land parcel in the community from 1997 to October 2026.</span></div>
+    <div class="finding"><b>On the Green Line</b><span>Al Qiyadah and Abu Hail Metro stations sit on the community's edge.</span></div>
+  </div>
+
+  <section aria-labelledby="h-where">
+    <div class="sec-head">
+      <span class="eyebrow">Location</span>
+      <h2 id="h-where">The community around the plot</h2>
+      <p class="note">The plot lies inside this boundary. Its exact outline is published only through DLD's Property Status Enquiry and Dubai Municipality's Makani, both closed to automated access from outside the UAE (see <a href="#h-missing">what is not public</a>).</p>
+    </div>
+    <div class="two">
+      <div class="panel"><svg id="map" role="img" aria-label="Map of Hor Al Anz East with nearby metro stations and landmarks"></svg></div>
+      <div style="display:grid; gap:14px; min-width:0">
+        <ul class="key" id="mapkey"></ul>
+        <p class="note">Boundary: OpenStreetMap way 396533652, 1.383 km² (Dubai Municipality gives 1.377 km²). Stations and landmarks: OpenStreetMap. Distances are to the community boundary.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-size">
+    <div class="sec-head">
+      <span class="eyebrow">Land register</span>
+      <h2 id="h-size">How the plot compares with the other 385 parcels</h2>
+      <p class="note">Hor Al Anz East holds 386 registered parcels totalling 856,883 m². Most are 500–1,100 m² villa plots; 133-0114 sits in the band of 21 parcels between 5,000 and 10,000 m².</p>
+    </div>
+    <div class="panel">
+      <h3 style="margin-bottom:8px">Registered parcels by area (m²)</h3>
+      <svg id="hist" role="img" aria-label="Histogram of parcel areas in Hor Al Anz East"></svg>
+    </div>
+    <h3>Neighbouring plot numbers</h3>
+    <p class="note">Plot numbers run roughly in sequence across a community's blocks, so these are likely, though not certainly, adjacent.</p>
+    <div class="tablewrap"><table id="neigh"><thead><tr><th>Plot</th><th class="r">DLD land no.</th><th>Land type</th><th>Sub-type</th><th class="r">Area (m²)</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section aria-labelledby="h-value">
+    <div class="sec-head">
+      <span class="eyebrow">Market evidence</span>
+      <h2 id="h-value">What commercial land in Hor Al Anz East has traded at</h2>
+      <p class="note">Every DLD-recorded commercial land sale, grant and 2026 valuation in the community, in AED per sq ft of land. The shaded band is the range applied to 133-0114 below.</p>
+    </div>
+    <div class="panel" style="display:grid; gap:10px">
+      <div class="legend" id="evlegend"></div>
+      <svg id="ev" role="img" aria-label="Commercial land values per square foot in Hor Al Anz East, 1998 to 2026"></svg>
+    </div>
+    <details>
+      <summary>Show the 16 records as a table</summary>
+      <div class="tablewrap"><table id="evtable"><thead><tr><th>Date</th><th>Kind</th><th class="r">Area (m²)</th><th class="r">Value (AED)</th><th class="r">AED / sq ft</th><th>Reference</th></tr></thead><tbody></tbody></table></div>
+    </details>
+    <div class="value">
+      <div class="big">AED 58–75M</div>
+      <div style="display:grid; gap:4px">
+        <b>Indicative value as vacant land, not a valuation</b>
+        <span class="note">57,806 sq ft at AED 1,000–1,300 per sq ft. Those are the two round rates in the evidence: a February 2026 DLD valuation of a 7,051 m² commercial plot and a 2018 grant of a 9,136 m² commercial plot. The 2026 valuations at AED 2,600–3,125 per sq ft are most likely plots with buildings. Whether 133-0114 is built on, its permitted floor area and its frontage are not public and would move this figure.</span>
+      </div>
+    </div>
+    <div class="two">
+      <div style="display:grid; gap:8px; min-width:0">
+        <h3>Ejari rents in the community, Jan–Oct 2026</h3>
+        <div class="tablewrap"><table id="rents"><thead><tr><th>Segment</th><th class="r">Contracts</th><th class="r">Median AED / yr</th><th class="r">Middle half</th><th class="r">AED / m² / yr</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div style="display:grid; gap:8px; min-width:0">
+        <h3>Residential land sales</h3>
+        <div class="tablewrap"><table id="res"><thead><tr><th>Date</th><th class="r">m²</th><th class="r">AED</th><th class="r">/ sq ft</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-comm">
+    <div class="sec-head">
+      <span class="eyebrow">Community profile</span>
+      <h2 id="h-comm">Who lives here and what is nearby</h2>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="eyebrow">Residents, end 2023</span><span class="n">22,739</span><svg id="spark" role="img" aria-label="Population 2015 to 2023" style="max-width:220px"></svg><span class="note">+17% since 2015 · Dubai Statistics Center</span></div>
+      <div class="stat"><span class="eyebrow">Density</span><span class="n">16,500</span><span class="note">residents per km²</span></div>
+      <div class="stat"><span class="eyebrow">Mapped buildings</span><span class="n">1,246</span><span class="note">OpenStreetMap</span></div>
+      <div class="stat"><span class="eyebrow">Bus stops</span><span class="n">11</span><span class="note">in and around the boundary</span></div>
+    </div>
+    <div class="panel" style="display:grid; gap:10px">
+      <h3>Mapped businesses and services inside the boundary</h3>
+      <div class="bars" id="amen"></div>
+      <p class="note">Main roads: Al Ittihad Road (E11), Al Wuheida Street, Abu Hail Street, Al Rasheed Street, Salah Al Din Street.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-missing">
+    <div class="sec-head">
+      <span class="eyebrow">Gaps</span>
+      <h2 id="h-missing">What is not public, and the two-minute way to get it</h2>
+      <p class="note">These services check a captcha on the server or answer only from inside the UAE. The research did not try to get past either.</p>
+    </div>
+    <ol class="steps">
+      <li><div><b>Coordinates, zoning and legal status.</b> Open DLD's <a href="https://dubailand.gov.ae/en/eservices/property-status-overview/property-status/">Property Status Enquiry</a>, choose the Land Number tab, then area <code>Hor Al Anz East</code>, property type <code>Land</code>, land number <code>1928</code>, sub-number <code>0</code>. The Municipality Number tab should also accept <code>1330114</code>. It returns the plot's location and land photo, height, land-use, parking and setback regulations, zone code, Dubai Municipality violations, property blocks and rental disputes.</div></li>
+      <li><div><b>Makani number and plot outline.</b> Search <code>1330114</code> in the Makani or Dubai Now app, or open <a href="https://www.makani.ae/">makani.ae</a> from a UAE connection.</div></li>
+      <li><div><b>Affection plan.</b> Request it from Dubai Municipality's planning services, which require an owner or consultant account.</div></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="h-src">
+    <div class="sec-head">
+      <span class="eyebrow">Method</span>
+      <h2 id="h-src">Sources and what answered</h2>
+      <p class="note">The research sandbox could not reach Dubai government hosts, so a probe ran on a GitHub-hosted runner and saved every response. Each request and its status is in <span class="inline-code">research/plot-1330114/raw/log.jsonl</span> in the repository.</p>
+    </div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Source</th><th>Result</th><th>Used for</th></tr></thead>
+      <tbody>
+        <tr><td>DLD open-data gateway</td><td><span class="pill ok">Answered</span></td><td>Land register (386 parcels), area lookup, 2026 valuations</td></tr>
+        <tr><td>DLD sales and rents, 2026</td><td><span class="pill ok">Mirror</span></td><td>Daily mirror of DLD open data on GitHub</td></tr>
+        <tr><td>DLD transactions, 1997–2026</td><td><span class="pill ok">Mirror</span></td><td>Two Hugging Face mirrors, 2.6 million rows, 864 in the community</td></tr>
+        <tr><td>Dubai Statistics Center population</td><td><span class="pill ok">Mirror</span></td><td>Population by community, 2015–2023</td></tr>
+        <tr><td>OpenStreetMap</td><td><span class="pill ok">Answered</span></td><td>Boundary, buildings, businesses, roads, transit</td></tr>
+        <tr><td>DLD Property Status Enquiry</td><td><span class="pill no">Captcha</span></td><td>Not queried</td></tr>
+        <tr><td>Dubai Municipality GIS, GeoDubai, Makani</td><td><span class="pill no">Timed out</span></td><td>Geo-fenced outside the UAE</td></tr>
+        <tr><td>Dubai Pulse</td><td><span class="pill no">Timed out</span></td><td>Geo-fenced outside the UAE</td></tr>
+        <tr><td>data.dubai, dsc.gov.ae</td><td><span class="pill no">Rejected</span></td><td>Site firewall</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <footer>Compiled 13 October 2026 from public data. Indicative figures are not a valuation. Map data © OpenStreetMap contributors (ODbL).</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script id="data" type="application/json">{"plot":{"PARCEL_ID":1330114,"DM_ZIP_CODE":"133","MUNICIPALITY_NUMBER":"114","LAND_NUMBER":"1928","LAND_SUB_NUMBER":0,"LAND_TYPE_EN":"Commercial","LAND_TYPE_AR":"تجارى","PROP_SUB_TYPE_EN":"Commercial","PROP_SUB_TYPE_AR":"تجارية","ACTUAL_AREA":5370.32,"AREA_EN":"Hor Al Anz East","AREA_AR":"هور العنز شرق","ZONE_EN":"Deira","IS_FREE_HOLD_EN":"Non Free Hold","IS_REGISTERED":1,"IS_OFFPLAN_EN":"Ready","PROJECT_EN":null,"MASTER_PROJECT_EN":null,"SEPARATED_FROM":null,"PRE_REGISTRATION_NUMBER":null,"areaSqft":57806,"dldAreaId":234,"plotNumber":"133-0114"},"register":{"parcels":386,"totalM2":856883,"medianM2":1021.93,"rankAll":30,"commercialCommercial":75,"rankCommercialCommercial":10,"hist":[{"label":"< 500","lo":0,"hi":500,"count":19,"hasPlot":false},{"label":"500–1,000","lo":500,"hi":1000,"count":154,"hasPlot":false},{"label":"1,000–1,100","lo":1000,"hi":1100,"count":68,"hasPlot":false},{"label":"1,100–2,000","lo":1100,"hi":2000,"count":47,"hasPlot":false},{"label":"2,000–5,000","lo":2000,"hi":5000,"count":67,"hasPlot":false},{"label":"5,000–10,000","lo":5000,"hi":10000,"count":21,"hasPlot":true},{"label":"10,000+","lo":10000,"hi":1000000000.0,"count":10,"hasPlot":false}]},"neighbours":[{"plot":"133-0110","land":"764","type":"Commercial","sub":"Commercial","m2":1672.25},{"plot":"133-0111","land":"1862","type":"Commercial","sub":"Residential","m2":2787.1},{"plot":"133-0114","land":"1928","type":"Commercial","sub":"Commercial","m2":5370.32},{"plot":"133-0115","land":"1014","type":"Commercial","sub":"Commercial","m2":3335.22},{"plot":"133-0116","land":"1535","type":"Commercial","sub":"Residential","m2":6578.74},{"plot":"133-0117","land":"1538","type":"Commercial","sub":"Residential","m2":3796.95},{"plot":"133-0118","land":"261","type":"Commercial","sub":"Commercial","m2":3355.56},{"plot":"133-0123","land":"1214","type":"Commercial","sub":"Commercial","m2":3716.12},{"plot":"133-0124","land":"1295","type":"Commercial","sub":"Commercial","m2":1077.68}],"evidence":[{"date":"1998-02-16","kind":"Sale","m2":1393.55,"aed":4050000.0,"psf":270,"ref":"1-11-1998-44","proc":"Sell"},{"date":"1998-05-28","kind":"Sale","m2":11287.71,"aed":48600000.0,"psf":400,"ref":"1-11-1998-452","proc":"Sell"},{"date":"1998-06-29","kind":"Sale","m2":232.26,"aed":1500000.0,"psf":600,"ref":"1-11-1998-647","proc":"Sell"},{"date":"2000-02-28","kind":"Sale","m2":2353.51,"aed":7599900.0,"psf":300,"ref":"1-11-2000-117","proc":"Sell"},{"date":"2001-02-19","kind":"Sale","m2":232.26,"aed":340000.0,"psf":136,"ref":"1-11-2001-151","proc":"Sell"},{"date":"2001-05-16","kind":"Sale","m2":224.36,"aed":300000.0,"psf":124,"ref":"1-11-2001-483","proc":"Sell"},{"date":"2004-04-06","kind":"Sale","m2":1413.28,"aed":4867968.0,"psf":320,"ref":"1-11-2004-699","proc":"Sell"},{"date":"2004-04-26","kind":"Sale","m2":1413.28,"aed":4944030.0,"psf":325,"ref":"1-11-2004-883","proc":"Sell"},{"date":"2004-08-24","kind":"Sale","m2":362.14,"aed":1559368.0,"psf":400,"ref":"1-4-2004-18","proc":"Adding Land By Sell"},{"date":"2007-05-03","kind":"Sale","m2":1413.24,"aed":10039920.0,"psf":660,"ref":"1-11-2007-1260","proc":"Sell"},{"date":"2007-10-30","kind":"Sale","m2":1413.24,"aed":13690800.0,"psf":900,"ref":"1-11-2007-3103","proc":"Sell"},{"date":"2016-05-03","kind":"Sale","m2":213.63,"aed":605764.0,"psf":263,"ref":"1-11-2016-5193","proc":"Sell"},{"date":"2018-05-28","kind":"Grant","m2":9136.27,"aed":127844465.0,"psf":1300,"ref":"Dubai Pulse transactions mirror","proc":"Grant"},{"date":"2026-01-23","kind":"DLD valuation","m2":3716.12,"aed":125000000,"psf":3125,"ref":"DLD open-data valuations","proc":"Valuation","sub":"Commercial"},{"date":"2026-02-17","kind":"DLD valuation","m2":7051.25,"aed":75898950,"psf":1000,"ref":"DLD open-data valuations","proc":"Valuation","sub":"Commercial"},{"date":"2026-09-01","kind":"DLD valuation","m2":2322.58,"aed":65000000,"psf":2600,"ref":"DLD open-data valuations","proc":"Valuation","sub":"Commercial"}],"residential":[{"date":"2014-01-28","m2":1021.93,"aed":2370000.0,"psf":215,"ref":"1-11-2014-2454"},{"date":"2024-01-24","m2":1021.93,"aed":1717993.0,"psf":156,"ref":"1-11-2024-2641"},{"date":"2026-02-11","m2":753.49,"aed":1400000.0,"psf":173,"ref":"1-11-2026-6063"},{"date":"2026-08-24","m2":619.34,"aed":1466635.0,"psf":220,"ref":"1-11-2026-26060"},{"date":"2026-10-01","m2":1021.93,"aed":3000000.0,"psf":273,"ref":"1-11-2026-29987"}],"rents":[{"segment":"Flats","contracts":3397,"median":60000,"p25":46000,"p75":75000,"medianPerM2":591},{"segment":"Villas","contracts":51,"median":120000,"p25":100000,"p75":160000,"medianPerM2":254},{"segment":"Offices","contracts":827,"median":64000,"p25":45000,"p75":86400,"medianPerM2":862},{"segment":"Shops","contracts":813,"median":70000,"p25":42000,"p75":115500,"medianPerM2":1647},{"segment":"Showrooms","contracts":72,"median":230000,"p25":134000,"p75":433750,"medianPerM2":1275}],"population":[{"year":2015,"pop":19453},{"year":2018,"pop":20847},{"year":2019,"pop":21218},{"year":2020,"pop":21430},{"year":2021,"pop":22026},{"year":2022,"pop":22143},{"year":2023,"pop":22739}],"amenities":{"Other shops":124,"Restaurants & cafés":70,"Car rental":37,"Supermarkets & groceries":33,"Banks & exchange":11,"Healthcare & pharmacies":11,"Hotels & hotel apartments":7,"Mosques":5,"Schools":3},"ring":[[55.338551,25.283757],[55.339495,25.283048],[55.340128,25.282547],[55.340245,25.282457],[55.340485,25.282296],[55.341136,25.281783],[55.342339,25.280826],[55.343221,25.280115],[55.343686,25.279739],[55.344605,25.279019],[55.346772,25.277265],[55.347942,25.27597],[55.348434,25.27537],[55.348984,25.274784],[55.351431,25.277085],[55.352903,25.278409],[55.353791,25.279206],[55.35572,25.281038],[55.355184,25.281535],[55.35444,25.282211],[55.353404,25.283196],[55.352918,25.283654],[55.352307,25.284222],[55.351824,25.28469],[55.350921,25.285539],[55.350614,25.285865],[55.349485,25.286855],[55.348899,25.287326],[55.348219,25.287873],[55.347706,25.288318],[55.347293,25.288653],[55.346974,25.288955],[55.34562,25.290073],[55.345471,25.290199],[55.343733,25.288395],[55.342059,25.286649],[55.340527,25.285073],[55.34014,25.284682],[55.339508,25.284236],[55.339245,25.284079],[55.339022,25.283976],[55.338551,25.283757]],"stations":[{"name":"Al Qiyadah","line":"green","lon":55.352631,"lat":25.277585,"toBoundaryM":46},{"name":"Abu Hail","line":"green","lon":55.34645,"lat":25.275416,"toBoundaryM":155},{"name":"Stadium","line":"green","lon":55.361466,"lat":25.27791,"toBoundaryM":675}],"landmarks":[{"name":"Hor Al Anz Primary Health Centre","lat":25.2833757,"lon":55.3484865},{"name":"MBR Housing Establishment","lat":25.2808298,"lon":55.3464458},{"name":"Hamria Shopping Centre","lat":25.2833819,"lon":55.341368},{"name":"Canadian Specialist Hospital","lat":25.2773644,"lon":55.3483985},{"name":"Union Coop Hypermarket","lat":25.2825128,"lon":55.3409238},{"name":"Al Ahmadiya School","lat":25.2822045,"lon":55.3423593},{"name":"Mamzar Centre","lat":25.2800135,"lon":55.3535837},{"name":"Dubai Public Library","lat":25.2847961,"lon":55.3502892},{"name":"Abu Hail Park","lat":25.2797638,"lon":55.3458371},{"name":"Queen International School","lat":25.2831389,"lon":55.3487844},{"name":"Abu Hail Centre","lat":25.2782649,"lon":55.3463589}]}</script>
+<script>
+(function () {
+  var D = JSON.parse(document.getElementById('data').textContent);
+  var NS = 'http://www.w3.org/2000/svg';
+  var fmt = function (n) { return Math.round(n).toLocaleString('en-US'); };
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  var tip = document.getElementById('tip');
+  function showTip(html, ev) {
+    tip.innerHTML = html; tip.hidden = false;
+    var x = ev.clientX + 14, y = ev.clientY + 14;
+    var w = tip.offsetWidth, h = tip.offsetHeight;
+    if (x + w > window.innerWidth - 8) x = ev.clientX - w - 14;
+    if (y + h > window.innerHeight - 8) y = ev.clientY - h - 14;
+    tip.style.left = Math.max(8, x) + 'px'; tip.style.top = Math.max(8, y) + 'px';
+  }
+  function hideTip() { tip.hidden = true; }
+  function bindTip(node, html) {
+    node.addEventListener('pointermove', function (e) { showTip(html, e); });
+    node.addEventListener('pointerleave', hideTip);
+    node.addEventListener('pointerdown', function (e) { showTip(html, e); });
+  }
+  document.addEventListener('scroll', hideTip, { passive: true });
+
+  /* Map */
+  function drawMap() {
+    var svg = document.getElementById('map');
+    svg.innerHTML = '';
+    var pts = D.ring.concat(D.stations.map(function (s) { return [s.lon, s.lat]; }));
+    var lons = pts.map(function (p) { return p[0]; }), lats = pts.map(function (p) { return p[1]; });
+    var minX = Math.min.apply(null, lons) - 0.0012, maxX = Math.max.apply(null, lons) + 0.0012;
+    var minY = Math.min.apply(null, lats) - 0.0012, maxY = Math.max.apply(null, lats) + 0.0012;
+    var kx = Math.cos(25.28 * Math.PI / 180);
+    var W = Math.max(300, svg.parentNode.clientWidth - 32), H = Math.round(W * (maxY - minY) / ((maxX - minX) * kx));
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    var px = function (lon) { return (lon - minX) / (maxX - minX) * W; };
+    var py = function (lat) { return H - (lat - minY) / (maxY - minY) * H; };
+    var d = D.ring.map(function (p, i) { return (i ? 'L' : 'M') + px(p[0]).toFixed(1) + ' ' + py(p[1]).toFixed(1); }).join(' ') + 'Z';
+    el('path', { d: d, fill: 'var(--accent-soft)', stroke: 'var(--accent)', 'stroke-width': 2, 'stroke-linejoin': 'round' }, svg);
+    var lab = el('text', { x: 4, y: 16, 'text-anchor': 'start', 'font-size': 14, 'font-weight': 600 }, svg);
+    lab.style.fill = 'var(--accent)'; lab.style.fontFamily = 'var(--f-display)';
+    lab.textContent = 'Hor Al Anz East · community 133';
+    // scale bar: 500 m
+    var m500 = 500 / (111320 * kx) / (maxX - minX) * W;
+    var sb = el('g', {}, svg);
+    el('line', { x1: 14, y1: H - 16, x2: 14 + m500, y2: H - 16, stroke: 'var(--ink-2)', 'stroke-width': 2 }, sb);
+    el('line', { x1: 14, y1: H - 21, x2: 14, y2: H - 11, stroke: 'var(--ink-2)', 'stroke-width': 1.5 }, sb);
+    el('line', { x1: 14 + m500, y1: H - 21, x2: 14 + m500, y2: H - 11, stroke: 'var(--ink-2)', 'stroke-width': 1.5 }, sb);
+    var t = el('text', { x: 14 + m500 / 2, y: H - 26, 'text-anchor': 'middle', 'font-size': 11 }, sb); t.textContent = '500 m';
+    // north arrow
+    var na = el('g', { transform: 'translate(' + (W - 22) + ',26)' }, svg);
+    el('path', { d: 'M0 -12 L6 6 L0 2 L-6 6 Z', fill: 'var(--ink-2)' }, na);
+    var nt = el('text', { x: 0, y: 20, 'text-anchor': 'middle', 'font-size': 10 }, na); nt.textContent = 'N';
+    var key = document.getElementById('mapkey');
+    key.innerHTML = '';
+    D.stations.forEach(function (s) {
+      var g = el('g', {}, svg);
+      el('circle', { cx: px(s.lon), cy: py(s.lat), r: 8, fill: 'var(--metro)', stroke: 'var(--paper)', 'stroke-width': 2 }, g);
+      var m = el('text', { x: px(s.lon), y: py(s.lat) + 3.5, 'text-anchor': 'middle', 'font-size': 9, 'font-weight': 700 }, g);
+      m.style.fill = '#fff'; m.textContent = 'M';
+      var tl = el('text', { x: px(s.lon), y: py(s.lat) + 24, 'text-anchor': 'middle', 'font-size': 12, 'font-weight': 600 }, g);
+      tl.style.fill = 'var(--ink)'; tl.textContent = s.name;
+      bindTip(g, '<b>' + s.name + '</b><br>Dubai Metro Green Line<br>' + s.toBoundaryM + ' m from the community boundary');
+      var li = document.createElement('li');
+      li.innerHTML = '<span class="badge st">M</span><span>' + s.name + ' Metro, Green Line · ' + s.toBoundaryM + ' m from boundary</span>';
+      key.appendChild(li);
+    });
+    D.landmarks.forEach(function (l, i) {
+      var g = el('g', {}, svg);
+      el('circle', { cx: px(l.lon), cy: py(l.lat), r: 10, fill: 'transparent' }, g);
+      el('circle', { cx: px(l.lon), cy: py(l.lat), r: 7.5, fill: 'var(--ink)', stroke: 'var(--paper)', 'stroke-width': 1.5 }, g);
+      var n = el('text', { x: px(l.lon), y: py(l.lat) + 3.2, 'text-anchor': 'middle', 'font-size': 8.5 }, g);
+      n.style.fill = 'var(--paper)'; n.style.fontFamily = 'var(--f-mono)'; n.textContent = String(i + 1);
+      bindTip(g, '<b>' + l.name + '</b>');
+      var li = document.createElement('li');
+      li.innerHTML = '<span class="badge">' + (i + 1) + '</span><span>' + l.name + '</span>';
+      key.appendChild(li);
+    });
+  }
+
+  /* Histogram */
+  function drawHist() {
+    var svg = document.getElementById('hist');
+    svg.innerHTML = '';
+    var W = Math.max(300, svg.parentNode.clientWidth - 32), H = 230, m = { l: 36, r: 6, t: 26, b: 40 };
+    var narrow = W < 560;
+    var short = ['< 0.5k', '0.5–1k', '1–1.1k', '1.1–2k', '2–5k', '5–10k', '10k+'];
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    var data = D.register.hist, max = 160;
+    var bw = (W - m.l - m.r) / data.length;
+    var y = function (v) { return m.t + (H - m.t - m.b) * (1 - v / max); };
+    [0, 50, 100, 150].forEach(function (v) {
+      el('line', { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), stroke: 'var(--rule)', 'stroke-width': 1 }, svg);
+      var t = el('text', { x: m.l - 8, y: y(v) + 4, 'text-anchor': 'end', 'font-size': 11 }, svg); t.textContent = v;
+    });
+    data.forEach(function (b, i) {
+      var x = m.l + i * bw + 1, w = bw - 2, top = y(b.count), base = y(0);
+      var r = Math.min(4, (base - top) / 2);
+      var path = 'M' + x + ' ' + base + ' V' + (top + r) + ' Q' + x + ' ' + top + ' ' + (x + r) + ' ' + top + ' H' + (x + w - r) + ' Q' + (x + w) + ' ' + top + ' ' + (x + w) + ' ' + (top + r) + ' V' + base + ' Z';
+      el('path', { d: path, fill: b.hasPlot ? 'var(--accent)' : 'var(--bar)' }, svg);
+      var t = el('text', { x: x + w / 2, y: H - m.b + 18, 'text-anchor': 'middle', 'font-size': 11 }, svg); t.textContent = narrow ? short[i] : b.label;
+      if (b.hasPlot || b.count === 154) {
+        // Clear the taller bars either side so the label never crosses them.
+        var near = Math.max(b.count, (data[i - 1] || {}).count || 0, (data[i + 1] || {}).count || 0);
+        var v = el('text', { x: x + w / 2, y: (b.hasPlot ? y(near) : top) - 8, 'text-anchor': b.hasPlot && narrow ? 'end' : 'middle', 'font-size': 12, 'font-weight': 600 }, svg);
+        if (b.hasPlot && narrow) v.setAttribute('x', x + w);
+        v.style.fill = 'var(--ink)';
+        v.textContent = b.hasPlot ? b.count + ' parcels · incl. 133-0114' : b.count + ' parcels';
+        if (b.hasPlot && near > b.count) el('line', { x1: x + w / 2, x2: x + w / 2, y1: y(near) - 4, y2: top - 3, stroke: 'var(--ink-2)', 'stroke-width': 1 }, svg);
+      }
+      var hit = el('rect', { x: m.l + i * bw, y: m.t, width: bw, height: H - m.t - m.b, class: 'hit' }, svg);
+      bindTip(hit, '<b>' + b.label + ' m²</b><br>' + b.count + ' parcels' + (b.hasPlot ? '<br>Includes 133-0114 (5,370 m²)' : ''));
+    });
+    el('line', { x1: m.l, x2: W - m.r, y1: y(0), y2: y(0), stroke: 'var(--rule-strong)', 'stroke-width': 1 }, svg);
+  }
+
+  /* Neighbours */
+  (function () {
+    var tb = document.querySelector('#neigh tbody');
+    D.neighbours.forEach(function (n) {
+      var tr = document.createElement('tr');
+      if (n.plot === '133-0114') tr.className = 'me';
+      tr.innerHTML = '<td class="mono">' + n.plot + '</td><td class="r mono">' + n.land + '</td><td>' + n.type + '</td><td>' + n.sub + '</td><td class="r mono">' + n.m2.toLocaleString('en-US', { minimumFractionDigits: 2 }) + '</td>';
+      tb.appendChild(tr);
+    });
+  })();
+
+  /* Evidence chart */
+  (function () {
+    var kinds = [
+      { k: 'Sale', c: 'var(--s1)', shape: 'circle' },
+      { k: 'DLD valuation', c: 'var(--s2)', shape: 'square' },
+      { k: 'Grant', c: 'var(--s3)', shape: 'diamond' }
+    ];
+    var lg = document.getElementById('evlegend');
+    kinds.forEach(function (k) {
+      var s = document.createElement('span');
+      var shape = k.shape === 'circle' ? 'border-radius:50%' : k.shape === 'diamond' ? 'transform:rotate(45deg) scale(.85)' : '';
+      s.innerHTML = '<i style="background:' + k.c + ';' + shape + '"></i>' + k.k;
+      lg.appendChild(s);
+    });
+    var b = document.createElement('span');
+    b.innerHTML = '<i style="background:var(--band);outline:1px solid var(--accent)"></i>Range applied to 133-0114';
+    lg.appendChild(b);
+    window.__drawEv = function () {
+    var svg = document.getElementById('ev');
+    svg.innerHTML = '';
+    var W = Math.max(300, svg.parentNode.clientWidth - 32), H = W < 560 ? 280 : 320, m = { l: 46, r: 12, t: 14, b: 34 };
+    var narrow = W < 560;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    var t0 = Date.UTC(1997, 0, 1), t1 = Date.UTC(2027, 0, 1), max = 3300;
+    var x = function (d) { var p = d.split('-'); return m.l + (Date.UTC(+p[0], +p[1] - 1, +p[2]) - t0) / (t1 - t0) * (W - m.l - m.r); };
+    var y = function (v) { return m.t + (H - m.t - m.b) * (1 - v / max); };
+    [0, 500, 1000, 1500, 2000, 2500, 3000].forEach(function (v) {
+      el('line', { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), stroke: v ? 'var(--rule)' : 'var(--rule-strong)', 'stroke-width': 1 }, svg);
+      var t = el('text', { x: m.l - 8, y: y(v) + 4, 'text-anchor': 'end', 'font-size': 11 }, svg); t.textContent = v.toLocaleString('en-US');
+    });
+    var yl = el('text', { x: m.l - 8, y: m.t - 2, 'text-anchor': 'end', 'font-size': 10 }, svg); yl.textContent = '';
+    (narrow ? [2000, 2010, 2020] : [2000, 2005, 2010, 2015, 2020, 2025]).forEach(function (yr) {
+      var t = el('text', { x: x(yr + '-01-01'), y: H - m.b + 20, 'text-anchor': 'middle', 'font-size': 11 }, svg); t.textContent = yr;
+    });
+    el('rect', { x: m.l, width: W - m.l - m.r, y: y(1300), height: y(1000) - y(1300), fill: 'var(--band)' }, svg);
+    var bl = el('text', { x: m.l + 8, y: y(1300) - 6, 'font-size': 11 }, svg);
+    bl.style.fill = 'var(--accent)'; bl.textContent = narrow ? 'Range applied to 133-0114' : 'AED 1,000–1,300 per sq ft → AED 58–75M for 133-0114';
+    var ax = el('text', { x: m.l, y: H - 2, 'font-size': 10.5 }, svg); ax.textContent = 'AED per sq ft of land';
+    D.evidence.forEach(function (e) {
+      var k = kinds.filter(function (k) { return k.k === e.kind; })[0];
+      var cx = x(e.date), cy = y(e.psf), g = el('g', {}, svg), s = 5;
+      el('circle', { cx: cx, cy: cy, r: 12, class: 'hit' }, g);
+      var mark;
+      if (k.shape === 'circle') mark = el('circle', { cx: cx, cy: cy, r: s }, g);
+      else if (k.shape === 'square') mark = el('rect', { x: cx - s, y: cy - s, width: 2 * s, height: 2 * s, rx: 1.5 }, g);
+      else mark = el('path', { d: 'M' + cx + ' ' + (cy - s - 1.5) + ' L' + (cx + s + 1.5) + ' ' + cy + ' L' + cx + ' ' + (cy + s + 1.5) + ' L' + (cx - s - 1.5) + ' ' + cy + ' Z' }, g);
+      mark.setAttribute('fill', k.c); mark.setAttribute('stroke', 'var(--paper)'); mark.setAttribute('stroke-width', 2);
+      bindTip(g, '<b>' + e.kind + ', ' + e.date + '</b><br>' + e.m2.toLocaleString('en-US') + ' m² · AED ' + fmt(e.aed) + '<br>AED ' + fmt(e.psf) + ' per sq ft' + (e.kind === 'DLD valuation' && e.psf > 2000 ? '<br>Likely includes a building' : ''));
+    });
+    var notes = [
+      { d: '2018-05-28', v: 1300, txt: '2018 grant, 9,136 m²', dx: -8, anchor: 'end' },
+      { d: '2026-01-23', v: 3125, txt: 'Likely built', dx: -10, anchor: 'end' }
+    ];
+    notes.forEach(function (n) {
+      var t = el('text', { x: x(n.d) + n.dx, y: y(n.v) + 4, 'text-anchor': n.anchor, 'font-size': 11 }, svg); t.textContent = n.txt;
+    });
+    };
+    window.__drawEv();
+    var tb = document.querySelector('#evtable tbody');
+    D.evidence.forEach(function (e) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td class="mono">' + e.date + '</td><td>' + e.kind + '</td><td class="r">' + e.m2.toLocaleString('en-US') + '</td><td class="r">' + fmt(e.aed) + '</td><td class="r">' + fmt(e.psf) + '</td><td class="mono">' + e.ref + '</td>';
+      tb.appendChild(tr);
+    });
+  })();
+
+  /* Rents and residential land */
+  (function () {
+    var tb = document.querySelector('#rents tbody');
+    D.rents.forEach(function (r) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + r.segment + '</td><td class="r">' + fmt(r.contracts) + '</td><td class="r">' + fmt(r.median) + '</td><td class="r">' + fmt(r.p25) + '–' + fmt(r.p75) + '</td><td class="r">' + fmt(r.medianPerM2) + '</td>';
+      tb.appendChild(tr);
+    });
+    var rb = document.querySelector('#res tbody');
+    D.residential.forEach(function (r) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td class="mono">' + r.date + '</td><td class="r">' + r.m2.toLocaleString('en-US') + '</td><td class="r">' + fmt(r.aed) + '</td><td class="r">' + fmt(r.psf) + '</td>';
+      rb.appendChild(tr);
+    });
+  })();
+
+  drawMap();
+  drawHist();
+  var lastW = window.innerWidth, timer;
+  window.addEventListener('resize', function () {
+    if (window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
+    clearTimeout(timer);
+    timer = setTimeout(function () { hideTip(); drawMap(); drawHist(); window.__drawEv(); }, 150);
+  });
+
+  /* Population sparkline */
+  (function () {
+    var svg = document.getElementById('spark');
+    var W = 220, H = 48, p = D.population;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    var x = function (yr) { return 4 + (yr - 2015) / 8 * (W - 8); };
+    var y = function (v) { return 6 + (1 - (v - 19000) / 4000) * (H - 12); };
+    var d = p.map(function (q, i) { return (i ? 'L' : 'M') + x(q.year).toFixed(1) + ' ' + y(q.pop).toFixed(1); }).join(' ');
+    el('path', { d: d + ' L' + x(2023) + ' ' + H + ' L' + x(2015) + ' ' + H + ' Z', fill: 'var(--band)' }, svg);
+    el('path', { d: d, fill: 'none', stroke: 'var(--accent)', 'stroke-width': 2, 'stroke-linejoin': 'round' }, svg);
+    p.forEach(function (q) {
+      var g = el('g', {}, svg);
+      el('circle', { cx: x(q.year), cy: y(q.pop), r: 9, class: 'hit' }, g);
+      if (q.year === 2023) el('circle', { cx: x(q.year), cy: y(q.pop), r: 3.5, fill: 'var(--accent)', stroke: 'var(--paper)', 'stroke-width': 1.5 }, g);
+      bindTip(g, '<b>' + q.year + '</b><br>' + fmt(q.pop) + ' residents');
+    });
+  })();
+
+  /* Amenities */
+  (function () {
+    var box = document.getElementById('amen');
+    var entries = Object.keys(D.amenities).map(function (k) { return [k, D.amenities[k]]; });
+    var max = Math.max.apply(null, entries.map(function (e) { return e[1]; }));
+    entries.forEach(function (e) {
+      var row = document.createElement('div'); row.className = 'row';
+      row.innerHTML = '<span>' + e[0] + '</span><span class="track"><span class="fill" style="display:block;width:' + (e[1] / max * 100).toFixed(1) + '%"></span></span><span class="num" style="text-align:right">' + e[1] + '</span>';
+      box.appendChild(row);
+    });
+  })();
+})();
+</script>

@@ -1,0 +1,922 @@
+{
+ "retrieved": "2026-10-13",
+ "plot": {
+  "PARCEL_ID": 1330114,
+  "DM_ZIP_CODE": "133",
+  "MUNICIPALITY_NUMBER": "114",
+  "LAND_NUMBER": "1928",
+  "LAND_SUB_NUMBER": 0,
+  "LAND_TYPE_EN": "Commercial",
+  "LAND_TYPE_AR": "تجارى",
+  "PROP_SUB_TYPE_EN": "Commercial",
+  "PROP_SUB_TYPE_AR": "تجارية",
+  "ACTUAL_AREA": 5370.32,
+  "AREA_EN": "Hor Al Anz East",
+  "AREA_AR": "هور العنز شرق",
+  "ZONE_EN": "Deira",
+  "IS_FREE_HOLD_EN": "Non Free Hold",
+  "IS_REGISTERED": 1,
+  "IS_OFFPLAN_EN": "Ready",
+  "PROJECT_EN": null,
+  "MASTER_PROJECT_EN": null,
+  "SEPARATED_FROM": null,
+  "PRE_REGISTRATION_NUMBER": null,
+  "areaSqft": 57806,
+  "dldAreaId": 234,
+  "plotNumber": "133-0114"
+ },
+ "register": {
+  "parcels": 386,
+  "totalM2": 856883,
+  "medianM2": 1021.93,
+  "rankAll": 30,
+  "commercialCommercial": 75,
+  "rankCommercialCommercial": 10,
+  "hist": [
+   {
+    "label": "< 500",
+    "lo": 0,
+    "hi": 500,
+    "count": 19,
+    "hasPlot": false
+   },
+   {
+    "label": "500–1,000",
+    "lo": 500,
+    "hi": 1000,
+    "count": 154,
+    "hasPlot": false
+   },
+   {
+    "label": "1,000–1,100",
+    "lo": 1000,
+    "hi": 1100,
+    "count": 68,
+    "hasPlot": false
+   },
+   {
+    "label": "1,100–2,000",
+    "lo": 1100,
+    "hi": 2000,
+    "count": 47,
+    "hasPlot": false
+   },
+   {
+    "label": "2,000–5,000",
+    "lo": 2000,
+    "hi": 5000,
+    "count": 67,
+    "hasPlot": false
+   },
+   {
+    "label": "5,000–10,000",
+    "lo": 5000,
+    "hi": 10000,
+    "count": 21,
+    "hasPlot": true
+   },
+   {
+    "label": "10,000+",
+    "lo": 10000,
+    "hi": 1000000000.0,
+    "count": 10,
+    "hasPlot": false
+   }
+  ],
+  "mix": [
+   {
+    "type": "Commercial",
+    "sub": "Residential",
+    "count": 246
+   },
+   {
+    "type": "Commercial",
+    "sub": "Commercial",
+    "count": 75
+   },
+   {
+    "type": "Public Facilities",
+    "sub": "Electricity Station",
+    "count": 12
+   },
+   {
+    "type": "Public Facilities",
+    "sub": "—",
+    "count": 10
+   },
+   {
+    "type": "Public Facilities",
+    "sub": "Ground Level Parcking",
+    "count": 10
+   },
+   {
+    "type": "Residential",
+    "sub": "Government Housing",
+    "count": 6
+   },
+   {
+    "type": "Government Authorities",
+    "sub": "School",
+    "count": 5
+   },
+   {
+    "type": "Government Authorities",
+    "sub": "General Services",
+    "count": 4
+   },
+   {
+    "type": "Industrial",
+    "sub": "Industrial",
+    "count": 3
+   },
+   {
+    "type": "Commercial",
+    "sub": "—",
+    "count": 3
+   },
+   {
+    "type": "Government Authorities",
+    "sub": "—",
+    "count": 3
+   },
+   {
+    "type": "Public Facilities",
+    "sub": "General Services",
+    "count": 2
+   },
+   {
+    "type": "Residential",
+    "sub": "—",
+    "count": 2
+   },
+   {
+    "type": "Public Facilities",
+    "sub": "Mosque",
+    "count": 2
+   },
+   {
+    "type": "Unclassified",
+    "sub": "—",
+    "count": 1
+   },
+   {
+    "type": "Government Authorities",
+    "sub": "مبنى ثقافي ",
+    "count": 1
+   },
+   {
+    "type": "Agricultural",
+    "sub": "Horse Estabal",
+    "count": 1
+   }
+  ],
+  "neighbours": [
+   {
+    "plot": "133-0101",
+    "land": "10",
+    "type": "Commercial",
+    "sub": "Commercial",
+    "m2": 1858.06
+   },
+   {
+    "plot": "133-0102",
+    "land": "821",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 794.32
+   },
+   {
+    "plot": "133-0103",
+    "land": "1002",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 929.03
+   },
+   {
+    "plot": "133-0104",
+    "land": "876",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 937.21
+   },
+   {
+    "plot": "133-0105",
+    "land": "1026",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 929.03
+   },
+   {
+    "plot": "133-0106",
+    "land": "1222",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 929.04
+   },
+   {
+    "plot": "133-0107",
+    "land": "720",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 929.04
+   },
+   {
+    "plot": "133-0108",
+    "land": "1357",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 794.32
+   },
+   {
+    "plot": "133-0109",
+    "land": "907",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 595
+   },
+   {
+    "plot": "133-0110",
+    "land": "764",
+    "type": "Commercial",
+    "sub": "Commercial",
+    "m2": 1672.25
+   },
+   {
+    "plot": "133-0111",
+    "land": "1862",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 2787.1
+   },
+   {
+    "plot": "133-0114",
+    "land": "1928",
+    "type": "Commercial",
+    "sub": "Commercial",
+    "m2": 5370.32
+   },
+   {
+    "plot": "133-0115",
+    "land": "1014",
+    "type": "Commercial",
+    "sub": "Commercial",
+    "m2": 3335.22
+   },
+   {
+    "plot": "133-0116",
+    "land": "1535",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 6578.74
+   },
+   {
+    "plot": "133-0117",
+    "land": "1538",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 3796.95
+   },
+   {
+    "plot": "133-0118",
+    "land": "261",
+    "type": "Commercial",
+    "sub": "Commercial",
+    "m2": 3355.56
+   },
+   {
+    "plot": "133-0123",
+    "land": "1214",
+    "type": "Commercial",
+    "sub": "Commercial",
+    "m2": 3716.12
+   },
+   {
+    "plot": "133-0124",
+    "land": "1295",
+    "type": "Commercial",
+    "sub": "Commercial",
+    "m2": 1077.68
+   },
+   {
+    "plot": "133-0125",
+    "land": "797",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 1021.93
+   },
+   {
+    "plot": "133-0126",
+    "land": "696",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 1022
+   },
+   {
+    "plot": "133-0127",
+    "land": "608",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 1021.93
+   },
+   {
+    "plot": "133-0128",
+    "land": "1159",
+    "type": "Residential",
+    "sub": "Government Housing",
+    "m2": 1021.93
+   },
+   {
+    "plot": "133-0129",
+    "land": "987",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 1021.93
+   },
+   {
+    "plot": "133-0130",
+    "land": "879",
+    "type": "Commercial",
+    "sub": "Residential",
+    "m2": 1021.93
+   }
+  ]
+ },
+ "commercialEvidence": [
+  {
+   "date": "1998-02-16",
+   "kind": "Sale",
+   "m2": 1393.55,
+   "aed": 4050000.0,
+   "psf": 270,
+   "ref": "1-11-1998-44",
+   "proc": "Sell"
+  },
+  {
+   "date": "1998-05-28",
+   "kind": "Sale",
+   "m2": 11287.71,
+   "aed": 48600000.0,
+   "psf": 400,
+   "ref": "1-11-1998-452",
+   "proc": "Sell"
+  },
+  {
+   "date": "1998-06-29",
+   "kind": "Sale",
+   "m2": 232.26,
+   "aed": 1500000.0,
+   "psf": 600,
+   "ref": "1-11-1998-647",
+   "proc": "Sell"
+  },
+  {
+   "date": "2000-02-28",
+   "kind": "Sale",
+   "m2": 2353.51,
+   "aed": 7599900.0,
+   "psf": 300,
+   "ref": "1-11-2000-117",
+   "proc": "Sell"
+  },
+  {
+   "date": "2001-02-19",
+   "kind": "Sale",
+   "m2": 232.26,
+   "aed": 340000.0,
+   "psf": 136,
+   "ref": "1-11-2001-151",
+   "proc": "Sell"
+  },
+  {
+   "date": "2001-05-16",
+   "kind": "Sale",
+   "m2": 224.36,
+   "aed": 300000.0,
+   "psf": 124,
+   "ref": "1-11-2001-483",
+   "proc": "Sell"
+  },
+  {
+   "date": "2004-04-06",
+   "kind": "Sale",
+   "m2": 1413.28,
+   "aed": 4867968.0,
+   "psf": 320,
+   "ref": "1-11-2004-699",
+   "proc": "Sell"
+  },
+  {
+   "date": "2004-04-26",
+   "kind": "Sale",
+   "m2": 1413.28,
+   "aed": 4944030.0,
+   "psf": 325,
+   "ref": "1-11-2004-883",
+   "proc": "Sell"
+  },
+  {
+   "date": "2004-08-24",
+   "kind": "Sale",
+   "m2": 362.14,
+   "aed": 1559368.0,
+   "psf": 400,
+   "ref": "1-4-2004-18",
+   "proc": "Adding Land By Sell"
+  },
+  {
+   "date": "2007-05-03",
+   "kind": "Sale",
+   "m2": 1413.24,
+   "aed": 10039920.0,
+   "psf": 660,
+   "ref": "1-11-2007-1260",
+   "proc": "Sell"
+  },
+  {
+   "date": "2007-10-30",
+   "kind": "Sale",
+   "m2": 1413.24,
+   "aed": 13690800.0,
+   "psf": 900,
+   "ref": "1-11-2007-3103",
+   "proc": "Sell"
+  },
+  {
+   "date": "2016-05-03",
+   "kind": "Sale",
+   "m2": 213.63,
+   "aed": 605764.0,
+   "psf": 263,
+   "ref": "1-11-2016-5193",
+   "proc": "Sell"
+  },
+  {
+   "date": "2018-05-28",
+   "kind": "Grant",
+   "m2": 9136.27,
+   "aed": 127844465.0,
+   "psf": 1300,
+   "ref": "Dubai Pulse transactions mirror",
+   "proc": "Grant"
+  },
+  {
+   "date": "2026-01-23",
+   "kind": "DLD valuation",
+   "m2": 3716.12,
+   "aed": 125000000,
+   "psf": 3125,
+   "ref": "DLD open-data valuations",
+   "proc": "Valuation",
+   "sub": "Commercial"
+  },
+  {
+   "date": "2026-02-17",
+   "kind": "DLD valuation",
+   "m2": 7051.25,
+   "aed": 75898950,
+   "psf": 1000,
+   "ref": "DLD open-data valuations",
+   "proc": "Valuation",
+   "sub": "Commercial"
+  },
+  {
+   "date": "2026-09-01",
+   "kind": "DLD valuation",
+   "m2": 2322.58,
+   "aed": 65000000,
+   "psf": 2600,
+   "ref": "DLD open-data valuations",
+   "proc": "Valuation",
+   "sub": "Commercial"
+  }
+ ],
+ "residentialSales": [
+  {
+   "date": "2014-01-28",
+   "m2": 1021.93,
+   "aed": 2370000.0,
+   "psf": 215,
+   "ref": "1-11-2014-2454"
+  },
+  {
+   "date": "2024-01-24",
+   "m2": 1021.93,
+   "aed": 1717993.0,
+   "psf": 156,
+   "ref": "1-11-2024-2641"
+  },
+  {
+   "date": "2026-02-11",
+   "m2": 753.49,
+   "aed": 1400000.0,
+   "psf": 173,
+   "ref": "1-11-2026-6063"
+  },
+  {
+   "date": "2026-08-24",
+   "m2": 619.34,
+   "aed": 1466635.0,
+   "psf": 220,
+   "ref": "1-11-2026-26060"
+  },
+  {
+   "date": "2026-10-01",
+   "m2": 1021.93,
+   "aed": 3000000.0,
+   "psf": 273,
+   "ref": "1-11-2026-29987"
+  }
+ ],
+ "residentialValuations": [
+  {
+   "date": "2026-03-17",
+   "m2": 1026.58,
+   "aed": 2600000,
+   "psf": 235
+  },
+  {
+   "date": "2026-02-19",
+   "m2": 2041.17,
+   "aed": 7000000,
+   "psf": 319
+  },
+  {
+   "date": "2026-02-11",
+   "m2": 1741.37,
+   "aed": 16869539,
+   "psf": 900
+  },
+  {
+   "date": "2026-01-23",
+   "m2": 1120.74,
+   "aed": 2600000,
+   "psf": 216
+  },
+  {
+   "date": "2026-01-23",
+   "m2": 11287.72,
+   "aed": 245000000,
+   "psf": 2016
+  },
+  {
+   "date": "2026-01-14",
+   "m2": 929.03,
+   "aed": 2499997,
+   "psf": 250
+  }
+ ],
+ "rents2026": [
+  {
+   "segment": "Flats",
+   "contracts": 3397,
+   "median": 60000,
+   "p25": 46000,
+   "p75": 75000,
+   "medianPerM2": 591
+  },
+  {
+   "segment": "Villas",
+   "contracts": 51,
+   "median": 120000,
+   "p25": 100000,
+   "p75": 160000,
+   "medianPerM2": 254
+  },
+  {
+   "segment": "Offices",
+   "contracts": 827,
+   "median": 64000,
+   "p25": 45000,
+   "p75": 86400,
+   "medianPerM2": 862
+  },
+  {
+   "segment": "Shops",
+   "contracts": 813,
+   "median": 70000,
+   "p25": 42000,
+   "p75": 115500,
+   "medianPerM2": 1647
+  },
+  {
+   "segment": "Showrooms",
+   "contracts": 72,
+   "median": 230000,
+   "p25": 134000,
+   "p75": 433750,
+   "medianPerM2": 1275
+  }
+ ],
+ "community": {
+  "dmCode": "133",
+  "dmAreaKm2": 1.3772751565,
+  "osmAreaKm2": 1.383,
+  "population": [
+   {
+    "year": 2015,
+    "pop": 19453
+   },
+   {
+    "year": 2018,
+    "pop": 20847
+   },
+   {
+    "year": 2019,
+    "pop": 21218
+   },
+   {
+    "year": 2020,
+    "pop": 21430
+   },
+   {
+    "year": 2021,
+    "pop": 22026
+   },
+   {
+    "year": 2022,
+    "pop": 22143
+   },
+   {
+    "year": 2023,
+    "pop": 22739
+   }
+  ],
+  "osmBuildings": 1246,
+  "amenities": {
+   "Other shops": 124,
+   "Restaurants & cafés": 70,
+   "Car rental": 37,
+   "Supermarkets & groceries": 33,
+   "Banks & exchange": 11,
+   "Healthcare & pharmacies": 11,
+   "Hotels & hotel apartments": 7,
+   "Mosques": 5,
+   "Schools": 3
+  },
+  "ring": [
+   [
+    55.338551,
+    25.283757
+   ],
+   [
+    55.339495,
+    25.283048
+   ],
+   [
+    55.340128,
+    25.282547
+   ],
+   [
+    55.340245,
+    25.282457
+   ],
+   [
+    55.340485,
+    25.282296
+   ],
+   [
+    55.341136,
+    25.281783
+   ],
+   [
+    55.342339,
+    25.280826
+   ],
+   [
+    55.343221,
+    25.280115
+   ],
+   [
+    55.343686,
+    25.279739
+   ],
+   [
+    55.344605,
+    25.279019
+   ],
+   [
+    55.346772,
+    25.277265
+   ],
+   [
+    55.347942,
+    25.27597
+   ],
+   [
+    55.348434,
+    25.27537
+   ],
+   [
+    55.348984,
+    25.274784
+   ],
+   [
+    55.351431,
+    25.277085
+   ],
+   [
+    55.352903,
+    25.278409
+   ],
+   [
+    55.353791,
+    25.279206
+   ],
+   [
+    55.35572,
+    25.281038
+   ],
+   [
+    55.355184,
+    25.281535
+   ],
+   [
+    55.35444,
+    25.282211
+   ],
+   [
+    55.353404,
+    25.283196
+   ],
+   [
+    55.352918,
+    25.283654
+   ],
+   [
+    55.352307,
+    25.284222
+   ],
+   [
+    55.351824,
+    25.28469
+   ],
+   [
+    55.350921,
+    25.285539
+   ],
+   [
+    55.350614,
+    25.285865
+   ],
+   [
+    55.349485,
+    25.286855
+   ],
+   [
+    55.348899,
+    25.287326
+   ],
+   [
+    55.348219,
+    25.287873
+   ],
+   [
+    55.347706,
+    25.288318
+   ],
+   [
+    55.347293,
+    25.288653
+   ],
+   [
+    55.346974,
+    25.288955
+   ],
+   [
+    55.34562,
+    25.290073
+   ],
+   [
+    55.345471,
+    25.290199
+   ],
+   [
+    55.343733,
+    25.288395
+   ],
+   [
+    55.342059,
+    25.286649
+   ],
+   [
+    55.340527,
+    25.285073
+   ],
+   [
+    55.34014,
+    25.284682
+   ],
+   [
+    55.339508,
+    25.284236
+   ],
+   [
+    55.339245,
+    25.284079
+   ],
+   [
+    55.339022,
+    25.283976
+   ],
+   [
+    55.338551,
+    25.283757
+   ]
+  ],
+  "stations": [
+   {
+    "name": "Al Qiyadah",
+    "line": "green",
+    "lon": 55.352631,
+    "lat": 25.277585,
+    "toBoundaryM": 46
+   },
+   {
+    "name": "Abu Hail",
+    "line": "green",
+    "lon": 55.34645,
+    "lat": 25.275416,
+    "toBoundaryM": 155
+   },
+   {
+    "name": "Stadium",
+    "line": "green",
+    "lon": 55.361466,
+    "lat": 25.27791,
+    "toBoundaryM": 675
+   },
+   {
+    "name": "Abu Baker Al Siddique",
+    "line": "green",
+    "lon": 55.332755,
+    "lat": 25.270893,
+    "toBoundaryM": 1467
+   }
+  ],
+  "landmarks": [
+   {
+    "name": "Hor Al Anz Primary Health Centre",
+    "lat": 25.2833757,
+    "lon": 55.3484865
+   },
+   {
+    "name": "MBR Housing Establishment",
+    "lat": 25.2808298,
+    "lon": 55.3464458
+   },
+   {
+    "name": "Hamria Shopping Centre",
+    "lat": 25.2833819,
+    "lon": 55.341368
+   },
+   {
+    "name": "Canadian Specialist Hospital",
+    "lat": 25.2773644,
+    "lon": 55.3483985
+   },
+   {
+    "name": "Union Coop Hypermarket",
+    "lat": 25.2825128,
+    "lon": 55.3409238
+   },
+   {
+    "name": "Al Ahmadiya School",
+    "lat": 25.2822045,
+    "lon": 55.3423593
+   },
+   {
+    "name": "Mamzar Centre",
+    "lat": 25.2800135,
+    "lon": 55.3535837
+   },
+   {
+    "name": "Dubai Public Library",
+    "lat": 25.2847961,
+    "lon": 55.3502892
+   },
+   {
+    "name": "Abu Hail Park",
+    "lat": 25.2797638,
+    "lon": 55.3458371
+   },
+   {
+    "name": "Queen International School",
+    "lat": 25.2831389,
+    "lon": 55.3487844
+   },
+   {
+    "name": "Abu Hail Centre",
+    "lat": 25.2782649,
+    "lon": 55.3463589
+   }
+  ],
+  "busStops": 11,
+  "roads": [
+   "Al Ittihad Road (E11)",
+   "Al Wuheida Street",
+   "Abu Hail Street",
+   "Al Rasheed Street",
+   "Salah Al Din Street"
+  ]
+ }
+}
