@@ -465,6 +465,27 @@ def dld_indexes():
                 break
 
 
+def fetch_list():
+    """Fetch each request listed in requests.jsonl next to this script, one JSON object per line:
+    {"name": ..., "method": "GET", "url": ..., "json": {...}, "headers": {...}}."""
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "requests.jsonl")
+    if not os.path.exists(path):
+        return
+    for line in open(path, encoding="utf-8"):
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        req = json.loads(line)
+        kw = {"headers": req.get("headers") or {}, "timeout": req.get("timeout", 60)}
+        if "json" in req:
+            kw["json"] = req["json"]
+        if "data" in req:
+            kw["data"] = req["data"]
+        r = fetch(req.get("method", "GET"), req["url"], **kw)
+        if r is not None:
+            save(f"req_{req['name']}.txt",
+                 f"{r.status_code} {r.headers.get('content-type')}\n{r.text[:3_000_000]}")
+
+
 # ── 7. OpenStreetMap features inside the community boundary ──────────────────
 
 OVERPASS = "https://overpass-api.de/api/interpreter"
@@ -534,7 +555,12 @@ def osm():
 if __name__ == "__main__":
     all_steps = ["reach", "dld", "dldsite", "dldgis", "indexes", "makani", "gis", "pages", "osm",
                  "overpass", "pulse"]
-    steps = [s for s in (sys.argv[2] if len(sys.argv) > 2 else "").split(",") if s] or all_steps
+    # Steps come from the command line, else from steps.txt next to this script, else all.
+    chosen = sys.argv[2] if len(sys.argv) > 2 else ""
+    steps_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "steps.txt")
+    if not chosen.strip() and os.path.exists(steps_file):
+        chosen = open(steps_file, encoding="utf-8").read()
+    steps = [s.strip() for s in chosen.split(",") if s.strip()] or all_steps
     log(src="probe", plot=PLOT, community=COMMUNITY_NO, parcel=PARCEL_NO, area=AREA_NAME, steps=steps)
     area_ids = []
     for step in steps:
@@ -559,6 +585,8 @@ if __name__ == "__main__":
                 osm()
             elif step == "overpass":
                 overpass()
+            elif step == "requests":
+                fetch_list()
             elif step == "pulse":
                 pulse(set(area_ids))
         except Exception as e:

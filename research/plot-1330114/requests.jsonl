@@ -1,0 +1,8 @@
+{"name": "dld_landstatus_js", "url": "https://dubailand.gov.ae/scripts/LandStatusFunctions-1.0.2.js?v=11"}
+{"name": "dld_landstatus_arealist", "url": "https://dubailand.gov.ae/umbraco/surface/LandStatus/GetAreaList", "headers": {"X-Requested-With": "XMLHttpRequest", "Referer": "https://dubailand.gov.ae/en/eservices/property-status-overview/property-status/"}}
+{"name": "hf_lemoninabag_sales", "url": "https://huggingface.co/api/datasets/lemoninabag/Sales"}
+{"name": "hf_search_dubai", "url": "https://huggingface.co/api/datasets?search=dubai&limit=100"}
+{"name": "hf_search_dld", "url": "https://huggingface.co/api/datasets?search=dld&limit=100"}
+{"name": "osm_building_count", "method": "POST", "url": "https://overpass-api.de/api/interpreter", "timeout": 180, "data": {"data": "[out:json][timeout:150];way(396533652);map_to_area->.a;way(area.a)[building];out count;"}}
+{"name": "osm_transit", "method": "POST", "url": "https://overpass-api.de/api/interpreter", "timeout": 180, "data": {"data": "[out:json][timeout:150];(node[railway=station](25.255,55.320,25.305,55.380);node[highway=bus_stop](25.272,55.336,25.292,55.358););out tags;"}}
+{"name": "osm_large_polygons", "method": "POST", "url": "https://overpass-api.de/api/interpreter", "timeout": 180, "data": {"data": "[out:json][timeout:150];way(396533652);map_to_area->.a;(way(area.a)[building];way(area.a)[landuse];way(area.a)[amenity];way(area.a)[leisure];);out tags geom;"}}

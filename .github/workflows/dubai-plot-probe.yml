@@ -9,6 +9,8 @@ on:
     branches: [claude/modest-bardeen-69qao2]
     paths:
       - research/plot-1330114/probe.py
+      - research/plot-1330114/steps.txt
+      - research/plot-1330114/requests.jsonl
       - .github/workflows/dubai-plot-probe.yml
   workflow_dispatch:
     inputs:
