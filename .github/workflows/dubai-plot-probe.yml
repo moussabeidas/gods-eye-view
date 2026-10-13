@@ -1,0 +1,59 @@
+name: Dubai plot probe
+
+# Queries public Dubai government services (DLD open data, Dubai Pulse, Makani,
+# Dubai Municipality GIS) for one plot from a GitHub-hosted runner, and commits
+# what they returned under research/plot-<id>/raw.
+
+on:
+  push:
+    branches: [claude/modest-bardeen-69qao2]
+    paths:
+      - research/plot-1330114/probe.py
+      - .github/workflows/dubai-plot-probe.yml
+  workflow_dispatch:
+    inputs:
+      plot_id:
+        description: Dubai Municipality plot number
+        default: '1330114'
+      area_name:
+        description: Community name as DLD spells it
+        default: Hor Al Anz East
+      steps:
+        description: Comma-separated probe steps
+        default: reach,dld,makani,gis,pages,osm,pulse
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dubai-plot-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Install requests
+        run: python3 -m pip install --quiet requests
+
+      - name: Probe Dubai services
+        env:
+          PLOT_ID: ${{ inputs.plot_id || '1330114' }}
+          AREA_NAME: ${{ inputs.area_name || 'Hor Al Anz East' }}
+          PROBE_STEPS: ${{ inputs.steps || 'reach,dld,makani,gis,pages,osm,pulse' }}
+        run: python3 research/plot-1330114/probe.py "research/plot-${PLOT_ID}/raw" "$PROBE_STEPS"
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research
+          git diff --cached --quiet && exit 0
+          git commit -m "Record Dubai plot probe results (run ${{ github.run_id }})"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"
