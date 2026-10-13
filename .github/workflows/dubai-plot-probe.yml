@@ -19,8 +19,8 @@ on:
         description: Community name as DLD spells it
         default: Hor Al Anz East
       steps:
-        description: Comma-separated probe steps
-        default: reach,dld,makani,gis,pages,osm,pulse
+        description: Comma-separated probe steps (blank runs them all)
+        default: ''
 
 permissions:
   contents: write
@@ -44,7 +44,7 @@ jobs:
         env:
           PLOT_ID: ${{ inputs.plot_id || '1330114' }}
           AREA_NAME: ${{ inputs.area_name || 'Hor Al Anz East' }}
-          PROBE_STEPS: ${{ inputs.steps || 'reach,dld,makani,gis,pages,osm,pulse' }}
+          PROBE_STEPS: ${{ inputs.steps || '' }}
         run: python3 research/plot-1330114/probe.py "research/plot-${PLOT_ID}/raw" "$PROBE_STEPS"
 
       - name: Commit results

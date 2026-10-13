@@ -58,7 +58,11 @@ def save(name, data):
 
 
 def fetch(method, url, **kw):
+    # Geo-fenced Dubai hosts drop packets rather than refuse, so keep the
+    # connect timeout short and let only the read wait.
     kw.setdefault("timeout", 30)
+    if isinstance(kw["timeout"], (int, float)):
+        kw["timeout"] = (10, kw["timeout"])
     try:
         r = S.request(method, url, **kw)
         log(
@@ -169,14 +173,16 @@ def gw_all(cmd, base, take=1000, cap=60000):
 
 
 def area_ids_from_lookup(rows):
-    ids = set()
+    """Area ids for AREA_NAME, as the lookup gives them (e.g. "A-234") and bare."""
+    ids = []
     for row in rows or []:
-        names = " ".join(str(v) for v in row.values()).lower()
-        if AREA_NAME.lower() in names or "هور العنز شرق" in names:
-            for k, v in row.items():
-                if "ID" in k.upper() and str(v).strip().lstrip("-").isdigit():
-                    ids.add(str(v).strip())
-    return sorted(ids)
+        if str(row.get("NAME_EN", "")).strip().lower() != AREA_NAME.lower():
+            continue
+        for k, v in row.items():
+            if "ID" in k.upper() and str(v).strip():
+                v = str(v).strip()
+                ids += [v, re.sub(r"^\D+", "", v)]
+    return list(dict.fromkeys(i for i in ids if i))
 
 
 def dld_gateway():
@@ -190,9 +196,18 @@ def dld_gateway():
                 result["area_ids"] = area_ids_from_lookup(rows)
     log(src="gw", area_ids=result["area_ids"])
     today = date.today().strftime("%m/%d/%Y")
-    for aid in result["area_ids"] or [""]:
-        if not aid:
+    # Use the first id spelling the lands register accepts.
+    usable = []
+    for aid in result["area_ids"]:
+        probe = gw("lands", {"P_PROJECT": "", "P_MASTER_PROJECT": "", "P_LAND_TYPE_ID": "",
+                             "P_AREA_ID": aid, "P_ZONE_ID": "", "P_IS_FREE_HOLD": "",
+                             "P_PROP_SB_TYPE_ID": "", "P_SORT": "AREA_EN_ASC",
+                             "P_TAKE": "5", "P_SKIP": "0"})
+        log(src="gw", probe_area_id=aid, rows=None if probe is None else len(probe))
+        if probe:
+            usable = [aid]
             break
+    for aid in usable or result["area_ids"][:1]:
         queries = {
             "lands": {"P_PROJECT": "", "P_MASTER_PROJECT": "", "P_LAND_TYPE_ID": "",
                       "P_AREA_ID": aid, "P_ZONE_ID": "", "P_IS_FREE_HOLD": "",
@@ -356,9 +371,17 @@ def arc_json(url, **params):
         return None
 
 
-def dm_gis(budget_s=900):
+DLD_GIS_ROOTS = [
+    "https://gis.dubailand.gov.ae/arcgis/rest/services",
+    "https://gis.dubailand.gov.ae/server/rest/services",
+    "https://gis.dubailand.gov.ae/gis/rest/services",
+    "https://gis.dubailand.gov.ae/portal/sharing/rest",
+]
+
+
+def dm_gis(budget_s=900, roots=GIS_ROOTS, prefix="dm_gis"):
     catalog, hits, start = [], [], time.time()
-    for root in GIS_ROOTS:
+    for root in roots:
         top = arc_json(root)
         if not top or ("services" not in top and "folders" not in top):
             continue
@@ -396,9 +419,82 @@ def dm_gis(budget_s=900):
                         if fd and fd.get("results"):
                             hits.append({"layer": url, "find": text, "results": fd["results"]})
                 catalog.append(entry)
-    save("dm_gis_catalog.json", catalog)
-    save("dm_gis_plot_hits.json", hits)
-    log(src="dm_gis", services=len(catalog), hits=len(hits))
+    save(f"{prefix}_catalog.json", catalog)
+    save(f"{prefix}_plot_hits.json", hits)
+    log(src=prefix, services=len(catalog), hits=len(hits))
+
+
+def dld_gis():
+    """DLD runs its own GIS host (gisJobServiceApi in the DLD web config)."""
+    for url in ("https://gis.dubailand.gov.ae/", "https://gis.dubailand.gov.ae/jobservice"):
+        r = fetch("GET", url, timeout=25)
+        if r is not None:
+            save(f"dld_gis_{re.sub(r'[^a-z0-9]+', '_', url[8:].lower()).strip('_')}.txt",
+                 f"{r.status_code} {r.headers.get('content-type')}\n{r.text[:20000]}")
+    dm_gis(roots=DLD_GIS_ROOTS, prefix="dld_gis")
+
+
+def dld_site():
+    """Scripts behind the DLD open-data and Land Status pages, to learn their request shapes."""
+    base = "https://dubailand.gov.ae"
+    for path in ("/scripts/publicData.js?v=10", "/scripts/api/OpenDataApi.js",
+                 "/en/eservices/land-status/", "/en/eservices/land-status-overview/",
+                 "/en/eservices/property-status-overview/property-status/"):
+        r = fetch("GET", base + path, timeout=30)
+        if r is not None and r.status_code == 200:
+            save("dld_site_" + re.sub(r"[^a-z0-9]+", "_", path.lower()).strip("_")[:60] + ".txt", r.text)
+
+
+def dld_indexes():
+    """DLD rental index and community price index for the area."""
+    ext = "https://ext.dubailand.gov.ae"
+    for path in ("/rentalindex-v2/GetResidentialSubAreas", "/rentalindex/GetResidentialSubAreas",
+                 "/rentalindex/GetCommercialSubAreas"):
+        r = fetch("GET", ext + path, timeout=30)
+        if r is not None and r.status_code == 200:
+            save("dld_" + re.sub(r"[^a-z0-9]+", "_", path.lower()).strip("_") + ".txt", r.text)
+    idx = "https://gateway.dubailand.gov.ae/indexes-api/"
+    for name in ("communityindex", "priceindex", "residentialindex", "volumeindex"):
+        for method in ("GET", "POST"):
+            kw = {"headers": GW_HDR, "timeout": 40}
+            if method == "POST":
+                kw["json"] = {}
+            r = fetch(method, idx + name, **kw)
+            if r is not None and r.status_code == 200 and r.text.strip():
+                save(f"dld_index_{name}.json", r.text)
+                break
+
+
+# ── 7. OpenStreetMap features inside the community boundary ──────────────────
+
+OVERPASS = "https://overpass-api.de/api/interpreter"
+
+
+def overpass():
+    """What OSM maps inside Hor Al Anz East, and the transit around it."""
+    hits = json.load(open(os.path.join(OUT, "osm_nominatim_area.json"), encoding="utf-8")) \
+        if os.path.exists(os.path.join(OUT, "osm_nominatim_area.json")) else []
+    way = next((h["osm_id"] for h in hits if h.get("osm_type") == "way"), 396533652)
+    queries = {
+        "features": f"""[out:json][timeout:120];way({way});map_to_area->.a;
+            (nwr(area.a)[amenity];nwr(area.a)[shop];nwr(area.a)[leisure];nwr(area.a)[landuse];
+             nwr(area.a)[healthcare];nwr(area.a)[office];nwr(area.a)[tourism];nwr(area.a)[building][name];
+             nwr(area.a)[place];);out center tags;""",
+        "roads": f"""[out:json][timeout:120];way({way});map_to_area->.a;
+            way(area.a)[highway];out center tags;""",
+        "building_count": f"""[out:json][timeout:120];way({way});map_to_area->.a;
+            way(area.a)[building];out count;""",
+        "boundary": f"""[out:json][timeout:60];way({way});out geom tags;""",
+        "transit": """[out:json][timeout:120];
+            (node[railway=station](25.255,55.320,25.305,55.380);node[public_transport=station](25.255,55.320,25.305,55.380);
+             node[highway=bus_stop](25.270,55.333,25.295,55.362););out tags;""",
+    }
+    for name, q in queries.items():
+        r = fetch("POST", OVERPASS, data={"data": q}, timeout=180,
+                  headers={"User-Agent": "plot-research/1.0 (github actions)"})
+        if r is not None and r.status_code == 200:
+            save(f"osm_overpass_{name}.json", r.text)
+        time.sleep(2)
 
 
 def page_endpoints():
@@ -436,7 +532,9 @@ def osm():
 
 
 if __name__ == "__main__":
-    steps = sys.argv[2].split(",") if len(sys.argv) > 2 else ["reach", "dld", "makani", "gis", "pages", "osm", "pulse"]
+    all_steps = ["reach", "dld", "dldsite", "dldgis", "indexes", "makani", "gis", "pages", "osm",
+                 "overpass", "pulse"]
+    steps = [s for s in (sys.argv[2] if len(sys.argv) > 2 else "").split(",") if s] or all_steps
     log(src="probe", plot=PLOT, community=COMMUNITY_NO, parcel=PARCEL_NO, area=AREA_NAME, steps=steps)
     area_ids = []
     for step in steps:
@@ -451,8 +549,16 @@ if __name__ == "__main__":
                 dm_gis()
             elif step == "pages":
                 page_endpoints()
+            elif step == "dldsite":
+                dld_site()
+            elif step == "dldgis":
+                dld_gis()
+            elif step == "indexes":
+                dld_indexes()
             elif step == "osm":
                 osm()
+            elif step == "overpass":
+                overpass()
             elif step == "pulse":
                 pulse(set(area_ids))
         except Exception as e:
