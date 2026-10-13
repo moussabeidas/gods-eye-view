@@ -486,6 +486,74 @@ def fetch_list():
                  f"{r.status_code} {r.headers.get('content-type')}\n{r.text[:3_000_000]}")
 
 
+HF_DATASETS = [
+    "dubairealestatedata/dubai-real-estate-sales-transactions",
+    "viewit-ai/full-dubai-pulse",
+    "datadubai/dubai-real-estate-dld",
+    "lemoninabag/Sales",
+]
+HF_TEXT = (AREA_NAME.lower(), "هور العنز شرق")
+
+
+def hf_mirrors(max_bytes=3_000_000_000, budget_s=1800):
+    """Rows about the community or the plot in public Hugging Face mirrors of DLD data."""
+    import pyarrow as pa
+    import pyarrow.compute as pc
+    import pyarrow.csv as pacsv
+    import pyarrow.parquet as pq
+
+    start, summary = time.time(), []
+    for ds in HF_DATASETS:
+        r = fetch("GET", f"https://huggingface.co/api/datasets/{ds}/tree/main?recursive=true", timeout=40)
+        if r is None or r.status_code != 200:
+            continue
+        files = [f for f in r.json() if f.get("type") == "file"
+                 and re.search(r"\.(csv|parquet|jsonl)$", f["path"], re.I) and f.get("size", 0) <= max_bytes]
+        for f in files:
+            if time.time() - start > budget_s:
+                break
+            url = f"https://huggingface.co/datasets/{ds}/resolve/main/{f['path']}"
+            local = os.path.join("/tmp", re.sub(r"[^A-Za-z0-9.]+", "_", ds + "_" + f["path"]))
+            with S.get(url, stream=True, timeout=(10, 300)) as resp:
+                if resp.status_code != 200:
+                    log(src="hf", url=url, status=resp.status_code)
+                    continue
+                with open(local, "wb") as out:
+                    for chunk in resp.iter_content(1 << 20):
+                        out.write(chunk)
+            try:
+                if local.lower().endswith(".parquet"):
+                    table = pq.read_table(local)
+                elif local.lower().endswith(".csv"):
+                    table = pacsv.read_csv(local, convert_options=pacsv.ConvertOptions(strings_can_be_null=True))
+                else:
+                    table = pa.Table.from_pylist([json.loads(l) for l in open(local, encoding="utf-8")])
+                mask = pa.array([False] * table.num_rows)
+                for name in table.column_names:
+                    col = table[name]
+                    low = name.lower()
+                    if pa.types.is_string(col.type) or pa.types.is_large_string(col.type):
+                        hit = pc.fill_null(pc.or_(
+                            pc.match_substring(pc.utf8_lower(col), HF_TEXT[0]),
+                            pc.match_substring(col, HF_TEXT[1])), False)
+                        for key in PLOT_KEYS:
+                            hit = pc.or_(hit, pc.fill_null(pc.match_substring(col, key), False))
+                        mask = pc.or_(mask, hit)
+                    elif low in ("parcel_id", "parcel_number") and pa.types.is_integer(col.type):
+                        mask = pc.or_(mask, pc.fill_null(pc.equal(col, int(PLOT)), False))
+                kept = table.filter(mask)
+                name = "hf_" + re.sub(r"[^A-Za-z0-9]+", "_", ds + "_" + f["path"]).strip("_")[:90] + ".csv"
+                pacsv.write_csv(kept, os.path.join(OUT, name))
+                summary.append({"dataset": ds, "file": f["path"], "rows": table.num_rows,
+                                "kept": kept.num_rows, "columns": table.column_names})
+                log(src="hf", file=f"{ds}/{f['path']}", rows=table.num_rows, kept=kept.num_rows)
+            except Exception as e:
+                log(src="hf", file=f"{ds}/{f['path']}", error=f"{type(e).__name__}: {e}"[:300])
+            finally:
+                os.remove(local)
+    save("hf_summary.json", summary)
+
+
 # ── 7. OpenStreetMap features inside the community boundary ──────────────────
 
 OVERPASS = "https://overpass-api.de/api/interpreter"
@@ -587,6 +655,8 @@ if __name__ == "__main__":
                 overpass()
             elif step == "requests":
                 fetch_list()
+            elif step == "hf":
+                hf_mirrors()
             elif step == "pulse":
                 pulse(set(area_ids))
         except Exception as e:

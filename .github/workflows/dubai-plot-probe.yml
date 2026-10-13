@@ -39,8 +39,8 @@ jobs:
       - name: Check out source
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - name: Install requests
-        run: python3 -m pip install --quiet requests
+      - name: Install dependencies
+        run: python3 -m pip install --quiet requests pyarrow
 
       - name: Probe Dubai services
         env:
