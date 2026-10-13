@@ -1,0 +1,6033 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-13T06:53:35Z",
+    "timestamp_areas_base": "2026-10-13T03:40:33Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1368772905,
+  "lat": 25.2768406,
+  "lon": 55.3477653,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Union National Bank"
+  }
+},
+{
+  "type": "node",
+  "id": 1502792363,
+  "lat": 25.2833757,
+  "lon": 55.3484865,
+  "tags": {
+    "amenity": "hospital",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "name": "Hor-Al-Anz Primary Health Centre",
+    "name:en": "Hor-Al-Anz Primary Health Centre"
+  }
+},
+{
+  "type": "node",
+  "id": 1503619385,
+  "lat": 25.2800681,
+  "lon": 55.3443804,
+  "tags": {
+    "amenity": "parking",
+    "capacity": "6",
+    "name": "PRo suraj",
+    "name:en": "PRo suraj"
+  }
+},
+{
+  "type": "node",
+  "id": 1505078140,
+  "lat": 25.2798079,
+  "lon": 55.3441830,
+  "tags": {
+    "amenity": "atm",
+    "brand": "Dubai Islamic Bank",
+    "brand:ar": "بنك دبي الإسلامي",
+    "brand:en": "Dubai Islamic Bank",
+    "brand:ur": "دبئی اسلامی بینک",
+    "brand:wikidata": "Q5310570",
+    "name:ar": "بنك دبي الإسلامي",
+    "name:en": "Dubai Islamic Bank",
+    "name:ur": "دبئی اسلامی بینک",
+    "operator": "Dubai Islamic Bank",
+    "operator:wikidata": "Q5310570"
+  }
+},
+{
+  "type": "node",
+  "id": 1511411379,
+  "lat": 25.2808301,
+  "lon": 55.3456462,
+  "tags": {
+    "amenity": "parking",
+    "capacity": "15"
+  }
+},
+{
+  "type": "node",
+  "id": 1511417124,
+  "lat": 25.2814753,
+  "lon": 55.3469605,
+  "tags": {
+    "access": "private",
+    "amenity": "parking",
+    "parking": "surface",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "node",
+  "id": 1511417627,
+  "lat": 25.2788802,
+  "lon": 55.3463275,
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "node",
+  "id": 1512530752,
+  "lat": 25.2808298,
+  "lon": 55.3464458,
+  "tags": {
+    "building": "yes",
+    "name": "Mohamad Bin Rashid Housing Estabilishment",
+    "name:en": "Mohamad Bin Rashid Housing Estabilishment"
+  }
+},
+{
+  "type": "node",
+  "id": 1513882396,
+  "lat": 25.2798503,
+  "lon": 55.3443909,
+  "tags": {
+    "name": "General Authority For Youth And Sports Welfare",
+    "name:en": "General Authority For Youth And Sports Welfare",
+    "office": "government"
+  }
+},
+{
+  "type": "node",
+  "id": 1513884392,
+  "lat": 25.2800203,
+  "lon": 55.3442297,
+  "tags": {
+    "amenity": "car_rental",
+    "name": "Engima Car Rental",
+    "name:en": "Engima Car Rental"
+  }
+},
+{
+  "type": "node",
+  "id": 1513885883,
+  "lat": 25.2800734,
+  "lon": 55.3446592,
+  "tags": {
+    "amenity": "car_rental",
+    "name": "AL Sakka Car Rental",
+    "name:en": "AL Sakka Car Rental"
+  }
+},
+{
+  "type": "node",
+  "id": 1513886626,
+  "lat": 25.2782059,
+  "lon": 55.3464106,
+  "tags": {
+    "amenity": "atm",
+    "operator": "Emirates NBD"
+  }
+},
+{
+  "type": "node",
+  "id": 1513943662,
+  "lat": 25.2787992,
+  "lon": 55.3454367,
+  "tags": {
+    "name": "GoodBaby",
+    "name:en": "GoodBaby",
+    "shop": "baby_goods"
+  }
+},
+{
+  "type": "node",
+  "id": 1514975981,
+  "lat": 25.2804993,
+  "lon": 55.3448614,
+  "tags": {
+    "name": "Royal Scissors",
+    "name:en": "Royal Scissors",
+    "shop": "tailor"
+  }
+},
+{
+  "type": "node",
+  "id": 1514975982,
+  "lat": 25.2803815,
+  "lon": 55.3447477,
+  "tags": {
+    "shop": "hairdresser"
+  }
+},
+{
+  "type": "node",
+  "id": 1514975983,
+  "lat": 25.2784824,
+  "lon": 55.3459359,
+  "tags": {
+    "name": "مكتبة الامام البخاري",
+    "name:ar": "مكتبة الامام البخاري",
+    "shop": "books"
+  }
+},
+{
+  "type": "node",
+  "id": 1517556074,
+  "lat": 25.2806264,
+  "lon": 55.3450132,
+  "tags": {
+    "name": "Harmony flowers",
+    "name:en": "Harmony flowers",
+    "shop": "florist"
+  }
+},
+{
+  "type": "node",
+  "id": 1517556676,
+  "lat": 25.2798590,
+  "lon": 55.3439816,
+  "tags": {
+    "name": "Unimar Construction Equipment",
+    "name:en": "Unimar Construction Equipment",
+    "shop": "hardware"
+  }
+},
+{
+  "type": "node",
+  "id": 1520931373,
+  "lat": 25.2787604,
+  "lon": 55.3454799,
+  "tags": {
+    "leisure": "fitness_centre",
+    "name": "AbuHail Gym",
+    "name:en": "AbuHail Gym"
+  }
+},
+{
+  "type": "node",
+  "id": 1536208082,
+  "lat": 25.2782861,
+  "lon": 55.3474273,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "ChinaTown Restaurant",
+    "name:en": "ChinaTown Restaurant",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 1536327001,
+  "lat": 25.2780518,
+  "lon": 55.3474327,
+  "tags": {
+    "addr:street": "1 Street",
+    "amenity": "restaurant",
+    "name": "Blue Mountain",
+    "name:en": "Blue Mountain",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 1536329955,
+  "lat": 25.2798808,
+  "lon": 55.3464151,
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "node",
+  "id": 1536329967,
+  "lat": 25.2785833,
+  "lon": 55.3476672,
+  "tags": {
+    "amenity": "bureau_de_change",
+    "name": "UAE Exchange",
+    "name:ar": "مركز الإمارات العربية المتحدة للصرافة",
+    "name:en": "UAE Exchange"
+  }
+},
+{
+  "type": "node",
+  "id": 1536329969,
+  "lat": 25.2793958,
+  "lon": 55.3467585,
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "node",
+  "id": 1536341554,
+  "lat": 25.2803451,
+  "lon": 55.3450025,
+  "tags": {
+    "amenity": "car_rental",
+    "name": "Layers Rent a Car",
+    "name:en": "Layers Rent a Car"
+  }
+},
+{
+  "type": "node",
+  "id": 1536352133,
+  "lat": 25.2773036,
+  "lon": 55.3471241,
+  "tags": {
+    "amenity": "post_box",
+    "operator": "Emirates",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 1536362911,
+  "lat": 25.2767095,
+  "lon": 55.3496346,
+  "tags": {
+    "access": "yes",
+    "amenity": "parking",
+    "charge": "AED 2 per hour",
+    "fee": "yes",
+    "operator": "RTA",
+    "operator:type": "government",
+    "parking": "surface",
+    "surface": "asphalt",
+    "wikidata": "Q22101985",
+    "wikipedia": "en:Roads and Transport Authority (Dubai)",
+    "zone": "133D"
+  }
+},
+{
+  "type": "node",
+  "id": 1546961413,
+  "lat": 25.2806868,
+  "lon": 55.3452789,
+  "tags": {
+    "addr:street": "3b Street",
+    "name": "A Little Off the Top Beauty Salon",
+    "name:en": "A Little Off the Top Beauty Salon",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 1565007189,
+  "lat": 25.2814413,
+  "lon": 55.3444231,
+  "tags": {
+    "amenity": "telephone"
+  }
+},
+{
+  "type": "node",
+  "id": 1575303217,
+  "lat": 25.2767215,
+  "lon": 55.3479570,
+  "tags": {
+    "name": "Ministry of Water and Environment",
+    "name:en": "Ministry of Water and Environment",
+    "office": "government",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 2847479059,
+  "lat": 25.2843506,
+  "lon": 55.3406881,
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "node",
+  "id": 2847480025,
+  "lat": 25.2833819,
+  "lon": 55.3413680,
+  "tags": {
+    "amenity": "marketplace",
+    "name": "Hamria Shopping Centre",
+    "name:en": "Hamria Shopping Centre"
+  }
+},
+{
+  "type": "node",
+  "id": 2847482776,
+  "lat": 25.2823192,
+  "lon": 55.3436821,
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "node",
+  "id": 2855812861,
+  "lat": 25.2807532,
+  "lon": 55.3480835,
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "node",
+  "id": 2855831326,
+  "lat": 25.2819243,
+  "lon": 55.3510168,
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "node",
+  "id": 2855835927,
+  "lat": 25.2796073,
+  "lon": 55.3528213,
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "node",
+  "id": 3777195278,
+  "lat": 25.2780276,
+  "lon": 55.3513546,
+  "tags": {
+    "addr:city": "دبي",
+    "addr:city:ar": "دبي",
+    "addr:city:en": "Dubai",
+    "addr:city:ur": "دبئی",
+    "addr:housenumber": "210",
+    "addr:street": "Al Ettihad Road",
+    "name": "Belhasa Group of Companies",
+    "name:en": "Belhasa Group of Companies",
+    "office": "company"
+  }
+},
+{
+  "type": "node",
+  "id": 3941503188,
+  "lat": 25.2815386,
+  "lon": 55.3416849,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 4024145797,
+  "lat": 25.2828823,
+  "lon": 55.3400322,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 4175872505,
+  "lat": 25.2803656,
+  "lon": 55.3543768,
+  "tags": {
+    "addr:city:ar": "دبي",
+    "amenity": "restaurant",
+    "name": "Al Marhabani Mandi & Traditional Foods",
+    "name:ar": "المرحباني",
+    "name:ur": "المرہبانی",
+    "phone": "042660664",
+    "website": "https://almarhabani.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 4303093824,
+  "lat": 25.2809111,
+  "lon": 55.3529555,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Al Maskoof Al Iraqi Restaurant",
+    "phone": "042972288"
+  }
+},
+{
+  "type": "node",
+  "id": 4348712090,
+  "lat": 25.2773644,
+  "lon": 55.3483985,
+  "tags": {
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "Canadian Specialist Hospital",
+    "name:ar": "المستشفى الكندي التخصصي"
+  }
+},
+{
+  "type": "node",
+  "id": 4351411892,
+  "lat": 25.2780496,
+  "lon": 55.3507539,
+  "tags": {
+    "name": "July flowers",
+    "shop": "florist"
+  }
+},
+{
+  "type": "node",
+  "id": 4357254791,
+  "lat": 25.2784507,
+  "lon": 55.3516251,
+  "tags": {
+    "addr:street": "28 Street",
+    "email": "aljarmakani@gmail.com",
+    "name": "اندكس لتأمين السيارات",
+    "name:ar": "اندكس لتأمين السيارات",
+    "name:en": "Index car Insurance",
+    "opening_hours": "Sa-Th 09:00-20:00",
+    "phone": "0561177576",
+    "shop": "department_store",
+    "website": "http://www.indexcrs.com"
+  }
+},
+{
+  "type": "node",
+  "id": 4384457089,
+  "lat": 25.2792922,
+  "lon": 55.3501256,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Farhat original",
+    "name:ar": "فرحات الاصلى",
+    "name:en": "Farhat original"
+  }
+},
+{
+  "type": "node",
+  "id": 4412816995,
+  "lat": 25.2790978,
+  "lon": 55.3457112,
+  "tags": {
+    "name": "Gulam Supermarket",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 4412819101,
+  "lat": 25.2786773,
+  "lon": 55.3478616,
+  "tags": {
+    "name": "Al Shemoosi Grocery",
+    "name:en": "Al Shemoosi Grocery",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 4412820904,
+  "lat": 25.2842223,
+  "lon": 55.3515968,
+  "tags": {
+    "name": "Mohamed Grocery",
+    "name:en": "Mohamed Grocery",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 4412832601,
+  "lat": 25.2804769,
+  "lon": 55.3499828,
+  "tags": {
+    "name": "Al Dar Al Supermarket",
+    "name:en": "Al Dar Al Supermarket",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 4412832602,
+  "lat": 25.2819899,
+  "lon": 55.3492813,
+  "tags": {
+    "name": "desert Grocery",
+    "name:en": "desert Grocery",
+    "shop": "supermarket",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4412832696,
+  "lat": 25.2812784,
+  "lon": 55.3500778,
+  "tags": {
+    "name": "Three Star",
+    "name:en": "Three Star",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 4412850399,
+  "lat": 25.2807207,
+  "lon": 55.3452397,
+  "tags": {
+    "addr:street": "3b Street",
+    "name": "Madina Al Eman Grocery",
+    "name:en": "Madina Al Eman Grocery",
+    "shop": "supermarket",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4412850490,
+  "lat": 25.2804448,
+  "lon": 55.3502866,
+  "tags": {
+    "name": "Grocery",
+    "name:en": "Grocery",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 4412850590,
+  "lat": 25.2778557,
+  "lon": 55.3483435,
+  "tags": {
+    "name": "Al Shamsi Grocery",
+    "name:en": "Al Shamsi Grocery",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 4412853195,
+  "lat": 25.2807344,
+  "lon": 55.3450230,
+  "tags": {
+    "addr:street": "1b Street",
+    "name": "Grocery",
+    "name:en": "Grocery",
+    "shop": "supermarket",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4412853196,
+  "lat": 25.2777583,
+  "lon": 55.3498477,
+  "tags": {
+    "name": "7 Hills Supermarket",
+    "name:en": "7 Hills Supermarket",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 4412853590,
+  "lat": 25.2836278,
+  "lon": 55.3511425,
+  "tags": {
+    "name": "Makawi Grocery",
+    "name:en": "Makawi Grocery",
+    "shop": "supermarket",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4423933889,
+  "lat": 25.2805080,
+  "lon": 55.3430038,
+  "tags": {
+    "amenity": "car_rental"
+  }
+},
+{
+  "type": "node",
+  "id": 4444485262,
+  "lat": 25.2780096,
+  "lon": 55.3493006,
+  "tags": {
+    "name": "Lotus Grand Hotel Apartments",
+    "name:en": "Lotus Grand Hotel Apartments",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4570842489,
+  "lat": 25.2773160,
+  "lon": 55.3500910,
+  "tags": {
+    "shop": "furniture"
+  }
+},
+{
+  "type": "node",
+  "id": 4654997692,
+  "lat": 25.2773744,
+  "lon": 55.3492961,
+  "tags": {
+    "amenity": "atm"
+  }
+},
+{
+  "type": "node",
+  "id": 4674489989,
+  "lat": 25.2798463,
+  "lon": 55.3491875,
+  "tags": {
+    "name": "Al Falaj Supermarket",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 4685747889,
+  "lat": 25.2791927,
+  "lon": 55.3479044,
+  "tags": {
+    "name": "Shaklan Supermarket",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 4697855689,
+  "lat": 25.2830390,
+  "lon": 55.3411169,
+  "tags": {
+    "name": "sana saloon",
+    "name:en": "sana saloon",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 4925216031,
+  "lat": 25.2784961,
+  "lon": 55.3522981,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Charleston Cafe",
+    "name:ar": "شارلستون كافيه",
+    "outdoor_seating": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4925245457,
+  "lat": 25.2797890,
+  "lon": 55.3537023,
+  "tags": {
+    "addr:city": "Dubai",
+    "addr:street": "Al Ittihad Road",
+    "amenity": "fast_food",
+    "brand": "Papa John's",
+    "brand:wikidata": "Q2759586",
+    "cuisine": "pizza",
+    "drive_through": "no",
+    "name": "Papa John's",
+    "name:en": "Papa John's",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4925245458,
+  "lat": 25.2790759,
+  "lon": 55.3529111,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "drive_through": "no",
+    "name": "NBQ Bank - Abu Hail Branch"
+  }
+},
+{
+  "type": "node",
+  "id": 4925245459,
+  "lat": 25.2785400,
+  "lon": 55.3523479,
+  "tags": {
+    "name": "Essa Al Shamsi",
+    "office": "property_management"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134362,
+  "lat": 25.2801697,
+  "lon": 55.3457983,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "MILE7 RESTAURANT",
+    "phone": "042652225"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134373,
+  "lat": 25.2807493,
+  "lon": 55.3452045,
+  "tags": {
+    "addr:street": "3b Street",
+    "name": "Rukan Al Rihan LAdies Salon",
+    "name:en": "Rukan Al Rihan LAdies Salon",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134374,
+  "lat": 25.2807934,
+  "lon": 55.3451611,
+  "tags": {
+    "addr:street": "3b Street",
+    "name": "Al Nawaem Al Ajmal Ladies Salon",
+    "name:en": "Al Nawaem Al Ajmal Ladies Salon",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134375,
+  "lat": 25.2807971,
+  "lon": 55.3450838,
+  "tags": {
+    "addr:street": "3b Street",
+    "name": "Safari Gents Tailoring",
+    "name:en": "Safari Gents Tailoring",
+    "shop": "tailor",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134376,
+  "lat": 25.2789697,
+  "lon": 55.3458243,
+  "tags": {
+    "addr:street": "18 Street",
+    "name": "Dazzle",
+    "name:en": "Dazzle",
+    "shop": "clothes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134377,
+  "lat": 25.2788667,
+  "lon": 55.3459599,
+  "tags": {
+    "addr:street": "18 Street",
+    "name": "Al Sharqya",
+    "name:en": "Al Sharqya",
+    "shop": "clothes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134441,
+  "lat": 25.2780582,
+  "lon": 55.3462398,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "name": "Top Top",
+    "name:en": "Top Top",
+    "shop": "supermarket",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134442,
+  "lat": 25.2781440,
+  "lon": 55.3461333,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "amenity": "marketplace",
+    "name": "Privilege Line General Trading",
+    "name:en": "Privilege Line General Trading",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134443,
+  "lat": 25.2783863,
+  "lon": 55.3458461,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "name": "Mane Fashion",
+    "name:en": "Mane Fashion",
+    "shop": "clothes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134444,
+  "lat": 25.2785343,
+  "lon": 55.3456196,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "name": "Kashka",
+    "name:en": "Kashka",
+    "shop": "yes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134445,
+  "lat": 25.2785930,
+  "lon": 55.3455314,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "name": "Shoe Republic",
+    "name:en": "Shoe Republic",
+    "shop": "shoes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134446,
+  "lat": 25.2786337,
+  "lon": 55.3454714,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "name": "Al Aliaan",
+    "name:en": "Al Aliaan",
+    "shop": "computer",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134447,
+  "lat": 25.2786819,
+  "lon": 55.3454015,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "name": "Vanak",
+    "name:en": "Vanak",
+    "shop": "yes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939134448,
+  "lat": 25.2787436,
+  "lon": 55.3453332,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "name": "Al Imam Al Bukhari Islamic Book Shop & Recording",
+    "name:en": "Al Imam Al Bukhari Islamic Book Shop & Recording",
+    "shop": "books",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939146676,
+  "lat": 25.2792472,
+  "lon": 55.3446743,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "name": "Safe Master",
+    "name:en": "Safe Master",
+    "shop": "locksmith",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939146677,
+  "lat": 25.2792108,
+  "lon": 55.3447346,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "name": "Green Tech",
+    "name:en": "Green Tech",
+    "office": "company",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939146685,
+  "lat": 25.2793713,
+  "lon": 55.3445102,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "amenity": "restaurant",
+    "name": "Thai Elite",
+    "name:en": "Thai Elite",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939146686,
+  "lat": 25.2795891,
+  "lon": 55.3442634,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "name": "Al - Manama Business Services",
+    "name:en": "Al - Manama Business Services",
+    "shop": "yes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939146687,
+  "lat": 25.2796648,
+  "lon": 55.3441746,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "leisure": "fitness_centre",
+    "name": "Abu Hail Gym",
+    "name:en": "Abu Hail Gym",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939146688,
+  "lat": 25.2797738,
+  "lon": 55.3440256,
+  "tags": {
+    "name": "Unimar Trading",
+    "name:en": "Unimar Trading",
+    "office": "company",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285072,
+  "lat": 25.2775895,
+  "lon": 55.3504585,
+  "tags": {
+    "gender": "female",
+    "name": "Anjmat Al Jamal Joori Saloon",
+    "name:ar": "صالون جوري نجمة الجمال",
+    "shop": "beauty"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285073,
+  "lat": 25.2776317,
+  "lon": 55.3505068,
+  "tags": {
+    "addr:street": "28 Street",
+    "name": "Health & Diet",
+    "name:en": "Health & Diet",
+    "shop": "greengrocer",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285074,
+  "lat": 25.2777974,
+  "lon": 55.3507070,
+  "tags": {
+    "name": "Baqer Mohebi Supermarket - Abu Hail",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "phone": "042662222",
+    "shop": "supermarket",
+    "website": "https://mohebi.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285075,
+  "lat": 25.2791451,
+  "lon": 55.3529772,
+  "tags": {
+    "leisure": "fitness_centre",
+    "name": "Fitness Planet"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285076,
+  "lat": 25.2799853,
+  "lon": 55.3531518,
+  "tags": {
+    "addr:street": "28 Street",
+    "amenity": "restaurant",
+    "name": "Al Reef Al Yamani Restaurant & Bakeries",
+    "name:en": "Al Reef Al Yamani Restaurant & Bakeries",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285077,
+  "lat": 25.2800751,
+  "lon": 55.3532440,
+  "tags": {
+    "addr:street": "28 Street",
+    "amenity": "restaurant",
+    "name": "Laffah Restaurant",
+    "name:en": "Laffah Restaurant",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285079,
+  "lat": 25.2808098,
+  "lon": 55.3528081,
+  "tags": {
+    "name": "Al Qashimi Super Market",
+    "phone": "042626570",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285081,
+  "lat": 25.2813566,
+  "lon": 55.3526984,
+  "tags": {
+    "addr:street": "24 Street",
+    "name": "Asala ladies Saloon",
+    "name:en": "Asala ladies Saloon",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285083,
+  "lat": 25.2814864,
+  "lon": 55.3528480,
+  "tags": {
+    "addr:city": "Dubai",
+    "amenity": "car_rental",
+    "name": "Amazing Rent A Car"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285084,
+  "lat": 25.2816495,
+  "lon": 55.3530530,
+  "tags": {
+    "addr:street": "24 Street",
+    "amenity": "restaurant",
+    "contact:email": "yemen.restdxb@gmail.com",
+    "contact:facebook": "https://facebook.com/355804971286485",
+    "contact:phone": "+971 4 262 4979;+971 4 266 2207;+971 50 479 1047",
+    "name": "Al Yemen Mandi",
+    "name:en": "Al Yemen Mandi Restaurant",
+    "opening_hours": "Mo-Su 09:00-02:00",
+    "operator": "Al Yemen Mandi",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285094,
+  "lat": 25.2807774,
+  "lon": 55.3501692,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "restaurant",
+    "name": "Bel Vedere Restaurant",
+    "name:en": "Bel Vedere Restaurant",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285099,
+  "lat": 25.2803560,
+  "lon": 55.3500270,
+  "tags": {
+    "name": "Properties Market",
+    "name:en": "Properties Market",
+    "office": "estate_agent",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285100,
+  "lat": 25.2803608,
+  "lon": 55.3498694,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "internet_cafe",
+    "name": "Emperor Gaming Network",
+    "name:en": "Emperor Gaming Network",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285102,
+  "lat": 25.2804627,
+  "lon": 55.3501591,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "restaurant",
+    "name": "Tanja Moroccan Restaurant",
+    "name:en": "Tanja Moroccan Restaurant",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285103,
+  "lat": 25.2805585,
+  "lon": 55.3502798,
+  "tags": {
+    "addr:street": "22b Street",
+    "leisure": "spa",
+    "name": "Perfect Moments Gents",
+    "name:en": "Perfect Moments Gents",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285106,
+  "lat": 25.2807938,
+  "lon": 55.3505782,
+  "tags": {
+    "addr:street": "22b Street",
+    "name": "Najd",
+    "name:en": "Najd",
+    "office": "company",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285107,
+  "lat": 25.2808295,
+  "lon": 55.3505997,
+  "tags": {
+    "addr:street": "22b Street",
+    "name": "Wasabi Electronics",
+    "name:en": "Wasabi Electronics",
+    "shop": "electronics",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285108,
+  "lat": 25.2808744,
+  "lon": 55.3506506,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "restaurant",
+    "name": "Tajin & Tanjiah",
+    "name:en": "Tajin & Tanjiah",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285109,
+  "lat": 25.2811982,
+  "lon": 55.3509792,
+  "tags": {
+    "name": "Charisma Man Salon",
+    "name:en": "Charisma Man Salon",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285110,
+  "lat": 25.2812588,
+  "lon": 55.3510489,
+  "tags": {
+    "addr:street": "22b Street",
+    "name": "Hello Deira",
+    "name:en": "Hello Deira",
+    "shop": "mobile_phone",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285111,
+  "lat": 25.2812928,
+  "lon": 55.3510845,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "car_rental",
+    "name": "Fast One",
+    "name:en": "Fast One",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285112,
+  "lat": 25.2813207,
+  "lon": 55.3511240,
+  "tags": {
+    "addr:street": "22b Street",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285113,
+  "lat": 25.2814747,
+  "lon": 55.3512816,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "restaurant",
+    "name": "Al Wedayah Al Maghribi",
+    "name:en": "Al Wedayah Al Maghribi",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285114,
+  "lat": 25.2815959,
+  "lon": 55.3514251,
+  "tags": {
+    "addr:street": "22b Street",
+    "name": "Al Oudaya",
+    "name:en": "Al Oudaya",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285115,
+  "lat": 25.2816505,
+  "lon": 55.3514808,
+  "tags": {
+    "amenity": "car_rental",
+    "name": "Afras",
+    "name:en": "Afras",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285116,
+  "lat": 25.2816778,
+  "lon": 55.3515176,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "car_rental",
+    "name": "RCR Rent A Car",
+    "name:en": "RCR Rent A Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285117,
+  "lat": 25.2817263,
+  "lon": 55.3515740,
+  "tags": {
+    "amenity": "car_rental",
+    "contact:email": "info@bespokerentacar.com",
+    "contact:facebook": "https://facebook.com/109454043979876",
+    "contact:instagram": "https://instagram.com/bespoke_rentacar",
+    "contact:phone": "+971 50 224 2554;+971 52 406 0789",
+    "contact:website": "https://bespokerentacar.com/",
+    "name": "Bespoke Rent A Car",
+    "name:en": "DC Rent a Car",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "operator": "Bespoke Rent A Car LLC",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285118,
+  "lat": 25.2817712,
+  "lon": 55.3516129,
+  "tags": {
+    "amenity": "car_rental",
+    "name": "Royal Road Rent A Car",
+    "name:en": "Royal Road Rent A Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285221,
+  "lat": 25.2824915,
+  "lon": 55.3513768,
+  "tags": {
+    "name": "Naeman Gents Salon",
+    "name:en": "Naeman Gents Salon",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285222,
+  "lat": 25.2825363,
+  "lon": 55.3514184,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "car_rental",
+    "name": "Marvelous Rent A Car",
+    "name:en": "Marvelous Rent A Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285223,
+  "lat": 25.2825885,
+  "lon": 55.3514627,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "fast_food",
+    "name": "Warba Cafeteria",
+    "name:en": "Warba Cafeteria",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285224,
+  "lat": 25.2830238,
+  "lon": 55.3517202,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "Al Douri mart",
+    "name:en": "Al Douri mart",
+    "shop": "supermarket",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285225,
+  "lat": 25.2830857,
+  "lon": 55.3516410,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "Platinum Class Gents Salon",
+    "name:en": "Platinum Class Gents Salon",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285230,
+  "lat": 25.2834846,
+  "lon": 55.3512762,
+  "tags": {
+    "name": "Al Sabat Gents Salon",
+    "name:en": "Al Sabat Gents Salon",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285231,
+  "lat": 25.2835610,
+  "lon": 55.3511904,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "Autoclean",
+    "name:en": "Autoclean",
+    "shop": "dry_cleaning",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285232,
+  "lat": 25.2836859,
+  "lon": 55.3510456,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "Good Deal",
+    "name:en": "Good Deal",
+    "shop": "computer",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285233,
+  "lat": 25.2836726,
+  "lon": 55.3510630,
+  "tags": {
+    "addr:street": "20 Street",
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "name": "Hanan Al Shifa",
+    "name:en": "Manan Al Shifa",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939285317,
+  "lat": 25.2843625,
+  "lon": 55.3418429,
+  "tags": {
+    "addr:street": "3 A Street",
+    "name": "Mohammed Abdul Rahim Grocery",
+    "name:en": "Mohammed Abdul Rahim Grocery",
+    "shop": "greengrocer",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939288899,
+  "lat": 25.2790985,
+  "lon": 55.3471805,
+  "tags": {
+    "name": "Reetaj Abaya & Sheila",
+    "name:en": "Reetaj Abaya & Sheila",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939288900,
+  "lat": 25.2790184,
+  "lon": 55.3473120,
+  "tags": {
+    "addr:street": "3b Street",
+    "name": "Shoezies",
+    "name:en": "Shoezies",
+    "shop": "shoes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939288901,
+  "lat": 25.2789554,
+  "lon": 55.3473965,
+  "tags": {
+    "addr:street": "3b Street",
+    "amenity": "studio",
+    "name": "Al Badya Studio",
+    "name:en": "Al Badya Studio",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939288902,
+  "lat": 25.2787335,
+  "lon": 55.3474568,
+  "tags": {
+    "addr:street": "22a Street",
+    "name": "Sunny Shine Days",
+    "name:en": "Sunny Shine Days",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939288903,
+  "lat": 25.2786934,
+  "lon": 55.3474233,
+  "tags": {
+    "addr:street": "22a Street",
+    "name": "Una Diva",
+    "name:en": "Una Diva",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939288904,
+  "lat": 25.2786571,
+  "lon": 55.3473857,
+  "tags": {
+    "addr:street": "22a Street",
+    "name": "Home Point",
+    "name:en": "Home Point",
+    "shop": "furniture",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939288905,
+  "lat": 25.2783866,
+  "lon": 55.3471041,
+  "tags": {
+    "addr:street": "22a Street",
+    "amenity": "car_rental",
+    "name": "RPM Rent A Car",
+    "name:en": "RPM",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939288906,
+  "lat": 25.2771303,
+  "lon": 55.3481770,
+  "tags": {
+    "addr:street": "1 Street",
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "name": "Community Pharmacy",
+    "name:en": "Community Pharmacy",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939309096,
+  "lat": 25.2789972,
+  "lon": 55.3470967,
+  "tags": {
+    "addr:street": "18 Street",
+    "name": "Al Mashayekh Perfumes",
+    "name:en": "Al Mashayekh Perfumes",
+    "shop": "cosmetics",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4939309097,
+  "lat": 25.2790506,
+  "lon": 55.3471189,
+  "tags": {
+    "addr:street": "18 Street",
+    "name": "Al Riyadh Lady",
+    "name:en": "Al Riyadh Lady",
+    "shop": "clothes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940628693,
+  "lat": 25.2805519,
+  "lon": 55.3454592,
+  "tags": {
+    "addr:street": "3b Street",
+    "fixme": "shop type",
+    "name": "Sheoura",
+    "name:en": "Sheoura",
+    "shop": "yes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940628694,
+  "lat": 25.2778797,
+  "lon": 55.3470379,
+  "tags": {
+    "addr:street": "22a Street",
+    "name": "Bentec Office Equipment",
+    "name:en": "Bentec Office Equipment",
+    "office": "company",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940628695,
+  "lat": 25.2777115,
+  "lon": 55.3468821,
+  "tags": {
+    "addr:street": "22a Street",
+    "information": "office",
+    "name": "B6 Travel and Tourism",
+    "name:en": "B6 Travel and Tourism",
+    "source": "Kaart Ground Survey 2017",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 4940628696,
+  "lat": 25.2773163,
+  "lon": 55.3471425,
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "amenity": "restaurant",
+    "name": "Yulan",
+    "name:en": "Yulan",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841034,
+  "lat": 25.2787565,
+  "lon": 55.3479382,
+  "tags": {
+    "addr:street": "22a Street",
+    "amenity": "cafe",
+    "name": "For You Cafe",
+    "name:en": "For You Cafe",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841035,
+  "lat": 25.2783417,
+  "lon": 55.3474796,
+  "tags": {
+    "addr:street": "22a Street",
+    "name": "Al Shemoosi Grocery",
+    "name:en": "Al Shemoosi Grocery",
+    "shop": "greengrocer",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841036,
+  "lat": 25.2782192,
+  "lon": 55.3473495,
+  "tags": {
+    "addr:street": "22a Street",
+    "name": "Tiffany Beauty",
+    "name:en": "Tiffany Beauty",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841037,
+  "lat": 25.2781283,
+  "lon": 55.3473361,
+  "tags": {
+    "addr:street": "1 Street",
+    "name": "Sevana Bakery",
+    "shop": "bakery"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841038,
+  "lat": 25.2777815,
+  "lon": 55.3477800,
+  "tags": {
+    "name": "Plover Tailoring and Embroidery Work Shop Textile Trading",
+    "name:en": "Plover Tailoring and Embroidery Work Shop Textile Trading",
+    "shop": "tailor",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841039,
+  "lat": 25.2777342,
+  "lon": 55.3478269,
+  "tags": {
+    "addr:street": "1 Street",
+    "amenity": "car_rental",
+    "name": "Control Rent Car",
+    "name:en": "Control Rent Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841040,
+  "lat": 25.2776808,
+  "lon": 55.3479061,
+  "tags": {
+    "name": "Life Plus Labour Supply",
+    "name:en": "Life Plus Labour Supply",
+    "office": "company",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841041,
+  "lat": 25.2776505,
+  "lon": 55.3479423,
+  "tags": {
+    "addr:street": "1 Street",
+    "name": "Daitona",
+    "name:en": "Daitona",
+    "shop": "yes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841042,
+  "lat": 25.2776287,
+  "lon": 55.3479731,
+  "tags": {
+    "addr:street": "1 Street",
+    "name": "Fantasy Horizon",
+    "name:en": "Fantasy Horizon",
+    "shop": "yes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841043,
+  "lat": 25.2776304,
+  "lon": 55.3480799,
+  "tags": {
+    "addr:street": "شارع 24",
+    "amenity": "restaurant",
+    "email": "artistaone@hotmail.com",
+    "internet_access": "wlan",
+    "name": "Artista One",
+    "name:ar": "آرتيستا ون",
+    "name:en": "Artista One",
+    "opening_hours": "Sa-Th 09:00-20:00",
+    "phone": "+97142507447",
+    "source": "Kaart Ground Survey 2017",
+    "website": "http://www.artistaone.co"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841044,
+  "lat": 25.2766270,
+  "lon": 55.3491010,
+  "tags": {
+    "addr:street": "28 Street",
+    "name": "KM Daily",
+    "name:en": "KM Daily",
+    "office": "company",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841047,
+  "lat": 25.2770417,
+  "lon": 55.3495650,
+  "tags": {
+    "addr:street": "28 Street",
+    "name": "Lilya Flowers",
+    "name:en": "Lilya Flowers",
+    "shop": "florist",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841048,
+  "lat": 25.2770611,
+  "lon": 55.3495985,
+  "tags": {
+    "addr:street": "28 Street",
+    "name": "Almaz Beauty Saloon",
+    "name:en": "Almaz Beauty Saloon",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841049,
+  "lat": 25.2771982,
+  "lon": 55.3497447,
+  "tags": {
+    "addr:street": "28 Street",
+    "amenity": "car_rental",
+    "name": "Al Mamzar Rent a Car",
+    "name:en": "Al Mamzar Rent a Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841050,
+  "lat": 25.2772261,
+  "lon": 55.3497809,
+  "tags": {
+    "addr:street": "28 Street",
+    "amenity": "car_rental",
+    "name": "The One",
+    "name:en": "The One",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841051,
+  "lat": 25.2773267,
+  "lon": 55.3498667,
+  "tags": {
+    "name": "Salon Shams Baghdad",
+    "name:en": "Salon Shams Baghdad",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841052,
+  "lat": 25.2774916,
+  "lon": 55.3500625,
+  "tags": {
+    "addr:street": "28 Street",
+    "name": "Al Maraseem",
+    "name:en": "Al Maraseem",
+    "shop": "tailor",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841053,
+  "lat": 25.2775753,
+  "lon": 55.3501350,
+  "tags": {
+    "addr:street": "28 Street",
+    "name": "Zain",
+    "name:en": "Zain",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841054,
+  "lat": 25.2776432,
+  "lon": 55.3501631,
+  "tags": {
+    "addr:street": "28 Street",
+    "amenity": "car_rental",
+    "name": "Red Shark",
+    "name:en": "Red Shark",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841055,
+  "lat": 25.2779864,
+  "lon": 55.3502828,
+  "tags": {
+    "addr:street": "28 Street",
+    "name": "Satt Tourism & Travel",
+    "name:en": "Satt Tourism & Travel",
+    "shop": "travel_agency",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841057,
+  "lat": 25.2779086,
+  "lon": 55.3505500,
+  "tags": {
+    "leisure": "fitness_centre",
+    "name": "Ultimate Fitness Body Building Gym"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841058,
+  "lat": 25.2781028,
+  "lon": 55.3508133,
+  "tags": {
+    "name": "Al Maqta Books Trading",
+    "shop": "books"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841059,
+  "lat": 25.2783032,
+  "lon": 55.3508123,
+  "tags": {
+    "addr:street": "28 Street",
+    "amenity": "car_rental",
+    "name": "Mozanab",
+    "name:en": "Mozanab",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841060,
+  "lat": 25.2782333,
+  "lon": 55.3509518,
+  "tags": {
+    "name": "Hobby Hub",
+    "shop": "hobby"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841061,
+  "lat": 25.2783706,
+  "lon": 55.3507846,
+  "tags": {
+    "addr:street": "28 Street",
+    "amenity": "dentist",
+    "healthcare": "dentist",
+    "name": "Dentsply Sirona",
+    "name:en": "Dentsply Sirona",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841062,
+  "lat": 25.2784178,
+  "lon": 55.3508808,
+  "tags": {
+    "addr:street": "28 Street",
+    "name": "Sweety",
+    "name:en": "Sweety",
+    "shop": "tailor",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841063,
+  "lat": 25.2783238,
+  "lon": 55.3510558,
+  "tags": {
+    "addr:street": "28 Street",
+    "name": "Smart Travel",
+    "name:en": "Smart Travel",
+    "shop": "travel_agency",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841068,
+  "lat": 25.2789616,
+  "lon": 55.3514155,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "مطعم النهضة",
+    "name:ar": "مطعم النهضة",
+    "name:en": "Al Nahda Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841069,
+  "lat": 25.2791171,
+  "lon": 55.3518466,
+  "tags": {
+    "addr:street": "28 Street",
+    "name": "Two Brothers",
+    "name:en": "Two Brothers",
+    "shop": "copyshop",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841071,
+  "lat": 25.2791593,
+  "lon": 55.3519317,
+  "tags": {
+    "name": "Mr Wash Laundry",
+    "self_service": "no",
+    "shop": "laundry"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841072,
+  "lat": 25.2793192,
+  "lon": 55.3520688,
+  "tags": {
+    "name": "Dar Al Muteena Al Dhahbi Typing and Photocopying Services LLC",
+    "shop": "copyshop"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841074,
+  "lat": 25.2800532,
+  "lon": 55.3528987,
+  "tags": {
+    "name": "Al Mamzar Typing & Photocopying",
+    "shop": "copyshop"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841075,
+  "lat": 25.2801829,
+  "lon": 55.3530693,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "مطعم صحارى ستار هوم فود",
+    "name:ar": "مطعم صحارى ستار هوم فود",
+    "name:en": "Sahara Star Home Food Restaurant",
+    "phone": "0543656743"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841076,
+  "lat": 25.2802556,
+  "lon": 55.3531062,
+  "tags": {
+    "name": "Asmak AlAmmor",
+    "shop": "seafood"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841077,
+  "lat": 25.2804366,
+  "lon": 55.3529179,
+  "tags": {
+    "name": "Technical Touch Saloon",
+    "shop": "hairdresser"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841079,
+  "lat": 25.2805382,
+  "lon": 55.3528031,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Al Prince Al Ammar Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841080,
+  "lat": 25.2809592,
+  "lon": 55.3523094,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Mazza Cafe",
+    "outdoor_seating": "no",
+    "phone": "042978800",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841081,
+  "lat": 25.2813025,
+  "lon": 55.3522351,
+  "tags": {
+    "addr:street": "24 Street",
+    "name": "Super Cut Salon",
+    "name:en": "Super Cut Salon",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841082,
+  "lat": 25.2813722,
+  "lon": 55.3523136,
+  "tags": {
+    "addr:street": "24 Street",
+    "amenity": "car_rental",
+    "name": "Spurt Car Rental",
+    "name:en": "Spurt Car Rental",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841083,
+  "lat": 25.2814049,
+  "lon": 55.3523444,
+  "tags": {
+    "addr:street": "24 Street",
+    "name": "Zamzam",
+    "name:en": "Zamzam",
+    "shop": "yes",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841084,
+  "lat": 25.2814365,
+  "lon": 55.3523806,
+  "tags": {
+    "addr:street": "24 Street",
+    "name": "First Travel",
+    "name:en": "First Travel",
+    "shop": "travel_agency",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841085,
+  "lat": 25.2814631,
+  "lon": 55.3524122,
+  "tags": {
+    "addr:street": "24 Street",
+    "amenity": "bureau_de_change",
+    "name": "Al Ghurair Exchange",
+    "name:en": "Al Ghurair Exchange",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841086,
+  "lat": 25.2815286,
+  "lon": 55.3524859,
+  "tags": {
+    "addr:street": "24 Street",
+    "name": "Al Mimzar",
+    "name:en": "Al Mimzar",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841087,
+  "lat": 25.2815735,
+  "lon": 55.3525295,
+  "tags": {
+    "addr:street": "24 Street",
+    "amenity": "car_rental",
+    "name": "Veet Rent a Car",
+    "name:en": "Veet Rent a Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841088,
+  "lat": 25.2816062,
+  "lon": 55.3525677,
+  "tags": {
+    "addr:street": "24 Street",
+    "name": "Al Tofan",
+    "name:en": "Al Tofan",
+    "shop": "car_parts",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841089,
+  "lat": 25.2816311,
+  "lon": 55.3525932,
+  "tags": {
+    "addr:street": "24 Street",
+    "amenity": "car_rental",
+    "name": "Lanka Car Rental",
+    "name:en": "Lanka Car Rental",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841090,
+  "lat": 25.2817008,
+  "lon": 55.3526483,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Al Amoor Falafel"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841091,
+  "lat": 25.2817651,
+  "lon": 55.3525865,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "Car Accessories",
+    "name:en": "Car Accessories",
+    "shop": "car_parts",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841092,
+  "lat": 25.2817930,
+  "lon": 55.3525604,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "Happy Phone",
+    "name:en": "Happy Phone",
+    "shop": "mobile_phone",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841093,
+  "lat": 25.2819397,
+  "lon": 55.3523981,
+  "tags": {
+    "addr:street": "15 C",
+    "amenity": "car_rental",
+    "name": "Emirates Riders",
+    "name:en": "Emirates Riders",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841094,
+  "lat": 25.2819876,
+  "lon": 55.3523377,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "RPM Telecom",
+    "name:en": "RPM Telecom",
+    "shop": "electronics",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841095,
+  "lat": 25.2821483,
+  "lon": 55.3521694,
+  "tags": {
+    "addr:street": "15 C",
+    "amenity": "car_rental",
+    "name": "Khyool",
+    "name:en": "Khyool",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841096,
+  "lat": 25.2821756,
+  "lon": 55.3521480,
+  "tags": {
+    "amenity": "car_rental",
+    "name": "Damas Rent a Car",
+    "name:en": "Damas Rent a Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841097,
+  "lat": 25.2820331,
+  "lon": 55.3518643,
+  "tags": {
+    "name": "Main Solution Management Services",
+    "name:en": "Main Solution Management Services",
+    "office": "company",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841098,
+  "lat": 25.2820610,
+  "lon": 55.3518992,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "car_rental",
+    "name": "Al Sultan",
+    "name:en": "Al Sultan",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841099,
+  "lat": 25.2821259,
+  "lon": 55.3519649,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "car_rental",
+    "name": "Car One",
+    "name:en": "Car One",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841100,
+  "lat": 25.2821525,
+  "lon": 55.3519897,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "restaurant",
+    "name": "Humyum",
+    "name:en": "Humyum",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841101,
+  "lat": 25.2821883,
+  "lon": 55.3520226,
+  "tags": {
+    "addr:street": "22b Street",
+    "name": "Option Gents Salon",
+    "name:en": "Option Gents Salon",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841102,
+  "lat": 25.2819518,
+  "lon": 55.3517939,
+  "tags": {
+    "addr:street": "22b Street",
+    "leisure": "spa",
+    "name": "Diamond Finger",
+    "name:en": "Diamond Finger",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841103,
+  "lat": 25.2819203,
+  "lon": 55.3517644,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "car_rental",
+    "name": "Marina Rent A Car",
+    "name:en": "Marina Rent A Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841104,
+  "lat": 25.2818936,
+  "lon": 55.3517396,
+  "tags": {
+    "addr:street": "22b Street",
+    "name": "Al Zahraa",
+    "name:en": "Al Zahraa",
+    "shop": "butcher",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841105,
+  "lat": 25.2806883,
+  "lon": 55.3500083,
+  "tags": {
+    "addr:street": "22b Street",
+    "name": "Al Dar Al Baydaa",
+    "name:en": "Al Dar Al Baydaa",
+    "shop": "greengrocer",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841106,
+  "lat": 25.2807265,
+  "lon": 55.3501410,
+  "tags": {
+    "addr:street": "22b Street",
+    "name": "Dalloati",
+    "name:en": "Dalloati",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841107,
+  "lat": 25.2827843,
+  "lon": 55.3513822,
+  "tags": {
+    "addr:street": "22b Street",
+    "amenity": "restaurant",
+    "name": "Ajeeb Snacks",
+    "name:en": "Ajeeb Snacks",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841108,
+  "lat": 25.2828450,
+  "lon": 55.3514197,
+  "tags": {
+    "addr:street": "15 C",
+    "amenity": "restaurant",
+    "name": "Robyan Sea Food",
+    "name:en": "Robyan Sea Food",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841109,
+  "lat": 25.2828753,
+  "lon": 55.3513896,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "Khrimah Haircut",
+    "name:en": "Khrimah Haircut",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841110,
+  "lat": 25.2830123,
+  "lon": 55.3512387,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "Lap Zone",
+    "name:en": "Lap Zone",
+    "shop": "electronics",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841111,
+  "lat": 25.2830450,
+  "lon": 55.3512005,
+  "tags": {
+    "amenity": "car_rental",
+    "name": "Cach Rent a Car",
+    "name:en": "Cach Rent a Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841112,
+  "lat": 25.2830729,
+  "lon": 55.3511790,
+  "tags": {
+    "addr:street": "15 C",
+    "amenity": "cafe",
+    "name": "Tea Zone",
+    "name:en": "Tea Zone",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841113,
+  "lat": 25.2830917,
+  "lon": 55.3511515,
+  "tags": {
+    "addr:street": "15 C",
+    "amenity": "restaurant",
+    "name": "Taste Restaurant",
+    "name:en": "Taste Restaurant",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841114,
+  "lat": 25.2832457,
+  "lon": 55.3510067,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "Al Modhesh Phone",
+    "name:en": "Al Modhesh Phone",
+    "shop": "mobile_phone",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841115,
+  "lat": 25.2832894,
+  "lon": 55.3509678,
+  "tags": {
+    "addr:street": "15 C",
+    "amenity": "car_rental",
+    "name": "Elite Rent a Car",
+    "name:en": "Elite Rent a Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841116,
+  "lat": 25.2833185,
+  "lon": 55.3509316,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "Game Over",
+    "name:en": "Game Over",
+    "shop": "electronics",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841117,
+  "lat": 25.2833500,
+  "lon": 55.3508927,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "Al Madina Phone Trading",
+    "name:en": "Al Madina Phone Trading",
+    "shop": "mobile_phone",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841118,
+  "lat": 25.2833840,
+  "lon": 55.3508659,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "Evan Mobile & Computer",
+    "name:en": "Evan Mobile & Computer",
+    "shop": "computer",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841119,
+  "lat": 25.2834131,
+  "lon": 55.3508189,
+  "tags": {
+    "addr:street": "15 C",
+    "name": "Momayez",
+    "name:en": "Momayez",
+    "shop": "mobile_phone",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841120,
+  "lat": 25.2834143,
+  "lon": 55.3507291,
+  "tags": {
+    "addr:street": "20 Street",
+    "name": "Sea Gate Mobile Phones Trading",
+    "name:en": "Sea Gate Mobile Phones Trading",
+    "shop": "mobile_phone",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841521,
+  "lat": 25.2833731,
+  "lon": 55.3506821,
+  "tags": {
+    "addr:street": "20 Street",
+    "amenity": "car_rental",
+    "name": "Momayz Rent a Car",
+    "name:en": "Momayz Rent a Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841522,
+  "lat": 25.2833452,
+  "lon": 55.3506513,
+  "tags": {
+    "addr:street": "20 Street",
+    "amenity": "car_rental",
+    "name": "Sport Car",
+    "name:en": "Sport Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841523,
+  "lat": 25.2833209,
+  "lon": 55.3506111,
+  "tags": {
+    "addr:street": "20 Street",
+    "name": "Silver Thread",
+    "name:en": "Silver Thread",
+    "shop": "tailor",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841524,
+  "lat": 25.2832857,
+  "lon": 55.3505735,
+  "tags": {
+    "addr:street": "20 Street",
+    "name": "Al Qamarain Contracting",
+    "name:en": "Al Qamarain Contracting",
+    "office": "company",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841525,
+  "lat": 25.2832457,
+  "lon": 55.3505346,
+  "tags": {
+    "addr:street": "20 Street",
+    "name": "Saeed Khalifa Al Mheiri",
+    "name:en": "Saeed Khalifa Al Mheiri",
+    "office": "company",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841526,
+  "lat": 25.2825133,
+  "lon": 55.3497407,
+  "tags": {
+    "addr:street": "20 Street",
+    "name": "Atlanta Travels",
+    "name:en": "Atlanta Travels",
+    "shop": "travel_agency",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841527,
+  "lat": 25.2824321,
+  "lon": 55.3496481,
+  "tags": {
+    "addr:street": "20 Street",
+    "amenity": "car_rental",
+    "name": "Carfare",
+    "name:en": "Carfare",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841528,
+  "lat": 25.2823241,
+  "lon": 55.3495181,
+  "tags": {
+    "addr:street": "شارع 20",
+    "name": "Massage Me",
+    "name:en": "Massage Me",
+    "phone": "971543346866",
+    "shop": "massage",
+    "source": "Kaart Ground Survey 2017",
+    "website": "http://Massagedubairepublic.com"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841529,
+  "lat": 25.2822138,
+  "lon": 55.3494000,
+  "tags": {
+    "addr:street": "7 Street",
+    "amenity": "car_rental",
+    "name": "Fast Rent a Car",
+    "name:en": "Fast Rent a Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841530,
+  "lat": 25.2821786,
+  "lon": 55.3493665,
+  "tags": {
+    "addr:street": "7 Street",
+    "name": "Ali Ghanim",
+    "name:en": "Ali Ghanim",
+    "shop": "laundry",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841531,
+  "lat": 25.2821434,
+  "lon": 55.3493531,
+  "tags": {
+    "addr:street": "7 Street",
+    "name": "Estrahat Al Shabab Gents Saloon",
+    "name:en": "Estrahat Al Shabab Gents Saloon",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841532,
+  "lat": 25.2821034,
+  "lon": 55.3493290,
+  "tags": {
+    "addr:street": "7 Street",
+    "name": "Al Hadaf Gents Saloon",
+    "name:en": "Al Hadaf Gents Saloon",
+    "shop": "hairdresser",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841533,
+  "lat": 25.2820695,
+  "lon": 55.3492995,
+  "tags": {
+    "addr:street": "7 Street",
+    "name": "Al Asakea Al Sihriyah",
+    "name:en": "Al Asakea Al Sihriyah",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841534,
+  "lat": 25.2820185,
+  "lon": 55.3492793,
+  "tags": {
+    "addr:street": "7 Street",
+    "name": "Aroosat Al Neel Beauty Saloon",
+    "name:en": "Aroosat Al Neel Beauty Saloon",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841535,
+  "lat": 25.2819749,
+  "lon": 55.3492726,
+  "tags": {
+    "addr:street": "7 Street",
+    "amenity": "car_rental",
+    "name": "Road Beast",
+    "name:en": "Road Beast",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841536,
+  "lat": 25.2819458,
+  "lon": 55.3492659,
+  "tags": {
+    "addr:street": "7 Street",
+    "name": "Mubarak Marzooq Laundry",
+    "name:en": "Mubarak Marzooq Laundry",
+    "shop": "laundry",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841537,
+  "lat": 25.2819033,
+  "lon": 55.3492579,
+  "tags": {
+    "addr:street": "7 Street",
+    "amenity": "cafe",
+    "name": "Albal Man'oushe",
+    "name:en": "Albal Man'oushe",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841538,
+  "lat": 25.2818742,
+  "lon": 55.3492619,
+  "tags": {
+    "addr:street": "7 Street",
+    "amenity": "car_rental",
+    "name": "VIP Rent a Car",
+    "name:en": "VIP Rent a Car",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841539,
+  "lat": 25.2816596,
+  "lon": 55.3492820,
+  "tags": {
+    "addr:street": "7 Street",
+    "name": "Saloon 2002",
+    "name:en": "Saloon 2002",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4940841540,
+  "lat": 25.2817263,
+  "lon": 55.3492807,
+  "tags": {
+    "addr:street": "7 Street",
+    "amenity": "car_rental",
+    "name": "Class Car Exclusive",
+    "name:en": "Class Car Exclusive",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5158573023,
+  "lat": 25.2803378,
+  "lon": 55.3484507,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Habesha Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 5997773585,
+  "lat": 25.2821983,
+  "lon": 55.3518296,
+  "tags": {
+    "addr:housenumber": "238",
+    "addr:street": "22b شارع",
+    "shop": "car_parts"
+  }
+},
+{
+  "type": "node",
+  "id": 6145584489,
+  "lat": 25.2788951,
+  "lon": 55.3456116,
+  "tags": {
+    "amenity": "bank",
+    "name": "RAK bank",
+    "name:en": "RAK bank"
+  }
+},
+{
+  "type": "node",
+  "id": 7843646137,
+  "lat": 25.2825535,
+  "lon": 55.3407905,
+  "tags": {
+    "amenity": "fast_food",
+    "brand": "ماكدونالدز",
+    "brand:ar": "ماكدونالدز",
+    "brand:en": "McDonald's",
+    "brand:wikidata": "Q38076",
+    "contact:email": "crm@mcdonalds-uae.com",
+    "contact:facebook": "https://www.facebook.com/McDonaldsUAE",
+    "contact:phone": "+971 600 588885",
+    "contact:website": "https://www.mcdelivery.ae/",
+    "cuisine": "burger",
+    "name": "ماكدونالدز",
+    "name:ar": "ماكدونالدز",
+    "name:en": "McDonald's",
+    "opening_hours": "Mo-Su 07:00-24:00",
+    "operator": "EMIRATES FAST FOOD CO.",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7843656834,
+  "lat": 25.2829215,
+  "lon": 55.3409957,
+  "tags": {
+    "amenity": "driving_school",
+    "contact:email": "br.hamriya@gmdc.ae",
+    "contact:facebook": "https://facebook.com/galadaridriving",
+    "contact:instagram": "https://instagram.com/galadari.motor.driving.centre",
+    "contact:linkedin": "https://linkedin.com/company/galadari-motor-driving-centre",
+    "contact:phone": "+971 4 262 6170;+971 600 595956",
+    "contact:tiktok": "https://www.tiktok.com/@galadari_driving",
+    "contact:twitter": "https://twitter.com/@gmdc_gmdcuae",
+    "contact:website": "https://www.gmdc.ae/",
+    "contact:youtube": "https://www.youtube.com/@galadarimotordrivingcentre",
+    "name": "Galadari",
+    "name:en": "Galadari",
+    "opening_hours": "Mo-Su 08:00-22:00",
+    "operator": "Galadari Motor Driving Centre"
+  }
+},
+{
+  "type": "node",
+  "id": 7843656842,
+  "lat": 25.2810653,
+  "lon": 55.3508417,
+  "tags": {
+    "amenity": "driving_school",
+    "contact:email": "br.abuhail@gmdc.ae",
+    "contact:facebook": "https://facebook.com/galadaridriving",
+    "contact:instagram": "https://instagram.com/galadari.motor.driving.centre",
+    "contact:linkedin": "https://linkedin.com/company/galadari-motor-driving-centre",
+    "contact:phone": "+971 4 239 7992;+971 600 595956",
+    "contact:tiktok": "https://www.tiktok.com/@galadari_driving",
+    "contact:twitter": "https://twitter.com/@gmdc_gmdcuae",
+    "contact:website": "https://www.gmdc.ae/",
+    "contact:youtube": "https://youtube.com/channel/UC7V2rTfTLUCnM3Zh2GWaUmA",
+    "name": "Galadari",
+    "name:en": "Galadari",
+    "opening_hours": "Mo-Su 08:00-22:00",
+    "operator": "Galadari Motor Driving Centre"
+  }
+},
+{
+  "type": "node",
+  "id": 8706601166,
+  "lat": 25.2783471,
+  "lon": 55.3515073,
+  "tags": {
+    "contact:email": "contact@amd-medical.com",
+    "contact:facebook": "https://facebook.com/amdmedicalsuppliesllc",
+    "contact:instagram": "https://instagram.com/amdmedicalsuppliesllc",
+    "contact:linkedin": "https://linkedin.com/company/a-m-d-medical-supplies-llc",
+    "contact:phone": "+971 50 537 2015;+971 58 970 6123",
+    "contact:telegram": "https://t.me/amdmedicalsuppliesllc",
+    "contact:twitter": "https://twitter.com/@amdmedical",
+    "contact:website": "https://amd-medical.com",
+    "name": "AMD Medical Supplies",
+    "opening_hours": "Mo-Fr,Su 09:30-13:30,14:30-17:30",
+    "operator": "AMD Medical Supplies LLC",
+    "shop": "medical_supply"
+  }
+},
+{
+  "type": "node",
+  "id": 8929855085,
+  "lat": 25.2835821,
+  "lon": 55.3413043,
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Emirates NBD",
+    "brand:wikidata": "Q5372575",
+    "brand:wikipedia": "en:Emirates NBD",
+    "drive_through": "no",
+    "name": "Emirates NBD"
+  }
+},
+{
+  "type": "node",
+  "id": 8929855086,
+  "lat": 25.2831297,
+  "lon": 55.3408729,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Mubasher Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 8929855087,
+  "lat": 25.2831616,
+  "lon": 55.3410683,
+  "tags": {
+    "name": "June's Flowers",
+    "shop": "florist"
+  }
+},
+{
+  "type": "node",
+  "id": 8929855088,
+  "lat": 25.2829207,
+  "lon": 55.3412334,
+  "tags": {
+    "brand": "Gold's Gym",
+    "brand:wikidata": "Q1536234",
+    "brand:wikipedia": "en:Gold's Gym",
+    "leisure": "fitness_centre",
+    "name": "Gold's Gym"
+  }
+},
+{
+  "type": "node",
+  "id": 8929855089,
+  "lat": 25.2829914,
+  "lon": 55.3410201,
+  "tags": {
+    "amenity": "fast_food",
+    "brand": "ماكدونالدز",
+    "brand:ar": "ماكدونالدز",
+    "brand:en": "McDonald's",
+    "brand:wikidata": "Q38076",
+    "brand:wikipedia": "en:McDonald's",
+    "cuisine": "burger",
+    "name": "ماكدونالدز",
+    "name:ar": "ماكدونالدز",
+    "name:en": "McDonald's",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9047304446,
+  "lat": 25.2811744,
+  "lon": 55.3510723,
+  "tags": {
+    "amenity": "car_rental",
+    "contact:email": "alwajaharentcar@gmail.com",
+    "contact:instagram": "https://instagram.com/alwajaharentcar",
+    "contact:phone": "+971 55 594 4919;+971 58 595 9798",
+    "name": "Al Wajaha Rent A Car",
+    "opening_hours": "Mo-Th,Sa-Su 10:00-23:00",
+    "operator": "Al Wajaha Rent A Car LLC"
+  }
+},
+{
+  "type": "node",
+  "id": 10945717806,
+  "lat": 25.2778668,
+  "lon": 55.3495156,
+  "tags": {
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11011931999,
+  "lat": 25.2818470,
+  "lon": 55.3525284,
+  "tags": {
+    "addr:city": "Deira",
+    "addr:housenumber": "15",
+    "addr:postcode": "97001",
+    "addr:street": "15c شارع",
+    "amenity": "car_rental",
+    "email": "mumayesnewrentacar@gmail.com",
+    "name": "MUMAYES NEW RENT A CAR",
+    "name:ar": "مميز نيو لتأجير السيارات",
+    "opening_hours": "Mo-Su 11:00-23:00",
+    "operator": "JAMEEL AKHTAR",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "phone": "+971 55 388 8882",
+    "website": "https://mumayesnewrentacar.carrd.co/"
+  }
+},
+{
+  "type": "node",
+  "id": 11012454821,
+  "lat": 25.2774383,
+  "lon": 55.3485793,
+  "tags": {
+    "amenity": "atm",
+    "contact:email": "info@almasraf.ae",
+    "contact:facebook": "https://facebook.com/almasrafuae",
+    "contact:instagram": "https://instagram.com/almasrafuae",
+    "contact:linkedin": "https://linkedin.com/company/al-masraf",
+    "contact:phone": "+971 600 529999",
+    "contact:twitter": "https://twitter.com/@almasrafuae",
+    "contact:website": "https://almasraf.ae/",
+    "opening_hours": "24/7",
+    "operator": "Al Masraf Bank ATM"
+  }
+},
+{
+  "type": "node",
+  "id": 11609018886,
+  "lat": 25.2826784,
+  "lon": 55.3513408,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Street 27"
+  }
+},
+{
+  "type": "node",
+  "id": 11609045918,
+  "lat": 25.2811301,
+  "lon": 55.3524802,
+  "tags": {
+    "name": "Emirates Billiards Center",
+    "shop": "games",
+    "sport": "billiards"
+  }
+},
+{
+  "type": "node",
+  "id": 11609049914,
+  "lat": 25.2820810,
+  "lon": 55.3519119,
+  "tags": {
+    "addr:street": "14C Street, Hor Al Anz East",
+    "name": "Hilo Mur Grovery",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 11609151393,
+  "lat": 25.2811378,
+  "lon": 55.3520524,
+  "tags": {
+    "addr:street": "Doha Street, Hor Al Anz East",
+    "amenity": "restaurant",
+    "name": "Bait Al Kanafa"
+  }
+},
+{
+  "type": "node",
+  "id": 11609154285,
+  "lat": 25.2812132,
+  "lon": 55.3521156,
+  "tags": {
+    "addr:street": "Doha Street, Hor Al Anz East",
+    "amenity": "restaurant",
+    "name": "Hot Grill Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 11609241737,
+  "lat": 25.2812391,
+  "lon": 55.3522030,
+  "tags": {
+    "name": "Sheikha Fathima Building (MRM Building)",
+    "tourism": "apartment"
+  }
+},
+{
+  "type": "node",
+  "id": 11799185910,
+  "lat": 25.2822545,
+  "lon": 55.3484840,
+  "tags": {
+    "name": "هور العنز شراق",
+    "name:ar": "هور العنز شراق",
+    "name:en": "Hor Al Anz East",
+    "name:fa": "هور العنز شراق",
+    "name:ml": "ഹോർ അൽ-അൻസ് കിഴക്ക്",
+    "place": "suburb"
+  }
+},
+{
+  "type": "node",
+  "id": 11827111864,
+  "lat": 25.2800808,
+  "lon": 55.3508849,
+  "tags": {
+    "amenity": "ice_cream",
+    "brand": "Baskin-Robbins",
+    "brand:wikidata": "Q584601",
+    "cuisine": "ice_cream",
+    "name": "Baskin-Robbins"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019283,
+  "lat": 25.2818430,
+  "lon": 55.3482319,
+  "tags": {
+    "name": "E-Zone",
+    "shop": "video_games"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019284,
+  "lat": 25.2802115,
+  "lon": 55.3472234,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Tea & Treats Cafe",
+    "outdoor_seating": "yes",
+    "phone": "0501921060",
+    "website": "http://www.teaandtreatscafe.com/",
+    "website:menu": "https://drive.google.com/file/d/1GQGSAZG_1zKVNWHd26ZdXuIgT8SIGCDc/view?usp=sharing"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019285,
+  "lat": 25.2776158,
+  "lon": 55.3467796,
+  "tags": {
+    "name": "Al Kabayel Home",
+    "shop": "convenience"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019286,
+  "lat": 25.2792001,
+  "lon": 55.3478824,
+  "tags": {
+    "amenity": "atm",
+    "cash_in": "no",
+    "currency:AED": "yes",
+    "drive_through": "no",
+    "operator": "Mashreq Bank - ATM",
+    "wikidata": "Q1538829",
+    "wikipedia": "en:Mashreq (bank)"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019287,
+  "lat": 25.2794455,
+  "lon": 55.3475810,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "ethiopian",
+    "name": "CucIina Mesob Ethiopian Restaurant",
+    "phone": "042735841",
+    "website": "https://mesobrestaurantdubai.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019288,
+  "lat": 25.2796308,
+  "lon": 55.3473042,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "coffee_shop",
+    "internet_access": "yes",
+    "internet_access:fee": "yes",
+    "name": "Monaco Café & Cafeteria",
+    "outdoor_seating": "no",
+    "phone": "042556665",
+    "smoking": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019289,
+  "lat": 25.2814161,
+  "lon": 55.3477614,
+  "tags": {
+    "name": "Yousif Redha Smoking Equipment LLC",
+    "phone": "042624249",
+    "shop": "convenience",
+    "website": "https://yousefreza.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019290,
+  "lat": 25.2848279,
+  "lon": 55.3498638,
+  "tags": {
+    "access": "yes",
+    "amenity": "fast_food",
+    "drive_through": "no",
+    "fast_food": "cafeteria",
+    "name": "Shabab Al Khan Cafeteria",
+    "website": "0582681588"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019291,
+  "lat": 25.2841057,
+  "lon": 55.3517080,
+  "tags": {
+    "amenity": "ice_cream",
+    "name": "B.Laban",
+    "name:ar": "بــ لبن",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019292,
+  "lat": 25.2835586,
+  "lon": 55.3522659,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "egyptian",
+    "name": "Masmat Baha Restaurant",
+    "name:ar": "مطعم مسمط بحه",
+    "phone": "600565575",
+    "website:menu": "https://masmatbaha.tryorder.net/"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019293,
+  "lat": 25.2833665,
+  "lon": 55.3524784,
+  "tags": {
+    "amenity": "cafe",
+    "internet_access": "yes",
+    "name": "Ahwetna Cafe",
+    "outdoor_seating": "no",
+    "phone": "044411266"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019294,
+  "lat": 25.2831395,
+  "lon": 55.3527509,
+  "tags": {
+    "government": "administrative",
+    "name": "AMER - First one Government Transactions Clearing",
+    "office": "government",
+    "phone": "042636666",
+    "website": "https://www.first1.ae/"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019295,
+  "lat": 25.2829513,
+  "lon": 55.3529676,
+  "tags": {
+    "government": "administrative",
+    "name": "TADBEER - Abu Hail",
+    "office": "government",
+    "phone": "042699994"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019296,
+  "lat": 25.2825450,
+  "lon": 55.3533827,
+  "tags": {
+    "amenity": "cafe",
+    "name": "مندرة الفيشاوي مطعم وكافيه",
+    "name:ar": "مندرة الفيشاوي مطعم وكافيه",
+    "name:en": "Al Feshawi Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019297,
+  "lat": 25.2826724,
+  "lon": 55.3532551,
+  "tags": {
+    "female": "yes",
+    "name": "Fabiola Beauty Saloon",
+    "phone": "0508764655",
+    "shop": "hairdresser"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019298,
+  "lat": 25.2827738,
+  "lon": 55.3531980,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Istanbul Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019299,
+  "lat": 25.2822629,
+  "lon": 55.3532948,
+  "tags": {
+    "name": "Blue Queen Spa",
+    "shop": "massage"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019300,
+  "lat": 25.2822128,
+  "lon": 55.3536928,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Aghwat Al Sham Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019301,
+  "lat": 25.2818274,
+  "lon": 55.3532793,
+  "tags": {
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "name": "Jenanah Pharmacy"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019302,
+  "lat": 25.2800419,
+  "lon": 55.3508106,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "AL Fakher Mandi & Traditional Food Restaurant",
+    "phone": "042664660"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019303,
+  "lat": 25.2803183,
+  "lon": 55.3510965,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "name": "Bangkok Town Restaurant",
+    "phone": "042397242"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019304,
+  "lat": 25.2793367,
+  "lon": 55.3505292,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Farhat Alasli",
+    "name:ar": "مطعم فرحات الأصلي",
+    "phone": "042964949"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019305,
+  "lat": 25.2775239,
+  "lon": 55.3487108,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Costa",
+    "brand:wikidata": "Q608845",
+    "cuisine": "coffee_shop",
+    "name": "Costa",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019306,
+  "lat": 25.2775664,
+  "lon": 55.3480711,
+  "tags": {
+    "male": "yes",
+    "name": "VIP Class Gents Saloon",
+    "phone": "0554363145",
+    "shop": "hairdresser"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019307,
+  "lat": 25.2775534,
+  "lon": 55.3504138,
+  "tags": {
+    "name": "Fins & Tails Pets",
+    "shop": "pet"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019308,
+  "lat": 25.2774278,
+  "lon": 55.3510695,
+  "tags": {
+    "name": "Baqer Mohebi Supermarket - Abu Hail",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "phone": "042662222",
+    "shop": "supermarket",
+    "website": "https://mohebi.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019309,
+  "lat": 25.2772345,
+  "lon": 55.3508430,
+  "tags": {
+    "name": "Label Store",
+    "shop": "clothes"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019310,
+  "lat": 25.2776262,
+  "lon": 55.3513200,
+  "tags": {
+    "name": "Hadramout Spices & Yemen Coffee",
+    "name:ar": "حضرموت للبهارات والقهوة اليمنية",
+    "phone": "042687777",
+    "shop": "coffee",
+    "website": "https://www.hadarmout.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019311,
+  "lat": 25.2777837,
+  "lon": 55.3514885,
+  "tags": {
+    "name": "Grand Outlet Garments and Shoes Trading LLC",
+    "phone": "0544465882",
+    "shop": "clothes"
+  }
+},
+{
+  "type": "node",
+  "id": 11830019312,
+  "lat": 25.2780896,
+  "lon": 55.3518155,
+  "tags": {
+    "name": "VIVA Supermarket - Hor Al Anz East",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263942,
+  "lat": 25.2799346,
+  "lon": 55.3538994,
+  "tags": {
+    "addr:city": "Dubai",
+    "addr:street": "Itthiad Road",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "name": "Mamak",
+    "phone": "043852204"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263943,
+  "lat": 25.2802937,
+  "lon": 55.3542979,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Mazajnaji Restaurant & Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263944,
+  "lat": 25.2802163,
+  "lon": 55.3542151,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "moroccan",
+    "name": "مطعم ومقهى زوين بزاف",
+    "name:ar": "مطعم ومقهى زوين بزاف",
+    "name:en": "Zwain Bazaf Moroccan Restaurant & Cafe",
+    "phone": "044918889"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263945,
+  "lat": 25.2802975,
+  "lon": 55.3534979,
+  "tags": {
+    "addr:city": "Dubai",
+    "name": "Shaklan Supermarket - Mamzar Center",
+    "operator": "Shaklan",
+    "phone": "042739977",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263946,
+  "lat": 25.2802435,
+  "lon": 55.3534354,
+  "tags": {
+    "addr:city": "Dubai",
+    "amenity": "cafe",
+    "cuisine": "coffee_shop",
+    "name": "Kanaka Specialty Coffee & Roastery",
+    "name:ar": "كنكة محمصة القهوة المختصة",
+    "outdoor_seating": "no",
+    "phone": "042233997",
+    "website": "https://kanaka.ae/"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263947,
+  "lat": 25.2801228,
+  "lon": 55.3532960,
+  "tags": {
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "name": "Royal Mamzar Pharmacy",
+    "operator": "LIFE"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263948,
+  "lat": 25.2798122,
+  "lon": 55.3529281,
+  "tags": {
+    "addr:city": "Dubai",
+    "amenity": "restaurant",
+    "name": "Al Sultan Restaurant & Grill"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263949,
+  "lat": 25.2800875,
+  "lon": 55.3528450,
+  "tags": {
+    "amenity": "fast_food",
+    "drive_through": "no",
+    "fast_food": "cafeteria",
+    "name": "كوخ الشاي",
+    "name:ar": "كوخ الشاي",
+    "name:en": "Kouh Al Shay Cafeteria",
+    "phone": "042976600"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263950,
+  "lat": 25.2810141,
+  "lon": 55.3530656,
+  "tags": {
+    "addr:city": "Dubai",
+    "amenity": "cafe",
+    "name": "Night Moon Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263951,
+  "lat": 25.2811082,
+  "lon": 55.3531718,
+  "tags": {
+    "addr:city": "Dubai",
+    "amenity": "cafe",
+    "name": "قهوة إش إش",
+    "name:ar": "قهوة إش إش",
+    "name:en": "Esh Esh Cafe & Cafeteria",
+    "phone": "042633460"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263952,
+  "lat": 25.2812527,
+  "lon": 55.3533285,
+  "tags": {
+    "name": "Cake N More Patisserie",
+    "phone": "0508070348",
+    "shop": "pastry",
+    "website": "https://cakenmore.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263953,
+  "lat": 25.2813449,
+  "lon": 55.3534347,
+  "tags": {
+    "addr:city": "Dubai",
+    "male": "yes",
+    "name": "Al Zaybiq Gents Saloon",
+    "phone": "0504816400",
+    "shop": "hairdresser"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263954,
+  "lat": 25.2815224,
+  "lon": 55.3536300,
+  "tags": {
+    "name": "Hanon Feras Sweets",
+    "shop": "confectionery"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263955,
+  "lat": 25.2812401,
+  "lon": 55.3525680,
+  "tags": {
+    "name": "Martel Tyres Trading LLC",
+    "phone": "0501613001",
+    "shop": "tyres"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263956,
+  "lat": 25.2814564,
+  "lon": 55.3528159,
+  "tags": {
+    "name": "Al Marri Real Estate",
+    "office": "estate_agent"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263957,
+  "lat": 25.2814264,
+  "lon": 55.3527760,
+  "tags": {
+    "male": "yes",
+    "name": "Classic World Salon",
+    "shop": "hairdresser"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263958,
+  "lat": 25.2812805,
+  "lon": 55.3526063,
+  "tags": {
+    "addr:city": "Dubai",
+    "amenity": "pharmacy",
+    "drive_through": "no",
+    "healthcare": "pharmacy",
+    "name": "LIFE",
+    "operator": "LIFE"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263959,
+  "lat": 25.2804919,
+  "lon": 55.3517816,
+  "tags": {
+    "addr:city": "Dubai",
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Aster Medical Centre - Abu Hail",
+    "operator": "Aster",
+    "operator:type": "private",
+    "website": "https://www.myaster.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263960,
+  "lat": 25.2804611,
+  "lon": 55.3517467,
+  "tags": {
+    "amenity": "pharmacy",
+    "branch": "Abu Hail",
+    "brand": "Aster Pharmacy",
+    "brand:wikidata": "Q124453575",
+    "drive_through": "no",
+    "healthcare": "pharmacy",
+    "name": "Aster Pharmacy",
+    "operator": "Aster"
+  }
+},
+{
+  "type": "node",
+  "id": 11830263961,
+  "lat": 25.2803491,
+  "lon": 55.3516203,
+  "tags": {
+    "addr:city": "Dubai",
+    "amenity": "restaurant",
+    "cuisine": "arab",
+    "name": "Bait Al Nadec Mandi & Mazbi & Popular Dishes Restaurant",
+    "name:ar": "بيت الناضج للمندي والمظبي والأكلات الشعبية",
+    "phone": "042516666"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420870,
+  "lat": 25.2788502,
+  "lon": 55.3526400,
+  "tags": {
+    "name": "Healing Touch Spa & Cub",
+    "phone": "0529369471",
+    "shop": "massage"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420871,
+  "lat": 25.2784432,
+  "lon": 55.3522367,
+  "tags": {
+    "name": "Valley Sports Equipment Trading",
+    "shop": "sports"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420872,
+  "lat": 25.2783894,
+  "lon": 55.3521773,
+  "tags": {
+    "name": "Elsayed Elmougi Mobile Phones and Accessories",
+    "shop": "mobile_phone"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420873,
+  "lat": 25.2782909,
+  "lon": 55.3520414,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Instagram Cafe",
+    "outdoor_seating": "no",
+    "phone": "0502878850"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420874,
+  "lat": 25.2782461,
+  "lon": 55.3519890,
+  "tags": {
+    "amenity": "cafe",
+    "name": "Snapo Cafe",
+    "outdoor_seating": "no",
+    "phone": "042944896"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420875,
+  "lat": 25.2781987,
+  "lon": 55.3519338,
+  "tags": {
+    "amenity": "cafe",
+    "name": "OzOn Cafe",
+    "outdoor_seating": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420876,
+  "lat": 25.2777710,
+  "lon": 55.3502977,
+  "tags": {
+    "name": "Thai Corner General Trading LLC",
+    "phone": "0585912309",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420877,
+  "lat": 25.2787556,
+  "lon": 55.3517718,
+  "tags": {
+    "name": "Bakery Al Hamriyah",
+    "opening_hours": "24/7",
+    "phone": "0509033481",
+    "shop": "bakery"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420878,
+  "lat": 25.2794104,
+  "lon": 55.3524895,
+  "tags": {
+    "name": "Drr Al Madina Minimart",
+    "phone": "0562980604",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420879,
+  "lat": 25.2795457,
+  "lon": 55.3518435,
+  "tags": {
+    "addr:city": "Dubai",
+    "amenity": "restaurant",
+    "name": "Star One Restaurant",
+    "phone": "0525713300"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420880,
+  "lat": 25.2796251,
+  "lon": 55.3517475,
+  "tags": {
+    "name": "Orchid Fresh Supermarket",
+    "name:ar": "سوبر ماركت اوركيد فريش ش.ذ.م.م",
+    "phone": "042683421",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420881,
+  "lat": 25.2792847,
+  "lon": 55.3520622,
+  "tags": {
+    "amenity": "fast_food",
+    "cuisine": "juice",
+    "name": "Lassi Home"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420882,
+  "lat": 25.2792354,
+  "lon": 55.3516842,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "pakistani",
+    "name": "Lyari Darbar Restaurant"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420883,
+  "lat": 25.2793376,
+  "lon": 55.3516001,
+  "tags": {
+    "name": "Anjmat Abu Hail",
+    "shop": "grocery"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420888,
+  "lat": 25.2798029,
+  "lon": 55.3486225,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Arab Taste Restaurant & Cafeteria",
+    "phone": "042666070"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420889,
+  "lat": 25.2798397,
+  "lon": 55.3486669,
+  "tags": {
+    "name": "Brown Berry Phone",
+    "phone": "042651117",
+    "shop": "mobile_phone"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420890,
+  "lat": 25.2800381,
+  "lon": 55.3495012,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "مطعم ليالي ورود الشام",
+    "name:ar": "مطعم ليالي ورود الشام",
+    "name:en": "Layali Worod Al Sham",
+    "phone": "044560780"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420891,
+  "lat": 25.2801183,
+  "lon": 55.3494507,
+  "tags": {
+    "name": "Sun Valley Flowers",
+    "phone": "042666953",
+    "shop": "florist"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420892,
+  "lat": 25.2801919,
+  "lon": 55.3494162,
+  "tags": {
+    "name": "Photo World Studio",
+    "shop": "photo"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420893,
+  "lat": 25.2808371,
+  "lon": 55.3493878,
+  "tags": {
+    "amenity": "fast_food",
+    "fast_food": "cafeteria",
+    "name": "Hatta Malik Tea",
+    "phone": "042663117"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420894,
+  "lat": 25.2808872,
+  "lon": 55.3493817,
+  "tags": {
+    "gender": "female",
+    "name": "Al Anhar Beauty Saloon",
+    "shop": "beauty"
+  }
+},
+{
+  "type": "node",
+  "id": 11830420895,
+  "lat": 25.2807970,
+  "lon": 55.3493891,
+  "tags": {
+    "name": "Royal Laundry",
+    "name:ar": "المغسله الملكيه",
+    "phone": "042688088",
+    "self_service": "no",
+    "shop": "laundry"
+  }
+},
+{
+  "type": "node",
+  "id": 12587051107,
+  "lat": 25.2785979,
+  "lon": 55.3521098,
+  "tags": {
+    "shop": "travel_agency"
+  }
+},
+{
+  "type": "node",
+  "id": 12587051108,
+  "lat": 25.2780932,
+  "lon": 55.3516225,
+  "tags": {
+    "addr:city": "Dubai",
+    "addr:housenumber": "Al Kazim Building",
+    "addr:postcode": "98135",
+    "addr:street": "شارع 28",
+    "name": "Yathir International LLC",
+    "opening_hours": "Mo-Sa 09:00-17:30",
+    "operator": "Yathir International LLC",
+    "payment:cash": "yes",
+    "payment:online_payment": "yes",
+    "phone": "+971 566 98 222",
+    "shop": "travel_agency"
+  }
+},
+{
+  "type": "node",
+  "id": 12607020305,
+  "lat": 25.2854066,
+  "lon": 55.3411495,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 12607029945,
+  "lat": 25.2882993,
+  "lon": 55.3439354,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 13324901394,
+  "lat": 25.2759949,
+  "lon": 55.3487575,
+  "tags": {
+    "name": "La Zona Continental",
+    "opening_hours": "24/7",
+    "stars": "4",
+    "tourism": "hotel",
+    "website": "https://www.lazonacontinentalhotel.com"
+  }
+},
+{
+  "type": "node",
+  "id": 13351170805,
+  "lat": 25.2783548,
+  "lon": 55.3518735,
+  "tags": {
+    "addr:city": "Dubai",
+    "addr:housenumber": "RKM Building",
+    "addr:postcode": "00000",
+    "addr:street": "RKM Building - 307 28th St - Hor Al Anz East - Deira - Dubai",
+    "brand": "Jashan Tourism",
+    "name": "Jashan Tourism",
+    "opening_hours": "Mo-Sa 09:00-18:00",
+    "operator": "Jashan Tourism",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "phone": "+97142698986",
+    "shop": "travel_agency"
+  }
+},
+{
+  "type": "way",
+  "id": 201485605,
+  "center": {
+    "lat": 25.2848041,
+    "lon": 55.3511069
+  },
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "way",
+  "id": 201485606,
+  "center": {
+    "lat": 25.2828046,
+    "lon": 55.3487339
+  },
+  "tags": {
+    "leisure": "pitch",
+    "sport": "basketball"
+  }
+},
+{
+  "type": "way",
+  "id": 201485607,
+  "center": {
+    "lat": 25.2825205,
+    "lon": 55.3504609
+  },
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "way",
+  "id": 201485610,
+  "center": {
+    "lat": 25.2852443,
+    "lon": 55.3507298
+  },
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "way",
+  "id": 201485611,
+  "center": {
+    "lat": 25.2851579,
+    "lon": 55.3499793
+  },
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "way",
+  "id": 201485614,
+  "center": {
+    "lat": 25.2827389,
+    "lon": 55.3484250
+  },
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "way",
+  "id": 244770301,
+  "center": {
+    "lat": 25.2825128,
+    "lon": 55.3409238
+  },
+  "tags": {
+    "building": "yes",
+    "building:levels": "2",
+    "name": "تعاونية الاتحاد هايبر ماركت",
+    "name:ar": "تعاونية الاتحاد هايبر ماركت",
+    "name:en": "Union Coop Hypermarket",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "way",
+  "id": 244770305,
+  "center": {
+    "lat": 25.2822045,
+    "lon": 55.3423593
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "Al Ahmadiya School"
+  }
+},
+{
+  "type": "way",
+  "id": 244770306,
+  "center": {
+    "lat": 25.2810315,
+    "lon": 55.3439355
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 256407002,
+  "center": {
+    "lat": 25.2823669,
+    "lon": 55.3530289
+  },
+  "tags": {
+    "addr:street": "شارع 24",
+    "building": "residential",
+    "building:levels": "4",
+    "name": "Royal House Building",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 256407003,
+  "center": {
+    "lat": 25.2791202,
+    "lon": 55.3465886
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "mosque",
+    "name": "Masjid Khalifa bin Sultan Mosque",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 256407004,
+  "center": {
+    "lat": 25.2787199,
+    "lon": 55.3521472
+  },
+  "tags": {
+    "addr:city": "دبي",
+    "addr:street": "شارع 28",
+    "building": "yes",
+    "name": "Al Kazim Building",
+    "name:en": "Al Kazim Building"
+  }
+},
+{
+  "type": "way",
+  "id": 256407005,
+  "center": {
+    "lat": 25.2778950,
+    "lon": 55.3513275
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Belhasa Building"
+  }
+},
+{
+  "type": "way",
+  "id": 256407008,
+  "center": {
+    "lat": 25.2764499,
+    "lon": 55.3498325
+  },
+  "tags": {
+    "brand": "Millennium",
+    "brand:wikidata": "Q6858774",
+    "building": "yes",
+    "internet_access": "yes",
+    "internet_access:fee": "customers",
+    "name": "Studio M Arabian Plaza Hotel & Hotel Apartments",
+    "official_name": "Millennium Hotels & Resorts",
+    "phone": "042154444",
+    "tourism": "hotel",
+    "website": "https://www.millenniumhotels.com/en/destinations/mea/uae/dubai/studio-m-arabian-plaza/?cid=gplaces-studio-m-arabian-plaza"
+  }
+},
+{
+  "type": "way",
+  "id": 256407025,
+  "center": {
+    "lat": 25.2790794,
+    "lon": 55.3451583
+  },
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "building": "retail",
+    "name": "MAX",
+    "smoking": "no",
+    "wikidata": "Q6484773",
+    "wikipedia": "en:Landmark Group"
+  }
+},
+{
+  "type": "way",
+  "id": 256407027,
+  "center": {
+    "lat": 25.2772190,
+    "lon": 55.3475865
+  },
+  "tags": {
+    "addr:street": "1 Street",
+    "building": "yes",
+    "name": "Abjar Grand Jotel",
+    "name:en": "Abjar Grand Jotel",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 256407037,
+  "center": {
+    "lat": 25.2797773,
+    "lon": 55.3513959
+  },
+  "tags": {
+    "building": "residential",
+    "name": "Danat Al Mamzar"
+  }
+},
+{
+  "type": "way",
+  "id": 256407040,
+  "center": {
+    "lat": 25.2804858,
+    "lon": 55.3540856
+  },
+  "tags": {
+    "addr:city": "Dubai",
+    "building": "residential",
+    "name": "Al Shaali Building"
+  }
+},
+{
+  "type": "way",
+  "id": 256407046,
+  "center": {
+    "lat": 25.2782276,
+    "lon": 55.3500793
+  },
+  "tags": {
+    "building": "residential",
+    "name": "AB Plaza"
+  }
+},
+{
+  "type": "way",
+  "id": 256407047,
+  "center": {
+    "lat": 25.2791979,
+    "lon": 55.3508729
+  },
+  "tags": {
+    "building": "residential",
+    "name": "Al Zafrana"
+  }
+},
+{
+  "type": "way",
+  "id": 256407051,
+  "center": {
+    "lat": 25.2788196,
+    "lon": 55.3502666
+  },
+  "tags": {
+    "building": "residential",
+    "name": "Al Zafrana"
+  }
+},
+{
+  "type": "way",
+  "id": 256407054,
+  "center": {
+    "lat": 25.2822310,
+    "lon": 55.3515852
+  },
+  "tags": {
+    "addr:housenumber": "238",
+    "addr:postcode": "1234",
+    "addr:street": "شارع 24",
+    "amenity": "place_of_worship",
+    "building": "mosque",
+    "building:levels": "18",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 256407059,
+  "center": {
+    "lat": 25.2788219,
+    "lon": 55.3487686
+  },
+  "tags": {
+    "access": "private",
+    "amenity": "parking",
+    "parking": "surface",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 390996357,
+  "center": {
+    "lat": 25.2813534,
+    "lon": 55.3428971
+  },
+  "tags": {
+    "amenity": "kindergarten",
+    "barrier": "wall"
+  }
+},
+{
+  "type": "way",
+  "id": 396533652,
+  "center": {
+    "lat": 25.2824913,
+    "lon": 55.3471356
+  },
+  "tags": {
+    "landuse": "residential",
+    "name": "هور العنز شرق",
+    "name:ar": "هور العنز شرق",
+    "name:en": "Hor Al Anz East"
+  }
+},
+{
+  "type": "way",
+  "id": 437963185,
+  "center": {
+    "lat": 25.2800135,
+    "lon": 55.3535837
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Mamzar Centre",
+    "name:en": "Mamzar Centre",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 437963190,
+  "center": {
+    "lat": 25.2806084,
+    "lon": 55.3508937
+  },
+  "tags": {
+    "building": "hotel",
+    "name": "Al Manar Hotel Apartments",
+    "wikidata": "Q111150578"
+  }
+},
+{
+  "type": "way",
+  "id": 437963197,
+  "center": {
+    "lat": 25.2822940,
+    "lon": 55.3515009
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "Fathima Al Zarouni Masjid",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 437963199,
+  "center": {
+    "lat": 25.2821334,
+    "lon": 55.3473224
+  },
+  "tags": {
+    "amenity": "post_office",
+    "branch": "Deira",
+    "building": "yes",
+    "name": "بريد الإمارات",
+    "name:ar": "بريد الإمارات",
+    "name:en": "Emirates Post",
+    "operator": "Emirates Post",
+    "operator:wikidata": "Q5372577"
+  }
+},
+{
+  "type": "way",
+  "id": 447833604,
+  "center": {
+    "lat": 25.2834548,
+    "lon": 55.3414605
+  },
+  "tags": {
+    "building": "retail",
+    "building:levels": "1",
+    "name": "سوق الحمريه المركزي",
+    "name:ar": "سوق الحمريه المركزي",
+    "name:en": "Hamria Shopping Centre",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 503616536,
+  "center": {
+    "lat": 25.2801579,
+    "lon": 55.3456605
+  },
+  "tags": {
+    "building": "office",
+    "name": "Abu Hall Park Admin Office"
+  }
+},
+{
+  "type": "way",
+  "id": 503616538,
+  "center": {
+    "lat": 25.2793623,
+    "lon": 55.3456588
+  },
+  "tags": {
+    "addr:street": "18 Street",
+    "amenity": "parking",
+    "parking": "surface",
+    "source": "Kaart Ground Survey 2017",
+    "surface": "paving_stones"
+  }
+},
+{
+  "type": "way",
+  "id": 503616541,
+  "center": {
+    "lat": 25.2794304,
+    "lon": 55.3454180
+  },
+  "tags": {
+    "amenity": "parking",
+    "parking": "surface",
+    "source": "Kaart Ground Survey 2017",
+    "surface": "paving_stones"
+  }
+},
+{
+  "type": "way",
+  "id": 503616543,
+  "center": {
+    "lat": 25.2790386,
+    "lon": 55.3462457
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "Mashad Cafeteria and Restaurant",
+    "phone": "042690722"
+  }
+},
+{
+  "type": "way",
+  "id": 503616548,
+  "center": {
+    "lat": 25.2784323,
+    "lon": 55.3467339
+  },
+  "tags": {
+    "addr:street": "18 Street",
+    "amenity": "parking",
+    "parking": "surface",
+    "source": "Kaart Ground Survey 2017",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503616551,
+  "center": {
+    "lat": 25.2784844,
+    "lon": 55.3468028
+  },
+  "tags": {
+    "addr:street": "18 Street",
+    "amenity": "parking",
+    "parking": "surface",
+    "source": "Kaart Ground Survey 2017",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503618522,
+  "center": {
+    "lat": 25.2786626,
+    "lon": 55.3469516
+  },
+  "tags": {
+    "addr:street": "18 Street",
+    "building": "residential",
+    "name": "AbuHail Residence",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 503618523,
+  "center": {
+    "lat": 25.2788251,
+    "lon": 55.3473222
+  },
+  "tags": {
+    "addr:street": "18 Street",
+    "building": "residential",
+    "name": "AbuHail Residence"
+  }
+},
+{
+  "type": "way",
+  "id": 503640339,
+  "center": {
+    "lat": 25.2801708,
+    "lon": 55.3454592
+  },
+  "tags": {
+    "amenity": "parking",
+    "parking": "surface",
+    "source": "Kaart Ground Survey 2017",
+    "surface": "paving_stones"
+  }
+},
+{
+  "type": "way",
+  "id": 503641323,
+  "center": {
+    "lat": 25.2794105,
+    "lon": 55.3448736
+  },
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "building": "yes",
+    "name": "Alphamed",
+    "name:en": "Alphamed",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 503642306,
+  "center": {
+    "lat": 25.2795778,
+    "lon": 55.3446517
+  },
+  "tags": {
+    "addr:city": "هور العنز",
+    "addr:street": "شارع أبو هيل",
+    "building": "yes",
+    "name": "Zakhir Business Centre",
+    "name:en": "Zakhir Business Centre"
+  }
+},
+{
+  "type": "way",
+  "id": 503657699,
+  "center": {
+    "lat": 25.2848436,
+    "lon": 55.3414330
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Sarona Beauty Center",
+    "name:en": "Sarona Beauty Center",
+    "shop": "beauty",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 503830100,
+  "center": {
+    "lat": 25.2841972,
+    "lon": 55.3422671
+  },
+  "tags": {
+    "addr:street": "3A Street",
+    "building": "yes",
+    "name": "Union Cultural Institute",
+    "name:en": "Union Cultural Institute",
+    "office": "educational_institution",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 688946801,
+  "center": {
+    "lat": 25.2796854,
+    "lon": 55.3461693
+  },
+  "tags": {
+    "leisure": "pitch",
+    "sport": "basketball"
+  }
+},
+{
+  "type": "way",
+  "id": 965304832,
+  "center": {
+    "lat": 25.2817437,
+    "lon": 55.3418245
+  },
+  "tags": {
+    "leisure": "pitch",
+    "name": "Al Ahmadiya School Ground",
+    "sport": "soccer"
+  }
+},
+{
+  "type": "way",
+  "id": 965304833,
+  "center": {
+    "lat": 25.2836036,
+    "lon": 55.3398904
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 965304834,
+  "center": {
+    "lat": 25.2839532,
+    "lon": 55.3402284
+  },
+  "tags": {
+    "amenity": "marketplace",
+    "name": "Friday Market Area 1"
+  }
+},
+{
+  "type": "way",
+  "id": 965304835,
+  "center": {
+    "lat": 25.2845577,
+    "lon": 55.3404366
+  },
+  "tags": {
+    "amenity": "marketplace",
+    "name": "Friday Market Area 2"
+  }
+},
+{
+  "type": "way",
+  "id": 965304837,
+  "center": {
+    "lat": 25.2833969,
+    "lon": 55.3408766
+  },
+  "tags": {
+    "amenity": "parking",
+    "operator": "Hamriya Market Car Park"
+  }
+},
+{
+  "type": "way",
+  "id": 1012099008,
+  "center": {
+    "lat": 25.2711620,
+    "lon": 55.3261921
+  },
+  "tags": {
+    "place": "neighbourhood"
+  }
+},
+{
+  "type": "way",
+  "id": 1112859038,
+  "center": {
+    "lat": 25.2864182,
+    "lon": 55.3470154
+  },
+  "tags": {
+    "addr:city": "dubai",
+    "addr:housenumber": "21",
+    "addr:postcode": "0000",
+    "addr:street": "13a شارع",
+    "building": "yes",
+    "building:levels": "1",
+    "name": "Maryams.ae"
+  }
+},
+{
+  "type": "way",
+  "id": 1112887823,
+  "center": {
+    "lat": 25.2843662,
+    "lon": 55.3496473
+  },
+  "tags": {
+    "building": "hospital",
+    "name": "Hor Al Anz Health Center"
+  }
+},
+{
+  "type": "way",
+  "id": 1114822931,
+  "center": {
+    "lat": 25.2847961,
+    "lon": 55.3502892
+  },
+  "tags": {
+    "amenity": "library",
+    "building": "yes",
+    "name": "Dubai Public Library - Hor Al Anz",
+    "wikidata": "Q618441",
+    "wikipedia": "en:Dubai Public Libraries"
+  }
+},
+{
+  "type": "way",
+  "id": 1120075974,
+  "center": {
+    "lat": 25.2859984,
+    "lon": 55.3451927
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "mosque",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 1125600783,
+  "center": {
+    "lat": 25.2795295,
+    "lon": 55.3508692
+  },
+  "tags": {
+    "building": "residential",
+    "name": "Al Mashriq Building"
+  }
+},
+{
+  "type": "way",
+  "id": 1189096942,
+  "center": {
+    "lat": 25.2798120,
+    "lon": 55.3523989
+  },
+  "tags": {
+    "access": "yes",
+    "amenity": "parking",
+    "charge": "AED 2 per hour",
+    "fee": "yes",
+    "operator": "RTA",
+    "operator:type": "government",
+    "parking": "surface",
+    "parking_zone": "133D",
+    "surface": "asphalt",
+    "wikidata": "Q22101985",
+    "wikipedia": "en:Roads and Transport Authority (Dubai)"
+  }
+},
+{
+  "type": "way",
+  "id": 1274077936,
+  "center": {
+    "lat": 25.2789940,
+    "lon": 55.3513735
+  },
+  "tags": {
+    "access": "yes",
+    "amenity": "parking",
+    "charge": "AED 2 per hour",
+    "fee": "yes",
+    "operator": "RTA",
+    "operator:type": "government",
+    "parking": "surface",
+    "parking_zone": "133D",
+    "surface": "asphalt",
+    "wikidata": "Q22101985",
+    "wikipedia": "en:Roads and Transport Authority (Dubai)"
+  }
+},
+{
+  "type": "way",
+  "id": 1274077937,
+  "center": {
+    "lat": 25.2797638,
+    "lon": 55.3458371
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "Abu Hail Park"
+  }
+},
+{
+  "type": "way",
+  "id": 1274077938,
+  "center": {
+    "lat": 25.2797585,
+    "lon": 55.3455456
+  },
+  "tags": {
+    "leisure": "pitch",
+    "name": "Basketball Court - Abu Hail Park",
+    "sport": "basketball"
+  }
+},
+{
+  "type": "way",
+  "id": 1340372462,
+  "center": {
+    "lat": 25.2886265,
+    "lon": 55.3471094
+  },
+  "tags": {
+    "amenity": "shelter",
+    "bench": "yes",
+    "bin": "yes",
+    "building": "yes",
+    "lit": "yes",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "way",
+  "id": 1340372463,
+  "center": {
+    "lat": 25.2822650,
+    "lon": 55.3412189
+  },
+  "tags": {
+    "access": "permissive",
+    "amenity": "parking"
+  }
+},
+{
+  "type": "way",
+  "id": 1419367467,
+  "center": {
+    "lat": 25.2838509,
+    "lon": 55.3501045
+  },
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "way",
+  "id": 1419367468,
+  "center": {
+    "lat": 25.2831389,
+    "lon": 55.3487844
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "مدرسة كوين الدولية",
+    "name:ar": "مدرسة كوين الدولية",
+    "name:en": "Queen international school",
+    "name:ml": "യുഎഇയിലെ സ്കൂള്‍",
+    "phone": "+971 4 265 2600",
+    "start_date": "1998",
+    "website": "https://www.qisdubai.com/",
+    "wikidata": "Q86088708"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870202,
+  "center": {
+    "lat": 25.2799031,
+    "lon": 55.3459833
+  },
+  "tags": {
+    "leisure": "pitch",
+    "sport": "tennis"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870217,
+  "center": {
+    "lat": 25.2812916,
+    "lon": 55.3505105
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870218,
+  "center": {
+    "lat": 25.2816008,
+    "lon": 55.3506218
+  },
+  "tags": {
+    "leisure": "pitch",
+    "sport": "basketball"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870219,
+  "center": {
+    "lat": 25.2817030,
+    "lon": 55.3507357
+  },
+  "tags": {
+    "leisure": "pitch",
+    "sport": "basketball"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870220,
+  "center": {
+    "lat": 25.2814792,
+    "lon": 55.3508806
+  },
+  "tags": {
+    "leisure": "pitch",
+    "sport": "soccer"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886114,
+  "center": {
+    "lat": 25.2815061,
+    "lon": 55.3421180
+  },
+  "tags": {
+    "leisure": "pitch",
+    "sport": "basketball"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886115,
+  "center": {
+    "lat": 25.2807542,
+    "lon": 55.3430310
+  },
+  "tags": {
+    "leisure": "pitch",
+    "sport": "basketball"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886116,
+  "center": {
+    "lat": 25.2806418,
+    "lon": 55.3431744
+  },
+  "tags": {
+    "leisure": "pitch",
+    "sport": "basketball"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886117,
+  "center": {
+    "lat": 25.2808417,
+    "lon": 55.3436325
+  },
+  "tags": {
+    "leisure": "pitch",
+    "sport": "soccer"
+  }
+},
+{
+  "type": "way",
+  "id": 1431692828,
+  "center": {
+    "lat": 25.2807023,
+    "lon": 55.3547574
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1431692829,
+  "center": {
+    "lat": 25.2817526,
+    "lon": 55.3544417
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1431907856,
+  "center": {
+    "lat": 25.2846830,
+    "lon": 55.3514830
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1431907858,
+  "center": {
+    "lat": 25.2811856,
+    "lon": 55.3552460
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1431907859,
+  "center": {
+    "lat": 25.2808497,
+    "lon": 55.3550831
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1431907860,
+  "center": {
+    "lat": 25.2812027,
+    "lon": 55.3551280
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432300310,
+  "center": {
+    "lat": 25.2836142,
+    "lon": 55.3389852
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432300311,
+  "center": {
+    "lat": 25.2837579,
+    "lon": 55.3390015
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432300312,
+  "center": {
+    "lat": 25.2836628,
+    "lon": 55.3392293
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534871,
+  "center": {
+    "lat": 25.2860208,
+    "lon": 55.3501739
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534872,
+  "center": {
+    "lat": 25.2859197,
+    "lon": 55.3502596
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534873,
+  "center": {
+    "lat": 25.2858468,
+    "lon": 55.3501849
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534874,
+  "center": {
+    "lat": 25.2857252,
+    "lon": 55.3504673
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534875,
+  "center": {
+    "lat": 25.2856634,
+    "lon": 55.3504004
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534876,
+  "center": {
+    "lat": 25.2856396,
+    "lon": 55.3505814
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534877,
+  "center": {
+    "lat": 25.2831542,
+    "lon": 55.3531859
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534878,
+  "center": {
+    "lat": 25.2827011,
+    "lon": 55.3536620
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534879,
+  "center": {
+    "lat": 25.2840973,
+    "lon": 55.3521796
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534880,
+  "center": {
+    "lat": 25.2843827,
+    "lon": 55.3518646
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534881,
+  "center": {
+    "lat": 25.2853510,
+    "lon": 55.3508257
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534882,
+  "center": {
+    "lat": 25.2850070,
+    "lon": 55.3511545
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534883,
+  "center": {
+    "lat": 25.2849064,
+    "lon": 55.3501202
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534884,
+  "center": {
+    "lat": 25.2850969,
+    "lon": 55.3504817
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534885,
+  "center": {
+    "lat": 25.2850245,
+    "lon": 55.3500906
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534886,
+  "center": {
+    "lat": 25.2851484,
+    "lon": 55.3502305
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534887,
+  "center": {
+    "lat": 25.2851877,
+    "lon": 55.3504528
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534888,
+  "center": {
+    "lat": 25.2850187,
+    "lon": 55.3500189
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534897,
+  "center": {
+    "lat": 25.2890225,
+    "lon": 55.3465057
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534898,
+  "center": {
+    "lat": 25.2891437,
+    "lon": 55.3462572
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534899,
+  "center": {
+    "lat": 25.2892633,
+    "lon": 55.3461109
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534900,
+  "center": {
+    "lat": 25.2894769,
+    "lon": 55.3456080
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534901,
+  "center": {
+    "lat": 25.2899792,
+    "lon": 55.3454827
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534902,
+  "center": {
+    "lat": 25.2898931,
+    "lon": 55.3453820
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432534903,
+  "center": {
+    "lat": 25.2899101,
+    "lon": 55.3455565
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556606,
+  "center": {
+    "lat": 25.2860445,
+    "lon": 55.3447970
+  },
+  "tags": {
+    "leisure": "garden"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556607,
+  "center": {
+    "lat": 25.2862775,
+    "lon": 55.3450220
+  },
+  "tags": {
+    "leisure": "garden"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556608,
+  "center": {
+    "lat": 25.2856684,
+    "lon": 55.3452018
+  },
+  "tags": {
+    "leisure": "garden"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556609,
+  "center": {
+    "lat": 25.2857420,
+    "lon": 55.3455584
+  },
+  "tags": {
+    "leisure": "garden"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556610,
+  "center": {
+    "lat": 25.2840096,
+    "lon": 55.3442031
+  },
+  "tags": {
+    "leisure": "garden"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556611,
+  "center": {
+    "lat": 25.2847991,
+    "lon": 55.3436608
+  },
+  "tags": {
+    "leisure": "garden"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556612,
+  "center": {
+    "lat": 25.2842592,
+    "lon": 55.3442690
+  },
+  "tags": {
+    "leisure": "pitch",
+    "sport": "soccer"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556613,
+  "center": {
+    "lat": 25.2844967,
+    "lon": 55.3439695
+  },
+  "tags": {
+    "leisure": "pitch",
+    "sport": "soccer"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556614,
+  "center": {
+    "lat": 25.2847627,
+    "lon": 55.3404286
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556615,
+  "center": {
+    "lat": 25.2846342,
+    "lon": 55.3403051
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556616,
+  "center": {
+    "lat": 25.2845105,
+    "lon": 55.3401767
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556626,
+  "center": {
+    "lat": 25.2854903,
+    "lon": 55.3506053
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556627,
+  "center": {
+    "lat": 25.2855116,
+    "lon": 55.3503140
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556628,
+  "center": {
+    "lat": 25.2857448,
+    "lon": 55.3499992
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432556629,
+  "center": {
+    "lat": 25.2880180,
+    "lon": 55.3481174
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432558896,
+  "center": {
+    "lat": 25.2836118,
+    "lon": 55.3424510
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432558897,
+  "center": {
+    "lat": 25.2838386,
+    "lon": 55.3421651
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432558898,
+  "center": {
+    "lat": 25.2840491,
+    "lon": 55.3418597
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432558899,
+  "center": {
+    "lat": 25.2842437,
+    "lon": 55.3416516
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432558900,
+  "center": {
+    "lat": 25.2844148,
+    "lon": 55.3414373
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432558901,
+  "center": {
+    "lat": 25.2847190,
+    "lon": 55.3410490
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432558902,
+  "center": {
+    "lat": 25.2848932,
+    "lon": 55.3408257
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "way",
+  "id": 1432558903,
+  "center": {
+    "lat": 25.2851478,
+    "lon": 55.3408608
+  },
+  "tags": {
+    "landuse": "grass"
+  }
+},
+{
+  "type": "relation",
+  "id": 14983089,
+  "center": {
+    "lat": 25.2812316,
+    "lon": 55.3497230
+  },
+  "tags": {
+    "building": "residential",
+    "name": "Dar Al Aman 24",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 15059475,
+  "center": {
+    "lat": 25.2791384,
+    "lon": 55.3525842
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Atrium Building",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 15059638,
+  "center": {
+    "lat": 25.2802378,
+    "lon": 55.3518800
+  },
+  "tags": {
+    "building": "residential",
+    "name": "Sheikh Suhail Building",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 15059639,
+  "center": {
+    "lat": 25.2806182,
+    "lon": 55.3522847
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Dar Al Aman Building",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 15059640,
+  "center": {
+    "lat": 25.2811579,
+    "lon": 55.3528606
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Bayat Complex Building",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 15059641,
+  "center": {
+    "lat": 25.2815494,
+    "lon": 55.3533123
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Al Beit Building",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 15059642,
+  "center": {
+    "lat": 25.2819351,
+    "lon": 55.3537378
+  },
+  "tags": {
+    "building": "yes",
+    "building:levels": "4",
+    "name": "Dar Al Wuheida",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 15059643,
+  "center": {
+    "lat": 25.2827640,
+    "lon": 55.3525582
+  },
+  "tags": {
+    "building": "yes",
+    "building:levels": "4",
+    "name": "Grand Avenue Building",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 15059644,
+  "center": {
+    "lat": 25.2831928,
+    "lon": 55.3520774
+  },
+  "tags": {
+    "addr:street": "Al Wuheida Street",
+    "building": "yes",
+    "building:levels": "4",
+    "name": "Arabilla Building",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 15063174,
+  "center": {
+    "lat": 25.2775215,
+    "lon": 55.3507839
+  },
+  "tags": {
+    "building": "residential",
+    "name": "Belhasa Golden Residence",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 15063175,
+  "center": {
+    "lat": 25.2771023,
+    "lon": 55.3503344
+  },
+  "tags": {
+    "brand": "Millennium",
+    "brand:wikidata": "Q6858774",
+    "building": "hotel",
+    "internet_access": "yes",
+    "internet_access:fee": "customers",
+    "name": "Studio M Arabian Plaza Hotel & Hotel Apartments",
+    "official_name": "Millennium Hotels & Resorts",
+    "phone": "042154444",
+    "tourism": "hotel",
+    "type": "multipolygon",
+    "website": "https://www.millenniumhotels.com/en/destinations/mea/uae/dubai/studio-m-arabian-plaza/?cid=gplaces-studio-m-arabian-plaza"
+  }
+},
+{
+  "type": "relation",
+  "id": 15063804,
+  "center": {
+    "lat": 25.2817303,
+    "lon": 55.3478027
+  },
+  "tags": {
+    "building": "residential",
+    "name": "Telal Hotel Apartments",
+    "name:en": "Telal Hotel Apartments",
+    "tourism": "hotel",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 15081132,
+  "center": {
+    "lat": 25.2782649,
+    "lon": 55.3463589
+  },
+  "tags": {
+    "addr:street": "Abu Hail Street",
+    "building": "yes",
+    "name": "Abuhail Centre",
+    "name:en": "Abuhail Centre",
+    "type": "multipolygon"
+  }
+}
+
+  ]
+}

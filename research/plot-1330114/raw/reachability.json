@@ -5,7 +5,7 @@
   "status": 404,
   "ctype": "application/json; charset=utf-8",
   "final_url": "https://gateway.dubailand.gov.ae/open-data",
-  "head": "{\n  \"message\":\"no Route matched with those values\",\n  \"request_id\":\"df0d742be05ec42349d91a1dfafff714\"\n}"
+  "head": "{\n  \"message\":\"no Route matched with those values\",\n  \"request_id\":\"6ce3275338f3fa4b272593773255e828\"\n}"
  },
  {
   "url": "https://dubailand.gov.ae/en/open-data/real-estate-data/",
@@ -25,7 +25,7 @@
   "status": 200,
   "ctype": "text/html; charset=utf-8",
   "final_url": "https://data.dubai/",
-  "head": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 2831694023556901234<br><br><a href='javascript:history.back();'>[Go Back]</a></body></html>"
+  "head": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 2831694023470816383<br><br><a href='javascript:history.back();'>[Go Back]</a></body></html>"
  },
  {
   "url": "https://www.dsc.gov.ae/",
@@ -33,7 +33,7 @@
   "status": 200,
   "ctype": "text/html; charset=utf-8",
   "final_url": "https://data.dubai/services",
-  "head": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 2831694023556901630<br><br><a href='javascript:history.back();'>[Go Back]</a></body></html>"
+  "head": "<html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 2831694023569964479<br><br><a href='javascript:history.back();'>[Go Back]</a></body></html>"
  },
  {
   "url": "https://www.dm.gov.ae/",
@@ -45,11 +45,7 @@
  },
  {
   "url": "https://gis.dm.gov.ae/",
-  "reachable": true,
-  "status": 200,
-  "ctype": "text/html; charset=UTF-8",
-  "final_url": "https://www.dm.gov.ae/",
-  "head": "<!doctype html>\n<html lang=\"en-US\">\n<head>\n\t<meta charset=\"UTF-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\t<link rel=\"profile\" href=\"https://gmpg.org/xfn/11\">\n\t<link rel=\"icon\" type=\"image/x-icon\" href=\"https://www.dm.gov.ae/wp-content/themes/dubaimunicipality/assets/images/favicon.ico\">\n   <!-- <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; img-src 'self' data:;\"> -->\n\t\n\t<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dm-it-dmp"
+  "reachable": false
  },
  {
   "url": "https://geodubai.dm.gov.ae/",
@@ -77,6 +73,6 @@
   "status": 200,
   "ctype": "text/plain; charset=utf-8",
   "final_url": "https://overpass-api.de/api/status",
-  "head": "Connected as: 2652312514\nCurrent time: 2026-10-13T06:39:31Z\nAnnounced endpoint: gall.openstreetmap.de/\nRate limit: 4\n4 slots available now.\nCurrently running queries (pid, space limit, time limit, start time):\n"
+  "head": "Connected as: 675997462\nCurrent time: 2026-10-13T06:50:58Z\nAnnounced endpoint: gall.openstreetmap.de/\nRate limit: 4\n4 slots available now.\nCurrently running queries (pid, space limit, time limit, start time):\n"
  }
 ]

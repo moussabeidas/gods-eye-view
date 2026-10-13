@@ -1,4 +1,47 @@
 {
- "area_ids": [],
- "plot_hits": {}
+ "area_ids": [
+  "A-234",
+  "234"
+ ],
+ "plot_hits": {
+  "lands:234": [
+   {
+    "RN": 244,
+    "TOTAL": 386,
+    "IS_OFFPLAN_EN": "Ready",
+    "IS_OFFPLAN_AR": "????",
+    "IS_FREE_HOLD_EN": "Non Free Hold",
+    "IS_FREE_HOLD_AR": "??? ??",
+    "DEFAULT_SORT": "DEFAULT",
+    "PROJECT_NUMBER": null,
+    "PROJECT_AR": null,
+    "PROJECT_EN": null,
+    "MASTER_PROJECT_ID": 0,
+    "MASTER_PROJECT_EN": null,
+    "MASTER_PROJECT_AR": null,
+    "LAND_TYPE_ID": 0,
+    "LAND_TYPE_AR": "تجارى",
+    "LAND_TYPE_EN": "Commercial",
+    "AREA_ID": 0,
+    "AREA_EN": "Hor Al Anz East",
+    "AREA_AR": "هور العنز شرق",
+    "LAND_NUMBER": "1928",
+    "LAND_SUB_NUMBER": 0,
+    "ACTUAL_AREA": 5370.32,
+    "ZONE_ID": 0,
+    "ZONE_EN": "Deira",
+    "ZONE_AR": "ديرة",
+    "PROP_SUB_TYPE_EN": "Commercial",
+    "PROP_SUB_TYPE_AR": "تجارية",
+    "DM_ZIP_CODE": "133",
+    "MUNICIPALITY_NUMBER": "114",
+    "PARCEL_ID": 1330114,
+    "IS_FREE_HOLD": 0,
+    "IS_REGISTERED": 1,
+    "PRE_REGISTRATION_NUMBER": null,
+    "SEPARATED_FROM": null,
+    "SEPARATED_REFERENCE": null
+   }
+  ]
+ }
 }

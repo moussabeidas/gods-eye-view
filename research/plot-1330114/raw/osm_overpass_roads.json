@@ -1,0 +1,7769 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-13T06:53:35Z",
+    "timestamp_areas_base": "2026-10-11T17:41:06Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 10578136,
+  "center": {
+    "lat": 25.2757831,
+    "lon": 55.3480931
+  },
+  "tags": {
+    "bicycle": "no",
+    "highway": "secondary",
+    "horse": "no",
+    "lanes": "3",
+    "maxspeed": "60",
+    "name": "طريق صلاح الدين",
+    "name:ar": "طريق صلاح الدين",
+    "name:en": "Salah Al Din Street",
+    "oneway": "yes",
+    "ref": "D80",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 50242179,
+  "center": {
+    "lat": 25.2748842,
+    "lon": 55.3489991
+  },
+  "tags": {
+    "highway": "motorway",
+    "int_ref": "M5",
+    "lanes": "2",
+    "layer": "-1",
+    "maxspeed": "80",
+    "name": "طريق الاتحاد",
+    "name:ar": "طريق الاتحاد",
+    "name:en": "Al Ittihad Road",
+    "oneway": "yes",
+    "ref": "E11",
+    "surface": "asphalt",
+    "toll": "yes",
+    "tunnel": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 50301534,
+  "center": {
+    "lat": 25.2881104,
+    "lon": 55.3478410
+  },
+  "tags": {
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الوحيدة",
+    "name:ar": "شارع الوحيدة",
+    "name:en": "Al Wuheida Street",
+    "oneway": "yes",
+    "ref": "D93",
+    "sidewalk": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 136695911,
+  "center": {
+    "lat": 25.2815194,
+    "lon": 55.3455136
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 136695947,
+  "center": {
+    "lat": 25.2822840,
+    "lon": 55.3465336
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 136813236,
+  "center": {
+    "lat": 25.2807167,
+    "lon": 55.3445971
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 136813237,
+  "center": {
+    "lat": 25.2797140,
+    "lon": 55.3437025
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "tertiary",
+    "lanes": "1",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 137822802,
+  "center": {
+    "lat": 25.2832904,
+    "lon": 55.3429622
+  },
+  "tags": {
+    "access": "yes",
+    "highway": "residential",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "3a شارع",
+    "name:ar": "3a شارع",
+    "name:en": "3a Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 138706566,
+  "center": {
+    "lat": 25.2884808,
+    "lon": 55.3440442
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "1",
+    "maxspeed": "40",
+    "name": "13a شارع",
+    "name:ar": "13a شارع",
+    "name:en": "13a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140214436,
+  "center": {
+    "lat": 25.2807707,
+    "lon": 55.3454571
+  },
+  "tags": {
+    "highway": "service",
+    "lanes": "2",
+    "name": "3b شارع",
+    "name:ar": "3b شارع",
+    "name:en": "3b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140217839,
+  "center": {
+    "lat": 25.2772826,
+    "lon": 55.3481517
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "شارع 1",
+    "name:ar": "شارع 1",
+    "name:en": "1 Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140218261,
+  "center": {
+    "lat": 25.2799136,
+    "lon": 55.3509242
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "شارع 24",
+    "name:ar": "شارع 24",
+    "name:en": "24 Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140219219,
+  "center": {
+    "lat": 25.2796554,
+    "lon": 55.3496825
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "شارع 7",
+    "name:ar": "شارع 7",
+    "name:en": "7 Street",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140225179,
+  "center": {
+    "lat": 25.2797365,
+    "lon": 55.3532406
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140225279,
+  "center": {
+    "lat": 25.2780984,
+    "lon": 55.3498371
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "5d شارع",
+    "name:ar": "5d شارع",
+    "name:en": "5d Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140225355,
+  "center": {
+    "lat": 25.2773178,
+    "lon": 55.3505740
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "5d شارع",
+    "name:ar": "5d شارع",
+    "name:en": "5d Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140225702,
+  "center": {
+    "lat": 25.2793620,
+    "lon": 55.3514505
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "شارع 9",
+    "name:ar": "شارع 9",
+    "name:en": "9 Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140225844,
+  "center": {
+    "lat": 25.2795716,
+    "lon": 55.3469969
+  },
+  "tags": {
+    "highway": "unclassified",
+    "lanes": "2",
+    "name": "3b شارع",
+    "name:ar": "3b شارع",
+    "name:en": "3b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140226337,
+  "center": {
+    "lat": 25.2796089,
+    "lon": 55.3461812
+  },
+  "tags": {
+    "highway": "unclassified",
+    "lanes": "2",
+    "name": "شارع 18",
+    "name:ar": "شارع 18",
+    "name:en": "18 Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140226535,
+  "center": {
+    "lat": 25.2826883,
+    "lon": 55.3518282
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "15c شارع",
+    "name:ar": "15c شارع",
+    "name:en": "15c Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140226619,
+  "center": {
+    "lat": 25.2811083,
+    "lon": 55.3514907
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140226620,
+  "center": {
+    "lat": 25.2820517,
+    "lon": 55.3512516
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140226621,
+  "center": {
+    "lat": 25.2814644,
+    "lon": 55.3511509
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "22b شارع",
+    "name:ar": "22b شارع",
+    "name:en": "22b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 140226622,
+  "center": {
+    "lat": 25.2818330,
+    "lon": 55.3508800
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "22b شارع",
+    "name:ar": "22b شارع",
+    "name:en": "22b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 141317770,
+  "center": {
+    "lat": 25.2846222,
+    "lon": 55.3452166
+  },
+  "tags": {
+    "access": "yes",
+    "highway": "residential",
+    "lanes": "2",
+    "name": "10a شارع",
+    "name:ar": "10a شارع",
+    "name:en": "10a Street",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 141317771,
+  "center": {
+    "lat": 25.2855595,
+    "lon": 55.3438588
+  },
+  "tags": {
+    "access": "yes",
+    "highway": "residential",
+    "lanes": "2",
+    "name": "شارع 6",
+    "name:ar": "شارع 6",
+    "name:en": "6 Street",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485456,
+  "center": {
+    "lat": 25.2812372,
+    "lon": 55.3485123
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485458,
+  "center": {
+    "lat": 25.2830135,
+    "lon": 55.3483693
+  },
+  "tags": {
+    "highway": "unclassified",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485460,
+  "center": {
+    "lat": 25.2809548,
+    "lon": 55.3479075
+  },
+  "tags": {
+    "highway": "unclassified",
+    "lanes": "2",
+    "name": "شارع 20",
+    "name:ar": "شارع 20",
+    "name:en": "20 Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485462,
+  "center": {
+    "lat": 25.2806193,
+    "lon": 55.3480365
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485472,
+  "center": {
+    "lat": 25.2825684,
+    "lon": 55.3504539
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485480,
+  "center": {
+    "lat": 25.2844945,
+    "lon": 55.3497780
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485482,
+  "center": {
+    "lat": 25.2830229,
+    "lon": 55.3498873
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485484,
+  "center": {
+    "lat": 25.2824098,
+    "lon": 55.3506295
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485489,
+  "center": {
+    "lat": 25.2826391,
+    "lon": 55.3489736
+  },
+  "tags": {
+    "access": "permissive",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 201485492,
+  "center": {
+    "lat": 25.2838675,
+    "lon": 55.3501090
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485493,
+  "center": {
+    "lat": 25.2826165,
+    "lon": 55.3504054
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485494,
+  "center": {
+    "lat": 25.2805847,
+    "lon": 55.3475457
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485495,
+  "center": {
+    "lat": 25.2837569,
+    "lon": 55.3502316
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485496,
+  "center": {
+    "lat": 25.2828876,
+    "lon": 55.3493311
+  },
+  "tags": {
+    "access": "permissive",
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485499,
+  "center": {
+    "lat": 25.2806139,
+    "lon": 55.3480327
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485500,
+  "center": {
+    "lat": 25.2823167,
+    "lon": 55.3489989
+  },
+  "tags": {
+    "highway": "unclassified",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485503,
+  "center": {
+    "lat": 25.2827216,
+    "lon": 55.3502917
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485504,
+  "center": {
+    "lat": 25.2813266,
+    "lon": 55.3487242
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485516,
+  "center": {
+    "lat": 25.2815076,
+    "lon": 55.3480474
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485517,
+  "center": {
+    "lat": 25.2813147,
+    "lon": 55.3453291
+  },
+  "tags": {
+    "access": "yes",
+    "highway": "tertiary",
+    "horse": "no",
+    "junction": "roundabout",
+    "lanes": "2",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485528,
+  "center": {
+    "lat": 25.2859130,
+    "lon": 55.3505502
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "tertiary",
+    "lanes": "2",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485531,
+  "center": {
+    "lat": 25.2824243,
+    "lon": 55.3509945
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485534,
+  "center": {
+    "lat": 25.2815956,
+    "lon": 55.3483070
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485566,
+  "center": {
+    "lat": 25.2805892,
+    "lon": 55.3481156
+  },
+  "tags": {
+    "highway": "unclassified",
+    "lanes": "2",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485569,
+  "center": {
+    "lat": 25.2854891,
+    "lon": 55.3505111
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "primary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485587,
+  "center": {
+    "lat": 25.2845223,
+    "lon": 55.3516056
+  },
+  "tags": {
+    "highway": "unclassified",
+    "name": "شارع 20",
+    "name:ar": "شارع 20",
+    "name:en": "20 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485588,
+  "center": {
+    "lat": 25.2859560,
+    "lon": 55.3500350
+  },
+  "tags": {
+    "destination": "Hor Al Anz East",
+    "destination:lang:ar": "هور العنز شرق",
+    "destination:lang:en": "Hor Al Anz East",
+    "foot": "yes",
+    "highway": "primary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485589,
+  "center": {
+    "lat": 25.2837842,
+    "lon": 55.3501962
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 201485595,
+  "center": {
+    "lat": 25.2834924,
+    "lon": 55.3501586
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 204499771,
+  "center": {
+    "lat": 25.2800588,
+    "lon": 55.3545918
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "motorway",
+    "int_ref": "M5",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "طريق الاتحاد",
+    "name:ar": "طريق الاتحاد",
+    "name:en": "Al Ittihad Road",
+    "oneway": "yes",
+    "ref": "E11",
+    "surface": "asphalt",
+    "toll": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 204499773,
+  "center": {
+    "lat": 25.2760665,
+    "lon": 55.3503774
+  },
+  "tags": {
+    "highway": "motorway",
+    "int_ref": "M5",
+    "lanes": "2",
+    "name": "طريق الاتحاد",
+    "name:ar": "طريق الاتحاد",
+    "name:en": "Al Ittihad Road",
+    "oneway": "yes",
+    "ref": "E11",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 204499774,
+  "center": {
+    "lat": 25.2788389,
+    "lon": 55.3530001
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "طريق الاتحاد",
+    "name:ar": "طريق الاتحاد",
+    "name:en": "Al Ittihad Road",
+    "oneway": "yes",
+    "ref": "E11",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 204499778,
+  "center": {
+    "lat": 25.2810287,
+    "lon": 55.3556773
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "motorway",
+    "int_ref": "M5",
+    "lanes": "3",
+    "layer": "-1",
+    "maxspeed": "80",
+    "name": "طريق الاتحاد",
+    "name:ar": "طريق الاتحاد",
+    "name:en": "Al Ittihad Road",
+    "oneway": "yes",
+    "ref": "E11",
+    "surface": "asphalt",
+    "toll": "yes",
+    "tunnel": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 204501218,
+  "center": {
+    "lat": 25.2763266,
+    "lon": 55.3503197
+  },
+  "tags": {
+    "destination": "Terminal 1 3;Jebel Ali;Abu Dhabi",
+    "destination:lang:ar": "محطة 3 1;جبل علي;أبو ظبي",
+    "destination:lang:en": "Terminal 1 3;Jebel Ali;Abu Dhabi",
+    "destination:ref": "E11",
+    "highway": "motorway_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 204501222,
+  "center": {
+    "lat": 25.2806962,
+    "lon": 55.3553705
+  },
+  "tags": {
+    "destination": "Jabal Ali;Abu Dhabi",
+    "destination:lang:ar": "جبل علي;أبو ظبي",
+    "destination:lang:en": "Jabal Ali;Abu Dhabi",
+    "destination:ref": "E11",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 204501223,
+  "center": {
+    "lat": 25.2809777,
+    "lon": 55.3553658
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "3",
+    "name": "طريق الاتحاد",
+    "name:ar": "طريق الاتحاد",
+    "name:en": "Al Ittihad Road",
+    "oneway": "yes",
+    "ref": "E11",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 204501229,
+  "center": {
+    "lat": 25.2749140,
+    "lon": 55.3488520
+  },
+  "tags": {
+    "destination": "Terminal 1 3;Jebel Ali;Abu Dhabi",
+    "destination:lang:ar": "محطة 3 1;جبل علي;أبو ظبي",
+    "destination:lang:en": "Terminal 1 3;Jebel Ali;Abu Dhabi",
+    "destination:ref": "E11",
+    "highway": "motorway_link",
+    "lanes": "2",
+    "layer": "-1",
+    "maxspeed": "80",
+    "oneway": "yes",
+    "surface": "asphalt",
+    "tunnel": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 204520613,
+  "center": {
+    "lat": 25.2773571,
+    "lon": 55.3465430
+  },
+  "tags": {
+    "destination": "Al Ittihad Road;Al Sharjah",
+    "destination:lang:ar": "شارع الإتحاد;الشارقة",
+    "destination:lang:en": "Al Ittihad Road;Al Sharjah",
+    "destination:ref": "E11",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "1",
+    "maxspeed": "40",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 204520616,
+  "center": {
+    "lat": 25.2748863,
+    "lon": 55.3463323
+  },
+  "tags": {
+    "bridge": "viaduct",
+    "destination": "Al Ittihad Road;Al Sharjah",
+    "destination:lang:ar": "شارع الإتحاد;الشارقة",
+    "destination:lang:en": "Al Ittihad Road;Al Sharjah",
+    "destination:ref": "E11 (North)",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "2",
+    "layer": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 204520625,
+  "center": {
+    "lat": 25.2754001,
+    "lon": 55.3491722
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "2",
+    "name": "طريق الاتحاد",
+    "name:ar": "طريق الاتحاد",
+    "name:en": "Al Ittihad Road",
+    "oneway": "yes",
+    "ref": "E11",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 243704576,
+  "center": {
+    "lat": 25.2777125,
+    "lon": 55.3461759
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 244770303,
+  "center": {
+    "lat": 25.2825256,
+    "lon": 55.3401116
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 256406994,
+  "center": {
+    "lat": 25.2797925,
+    "lon": 55.3523838
+  },
+  "tags": {
+    "highway": "service",
+    "lanes": "2",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 256406995,
+  "center": {
+    "lat": 25.2790290,
+    "lon": 55.3513741
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 256406996,
+  "center": {
+    "lat": 25.2794016,
+    "lon": 55.3517718
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 256406997,
+  "center": {
+    "lat": 25.2797488,
+    "lon": 55.3524306
+  },
+  "tags": {
+    "highway": "service",
+    "lanes": "2",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 256406998,
+  "center": {
+    "lat": 25.2807800,
+    "lon": 55.3534268
+  },
+  "tags": {
+    "highway": "service",
+    "lanes": "2",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 256406999,
+  "center": {
+    "lat": 25.2806501,
+    "lon": 55.3528497
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "13b شارع",
+    "name:ar": "13b شارع",
+    "name:en": "13b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 276741690,
+  "center": {
+    "lat": 25.2856020,
+    "lon": 55.3508980
+  },
+  "tags": {
+    "destination": "Hor Al Anz East",
+    "destination:lang:ar": "هور العنز شرق",
+    "destination:lang:en": "Hor Al Anz East",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "2",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 276741691,
+  "center": {
+    "lat": 25.2863563,
+    "lon": 55.3500538
+  },
+  "tags": {
+    "destination": "Al Mamzar",
+    "destination:lang:ar": "الممزر",
+    "destination:lang:en": "Al Mamzar",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "2",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 276743099,
+  "center": {
+    "lat": 25.2897516,
+    "lon": 55.3454689
+  },
+  "tags": {
+    "destination": "Hor Al Anz East;Al Mizhar",
+    "destination:lang:ar": "هور العنز شرق;المزهر",
+    "destination:lang:en": "Hor Al Anz East;Al Mizhar",
+    "destination:ref": "D93",
+    "highway": "primary_link",
+    "lanes": "1",
+    "maxspeed": "80",
+    "oneway": "yes",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280674682,
+  "center": {
+    "lat": 25.2871589,
+    "lon": 55.3424431
+  },
+  "tags": {
+    "highway": "secondary_link",
+    "lanes": "1",
+    "maxspeed": "80",
+    "oneway": "yes",
+    "sidewalk": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280674705,
+  "center": {
+    "lat": 25.2864024,
+    "lon": 55.3418118
+  },
+  "tags": {
+    "highway": "secondary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "sidewalk": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280674908,
+  "center": {
+    "lat": 25.2873125,
+    "lon": 55.3466158
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "شارع 8",
+    "name:ar": "شارع 8",
+    "name:en": "8 Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280674909,
+  "center": {
+    "lat": 25.2879599,
+    "lon": 55.3458878
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "15a شارع",
+    "name:ar": "15a شارع",
+    "name:en": "15a Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280674910,
+  "center": {
+    "lat": 25.2873760,
+    "lon": 55.3453456
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280674945,
+  "center": {
+    "lat": 25.2864606,
+    "lon": 55.3464910
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "13a شارع",
+    "name:ar": "13a شارع",
+    "name:en": "13a Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280674997,
+  "center": {
+    "lat": 25.2883852,
+    "lon": 55.3439462
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "1",
+    "maxspeed": "40",
+    "name": "13a شارع",
+    "name:ar": "13a شارع",
+    "name:en": "13a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675008,
+  "center": {
+    "lat": 25.2878677,
+    "lon": 55.3446930
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675051,
+  "center": {
+    "lat": 25.2868260,
+    "lon": 55.3422898
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675129,
+  "center": {
+    "lat": 25.2855767,
+    "lon": 55.3488189
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "14b شارع",
+    "name:ar": "14b شارع",
+    "name:en": "14b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675130,
+  "center": {
+    "lat": 25.2862481,
+    "lon": 55.3480683
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "15b شارع",
+    "name:ar": "15b شارع",
+    "name:en": "15b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675144,
+  "center": {
+    "lat": 25.2851346,
+    "lon": 55.3469687
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "11b شارع",
+    "name:ar": "11b شارع",
+    "name:en": "11b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675145,
+  "center": {
+    "lat": 25.2840158,
+    "lon": 55.3458335
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "شارع 12",
+    "name:ar": "شارع 12",
+    "name:en": "12 Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675281,
+  "center": {
+    "lat": 25.2861088,
+    "lon": 55.3443932
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675292,
+  "center": {
+    "lat": 25.2863324,
+    "lon": 55.3447700
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675329,
+  "center": {
+    "lat": 25.2855706,
+    "lon": 55.3457930
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675383,
+  "center": {
+    "lat": 25.2851721,
+    "lon": 55.3458147
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675384,
+  "center": {
+    "lat": 25.2837329,
+    "lon": 55.3442341
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675421,
+  "center": {
+    "lat": 25.2845493,
+    "lon": 55.3451578
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675422,
+  "center": {
+    "lat": 25.2828830,
+    "lon": 55.3421048
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675448,
+  "center": {
+    "lat": 25.2853325,
+    "lon": 55.3478949
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675457,
+  "center": {
+    "lat": 25.2856730,
+    "lon": 55.3475024
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675473,
+  "center": {
+    "lat": 25.2829797,
+    "lon": 55.3471549
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675718,
+  "center": {
+    "lat": 25.2817660,
+    "lon": 55.3460533
+  },
+  "tags": {
+    "highway": "unclassified",
+    "lanes": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675719,
+  "center": {
+    "lat": 25.2824582,
+    "lon": 55.3468374
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675720,
+  "center": {
+    "lat": 25.2818360,
+    "lon": 55.3461355
+  },
+  "tags": {
+    "highway": "unclassified",
+    "lanes": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675721,
+  "center": {
+    "lat": 25.2811927,
+    "lon": 55.3467866
+  },
+  "tags": {
+    "highway": "unclassified",
+    "lanes": "2",
+    "noname": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675768,
+  "center": {
+    "lat": 25.2849001,
+    "lon": 55.3494972
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675842,
+  "center": {
+    "lat": 25.2851741,
+    "lon": 55.3495760
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675850,
+  "center": {
+    "lat": 25.2822644,
+    "lon": 55.3442907
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675873,
+  "center": {
+    "lat": 25.2834180,
+    "lon": 55.3428191
+  },
+  "tags": {
+    "highway": "service",
+    "lanes": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675921,
+  "center": {
+    "lat": 25.2868994,
+    "lon": 55.3443123
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "11a شارع",
+    "name:ar": "11a شارع",
+    "name:en": "11a Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675922,
+  "center": {
+    "lat": 25.2858534,
+    "lon": 55.3432099
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "شارع 4",
+    "name:ar": "شارع 4",
+    "name:en": "4 Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675936,
+  "center": {
+    "lat": 25.2854482,
+    "lon": 55.3437301
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675956,
+  "center": {
+    "lat": 25.2846434,
+    "lon": 55.3429999
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280675973,
+  "center": {
+    "lat": 25.2844896,
+    "lon": 55.3414602
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676010,
+  "center": {
+    "lat": 25.2850480,
+    "lon": 55.3404637
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 280676042,
+  "center": {
+    "lat": 25.2842452,
+    "lon": 55.3409529
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676043,
+  "center": {
+    "lat": 25.2835055,
+    "lon": 55.3403780
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676044,
+  "center": {
+    "lat": 25.2839748,
+    "lon": 55.3399163
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676056,
+  "center": {
+    "lat": 25.2843869,
+    "lon": 55.3405832
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676057,
+  "center": {
+    "lat": 25.2842633,
+    "lon": 55.3407420
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676120,
+  "center": {
+    "lat": 25.2840816,
+    "lon": 55.3417977
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676121,
+  "center": {
+    "lat": 25.2839953,
+    "lon": 55.3419076
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676122,
+  "center": {
+    "lat": 25.2827833,
+    "lon": 55.3417209
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676123,
+  "center": {
+    "lat": 25.2829375,
+    "lon": 55.3420097
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676124,
+  "center": {
+    "lat": 25.2828434,
+    "lon": 55.3419220
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676453,
+  "center": {
+    "lat": 25.2828123,
+    "lon": 55.3434656
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676454,
+  "center": {
+    "lat": 25.2832891,
+    "lon": 55.3427887
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676456,
+  "center": {
+    "lat": 25.2828237,
+    "lon": 55.3429200
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676458,
+  "center": {
+    "lat": 25.2819932,
+    "lon": 55.3436608
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676459,
+  "center": {
+    "lat": 25.2827433,
+    "lon": 55.3433747
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676460,
+  "center": {
+    "lat": 25.2824359,
+    "lon": 55.3438447
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676461,
+  "center": {
+    "lat": 25.2823148,
+    "lon": 55.3438831
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676462,
+  "center": {
+    "lat": 25.2817063,
+    "lon": 55.3432097
+  },
+  "tags": {
+    "access": "permissive",
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676464,
+  "center": {
+    "lat": 25.2820605,
+    "lon": 55.3435822
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676465,
+  "center": {
+    "lat": 25.2819377,
+    "lon": 55.3434620
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676466,
+  "center": {
+    "lat": 25.2816664,
+    "lon": 55.3444616
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676528,
+  "center": {
+    "lat": 25.2823722,
+    "lon": 55.3437876
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280676529,
+  "center": {
+    "lat": 25.2823816,
+    "lon": 55.3437980
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280677328,
+  "center": {
+    "lat": 25.2835388,
+    "lon": 55.3393815
+  },
+  "tags": {
+    "destination": "Al Mamzar",
+    "destination:lang:ar": "الممزر",
+    "destination:lang:en": "Al Mamzar",
+    "destination:ref": "D82",
+    "foot": "yes",
+    "highway": "secondary_link",
+    "lanes": "1",
+    "maxspeed": "80",
+    "oneway": "yes",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280678206,
+  "center": {
+    "lat": 25.2831791,
+    "lon": 55.3393436
+  },
+  "tags": {
+    "destination": "Abu Hail;Deira",
+    "destination:lang:ar": "أبو هيل;ديرة",
+    "destination:lang:en": "Abu Hail;Deira",
+    "destination:ref": "D82",
+    "foot": "no",
+    "highway": "secondary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 280678594,
+  "center": {
+    "lat": 25.2840057,
+    "lon": 55.3390190
+  },
+  "tags": {
+    "destination": "Hor Al Anz;Al Twar",
+    "destination:lang:ar": "هور العنز;الطوار",
+    "destination:lang:en": "Hor Al Anz;Al Twar",
+    "destination:ref": "D91",
+    "foot": "no",
+    "highway": "secondary_link",
+    "lanes": "2",
+    "maxspeed": "80",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281585452,
+  "center": {
+    "lat": 25.2830828,
+    "lon": 55.3503215
+  },
+  "tags": {
+    "access": "yes",
+    "highway": "unclassified",
+    "lanes": "2",
+    "name": "شارع 20",
+    "name:ar": "شارع 20",
+    "name:en": "20 Street",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281586613,
+  "center": {
+    "lat": 25.2810315,
+    "lon": 55.3534810
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "26b شارع",
+    "name:ar": "26b شارع",
+    "name:en": "26b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281586614,
+  "center": {
+    "lat": 25.2788323,
+    "lon": 55.3516855
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "شارع 28",
+    "name:ar": "شارع 28",
+    "name:en": "28 Street",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281586615,
+  "center": {
+    "lat": 25.2825192,
+    "lon": 55.3536574
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "شارع 24",
+    "name:ar": "شارع 24",
+    "name:en": "24 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281589139,
+  "center": {
+    "lat": 25.2774352,
+    "lon": 55.3492891
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "26a شارع",
+    "name:ar": "26a شارع",
+    "name:en": "26a Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281595983,
+  "center": {
+    "lat": 25.2804804,
+    "lon": 55.3500039
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281597902,
+  "center": {
+    "lat": 25.2833907,
+    "lon": 55.3526226
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281598606,
+  "center": {
+    "lat": 25.2819057,
+    "lon": 55.3511283
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281598607,
+  "center": {
+    "lat": 25.2818922,
+    "lon": 55.3511110
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281599201,
+  "center": {
+    "lat": 25.2779950,
+    "lon": 55.3509940
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281599202,
+  "center": {
+    "lat": 25.2765866,
+    "lon": 55.3490802
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "شارع 1",
+    "name:ar": "شارع 1",
+    "name:en": "1 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281599203,
+  "center": {
+    "lat": 25.2765708,
+    "lon": 55.3490802
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "شارع 1",
+    "name:ar": "شارع 1",
+    "name:en": "1 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281604782,
+  "center": {
+    "lat": 25.2833821,
+    "lon": 55.3530969
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الوحيدة",
+    "name:ar": "شارع الوحيدة",
+    "name:en": "Al Wuheida Street",
+    "oneway": "yes",
+    "ref": "D93",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 281610409,
+  "center": {
+    "lat": 25.2837212,
+    "lon": 55.3385510
+  },
+  "tags": {
+    "destination:backward": "Hor Al Anz;Al Twar",
+    "destination:forward": "Al Wuheida;Corniche",
+    "destination:ref": "D91",
+    "foot": "no",
+    "highway": "secondary_link",
+    "lanes": "2",
+    "maxspeed": "80",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 301272434,
+  "center": {
+    "lat": 25.2760302,
+    "lon": 55.3484244
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 301272445,
+  "center": {
+    "lat": 25.2764687,
+    "lon": 55.3478015
+  },
+  "tags": {
+    "destination": "Hor Al Anz East;Al Wuheida",
+    "destination:lang:ar": "هور العنز شرق;الوحيدة",
+    "destination:lang:en": "Hor Al Anz East;Al Wuheida",
+    "destination:ref": "D91",
+    "highway": "service",
+    "lanes": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 301272446,
+  "center": {
+    "lat": 25.2757578,
+    "lon": 55.3489380
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 301272450,
+  "center": {
+    "lat": 25.2795413,
+    "lon": 55.3533664
+  },
+  "tags": {
+    "highway": "residential",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 301272452,
+  "center": {
+    "lat": 25.2791335,
+    "lon": 55.3531800
+  },
+  "tags": {
+    "destination": "Al Ittihad Road",
+    "destination:lang:ar": "شارع الإتحاد",
+    "destination:lang:en": "Al Ittihad Road",
+    "destination:ref": "E11",
+    "highway": "primary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 301272455,
+  "center": {
+    "lat": 25.2776263,
+    "lon": 55.3522802
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 301272463,
+  "center": {
+    "lat": 25.2785726,
+    "lon": 55.3528148
+  },
+  "tags": {
+    "destination": "Jabal Ali;Abu Dhabi",
+    "destination:lang:ar": "جبل علي;أبو ظبي",
+    "destination:lang:en": "Jabal Ali;Abu Dhabi",
+    "highway": "motorway_link",
+    "lanes": "2",
+    "oneway": "yes",
+    "surface": "asphalt",
+    "toll": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 301272465,
+  "center": {
+    "lat": 25.2807713,
+    "lon": 55.3555966
+  },
+  "tags": {
+    "destination": "Al Mamzar;Al Hamriya Port",
+    "destination:lang:ar": "الممزر;ميناء الحمرية",
+    "destination:lang:en": "Al Mamzar;Al Hamriya Port",
+    "destination:ref": "D93",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "3",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 301272477,
+  "center": {
+    "lat": 25.2835244,
+    "lon": 55.3530720
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 301272492,
+  "center": {
+    "lat": 25.2860151,
+    "lon": 55.3505094
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "tertiary",
+    "lanes": "2",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 321694660,
+  "center": {
+    "lat": 25.2748679,
+    "lon": 55.3491664
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع أبو هيل",
+    "name:ar": "شارع أبو هيل",
+    "name:en": "Abu Hail Street",
+    "oneway": "yes",
+    "ref": "D91",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 321694681,
+  "center": {
+    "lat": 25.2773500,
+    "lon": 55.3467830
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع أبو هيل",
+    "name:ar": "شارع أبو هيل",
+    "name:en": "Abu Hail Street",
+    "oneway": "yes",
+    "ref": "D91",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 321694709,
+  "center": {
+    "lat": 25.2761923,
+    "lon": 55.3477747
+  },
+  "tags": {
+    "destination": "Hor Al Anz East;Al Wuheida",
+    "destination:lang:ar": "هور العنز شرق;الوحيدة",
+    "destination:lang:en": "Hor Al Anz East;Al Wuheida",
+    "destination:ref": "D91",
+    "foot": "no",
+    "highway": "secondary_link",
+    "lanes": "2",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 321694713,
+  "center": {
+    "lat": 25.2748874,
+    "lon": 55.3488136
+  },
+  "tags": {
+    "destination:backward": "Al Qusais;Al Sharjah",
+    "destination:forward": "Terminal 1 3;Jebel Ali;Abu Dhabi",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "2",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 321694715,
+  "center": {
+    "lat": 25.2749786,
+    "lon": 55.3489325
+  },
+  "tags": {
+    "destination:backward": "Al Twar;Terminal 2",
+    "destination:forward": "Hor Al Anz East;Al Wuheida",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "2",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 321694717,
+  "center": {
+    "lat": 25.2750324,
+    "lon": 55.3487584
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "2",
+    "name": "طريق الاتحاد",
+    "name:ar": "طريق الاتحاد",
+    "name:en": "Al Ittihad Road",
+    "oneway": "yes",
+    "ref": "E11",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 321694719,
+  "center": {
+    "lat": 25.2747930,
+    "lon": 55.3491339
+  },
+  "tags": {
+    "destination:backward": "Al Qusais;Al Sharjah",
+    "destination:forward": "Terminal 1 3;Jebel Ali;Abu Dhabi",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "2",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 321694720,
+  "center": {
+    "lat": 25.2747032,
+    "lon": 55.3490062
+  },
+  "tags": {
+    "destination:backward": "Al Twar;Terminal 2",
+    "destination:forward": "Hor Al Anz East;Al Wuheida",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "2",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 330277788,
+  "center": {
+    "lat": 25.2838007,
+    "lon": 55.3386112
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع أبو هيل",
+    "name:ar": "شارع أبو هيل",
+    "name:en": "Abu Hail Street",
+    "oneway": "yes",
+    "ref": "D91",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 330277791,
+  "center": {
+    "lat": 25.2837423,
+    "lon": 55.3386815
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع أبو هيل",
+    "name:ar": "شارع أبو هيل",
+    "name:en": "Abu Hail Street",
+    "oneway": "yes",
+    "ref": "D91",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 330277805,
+  "center": {
+    "lat": 25.2836997,
+    "lon": 55.3386793
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الرشيد",
+    "name:ar": "شارع الرشيد",
+    "name:en": "Al Rasheed Street",
+    "oneway": "yes",
+    "ref": "D82",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 330277810,
+  "center": {
+    "lat": 25.2868261,
+    "lon": 55.3422895
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الرشيد",
+    "name:ar": "شارع الرشيد",
+    "name:en": "Al Rasheed Street",
+    "oneway": "yes",
+    "ref": "D82",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 330277821,
+  "center": {
+    "lat": 25.2837526,
+    "lon": 55.3386165
+  },
+  "tags": {
+    "destination:backward": "Hor Al Anz;Al Twar",
+    "destination:forward": "Al Wuheida;Corniche",
+    "destination:ref": "D91",
+    "foot": "no",
+    "highway": "secondary_link",
+    "lanes": "2",
+    "maxspeed": "80",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 330277822,
+  "center": {
+    "lat": 25.2837100,
+    "lon": 55.3386143
+  },
+  "tags": {
+    "destination": "D82",
+    "destination:backward": "Abu Hail;Deira",
+    "destination:forward": "Al Mamzar",
+    "foot": "no",
+    "highway": "secondary_link",
+    "lanes": "2",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 330277824,
+  "center": {
+    "lat": 25.2837685,
+    "lon": 55.3385422
+  },
+  "tags": {
+    "destination": "D82",
+    "destination:backward": "Abu Hail;Deira",
+    "destination:forward": "Al Mamzar",
+    "foot": "no",
+    "highway": "secondary_link",
+    "lanes": "2",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 446651177,
+  "center": {
+    "lat": 25.2808873,
+    "lon": 55.3558049
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الوحيدة",
+    "name:ar": "شارع الوحيدة",
+    "name:en": "Al Wuheida Street",
+    "oneway": "yes",
+    "ref": "D93",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 447303933,
+  "center": {
+    "lat": 25.2858798,
+    "lon": 55.3504348
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الوحيدة",
+    "name:ar": "شارع الوحيدة",
+    "name:en": "Al Wuheida Street",
+    "oneway": "yes",
+    "ref": "D93",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 447303943,
+  "center": {
+    "lat": 25.2859472,
+    "lon": 55.3504344
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "tertiary",
+    "lanes": "2",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 447832449,
+  "center": {
+    "lat": 25.2848871,
+    "lon": 55.3405723
+  },
+  "tags": {
+    "highway": "steps"
+  }
+},
+{
+  "type": "way",
+  "id": 447833606,
+  "center": {
+    "lat": 25.2826902,
+    "lon": 55.3402206
+  },
+  "tags": {
+    "highway": "steps"
+  }
+},
+{
+  "type": "way",
+  "id": 447931804,
+  "center": {
+    "lat": 25.2779906,
+    "lon": 55.3518641
+  },
+  "tags": {
+    "highway": "steps",
+    "name": "entrance",
+    "name:en": "entrance"
+  }
+},
+{
+  "type": "way",
+  "id": 497643658,
+  "center": {
+    "lat": 25.2884565,
+    "lon": 55.3463737
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "17a شارع",
+    "name:ar": "17a شارع",
+    "name:en": "17a Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 497643660,
+  "center": {
+    "lat": 25.2885218,
+    "lon": 55.3450818
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "2b شارع",
+    "name:ar": "2b شارع",
+    "name:en": "2b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 497643662,
+  "center": {
+    "lat": 25.2862205,
+    "lon": 55.3427961
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "2a شارع",
+    "name:ar": "2a شارع",
+    "name:en": "2a Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 497643665,
+  "center": {
+    "lat": 25.2847566,
+    "lon": 55.3422252
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "5a شارع",
+    "name:ar": "5a شارع",
+    "name:en": "5a Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 497643667,
+  "center": {
+    "lat": 25.2804803,
+    "lon": 55.3500534
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "22b شارع",
+    "name:ar": "22b شارع",
+    "name:en": "22b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 497643672,
+  "center": {
+    "lat": 25.2829808,
+    "lon": 55.3446091
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "5b شارع",
+    "name:ar": "5b شارع",
+    "name:en": "5b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 497643674,
+  "center": {
+    "lat": 25.2835519,
+    "lon": 55.3464281
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "14a شارع",
+    "name:ar": "14a شارع",
+    "name:en": "14a Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 497643677,
+  "center": {
+    "lat": 25.2867294,
+    "lon": 55.3485419
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "17b شارع",
+    "name:ar": "17b شارع",
+    "name:en": "17b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 497643679,
+  "center": {
+    "lat": 25.2868236,
+    "lon": 55.3472146
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "10b شارع",
+    "name:ar": "10b شارع",
+    "name:en": "10b Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 500782808,
+  "center": {
+    "lat": 25.2891390,
+    "lon": 55.3445191
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 500782809,
+  "center": {
+    "lat": 25.2885374,
+    "lon": 55.3472561
+  },
+  "tags": {
+    "highway": "primary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "sidewalk": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 500782810,
+  "center": {
+    "lat": 25.2883708,
+    "lon": 55.3474543
+  },
+  "tags": {
+    "highway": "primary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "sidewalk": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 500782811,
+  "center": {
+    "lat": 25.2861133,
+    "lon": 55.3501761
+  },
+  "tags": {
+    "destination": "Muhaisnah;Al Mizhar",
+    "destination:lang:ar": "محيصنة;المزهر",
+    "destination:lang:en": "Muhaisnah;Al Mizhar",
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الوحيدة",
+    "name:ar": "شارع الوحيدة",
+    "name:en": "Al Wuheida Street",
+    "oneway": "yes",
+    "ref": "D93",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 501044542,
+  "center": {
+    "lat": 25.2755091,
+    "lon": 55.3490480
+  },
+  "tags": {
+    "destination": "Hor Al Anz East;Al Wuheida",
+    "destination:lang:ar": "هور العنز شرق;الوحيدة",
+    "destination:lang:en": "Hor Al Anz East;Al Wuheida",
+    "destination:ref": "D91",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "3",
+    "maxspeed": "80",
+    "oneway": "yes",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 501044551,
+  "center": {
+    "lat": 25.2844236,
+    "lon": 55.3517210
+  },
+  "tags": {
+    "highway": "unclassified",
+    "name": "شارع 20",
+    "name:ar": "شارع 20",
+    "name:en": "20 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 502098179,
+  "center": {
+    "lat": 25.2772742,
+    "lon": 55.3515755
+  },
+  "tags": {
+    "highway": "motorway",
+    "int_ref": "M5",
+    "lanes": "2",
+    "maxspeed": "80",
+    "name": "طريق الاتحاد",
+    "name:ar": "طريق الاتحاد",
+    "name:en": "Al Ittihad Road",
+    "name:ml": "അൽ ഇത്തിഹാദ് റോഡ്",
+    "oneway": "yes",
+    "ref": "E11",
+    "surface": "asphalt",
+    "toll": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 503616546,
+  "center": {
+    "lat": 25.2784382,
+    "lon": 55.3468899
+  },
+  "tags": {
+    "highway": "service",
+    "lanes": "2",
+    "name": "شارع 18",
+    "name:ar": "شارع 18",
+    "name:en": "18 Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503618525,
+  "center": {
+    "lat": 25.2797834,
+    "lon": 55.3479624
+  },
+  "tags": {
+    "access": "yes",
+    "highway": "unclassified",
+    "lanes": "2",
+    "name": "22a شارع",
+    "name:ar": "22a شارع",
+    "name:en": "22a Street",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503618526,
+  "center": {
+    "lat": 25.2777142,
+    "lon": 55.3465482
+  },
+  "tags": {
+    "highway": "unclassified",
+    "lanes": "1",
+    "name": "22a شارع",
+    "name:ar": "22a شارع",
+    "name:en": "22a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503618528,
+  "center": {
+    "lat": 25.2785085,
+    "lon": 55.3453751
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503624851,
+  "center": {
+    "lat": 25.2754256,
+    "lon": 55.3497442
+  },
+  "tags": {
+    "bridge": "viaduct",
+    "destination": "Al Ittihad Road;Al Sharjah",
+    "destination:lang:ar": "شارع الإتحاد;الشارقة",
+    "destination:lang:en": "Al Ittihad Road;Al Sharjah",
+    "destination:ref": "E11 (North)",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "3",
+    "layer": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503642307,
+  "center": {
+    "lat": 25.2797312,
+    "lon": 55.3440882
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "secondary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503642308,
+  "center": {
+    "lat": 25.2800753,
+    "lon": 55.3436447
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "secondary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503642309,
+  "center": {
+    "lat": 25.2797757,
+    "lon": 55.3436245
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "tertiary",
+    "lanes": "1",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503642310,
+  "center": {
+    "lat": 25.2815619,
+    "lon": 55.3414752
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع أبو هيل",
+    "name:ar": "شارع أبو هيل",
+    "name:en": "Abu Hail Street",
+    "oneway": "yes",
+    "ref": "D91",
+    "sidewalk": "right",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503642311,
+  "center": {
+    "lat": 25.2798091,
+    "lon": 55.3437304
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع أبو هيل",
+    "name:ar": "شارع أبو هيل",
+    "name:en": "Abu Hail Street",
+    "oneway": "yes",
+    "ref": "D91",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503642312,
+  "center": {
+    "lat": 25.2806164,
+    "lon": 55.3446763
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503657678,
+  "center": {
+    "lat": 25.2801566,
+    "lon": 55.3496941
+  },
+  "tags": {
+    "highway": "pedestrian",
+    "name": "22b شارع",
+    "name:ar": "22b شارع",
+    "name:en": "22b Street"
+  }
+},
+{
+  "type": "way",
+  "id": 503657700,
+  "center": {
+    "lat": 25.2851025,
+    "lon": 55.3407925
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "3a شارع",
+    "name:ar": "3a شارع",
+    "name:en": "3a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503657701,
+  "center": {
+    "lat": 25.2849562,
+    "lon": 55.3406345
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "3a شارع",
+    "name:ar": "3a شارع",
+    "name:en": "3a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503830064,
+  "center": {
+    "lat": 25.2801904,
+    "lon": 55.3479655
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503830066,
+  "center": {
+    "lat": 25.2810699,
+    "lon": 55.3480768
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503830068,
+  "center": {
+    "lat": 25.2814757,
+    "lon": 55.3451388
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "1",
+    "name": "3a شارع",
+    "name:ar": "3a شارع",
+    "name:en": "3a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 503830071,
+  "center": {
+    "lat": 25.2815261,
+    "lon": 55.3452244
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "1",
+    "name": "3a شارع",
+    "name:ar": "3a شارع",
+    "name:en": "3a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 505299031,
+  "center": {
+    "lat": 25.2901198,
+    "lon": 55.3454530
+  },
+  "tags": {
+    "destination": "Hor Al Anz East;Al Mizhar",
+    "destination:lang:ar": "هور العنز شرق;المزهر",
+    "destination:lang:en": "Hor Al Anz East;Al Mizhar",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "oneway": "yes",
+    "sidewalk": "no",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 505299032,
+  "center": {
+    "lat": 25.2901747,
+    "lon": 55.3453894
+  },
+  "tags": {
+    "destination": "Hor Al Anz East;Al Mizhar",
+    "destination:lang:ar": "هور العنز شرق;المزهر",
+    "destination:lang:en": "Hor Al Anz East;Al Mizhar",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "oneway": "yes",
+    "sidewalk": "no",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 505299038,
+  "center": {
+    "lat": 25.2901249,
+    "lon": 55.3455125
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "5",
+    "maxspeed": "80",
+    "name": "شارع الرشيد",
+    "name:ar": "شارع الرشيد",
+    "name:en": "Al Rasheed Street",
+    "oneway": "yes",
+    "ref": "D82",
+    "sidewalk": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 506558058,
+  "center": {
+    "lat": 25.2828647,
+    "lon": 55.3482020
+  },
+  "tags": {
+    "highway": "unclassified",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 506742453,
+  "center": {
+    "lat": 25.2750446,
+    "lon": 55.3489651
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع أبو هيل",
+    "name:ar": "شارع أبو هيل",
+    "name:en": "Abu Hail Street",
+    "oneway": "yes",
+    "ref": "D91",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 554318405,
+  "center": {
+    "lat": 25.2828061,
+    "lon": 55.3535451
+  },
+  "tags": {
+    "highway": "primary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 554318406,
+  "center": {
+    "lat": 25.2842987,
+    "lon": 55.3519539
+  },
+  "tags": {
+    "highway": "primary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 566764595,
+  "center": {
+    "lat": 25.2762631,
+    "lon": 55.3501369
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "طريق الاتحاد",
+    "name:ar": "طريق الاتحاد",
+    "name:en": "Al Ittihad Road",
+    "oneway": "yes",
+    "ref": "E11",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 566764599,
+  "center": {
+    "lat": 25.2759865,
+    "lon": 55.3479344
+  },
+  "tags": {
+    "bridge": "viaduct",
+    "destination": "Al Ittihad Road;Al Sharjah",
+    "destination:lang:ar": "شارع الإتحاد;الشارقة",
+    "destination:lang:en": "Al Ittihad Road;Al Sharjah",
+    "destination:ref": "E11",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "1",
+    "layer": "1",
+    "maxspeed": "40",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 638346282,
+  "center": {
+    "lat": 25.2777428,
+    "lon": 55.3515625
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 688198354,
+  "center": {
+    "lat": 25.2833724,
+    "lon": 55.3528745
+  },
+  "tags": {
+    "highway": "steps"
+  }
+},
+{
+  "type": "way",
+  "id": 688198355,
+  "center": {
+    "lat": 25.2867992,
+    "lon": 55.3421598
+  },
+  "tags": {
+    "crossing": "zebra",
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 688204069,
+  "center": {
+    "lat": 25.2778608,
+    "lon": 55.3462767
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 688204070,
+  "center": {
+    "lat": 25.2776208,
+    "lon": 55.3466593
+  },
+  "tags": {
+    "highway": "unclassified",
+    "lanes": "1",
+    "name": "22a شارع",
+    "name:ar": "22a شارع",
+    "name:en": "22a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 688204074,
+  "center": {
+    "lat": 25.2778534,
+    "lon": 55.3462984
+  },
+  "tags": {
+    "highway": "steps"
+  }
+},
+{
+  "type": "way",
+  "id": 688204076,
+  "center": {
+    "lat": 25.2827964,
+    "lon": 55.3400502
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 688946796,
+  "center": {
+    "lat": 25.2804546,
+    "lon": 55.3507799
+  },
+  "tags": {
+    "highway": "service",
+    "lanes": "2",
+    "name": "شارع 9",
+    "name:ar": "شارع 9",
+    "name:en": "9 Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 688946797,
+  "center": {
+    "lat": 25.2771146,
+    "lon": 55.3478078
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 688946798,
+  "center": {
+    "lat": 25.2786926,
+    "lon": 55.3458675
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 688946800,
+  "center": {
+    "lat": 25.2797876,
+    "lon": 55.3460310
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 688946804,
+  "center": {
+    "lat": 25.2800004,
+    "lon": 55.3446938
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 688946805,
+  "center": {
+    "lat": 25.2793556,
+    "lon": 55.3450231
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 688946807,
+  "center": {
+    "lat": 25.2793900,
+    "lon": 55.3453550
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 688946808,
+  "center": {
+    "lat": 25.2801827,
+    "lon": 55.3462119
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 688946810,
+  "center": {
+    "lat": 25.2803410,
+    "lon": 55.3467183
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 688946811,
+  "center": {
+    "lat": 25.2802353,
+    "lon": 55.3460300
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 688946814,
+  "center": {
+    "lat": 25.2793675,
+    "lon": 55.3463610
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 688946815,
+  "center": {
+    "lat": 25.2793974,
+    "lon": 55.3468254
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 688948954,
+  "center": {
+    "lat": 25.2821437,
+    "lon": 55.3465071
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 688948955,
+  "center": {
+    "lat": 25.2812879,
+    "lon": 55.3522053
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 688948956,
+  "center": {
+    "lat": 25.2817750,
+    "lon": 55.3515600
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 688948957,
+  "center": {
+    "lat": 25.2815589,
+    "lon": 55.3518905
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 688948958,
+  "center": {
+    "lat": 25.2815639,
+    "lon": 55.3518871
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "footway",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 688948959,
+  "center": {
+    "lat": 25.2813598,
+    "lon": 55.3530687
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "service": "alley"
+  }
+},
+{
+  "type": "way",
+  "id": 688948960,
+  "center": {
+    "lat": 25.2798782,
+    "lon": 55.3522905
+  },
+  "tags": {
+    "highway": "service",
+    "lanes": "2",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 688948961,
+  "center": {
+    "lat": 25.2795643,
+    "lon": 55.3516365
+  },
+  "tags": {
+    "highway": "service",
+    "service": "alley"
+  }
+},
+{
+  "type": "way",
+  "id": 688948963,
+  "center": {
+    "lat": 25.2819764,
+    "lon": 55.3497520
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 688948964,
+  "center": {
+    "lat": 25.2810261,
+    "lon": 55.3496992
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 688948965,
+  "center": {
+    "lat": 25.2805417,
+    "lon": 55.3495846
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 688948966,
+  "center": {
+    "lat": 25.2816855,
+    "lon": 55.3539810
+  },
+  "tags": {
+    "highway": "service",
+    "service": "alley"
+  }
+},
+{
+  "type": "way",
+  "id": 688948967,
+  "center": {
+    "lat": 25.2804181,
+    "lon": 55.3525829
+  },
+  "tags": {
+    "highway": "service",
+    "service": "alley"
+  }
+},
+{
+  "type": "way",
+  "id": 688948968,
+  "center": {
+    "lat": 25.2788926,
+    "lon": 55.3507847
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 688948969,
+  "center": {
+    "lat": 25.2787564,
+    "lon": 55.3486819
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle"
+  }
+},
+{
+  "type": "way",
+  "id": 688948970,
+  "center": {
+    "lat": 25.2788640,
+    "lon": 55.3488012
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle"
+  }
+},
+{
+  "type": "way",
+  "id": 688948971,
+  "center": {
+    "lat": 25.2789772,
+    "lon": 55.3489266
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle"
+  }
+},
+{
+  "type": "way",
+  "id": 688948972,
+  "center": {
+    "lat": 25.2788640,
+    "lon": 55.3487945
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 689199810,
+  "center": {
+    "lat": 25.2846407,
+    "lon": 55.3491944
+  },
+  "tags": {
+    "crossing": "zebra",
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 689199811,
+  "center": {
+    "lat": 25.2835138,
+    "lon": 55.3478340
+  },
+  "tags": {
+    "crossing": "zebra",
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 689710881,
+  "center": {
+    "lat": 25.2843888,
+    "lon": 55.3479500
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 696734304,
+  "center": {
+    "lat": 25.2809983,
+    "lon": 55.3545778
+  },
+  "tags": {
+    "destination": "Jabal Ali;Abu Dhabi",
+    "destination:lang:ar": "جبل علي;أبو ظبي",
+    "destination:lang:en": "Jabal Ali;Abu Dhabi",
+    "destination:ref": "E11",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 700228538,
+  "center": {
+    "lat": 25.2754827,
+    "lon": 55.3494810
+  },
+  "tags": {
+    "destination": "Terminal 1 3;Jebel Ali;Abu Dhabi",
+    "destination:lang:ar": "محطة 3 1;جبل علي;أبو ظبي",
+    "destination:lang:en": "Terminal 1 3;Jebel Ali;Abu Dhabi",
+    "destination:ref": "E11",
+    "highway": "motorway_link",
+    "lanes": "2",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 725428140,
+  "center": {
+    "lat": 25.2781024,
+    "lon": 55.3519837
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 725432654,
+  "center": {
+    "lat": 25.2750993,
+    "lon": 55.3486401
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 725432656,
+  "center": {
+    "lat": 25.2751308,
+    "lon": 55.3491865
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 725434446,
+  "center": {
+    "lat": 25.2855200,
+    "lon": 55.3505068
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 725434449,
+  "center": {
+    "lat": 25.2859223,
+    "lon": 55.3501489
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 725434459,
+  "center": {
+    "lat": 25.2859535,
+    "lon": 55.3504976
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 725439793,
+  "center": {
+    "lat": 25.2798782,
+    "lon": 55.3438819
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 725439794,
+  "center": {
+    "lat": 25.2799379,
+    "lon": 55.3436925
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 725439795,
+  "center": {
+    "lat": 25.2798466,
+    "lon": 55.3434675
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 725439796,
+  "center": {
+    "lat": 25.2799644,
+    "lon": 55.3436952
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 744471941,
+  "center": {
+    "lat": 25.2817066,
+    "lon": 55.3540936
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "name": "شارع 28",
+    "name:ar": "شارع 28",
+    "name:en": "28 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 752017827,
+  "center": {
+    "lat": 25.2902402,
+    "lon": 55.3454670
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 754028841,
+  "center": {
+    "lat": 25.2804158,
+    "lon": 55.3545589
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 754028842,
+  "center": {
+    "lat": 25.2809764,
+    "lon": 55.3546846
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 754031940,
+  "center": {
+    "lat": 25.2785415,
+    "lon": 55.3519452
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 754032626,
+  "center": {
+    "lat": 25.2783290,
+    "lon": 55.3490158
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 754032627,
+  "center": {
+    "lat": 25.2785881,
+    "lon": 55.3484498
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 754033301,
+  "center": {
+    "lat": 25.2796644,
+    "lon": 55.3475569
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 754033711,
+  "center": {
+    "lat": 25.2802046,
+    "lon": 55.3487200
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 754034567,
+  "center": {
+    "lat": 25.2816036,
+    "lon": 55.3471047
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 754034568,
+  "center": {
+    "lat": 25.2807922,
+    "lon": 55.3472365
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 754034998,
+  "center": {
+    "lat": 25.2797798,
+    "lon": 55.3466240
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 754035404,
+  "center": {
+    "lat": 25.2792193,
+    "lon": 55.3463410
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 754037185,
+  "center": {
+    "lat": 25.2761203,
+    "lon": 55.3478181
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 829185785,
+  "center": {
+    "lat": 25.2829657,
+    "lon": 55.3402608
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 829552682,
+  "center": {
+    "lat": 25.2808520,
+    "lon": 55.3456447
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 829552683,
+  "center": {
+    "lat": 25.2807087,
+    "lon": 55.3456886
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 829552684,
+  "center": {
+    "lat": 25.2822147,
+    "lon": 55.3473217
+  },
+  "tags": {
+    "access": "customers",
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 831185977,
+  "center": {
+    "lat": 25.2842930,
+    "lon": 55.3447386
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 845698976,
+  "center": {
+    "lat": 25.2796654,
+    "lon": 55.3499204
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 965304836,
+  "center": {
+    "lat": 25.2846078,
+    "lon": 55.3409073
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 965304838,
+  "center": {
+    "lat": 25.2833953,
+    "lon": 55.3407945
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1024616387,
+  "center": {
+    "lat": 25.2898838,
+    "lon": 55.3452408
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "5",
+    "maxspeed": "80",
+    "name": "شارع الرشيد",
+    "name:ar": "شارع الرشيد",
+    "name:en": "Al Rasheed Street",
+    "oneway": "yes",
+    "ref": "D82",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1024626088,
+  "center": {
+    "lat": 25.2816558,
+    "lon": 55.3549677
+  },
+  "tags": {
+    "destination:lanes": "Al Sharjah|Muhaisnah;Al Mizhar|Muhaisnah;Al Mizhar|Muhaisnah;Al Mizhar",
+    "destination:lang:ar": "الشارقة|محيصنة;المزهر|محيصنة;المزهر|محيصنة;المزهر",
+    "destination:lang:en": "Al Sharjah|Muhaisnah;Al Mizhar|Muhaisnah;Al Mizhar|Muhaisnah;Al Mizhar",
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الوحيدة",
+    "name:ar": "شارع الوحيدة",
+    "name:en": "Al Wuheida Street",
+    "oneway": "yes",
+    "ref": "D93",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1024626090,
+  "center": {
+    "lat": 25.2810666,
+    "lon": 55.3556082
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الوحيدة",
+    "name:ar": "شارع الوحيدة",
+    "name:en": "Al Wuheida Street",
+    "oneway": "yes",
+    "ref": "D93",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1024626091,
+  "center": {
+    "lat": 25.2811959,
+    "lon": 55.3556232
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "3",
+    "name": "طريق الاتحاد",
+    "name:ar": "طريق الاتحاد",
+    "name:en": "Al Ittihad Road",
+    "oneway": "yes",
+    "ref": "E11",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1024626093,
+  "center": {
+    "lat": 25.2810505,
+    "lon": 55.3556832
+  },
+  "tags": {
+    "destination": "Al Mamzar;Al Hamriya Port",
+    "destination:lang:ar": "الممزر;ميناء الحمرية",
+    "destination:lang:en": "Al Mamzar;Al Hamriya Port",
+    "destination:ref": "D93",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "3",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1024626096,
+  "center": {
+    "lat": 25.2811110,
+    "lon": 55.3556133
+  },
+  "tags": {
+    "destination": "Al Sharjah",
+    "destination:lang:ar": "الشارقة",
+    "destination:lang:en": "Al Sharjah",
+    "destination:ref": "E11",
+    "foot": "no",
+    "highway": "primary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1088488318,
+  "center": {
+    "lat": 25.2808623,
+    "lon": 55.3555903
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1090989408,
+  "center": {
+    "lat": 25.2836907,
+    "lon": 55.3389985
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1090989410,
+  "center": {
+    "lat": 25.2837550,
+    "lon": 55.3385861
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1090989413,
+  "center": {
+    "lat": 25.2810936,
+    "lon": 55.3452767
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854696,
+  "center": {
+    "lat": 25.2812361,
+    "lon": 55.3522608
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854697,
+  "center": {
+    "lat": 25.2817944,
+    "lon": 55.3515394
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854698,
+  "center": {
+    "lat": 25.2812549,
+    "lon": 55.3488760
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854699,
+  "center": {
+    "lat": 25.2825164,
+    "lon": 55.3517711
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854700,
+  "center": {
+    "lat": 25.2825550,
+    "lon": 55.3518442
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854701,
+  "center": {
+    "lat": 25.2836113,
+    "lon": 55.3508415
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "15c شارع",
+    "name:ar": "15c شارع",
+    "name:en": "15c Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854702,
+  "center": {
+    "lat": 25.2835889,
+    "lon": 55.3508167
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "15c شارع",
+    "name:ar": "15c شارع",
+    "name:en": "15c Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854703,
+  "center": {
+    "lat": 25.2817877,
+    "lon": 55.3528441
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "15c شارع",
+    "name:ar": "15c شارع",
+    "name:en": "15c Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854704,
+  "center": {
+    "lat": 25.2817629,
+    "lon": 55.3528165
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "15c شارع",
+    "name:ar": "15c شارع",
+    "name:en": "15c Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854705,
+  "center": {
+    "lat": 25.2802182,
+    "lon": 55.3505127
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854706,
+  "center": {
+    "lat": 25.2800490,
+    "lon": 55.3492474
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "شارع 7",
+    "name:ar": "شارع 7",
+    "name:en": "7 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854707,
+  "center": {
+    "lat": 25.2800188,
+    "lon": 55.3492305
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "شارع 7",
+    "name:ar": "شارع 7",
+    "name:en": "7 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854708,
+  "center": {
+    "lat": 25.2792732,
+    "lon": 55.3500831
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "شارع 7",
+    "name:ar": "شارع 7",
+    "name:en": "7 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854709,
+  "center": {
+    "lat": 25.2792926,
+    "lon": 55.3501044
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "شارع 7",
+    "name:ar": "شارع 7",
+    "name:en": "7 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854710,
+  "center": {
+    "lat": 25.2793838,
+    "lon": 55.3485790
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854711,
+  "center": {
+    "lat": 25.2789743,
+    "lon": 55.3477317
+  },
+  "tags": {
+    "highway": "unclassified",
+    "name": "3b شارع",
+    "name:ar": "3b شارع",
+    "name:en": "3b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854712,
+  "center": {
+    "lat": 25.2789965,
+    "lon": 55.3477554
+  },
+  "tags": {
+    "highway": "unclassified",
+    "name": "3b شارع",
+    "name:ar": "3b شارع",
+    "name:en": "3b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854713,
+  "center": {
+    "lat": 25.2817950,
+    "lon": 55.3490338
+  },
+  "tags": {
+    "highway": "unclassified",
+    "name": "شارع 20",
+    "name:ar": "شارع 20",
+    "name:en": "20 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854714,
+  "center": {
+    "lat": 25.2817677,
+    "lon": 55.3490357
+  },
+  "tags": {
+    "highway": "unclassified",
+    "name": "شارع 20",
+    "name:ar": "شارع 20",
+    "name:en": "20 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854715,
+  "center": {
+    "lat": 25.2769468,
+    "lon": 55.3487868
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "26a شارع",
+    "name:ar": "26a شارع",
+    "name:en": "26a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854716,
+  "center": {
+    "lat": 25.2769749,
+    "lon": 55.3487545
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "26a شارع",
+    "name:ar": "26a شارع",
+    "name:en": "26a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854717,
+  "center": {
+    "lat": 25.2779091,
+    "lon": 55.3498051
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "26a شارع",
+    "name:ar": "26a شارع",
+    "name:en": "26a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854718,
+  "center": {
+    "lat": 25.2778857,
+    "lon": 55.3498306
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "26a شارع",
+    "name:ar": "26a شارع",
+    "name:en": "26a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854719,
+  "center": {
+    "lat": 25.2777412,
+    "lon": 55.3502534
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "5d شارع",
+    "name:ar": "5d شارع",
+    "name:en": "5d Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854720,
+  "center": {
+    "lat": 25.2777158,
+    "lon": 55.3502257
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "5d شارع",
+    "name:ar": "5d شارع",
+    "name:en": "5d Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854721,
+  "center": {
+    "lat": 25.2784234,
+    "lon": 55.3494593
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "5d شارع",
+    "name:ar": "5d شارع",
+    "name:en": "5d Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854722,
+  "center": {
+    "lat": 25.2784456,
+    "lon": 55.3494838
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "5d شارع",
+    "name:ar": "5d شارع",
+    "name:en": "5d Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854723,
+  "center": {
+    "lat": 25.2792554,
+    "lon": 55.3514399
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854724,
+  "center": {
+    "lat": 25.2792062,
+    "lon": 55.3514949
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854725,
+  "center": {
+    "lat": 25.2798053,
+    "lon": 55.3509473
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "شارع 9",
+    "name:ar": "شارع 9",
+    "name:en": "9 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854726,
+  "center": {
+    "lat": 25.2798241,
+    "lon": 55.3509693
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "شارع 9",
+    "name:ar": "شارع 9",
+    "name:en": "9 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854727,
+  "center": {
+    "lat": 25.2801231,
+    "lon": 55.3516846
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854728,
+  "center": {
+    "lat": 25.2810937,
+    "lon": 55.3523462
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "13b شارع",
+    "name:ar": "13b شارع",
+    "name:en": "13b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854729,
+  "center": {
+    "lat": 25.2811162,
+    "lon": 55.3523711
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "13b شارع",
+    "name:ar": "13b شارع",
+    "name:en": "13b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854730,
+  "center": {
+    "lat": 25.2817593,
+    "lon": 55.3535023
+  },
+  "tags": {
+    "highway": "service",
+    "service": "alley"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854731,
+  "center": {
+    "lat": 25.2766318,
+    "lon": 55.3496717
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854732,
+  "center": {
+    "lat": 25.2765419,
+    "lon": 55.3493716
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854733,
+  "center": {
+    "lat": 25.2774626,
+    "lon": 55.3481990
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "شارع 24",
+    "name:ar": "شارع 24",
+    "name:en": "24 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854734,
+  "center": {
+    "lat": 25.2774460,
+    "lon": 55.3482179
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "شارع 24",
+    "name:ar": "شارع 24",
+    "name:en": "24 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854735,
+  "center": {
+    "lat": 25.2780610,
+    "lon": 55.3472736
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "شارع 1",
+    "name:ar": "شارع 1",
+    "name:en": "1 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854736,
+  "center": {
+    "lat": 25.2780393,
+    "lon": 55.3472505
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "شارع 1",
+    "name:ar": "شارع 1",
+    "name:en": "1 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091854737,
+  "center": {
+    "lat": 25.2767182,
+    "lon": 55.3492358
+  },
+  "tags": {
+    "highway": "unclassified",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868734,
+  "center": {
+    "lat": 25.2817828,
+    "lon": 55.3461196
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868735,
+  "center": {
+    "lat": 25.2812831,
+    "lon": 55.3483290
+  },
+  "tags": {
+    "highway": "unclassified",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868736,
+  "center": {
+    "lat": 25.2813023,
+    "lon": 55.3483504
+  },
+  "tags": {
+    "highway": "unclassified",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868737,
+  "center": {
+    "lat": 25.2803298,
+    "lon": 55.3473342
+  },
+  "tags": {
+    "highway": "unclassified",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868738,
+  "center": {
+    "lat": 25.2803454,
+    "lon": 55.3473518
+  },
+  "tags": {
+    "highway": "unclassified",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868739,
+  "center": {
+    "lat": 25.2797212,
+    "lon": 55.3469702
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868740,
+  "center": {
+    "lat": 25.2799901,
+    "lon": 55.3467529
+  },
+  "tags": {
+    "highway": "unclassified",
+    "name": "شارع 20",
+    "name:ar": "شارع 20",
+    "name:en": "20 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868741,
+  "center": {
+    "lat": 25.2800163,
+    "lon": 55.3467191
+  },
+  "tags": {
+    "highway": "unclassified",
+    "name": "شارع 20",
+    "name:ar": "شارع 20",
+    "name:en": "20 Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868742,
+  "center": {
+    "lat": 25.2809407,
+    "lon": 55.3460277
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868743,
+  "center": {
+    "lat": 25.2809126,
+    "lon": 55.3464040
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868744,
+  "center": {
+    "lat": 25.2810261,
+    "lon": 55.3462888
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868745,
+  "center": {
+    "lat": 25.2812912,
+    "lon": 55.3460130
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868746,
+  "center": {
+    "lat": 25.2810270,
+    "lon": 55.3461586
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868747,
+  "center": {
+    "lat": 25.2813843,
+    "lon": 55.3459131
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868748,
+  "center": {
+    "lat": 25.2806324,
+    "lon": 55.3468276
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868749,
+  "center": {
+    "lat": 25.2791602,
+    "lon": 55.3470086
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868750,
+  "center": {
+    "lat": 25.2797733,
+    "lon": 55.3464874
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868751,
+  "center": {
+    "lat": 25.2829681,
+    "lon": 55.3523796
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868752,
+  "center": {
+    "lat": 25.2834537,
+    "lon": 55.3518450
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1091868753,
+  "center": {
+    "lat": 25.2825184,
+    "lon": 55.3505141
+  },
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1091869304,
+  "center": {
+    "lat": 25.2802415,
+    "lon": 55.3455452
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1091869305,
+  "center": {
+    "lat": 25.2801736,
+    "lon": 55.3456648
+  },
+  "tags": {
+    "covered": "yes",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092047443,
+  "center": {
+    "lat": 25.2845153,
+    "lon": 55.3513832
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092047444,
+  "center": {
+    "lat": 25.2845538,
+    "lon": 55.3508420
+  },
+  "tags": {
+    "access": "permissive",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092047445,
+  "center": {
+    "lat": 25.2850909,
+    "lon": 55.3503695
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092047446,
+  "center": {
+    "lat": 25.2851566,
+    "lon": 55.3500878
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092047447,
+  "center": {
+    "lat": 25.2844907,
+    "lon": 55.3499594
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092047448,
+  "center": {
+    "lat": 25.2841495,
+    "lon": 55.3495209
+  },
+  "tags": {
+    "access": "private",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092047449,
+  "center": {
+    "lat": 25.2833641,
+    "lon": 55.3478327
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092047450,
+  "center": {
+    "lat": 25.2848569,
+    "lon": 55.3494489
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1092047451,
+  "center": {
+    "lat": 25.2822269,
+    "lon": 55.3469199
+  },
+  "tags": {
+    "access": "customers",
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1092047452,
+  "center": {
+    "lat": 25.2820818,
+    "lon": 55.3482496
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092047453,
+  "center": {
+    "lat": 25.2813533,
+    "lon": 55.3470536
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093605,
+  "center": {
+    "lat": 25.2827316,
+    "lon": 55.3437408
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093608,
+  "center": {
+    "lat": 25.2815818,
+    "lon": 55.3451176
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093609,
+  "center": {
+    "lat": 25.2814301,
+    "lon": 55.3434010
+  },
+  "tags": {
+    "access": "permissive",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093610,
+  "center": {
+    "lat": 25.2821576,
+    "lon": 55.3432594
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093611,
+  "center": {
+    "lat": 25.2816428,
+    "lon": 55.3449025
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093612,
+  "center": {
+    "lat": 25.2828294,
+    "lon": 55.3434435
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093613,
+  "center": {
+    "lat": 25.2829229,
+    "lon": 55.3407776
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093614,
+  "center": {
+    "lat": 25.2830456,
+    "lon": 55.3418150
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093615,
+  "center": {
+    "lat": 25.2843839,
+    "lon": 55.3412670
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093616,
+  "center": {
+    "lat": 25.2820667,
+    "lon": 55.3413114
+  },
+  "tags": {
+    "highway": "residential",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093617,
+  "center": {
+    "lat": 25.2820514,
+    "lon": 55.3413312
+  },
+  "tags": {
+    "highway": "residential",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093618,
+  "center": {
+    "lat": 25.2823374,
+    "lon": 55.3414446
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093619,
+  "center": {
+    "lat": 25.2833430,
+    "lon": 55.3395964
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093623,
+  "center": {
+    "lat": 25.2849298,
+    "lon": 55.3405699
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093624,
+  "center": {
+    "lat": 25.2894467,
+    "lon": 55.3461690
+  },
+  "tags": {
+    "highway": "primary_link",
+    "lanes": "1",
+    "oneway": "yes",
+    "sidewalk": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093625,
+  "center": {
+    "lat": 25.2817077,
+    "lon": 55.3457789
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092093626,
+  "center": {
+    "lat": 25.2817159,
+    "lon": 55.3471333
+  },
+  "tags": {
+    "access": "customers",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117380,
+  "center": {
+    "lat": 25.2855851,
+    "lon": 55.3433671
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117381,
+  "center": {
+    "lat": 25.2848227,
+    "lon": 55.3416081
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117382,
+  "center": {
+    "lat": 25.2845098,
+    "lon": 55.3420060
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117383,
+  "center": {
+    "lat": 25.2875861,
+    "lon": 55.3442084
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117384,
+  "center": {
+    "lat": 25.2875066,
+    "lon": 55.3435878
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117385,
+  "center": {
+    "lat": 25.2861125,
+    "lon": 55.3421905
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117386,
+  "center": {
+    "lat": 25.2856452,
+    "lon": 55.3417365
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117387,
+  "center": {
+    "lat": 25.2853126,
+    "lon": 55.3414518
+  },
+  "tags": {
+    "highway": "service",
+    "service": "alley"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117388,
+  "center": {
+    "lat": 25.2868980,
+    "lon": 55.3451113
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117389,
+  "center": {
+    "lat": 25.2861775,
+    "lon": 55.3456477
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117390,
+  "center": {
+    "lat": 25.2861443,
+    "lon": 55.3454842
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117391,
+  "center": {
+    "lat": 25.2854729,
+    "lon": 55.3459360
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117392,
+  "center": {
+    "lat": 25.2841726,
+    "lon": 55.3429267
+  },
+  "tags": {
+    "access": "permissive",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117393,
+  "center": {
+    "lat": 25.2836816,
+    "lon": 55.3429612
+  },
+  "tags": {
+    "access": "permissive",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117394,
+  "center": {
+    "lat": 25.2835656,
+    "lon": 55.3431115
+  },
+  "tags": {
+    "access": "permissive",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117395,
+  "center": {
+    "lat": 25.2836211,
+    "lon": 55.3430612
+  },
+  "tags": {
+    "access": "permissive",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117396,
+  "center": {
+    "lat": 25.2836662,
+    "lon": 55.3430613
+  },
+  "tags": {
+    "access": "permissive",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117397,
+  "center": {
+    "lat": 25.2838517,
+    "lon": 55.3450619
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117398,
+  "center": {
+    "lat": 25.2846715,
+    "lon": 55.3459655
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117399,
+  "center": {
+    "lat": 25.2843051,
+    "lon": 55.3464476
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117400,
+  "center": {
+    "lat": 25.2833530,
+    "lon": 55.3457011
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117401,
+  "center": {
+    "lat": 25.2857626,
+    "lon": 55.3467629
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117402,
+  "center": {
+    "lat": 25.2850806,
+    "lon": 55.3475939
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117403,
+  "center": {
+    "lat": 25.2831636,
+    "lon": 55.3466722
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117404,
+  "center": {
+    "lat": 25.2821855,
+    "lon": 55.3455569
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117405,
+  "center": {
+    "lat": 25.2824546,
+    "lon": 55.3446890
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117406,
+  "center": {
+    "lat": 25.2830379,
+    "lon": 55.3434569
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "10a شارع",
+    "name:ar": "10a شارع",
+    "name:en": "10a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117407,
+  "center": {
+    "lat": 25.2830200,
+    "lon": 55.3434801
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "10a شارع",
+    "name:ar": "10a شارع",
+    "name:en": "10a Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1092117408,
+  "center": {
+    "lat": 25.2866987,
+    "lon": 55.3461779
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1092136004,
+  "center": {
+    "lat": 25.2879748,
+    "lon": 55.3458779
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092136005,
+  "center": {
+    "lat": 25.2889604,
+    "lon": 55.3449835
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092136006,
+  "center": {
+    "lat": 25.2891926,
+    "lon": 55.3456748
+  },
+  "tags": {
+    "highway": "service",
+    "service": "alley"
+  }
+},
+{
+  "type": "way",
+  "id": 1092136007,
+  "center": {
+    "lat": 25.2880344,
+    "lon": 55.3473444
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092136008,
+  "center": {
+    "lat": 25.2862581,
+    "lon": 55.3480586
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1092136010,
+  "center": {
+    "lat": 25.2875699,
+    "lon": 55.3478928
+  },
+  "tags": {
+    "highway": "service",
+    "service": "alley"
+  }
+},
+{
+  "type": "way",
+  "id": 1092136011,
+  "center": {
+    "lat": 25.2868629,
+    "lon": 55.3488339
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1093748620,
+  "center": {
+    "lat": 25.2811715,
+    "lon": 55.3522941
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1164152227,
+  "center": {
+    "lat": 25.2854557,
+    "lon": 55.3506470
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1175037512,
+  "center": {
+    "lat": 25.2791432,
+    "lon": 55.3491103
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1177865513,
+  "center": {
+    "lat": 25.2823568,
+    "lon": 55.3489791
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1189096941,
+  "center": {
+    "lat": 25.2788083,
+    "lon": 55.3516579
+  },
+  "tags": {
+    "crossing": "uncontrolled",
+    "crossing:island": "no",
+    "crossing:markings": "yes",
+    "footway": "crossing",
+    "highway": "footway",
+    "surface": "asphalt",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 1189096943,
+  "center": {
+    "lat": 25.2793701,
+    "lon": 55.3521680
+  },
+  "tags": {
+    "crossing": "uncontrolled",
+    "crossing:island": "no",
+    "crossing:markings": "yes",
+    "footway": "crossing",
+    "highway": "footway",
+    "surface": "asphalt",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 1189096944,
+  "center": {
+    "lat": 25.2783223,
+    "lon": 55.3495445
+  },
+  "tags": {
+    "crossing": "uncontrolled",
+    "crossing:island": "no",
+    "crossing:markings": "yes",
+    "footway": "crossing",
+    "highway": "footway",
+    "surface": "asphalt",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 1189096945,
+  "center": {
+    "lat": 25.2783684,
+    "lon": 55.3492156
+  },
+  "tags": {
+    "crossing": "uncontrolled",
+    "crossing:island": "no",
+    "crossing:markings": "yes",
+    "footway": "crossing",
+    "highway": "footway",
+    "surface": "asphalt",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 1189096946,
+  "center": {
+    "lat": 25.2783219,
+    "lon": 55.3493871
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1189096947,
+  "center": {
+    "lat": 25.2780751,
+    "lon": 55.3488598
+  },
+  "tags": {
+    "crossing": "uncontrolled",
+    "crossing:island": "no",
+    "crossing:markings": "yes",
+    "footway": "crossing",
+    "highway": "footway",
+    "surface": "asphalt",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 1189096948,
+  "center": {
+    "lat": 25.2774931,
+    "lon": 55.3482480
+  },
+  "tags": {
+    "crossing": "uncontrolled",
+    "crossing:island": "no",
+    "crossing:markings": "yes",
+    "footway": "crossing",
+    "highway": "footway",
+    "surface": "asphalt",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 1266111464,
+  "center": {
+    "lat": 25.2879255,
+    "lon": 55.3479660
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1266111465,
+  "center": {
+    "lat": 25.2895467,
+    "lon": 55.3456626
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1266423865,
+  "center": {
+    "lat": 25.2895724,
+    "lon": 55.3450687
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1340372464,
+  "center": {
+    "lat": 25.2824879,
+    "lon": 55.3414147
+  },
+  "tags": {
+    "crossing": "uncontrolled",
+    "crossing:island": "no",
+    "crossing:markings": "zebra",
+    "footway": "crossing",
+    "highway": "footway",
+    "tactile_paving": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 1365679019,
+  "center": {
+    "lat": 25.2783570,
+    "lon": 55.3501952
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1393737174,
+  "center": {
+    "lat": 25.2806720,
+    "lon": 55.3485075
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1424769753,
+  "center": {
+    "lat": 25.2760143,
+    "lon": 55.3480930
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع أبو هيل",
+    "name:ar": "شارع أبو هيل",
+    "name:en": "Abu Hail Street",
+    "oneway": "yes",
+    "ref": "D91",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1428679607,
+  "center": {
+    "lat": 25.2818146,
+    "lon": 55.3527873
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1428679612,
+  "center": {
+    "lat": 25.2811824,
+    "lon": 55.3554798
+  },
+  "tags": {
+    "destination:lanes": "Al Sharjah|Muhaisnah;Al Mizhar|Muhaisnah;Al Mizhar|Muhaisnah;Al Mizhar",
+    "destination:lang:ar": "الشارقة|محيصنة;المزهر|محيصنة;المزهر|محيصنة;المزهر",
+    "destination:lang:en": "Al Sharjah|Muhaisnah;Al Mizhar|Muhaisnah;Al Mizhar|Muhaisnah;Al Mizhar",
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الوحيدة",
+    "name:ar": "شارع الوحيدة",
+    "name:en": "Al Wuheida Street",
+    "oneway": "yes",
+    "ref": "D93",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1428679615,
+  "center": {
+    "lat": 25.2812716,
+    "lon": 55.3553974
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1429005024,
+  "center": {
+    "lat": 25.2824257,
+    "lon": 55.3537212
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1430238046,
+  "center": {
+    "lat": 25.2856326,
+    "lon": 55.3504803
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1430275351,
+  "center": {
+    "lat": 25.2809877,
+    "lon": 55.3549232
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579604,
+  "center": {
+    "lat": 25.2850342,
+    "lon": 55.3513154
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الوحيدة",
+    "name:ar": "شارع الوحيدة",
+    "name:en": "Al Wuheida Street",
+    "oneway": "yes",
+    "ref": "D93",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579605,
+  "center": {
+    "lat": 25.2856110,
+    "lon": 55.3507106
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الوحيدة",
+    "name:ar": "شارع الوحيدة",
+    "name:en": "Al Wuheida Street",
+    "oneway": "yes",
+    "ref": "D93",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579610,
+  "center": {
+    "lat": 25.2845378,
+    "lon": 55.3490091
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579611,
+  "center": {
+    "lat": 25.2834174,
+    "lon": 55.3477691
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579612,
+  "center": {
+    "lat": 25.2851741,
+    "lon": 55.3495781
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579613,
+  "center": {
+    "lat": 25.2829797,
+    "lon": 55.3471549
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579614,
+  "center": {
+    "lat": 25.2856715,
+    "lon": 55.3502706
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579615,
+  "center": {
+    "lat": 25.2855781,
+    "lon": 55.3500260
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579616,
+  "center": {
+    "lat": 25.2845733,
+    "lon": 55.3489167
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579617,
+  "center": {
+    "lat": 25.2857584,
+    "lon": 55.3502254
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579619,
+  "center": {
+    "lat": 25.2799145,
+    "lon": 55.3439078
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579620,
+  "center": {
+    "lat": 25.2799889,
+    "lon": 55.3438515
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "tertiary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "1b شارع",
+    "name:ar": "1b شارع",
+    "name:en": "1b Street",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579621,
+  "center": {
+    "lat": 25.2785006,
+    "lon": 55.3453710
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع أبو هيل",
+    "name:ar": "شارع أبو هيل",
+    "name:en": "Abu Hail Street",
+    "oneway": "yes",
+    "ref": "D91",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579622,
+  "center": {
+    "lat": 25.2800006,
+    "lon": 55.3434852
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع أبو هيل",
+    "name:ar": "شارع أبو هيل",
+    "name:en": "Abu Hail Street",
+    "oneway": "yes",
+    "ref": "D91",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579623,
+  "center": {
+    "lat": 25.2795958,
+    "lon": 55.3439965
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع أبو هيل",
+    "name:ar": "شارع أبو هيل",
+    "name:en": "Abu Hail Street",
+    "oneway": "yes",
+    "ref": "D91",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579624,
+  "center": {
+    "lat": 25.2793094,
+    "lon": 55.3443545
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع أبو هيل",
+    "name:ar": "شارع أبو هيل",
+    "name:en": "Abu Hail Street",
+    "oneway": "yes",
+    "ref": "D91",
+    "sidewalk": "right",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579638,
+  "center": {
+    "lat": 25.2833388,
+    "lon": 55.3391926
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع أبو هيل",
+    "name:ar": "شارع أبو هيل",
+    "name:en": "Abu Hail Street",
+    "oneway": "yes",
+    "ref": "D91",
+    "source:maxspeed": "sign",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579641,
+  "center": {
+    "lat": 25.2847150,
+    "lon": 55.3402486
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الرشيد",
+    "name:ar": "شارع الرشيد",
+    "name:en": "Al Rasheed Street",
+    "oneway": "yes",
+    "ref": "D82",
+    "sidewalk:right": "separate",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579642,
+  "center": {
+    "lat": 25.2843257,
+    "lon": 55.3397670
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الرشيد",
+    "name:ar": "شارع الرشيد",
+    "name:en": "Al Rasheed Street",
+    "oneway": "yes",
+    "ref": "D82",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579643,
+  "center": {
+    "lat": 25.2839160,
+    "lon": 55.3390936
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الرشيد",
+    "name:ar": "شارع الرشيد",
+    "name:en": "Al Rasheed Street",
+    "oneway": "yes",
+    "ref": "D82",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579644,
+  "center": {
+    "lat": 25.2846374,
+    "lon": 55.3403226
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579647,
+  "center": {
+    "lat": 25.2899000,
+    "lon": 55.3457109
+  },
+  "tags": {
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الوحيدة",
+    "name:ar": "شارع الوحيدة",
+    "name:en": "Al Wuheida Street",
+    "oneway": "yes",
+    "ref": "D93",
+    "sidewalk": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430579650,
+  "center": {
+    "lat": 25.2898281,
+    "lon": 55.3454775
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870201,
+  "center": {
+    "lat": 25.2848205,
+    "lon": 55.3495441
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870203,
+  "center": {
+    "lat": 25.2816514,
+    "lon": 55.3462242
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870204,
+  "center": {
+    "lat": 25.2821003,
+    "lon": 55.3466722
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870205,
+  "center": {
+    "lat": 25.2827986,
+    "lon": 55.3474309
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870206,
+  "center": {
+    "lat": 25.2824668,
+    "lon": 55.3470712
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870207,
+  "center": {
+    "lat": 25.2843428,
+    "lon": 55.3491698
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870208,
+  "center": {
+    "lat": 25.2836542,
+    "lon": 55.3493613
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870209,
+  "center": {
+    "lat": 25.2835470,
+    "lon": 55.3492413
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870210,
+  "center": {
+    "lat": 25.2835982,
+    "lon": 55.3493024
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870211,
+  "center": {
+    "lat": 25.2832607,
+    "lon": 55.3498394
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870212,
+  "center": {
+    "lat": 25.2828126,
+    "lon": 55.3494081
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870213,
+  "center": {
+    "lat": 25.2825371,
+    "lon": 55.3490855
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870214,
+  "center": {
+    "lat": 25.2808071,
+    "lon": 55.3518208
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870215,
+  "center": {
+    "lat": 25.2814055,
+    "lon": 55.3511649
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870216,
+  "center": {
+    "lat": 25.2850352,
+    "lon": 55.3508492
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870221,
+  "center": {
+    "lat": 25.2822326,
+    "lon": 55.3488687
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870222,
+  "center": {
+    "lat": 25.2804212,
+    "lon": 55.3467237
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870223,
+  "center": {
+    "lat": 25.2807217,
+    "lon": 55.3470576
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870224,
+  "center": {
+    "lat": 25.2805177,
+    "lon": 55.3457786
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870225,
+  "center": {
+    "lat": 25.2799798,
+    "lon": 55.3462598
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1430870226,
+  "center": {
+    "lat": 25.2800675,
+    "lon": 55.3463574
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886109,
+  "center": {
+    "lat": 25.2840717,
+    "lon": 55.3425343
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886110,
+  "center": {
+    "lat": 25.2832571,
+    "lon": 55.3435955
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886111,
+  "center": {
+    "lat": 25.2846900,
+    "lon": 55.3442639
+  },
+  "tags": {
+    "access": "permissive",
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886112,
+  "center": {
+    "lat": 25.2839340,
+    "lon": 55.3416860
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886113,
+  "center": {
+    "lat": 25.2839526,
+    "lon": 55.3417984
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886118,
+  "center": {
+    "lat": 25.2826788,
+    "lon": 55.3433112
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886119,
+  "center": {
+    "lat": 25.2831421,
+    "lon": 55.3427187
+  },
+  "tags": {
+    "highway": "service",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886120,
+  "center": {
+    "lat": 25.2815317,
+    "lon": 55.3447893
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886121,
+  "center": {
+    "lat": 25.2819257,
+    "lon": 55.3442565
+  },
+  "tags": {
+    "highway": "service",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1430886122,
+  "center": {
+    "lat": 25.2893523,
+    "lon": 55.3460821
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1431675775,
+  "center": {
+    "lat": 25.2825115,
+    "lon": 55.3413516
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1431688045,
+  "center": {
+    "lat": 25.2886214,
+    "lon": 55.3440202
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الرشيد",
+    "name:ar": "شارع الرشيد",
+    "name:en": "Al Rasheed Street",
+    "oneway": "yes",
+    "ref": "D82",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1431688046,
+  "center": {
+    "lat": 25.2885030,
+    "lon": 55.3439070
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الرشيد",
+    "name:ar": "شارع الرشيد",
+    "name:en": "Al Rasheed Street",
+    "oneway": "yes",
+    "ref": "D82",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1431688047,
+  "center": {
+    "lat": 25.2891565,
+    "lon": 55.3445172
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الرشيد",
+    "name:ar": "شارع الرشيد",
+    "name:en": "Al Rasheed Street",
+    "oneway": "yes",
+    "ref": "D82",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1431688048,
+  "center": {
+    "lat": 25.2883868,
+    "lon": 55.3437942
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الرشيد",
+    "name:ar": "شارع الرشيد",
+    "name:en": "Al Rasheed Street",
+    "oneway": "yes",
+    "ref": "D82",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1431688049,
+  "center": {
+    "lat": 25.2852559,
+    "lon": 55.3407763
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الرشيد",
+    "name:ar": "شارع الرشيد",
+    "name:en": "Al Rasheed Street",
+    "oneway": "yes",
+    "ref": "D82",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1431688050,
+  "center": {
+    "lat": 25.2850629,
+    "lon": 55.3405949
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "secondary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الرشيد",
+    "name:ar": "شارع الرشيد",
+    "name:en": "Al Rasheed Street",
+    "oneway": "yes",
+    "ref": "D82",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1431688062,
+  "center": {
+    "lat": 25.2864126,
+    "lon": 55.3498480
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "primary",
+    "lanes": "3",
+    "maxspeed": "80",
+    "name": "شارع الوحيدة",
+    "name:ar": "شارع الوحيدة",
+    "name:en": "Al Wuheida Street",
+    "oneway": "yes",
+    "ref": "D93",
+    "sidewalk": "right",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1432453752,
+  "center": {
+    "lat": 25.2806409,
+    "lon": 55.3446326
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1432453753,
+  "center": {
+    "lat": 25.2810858,
+    "lon": 55.3448070
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1432453754,
+  "center": {
+    "lat": 25.2816874,
+    "lon": 55.3454275
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1432453755,
+  "center": {
+    "lat": 25.2816664,
+    "lon": 55.3459960
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1434560867,
+  "center": {
+    "lat": 25.2832888,
+    "lon": 55.3528789
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1434560868,
+  "center": {
+    "lat": 25.2833209,
+    "lon": 55.3529085
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1434560869,
+  "center": {
+    "lat": 25.2823305,
+    "lon": 55.3536031
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1434560871,
+  "center": {
+    "lat": 25.2789564,
+    "lon": 55.3516828
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1434560872,
+  "center": {
+    "lat": 25.2790850,
+    "lon": 55.3517557
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1434560873,
+  "center": {
+    "lat": 25.2792160,
+    "lon": 55.3519679
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1434560874,
+  "center": {
+    "lat": 25.2794334,
+    "lon": 55.3521725
+  },
+  "tags": {
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1460770791,
+  "center": {
+    "lat": 25.2777470,
+    "lon": 55.3502159
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1460770792,
+  "center": {
+    "lat": 25.2780040,
+    "lon": 55.3473133
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1460770793,
+  "center": {
+    "lat": 25.2790018,
+    "lon": 55.3477319
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1460770794,
+  "center": {
+    "lat": 25.2803104,
+    "lon": 55.3473710
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1460770795,
+  "center": {
+    "lat": 25.2812428,
+    "lon": 55.3483958
+  },
+  "tags": {
+    "footway": "crossing",
+    "highway": "footway"
+  }
+},
+{
+  "type": "way",
+  "id": 1465314388,
+  "center": {
+    "lat": 25.2804762,
+    "lon": 55.3439937
+  },
+  "tags": {
+    "highway": "service"
+  }
+}
+
+  ]
+}

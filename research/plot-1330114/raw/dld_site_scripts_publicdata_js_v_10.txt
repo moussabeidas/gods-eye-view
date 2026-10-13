@@ -1,0 +1,2565 @@
+ï»¿var lang = '';
+var googleCaptchaTab = "transactions_";
+var cacheVerified = false;
+
+function GetAreaList(lang, onSuccess) {   
+    $.get(apiConfig.landStatusController + "/GetAreaList", onSuccess);
+}
+
+var sortByProperty = function (property) {
+    return function (x, y) {
+        return ((x[property] === y[property]) ? 0 : ((x[property] > y[property]) ? 1 : -1));
+    };
+};
+
+
+var getPropertyName = (property) => property + (lang == 'ar' ? "_AR" : "_EN");
+
+var getRequestBody = (form, parameters) => {
+    var formData = new FormData(form);
+    var filter = {};
+    formData.forEach(function (value, key) {
+        if (parameters && parameters.length && parameters.findIndex(i => i == key) < 0) return;
+        if ((key == 'P_FROM_DATE' || key == 'P_TO_DATE') && value) value = moment(value, 'DD/MM/YYYY').locale('en').format("MM/DD/YYYY");
+        filter[key] = value;
+    });
+    return filter;
+}
+
+var checkValidity = (form) => {
+    var r = form.checkValidity() 
+    if (r === false) {
+        var invalids = form.querySelectorAll(':invalid');
+        for (var i of invalids) {
+            if (i.validity.customError) {
+                var msgElement = 'data-' + i.validationMessage + '-msg'
+                $(i).siblings('.invalid-feedback').find('span').hide();
+                $(i).siblings('.invalid-feedback').find('span[' + msgElement + ']').show();
+            } else {
+                $(i).siblings('.invalid-feedback').find('span').hide();
+                $(i).siblings('.invalid-feedback').find('span[data-default]').show();
+            }
+        }
+    }
+    if (!form.classList.contains('was-validated')) {
+        form.classList.add('was-validated')
+    }
+    return r;
+}
+
+function initializeDatePicker(lang, element) {
+    if (lang == "ar") {
+        (function (factory) {
+            if (typeof define === "function" && define.amd) {
+                // AMD. Register as an anonymous module.
+                define(["../jquery.ui.datepicker"], factory);
+            }
+            else {
+                // Browser globals
+                factory(jQuery.datepicker);
+            }
+        }(function (datepicker) {
+            datepicker.regional['ar'] = {
+                closeText: 'Ø¥ØºÙØ§Ù',
+                prevText: '&#x3C;Ø§ÙØ³Ø§Ø¨Ù',
+                nextText: 'Ø§ÙØªØ§ÙÙ&#x3E;',
+                currentText: 'Ø§ÙÙÙÙ',
+                monthNames: ['ÙÙØ§ÙØ±', 'ÙØ¨Ø±Ø§ÙØ±', 'ÙØ§Ø±Ø³', 'Ø§Ø¨Ø±ÙÙ', 'ÙØ§ÙÙ', 'ÙÙÙÙÙ', 'ÙÙÙÙÙ', 'Ø£ØºØ³Ø·Ø³', 'Ø³Ø¨ØªÙØ¨Ø±', 'Ø£ÙØªÙØ¨Ø±', 'ÙÙÙÙØ¨Ø±', 'Ø¯ÙØ³ÙØ¨Ø±'],
+                monthNamesShort: ['ÙÙØ§ÙØ±', 'ÙØ¨Ø±Ø§ÙØ±', 'ÙØ§Ø±Ø³', 'Ø§Ø¨Ø±ÙÙ', 'ÙØ§ÙÙ', 'ÙÙÙÙÙ', 'ÙÙÙÙÙ', 'Ø£ØºØ³Ø·Ø³', 'Ø³Ø¨ØªÙØ¨Ø±', 'Ø£ÙØªÙØ¨Ø±', 'ÙÙÙÙØ¨Ø±', 'Ø¯ÙØ³ÙØ¨Ø±'],
+                dayNames: ['Ø§ÙØ£Ø­Ø¯', 'Ø§ÙØ§Ø«ÙÙÙ', 'Ø§ÙØ«ÙØ§Ø«Ø§Ø¡', 'Ø§ÙØ£Ø±Ø¨Ø¹Ø§Ø¡', 'Ø§ÙØ®ÙÙØ³', 'Ø§ÙØ¬ÙØ¹Ø©', 'Ø§ÙØ³Ø¨Øª'],
+                dayNamesShort: ['Ø§ÙØ£Ø­Ø¯', 'Ø§ÙØ§Ø«ÙÙÙ', 'Ø§ÙØ«ÙØ§Ø«Ø§Ø¡', 'Ø§ÙØ£Ø±Ø¨Ø¹Ø§Ø¡', 'Ø§ÙØ®ÙÙØ³', 'Ø§ÙØ¬ÙØ¹Ø©', 'Ø§ÙØ³Ø¨Øª'],
+                dayNamesMin: ['Ø­', 'Ù', 'Ø«', 'Ø±', 'Ø®', 'Ø¬', 'Ø³'],
+                weekHeader: 'Ø£Ø³Ø¨ÙØ¹',
+                dateFormat: 'dd/mm/yy',
+                firstDay: 6,
+                isRTL: true,
+                showMonthAfterYear: false,
+                yearSuffix: ''
+            };
+            datepicker.setDefaults(datepicker.regional['ar']);
+            return datepicker.regional['ar'];
+        }));
+    }
+    
+    $(element).datepicker({
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '1950:' + new Date().getFullYear(),
+        localToday: '05/12/1988',
+        showOn: "both",
+        showAnim: "slideDown",
+        dateFormat: 'dd/mm/yy',
+        minDate: new Date(new Date().getFullYear(), 0, 1),
+        maxDate: new Date(new Date().getFullYear(), 11, 31),
+    }).on('change', function () {
+        this.setCustomValidity('');
+        var to_confirm = $(this);
+        var compare_to = to_confirm.attr('data-datepicker-greater-than')
+        if (!compare_to) return
+
+        var less_than = $("#" + compare_to)
+        var gt_value = to_confirm.datepicker('getDate');
+        var lt_value = less_than.datepicker('getDate');
+
+        if (!lt_value || !gt_value) return
+
+        if (gt_value.getTime() < lt_value.getTime())
+            this.setCustomValidity('datepicker-greater-than');
+        else
+            this.setCustomValidity('');
+    });
+}
+
+function getExportHeader(tbl) {
+    var labels = {}
+    /*$(tbl).dataTable().fnSettings().aoColumns.forEach(i => {*/
+   $(tbl).DataTable().settings().init().columns.forEach(i => {
+       //labels[i.data] = i.nTh.innerText;
+       labels[i.data] = i.data;
+    });
+    return labels;
+}
+
+const transactions = {
+    parameters: ["P_FROM_DATE","P_TO_DATE","P_GROUP_ID","P_IS_OFFPLAN","P_IS_FREE_HOLD","P_AREA_ID","P_USAGE_ID","P_PROP_TYPE_ID","P_TAKE","P_SKIP","P_SORT"],
+    chart: {
+        countSeries: []
+    },
+    form: document.forms.trxFilter,
+    initFilters() {
+        openDataApi.getData('carea-lookup', {}, (r) => {
+            var langAlias = lang == 'ar' ? 'NAME_AR' : 'NAME_EN';            
+            var sortedArr = r.result.sort(sortByProperty(langAlias));
+            var plsSelect = $("#transaction_pAreaId option:first").html();
+            $('#transaction_pAreaId_chosen').addClass('valid-validation form-select dropdown-chosen');
+            $("#transaction_pAreaId").chosen('destroy');
+            $("#transaction_pAreaId").empty();
+
+            $("#transaction_pAreaId").append($('<option/>', {
+                value: '',
+                text: plsSelect
+            }));
+            $("#transaction_pAreaId").append(sortedArr.map(function (item) {
+                return $('<option/>', {
+                    value: item.AREA_ID,
+                    text: item[langAlias]
+                });
+            }));
+            initialiseChosenDropdown("transaction_pAreaId");
+            $('#transaction_pAreaId_chosen').addClass('valid-validation form-select dropdown-chosen');
+        }, (e) => { });
+
+        initializeDatePicker(lang, "#transaction_pFromDate,#transaction_pToDate");
+        var date = new Date();
+        $("#transaction_pFromDate").datepicker("setDate", new Date(date.getFullYear(), date.getMonth(), date.getDate() - 1));
+        $("#transaction_pToDate").datepicker("setDate", date)
+
+        //$("#transaction_pAreaId").chosen({
+        //    //rtl: true
+        //}); 
+    },
+    bind(filter) {
+        var self = this;
+        $('#transactionGrid').DataTable().destroy();
+        $('#transactionGrid').DataTable({
+            //"scrollX": true,
+            "serverSide": true,
+            "searching": false,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>", 
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }, 
+            "ajax": function (data, callback, settings) {
+                if (!cacheVerified && AppInfo.featureGate.captchaEnabled && (!captcha || captcha == '')) {
+                    $('#' + googleCaptchaTab + 'invalidCaptcha').show().focus();
+                    return false;
+                }
+                $('#' + googleCaptchaTab + 'invalidCaptcha').hide();
+                $("#loading").show();  
+                self.sortOrder = settings.columns[data.order[0].column].data + "_" + (data.order[0].dir).toLocaleUpperCase();
+                var f = { ...filter, P_TAKE: (data.length || 50) + "", P_SKIP: (data.start || 0) + "", P_SORT: self.sortOrder };
+
+                openDataApi.getData('transactions', f,
+                    (r) => {
+                        var total = 0;
+                        $("#loading").hide();
+
+                        if (r.result && r.result.length) {
+                            total = r.result[0].TOTAL;
+                        }
+
+                        callback({
+                            data: r.result,
+                            recordsTotal: r.result.length,
+                            recordsFiltered: total
+                        });
+                    },
+                    (e) => {
+                        $("#loading").hide();
+                    }, captcha, !cacheVerified);
+                    //});
+            },
+            "columns": [
+                {
+                    "data": "TRANSACTION_NUMBER", render: function (data, type, row) {
+                        return row.TRANSACTION_NUMBER;
+                    }
+                },
+                {
+                    "data": "INSTANCE_DATE", render: function (date) {
+                        return moment(date).locale('en').format("DD/MM/YYYY");
+                    }
+                },
+                //{
+                //    "data": "PROPERTY_ID", render: function (data, type, row) {
+                //        return row.PROPERTY_ID;
+                //    }
+                //},
+                {
+                    "data": getPropertyName("GROUP"), render: function (data, type, row) {
+                        return row[getPropertyName("GROUP")];
+                    }
+                },
+                {
+                    "data": getPropertyName("PROCEDURE"), render: function (data, type, row) {
+                        return row[getPropertyName("PROCEDURE")];
+                    }
+                },
+                {
+                    "data": getPropertyName("IS_OFFPLAN"), render: function (data, type, row) {
+                        return row[getPropertyName("IS_OFFPLAN")];
+                    }
+                },
+                {
+                    "data": getPropertyName("IS_FREE_HOLD"), render: function (data, type, row) {
+                        return row[getPropertyName("IS_FREE_HOLD")];
+                    }
+                },
+                {
+                    "data": getPropertyName("USAGE"), render: function (data, type, row) {
+                        return row[getPropertyName("USAGE")];
+                    }
+                },
+                {
+                    "data": getPropertyName("AREA"), render: function (data, type, row) {
+                        return row[getPropertyName("AREA")];
+                    }
+                },
+                {
+                    "data": getPropertyName("PROP_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("PROP_TYPE")];
+                    }
+                },
+                {
+                    "data": getPropertyName("PROP_SB_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("PROP_SB_TYPE")];
+                    }
+                },
+                {
+                    "data": "TRANS_VALUE", render: function (data, type, row) {
+                        return Number.parseFloat(row.TRANS_VALUE).toFixed(2);
+                    }
+                },
+                {
+                    "data": "PROCEDURE_AREA", render: function (data, type, row) {
+                        return Number.parseFloat(row.PROCEDURE_AREA).toFixed(2);
+                    }
+                },
+                {
+                    "data": "ACTUAL_AREA", render: function (data, type, row) {
+                        return Number.parseFloat(row.ACTUAL_AREA).toFixed(2);
+                    },
+                    orderable: false
+                },
+                {
+                    "data": getPropertyName("ROOMS"), render: function (data, type, row) {
+                        return row[getPropertyName("ROOMS")];
+                    },
+                    orderable: false
+                },
+                //{
+                //    "data": "FLOOR", render: function (data, type, row) {
+                //        return row.FLOOR;
+                //    },
+                //    orderable: false
+                //},
+                {
+                    "data": "PARKING", render: function (data, type, row) {
+                        return row.PARKING;
+                    },
+                    orderable: false
+                },
+                //{
+                //    "data": "BUILDING_AGE", render: function (data, type, row) {
+                //        return row.BUILDING_AGE;
+                //    },
+                //    orderable: false
+                //},
+                {
+                    "data": getPropertyName("NEAREST_METRO"), render: function (data, type, row) {
+                        return row[getPropertyName("NEAREST_METRO")];
+                    }
+                },
+                {
+                    "data": getPropertyName("NEAREST_MALL"), render: function (data, type, row) {
+                        return row[getPropertyName("NEAREST_MALL")];
+                    }
+                },
+                {
+                    "data": getPropertyName("NEAREST_LANDMARK"), render: function (data, type, row) {
+                        return row[getPropertyName("NEAREST_LANDMARK")];
+                    }
+                },               
+                {
+                    "data": "TOTAL_BUYER", render: function (data, type, row) {
+                        return row.TOTAL_BUYER;
+                    }
+                },
+                {
+                    "data": "TOTAL_SELLER", render: function (data, type, row) {
+                        return row.TOTAL_SELLER;
+                    }
+                },
+                {
+                    "data": getPropertyName("MASTER_PROJECT"), render: function (data, type, row) {
+                        return row[getPropertyName("MASTER_PROJECT")];
+                    }
+                },
+                {
+                    "data": getPropertyName("PROJECT"), render: function (data, type, row) {
+                        return row[getPropertyName("PROJECT")];
+                    }
+                },
+            ]
+        });
+    },
+    getData() {
+        var filter = getRequestBody(document.forms.trxFilter, this.parameters);
+        this.bind(filter);
+
+        if (filter.P_GROUP_ID) $("#lblTrxType").html("(" + $("#transaction_pTrxType option:selected").text() + ")");
+        else $("#lblTrxType").html("");
+    },   
+    getExportFilter() {      
+        var filter = getRequestBody(document.forms.trxFilter, this.parameters);
+        filter.P_TAKE = "-1";
+        filter.P_SKIP = "";
+        filter.P_SORT = this.sortOrder;
+
+      
+
+        return {
+            parameters: filter, command: 'transactions', labels: getExportHeader('#transactionGrid')
+        };
+    },
+    init() {
+        this.initFilters();
+        //this.getData();    
+
+        $('#transactionGrid').DataTable({
+            //"scrollX": true,
+            "searching": false,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>", 
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }
+        });
+    }, 
+    destroy() {
+        $('#transactionGrid').DataTable().destroy();        
+        $("#transaction_pAreaId").chosen("destroy");
+        $("#transaction_pFromDate,#transaction_pToDate").datepicker("destroy");
+        if (this.chart.instance) this.chart.instance.destroy();
+        this.chart.countSeries = [];
+    }
+};
+
+const rents = {
+    parameters: ["P_FROM_DATE","P_TO_DATE","P_DATE_TYPE","P_IS_FREE_HOLD","P_VERSION","P_AREA_ID","P_USAGE_ID","P_PROP_TYPE_ID","P_TAKE","P_SKIP","P_SORT"],
+    chart: {
+        countSeries: []
+    },
+    form: document.forms.rentFilter,
+    initFilters() {
+        GetAreaList(lang, function (data) {
+            var langAlias = lang == 'ar' ? 'ArabicName' : 'EnglishName';
+            var jsonObj = JSON.parse(data);
+            var sortedArr = jsonObj.Result.sort(sortByProperty(langAlias));
+            var plsSelect = $("#rent_pAreaId option:first").html();
+            $('#rent_pAreaId_chosen').addClass('valid-validation form-select dropdown-chosen');
+            $("#rent_pAreaId").chosen('destroy');
+            $("#rent_pAreaId").empty();
+            $("#rent_pAreaId").append($('<option/>', {
+                value: '',
+                text: plsSelect
+            }));
+            $("#rent_pAreaId").append(sortedArr.map(function (item) {
+                var val = item.ID + ',' + item.MainAreaId;
+                var name = item.Title;
+                return $('<option/>', {
+                    value: item.AreaID,
+                    text: item[langAlias]
+                });
+            }));
+            initialiseChosenDropdown("rent_pAreaId");
+            $('#rent_pAreaId_chosen').addClass('valid-validation form-select dropdown-chosen');
+        });
+
+        openDataApi.getData('ejari-property-types', {}, (r) => {            
+            var plsSelect = $("#rent_pPropType option:first").html();
+            $("#rent_pPropType").chosen('destroy');
+            $("#rent_pPropType").empty();
+            $("#rent_pPropType").append($('<option/>', {
+                value: '',
+                text: plsSelect
+            }));
+            var langAlias = lang == 'ar' ? 'NAME_AR' : 'NAME_EN';
+            var sortedArr = r.result.sort(sortByProperty(langAlias));
+            sortedArr.forEach(function (item) {               
+                $("#rent_pPropType").append($('<option/>', {
+                    value: item.ID,
+                    text: item[langAlias]
+                }));
+            });
+            initialiseChosenDropdown("rent_pPropType");
+        }, (e) => {
+        })
+
+        initializeDatePicker(lang, "#rent_pFromDate,#rent_pToDate");
+        var date = new Date();
+        $("#rent_pFromDate").datepicker("setDate", new Date(date.getFullYear(), date.getMonth(), date.getDate() - 1));
+        $("#rent_pToDate").datepicker("setDate", date);
+
+        //$("#rent_pAreaId").chosen({
+        //    //rtl: true
+        //});
+    },
+    bind(filter) {
+        var self = this;
+        $('#rentGrid').DataTable().destroy();
+        $('#rentGrid').DataTable({
+            //"scrollX": true,
+            "serverSide": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>", 
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }, 
+            "ajax": function (data, callback, settings) {
+                if (!cacheVerified && AppInfo.featureGate.captchaEnabled && (!captcha || captcha == '')) {
+                    $('#' + googleCaptchaTab + 'invalidCaptcha').show().focus();
+                    return false;
+                }
+                $('#' + googleCaptchaTab + 'invalidCaptcha').hide();
+                $("#loading").show();
+                self.sortOrder = settings.columns[data.order[0].column].data + "_" + (data.order[0].dir).toLocaleUpperCase();
+                var f = { ...filter, P_TAKE: (data.length || 50) + "", P_SKIP: (data.start || 0) + "", P_SORT: self.sortOrder };
+
+                openDataApi.getData('rents', f,
+                    (r) => {
+                        var total = 0;
+                        $("#loading").hide();
+
+                        if (r.result && r.result.length) {
+                            total = r.result[0].TOTAL;
+                        }
+
+                        callback({
+                            data: r.result,
+                            recordsTotal: r.result.length,
+                            recordsFiltered: total
+                        });
+                    },
+                    (e) => {
+                        $("#loading").hide();
+                    }, captcha, !cacheVerified);
+                    //});
+            },
+            "columns": [
+                //{
+                //    "data": "CONTRACT_NUMBER", render: function (data, type, row) {
+                //        return row.CONTRACT_NUMBER;
+                //    }
+                //},
+                {
+                    "data": "REGISTRATION_DATE", render: function (date) {
+                        return moment(date).locale('en').format("DD/MM/YYYY");
+                    }
+                },
+                {
+                    "data": "START_DATE", render: function (date) {
+                        return moment(date).locale('en').format("DD/MM/YYYY");
+                    }
+                },
+                {
+                    "data": "END_DATE", render: function (date) {
+                        return moment(date).locale('en').format("DD/MM/YYYY");
+                    }
+                },
+                //{
+                //    "data": "PROPERTY_ID", render: function (data, type, row) {
+                //        return row.PROPERTY_ID;
+                //    }
+                //},
+                {
+                    "data": getPropertyName("VERSION"), render: function (data, type, row) {
+                        return row[getPropertyName("VERSION")];
+                    }
+                },
+                {
+                    "data": getPropertyName("AREA"), render: function (data, type, row) {
+                        return row[getPropertyName("AREA")];
+                    }
+                },
+                {
+                    "data": "CONTRACT_AMOUNT", render: function (data, type, row) {
+                        return Number.parseFloat(row.CONTRACT_AMOUNT).toFixed(2);
+                    }
+                },
+                {
+                    "data": "ANNUAL_AMOUNT", render: function (data, type, row) {
+                        return Number.parseFloat(row.ANNUAL_AMOUNT).toFixed(2);
+                    }
+                },
+                {
+                    "data": getPropertyName("IS_FREE_HOLD"), render: function (data, type, row) {
+                        return row[getPropertyName("IS_FREE_HOLD")];
+                    }
+                },
+                {
+                    "data": "ACTUAL_AREA", render: function (data, type, row) {
+                        return Number.parseFloat(row.ACTUAL_AREA).toFixed(2);
+                    }
+                },
+                {
+                    "data": getPropertyName("PROP_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("PROP_TYPE")];
+                    }
+                },
+                {
+                    "data": getPropertyName("PROP_SUB_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("PROP_SUB_TYPE")];
+                    }
+                },
+                {
+                    "data": "ROOMS", render: function (data, type, row) {
+                        return row.ROOMS;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": getPropertyName("USAGE"), render: function (data, type, row) {
+                        return row[getPropertyName("USAGE")];
+                    }
+                },
+                //{
+                //    "data": "FLOOR", render: function (data, type, row) {
+                //        return row.FLOOR;
+                //    },
+                //    orderable: false
+                //},
+                //{
+                //    "data": getPropertyName("NATIONALITY"), render: function (data, type, row) {
+                //        return row[getPropertyName("NATIONALITY")];
+                //    }
+                //},
+                //{
+                //    "data": "BUILDING_AGE", render: function (data, type, row) {
+                //        return row.BUILDING_AGE;
+                //    }
+                //},
+                {
+                    "data": getPropertyName("NEAREST_METRO"), render: function (data, type, row) {
+                        return row[getPropertyName("NEAREST_METRO")];
+                    }
+                },
+                {
+                    "data": getPropertyName("NEAREST_MALL"), render: function (data, type, row) {
+                        return row[getPropertyName("NEAREST_MALL")];
+                    }
+                },
+                {
+                    "data": getPropertyName("NEAREST_LANDMARK"), render: function (data, type, row) {
+                        return row[getPropertyName("NEAREST_LANDMARK")];
+                    }
+                },              
+                {
+                    "data": "PARKING", render: function (data, type, row) {
+                        return row.PARKING;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "TOTAL_PROPERTIES", render: function (data, type, row) {
+                        return row.TOTAL_PROPERTIES;
+                    },
+                    orderable: false
+                },               
+                {
+                    "data": getPropertyName("MASTER_PROJECT"), render: function (data, type, row) {
+                        return row[getPropertyName("MASTER_PROJECT")];
+                    }
+                },
+                {
+                    "data": getPropertyName("PROJECT"), render: function (data, type, row) {
+                        return row[getPropertyName("PROJECT")];
+                    }
+                },
+            ]
+        });  
+
+    },
+    getData() {
+        var filter = getRequestBody(document.forms.rentFilter, this.parameters);
+        this.bind(filter);
+    },
+    getExportFilter() {
+        var filter = getRequestBody(document.forms.rentFilter, this.parameters);
+        filter.P_TAKE = "-1";
+        filter.P_SKIP = "";
+        filter.P_SORT = this.sortOrder;
+        return {
+            parameters: filter, command: 'rents', labels: getExportHeader('#rentGrid')
+        };
+    },
+    init() {
+        this.initFilters();
+        //this.getData();
+        $('#rentGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>",
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }
+        });
+    },
+    destroy() {
+        $('#rentGrid').DataTable().destroy();
+        $("#rent_pAreaId").chosen("destroy");
+        $("#rent_pFromDate,#rent_pToDate").datepicker("destroy");
+        if (this.chart.instance) this.chart.instance.destroy();
+        this.chart.countSeries = [];
+    }
+};
+
+const projects = {
+    parameters: ["P_FROM_DATE","P_TO_DATE","P_DATE_TYPE","P_PRJ_TYPE_ID","P_PRJ_STATUS","P_ZONE_ID","P_AREA_ID","P_TAKE","P_SKIP","P_SORT"],
+    chart: {
+        countSeries: []
+    },
+    form: document.forms.projectFilter,
+    initFilters() {
+        GetAreaList(lang, function (data) {
+            var langAlias = lang == 'ar' ? 'ArabicName' : 'EnglishName';
+            var jsonObj = JSON.parse(data);
+            var sortedArr = jsonObj.Result.sort(sortByProperty(langAlias));
+            var plsSelect = $("#project_pAreaId option:first").html();
+            $("#project_pAreaId").chosen('destroy');
+            $("#project_pAreaId").empty();
+            $("#project_pAreaId").append($('<option/>', {
+                value: '',
+                text: plsSelect
+            }));
+            sortedArr.forEach(function (item) {
+                var val = item.ID + ',' + item.MainAreaId;
+                var name = item.Title;
+                $("#project_pAreaId").append($('<option/>', {
+                    value: item.AreaID,
+                    text: item[langAlias]
+                })).trigger("chosen:updated");
+            });
+            initialiseChosenDropdown("project_pAreaId");
+            $('#project_pAreaId_chosen').addClass('valid-validation form-select dropdown-chosen');
+        });
+
+        initializeDatePicker(lang, "#project_pFromDate,#project_pToDate");
+        var date = new Date();
+        $("#project_pFromDate").datepicker("setDate", new Date(date.getFullYear(), date.getMonth(), date.getDate() - 1));
+        $("#project_pToDate").datepicker("setDate", date)
+
+        //$("#project_pAreaId").chosen({
+        //    //rtl: true
+        //});
+    },
+    bind(filter) {
+        var self = this;
+        $('#projectGrid').DataTable().destroy();
+        $('#projectGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>", 
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "serverSide": true,
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }, 
+            "ajax": function (data, callback, settings) {
+                if (!cacheVerified && AppInfo.featureGate.captchaEnabled && (!captcha || captcha == '')) {
+                    $('#' + googleCaptchaTab + 'invalidCaptcha').show().focus();
+                    return false;
+                }
+                $('#' + googleCaptchaTab + 'invalidCaptcha').hide();
+                $("#loading").show();
+                self.sortOrder = settings.columns[data.order[0].column].data + "_" + (data.order[0].dir).toLocaleUpperCase();
+                var f = { ...filter, P_TAKE: (data.length || 50) + "", P_SKIP: (data.start || 0) + "", P_SORT: self.sortOrder };
+
+                openDataApi.getData('projects', f,
+                    (r) => {
+                        var total = 0;
+                        $("#loading").hide();
+
+                        if (r.result && r.result.length) {
+                            total = r.result[0].TOTAL;
+                        }
+
+                        callback({
+                            data: r.result,
+                            recordsTotal: r.result.length,
+                            recordsFiltered: total
+                        });
+                    },
+                    (e) => {
+                        $("#loading").hide();
+                    }, captcha, !cacheVerified);
+                    //});
+            },
+            "columns": [
+                {
+                    "data": "PROJECT_NUMBER", render: function (data, type, row) {
+                        return row.PROJECT_NUMBER;
+                    }
+                },
+                {
+                    "data": getPropertyName("PROJECT"), render: function (data, type, row) {
+                        return row[getPropertyName("PROJECT")];
+                    }
+                },
+                {
+                    "data": "DEVELOPER_NUMBER", render: function (data, type, row) {
+                        return row.DEVELOPER_NUMBER;
+                    }
+                },
+                {
+                    "data": getPropertyName("DEVELOPER"), render: function (data, type, row) {
+                        return row[getPropertyName("DEVELOPER")];
+                    }
+                },
+                {
+                    "data": "START_DATE", render: function (date) {
+                        return date ? moment(date).locale('en').format("DD/MM/YYYY") : null;
+                    }
+                },               
+                {
+                    "data": "END_DATE", render: function (date) {
+                        return date ? moment(date).locale('en').format("DD/MM/YYYY") : null;
+                    }
+                },
+                {
+                    "data": "ADOPTION_DATE", render: function (date) {
+                        return date ? moment(date).locale('en').format("DD/MM/YYYY"): null;
+                    }
+                },                
+                {
+                    "data": getPropertyName("PRJ_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("PRJ_TYPE")];
+                    }
+                },
+                {
+                    "data": "PROJECT_VALUE", render: function (data, type, row) {
+                        return row.PROJECT_VALUE ? Number.parseFloat(row.PROJECT_VALUE).toFixed(2) : null;
+                    }
+                },
+                {
+                    "data": "ESCROW_ACCOUNT_NUMBER", render: function (data, type, row) {
+                        return row.ESCROW_ACCOUNT_NUMBER;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "PROJECT_STATUS", render: function (data, type, row) {
+                        return row.PROJECT_STATUS;
+                    }
+                },
+                {
+                    "data": "PERCENT_COMPLETED", render: function (data, type, row) {
+                        return row.PERCENT_COMPLETED ? Number.parseFloat(row.PERCENT_COMPLETED).toFixed(2) : null;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "INSPECTION_DATE", render: function (date) {
+                        return date ? moment(date).locale('en').format("DD/MM/YYYY") : null;
+                    }
+                },
+                {
+                    "data": "COMPLETION_DATE", render: function (date) {
+                        return date ? moment(date).locale('en').format("DD/MM/YYYY") : null;
+                    }
+                },
+                {
+                    "data": getPropertyName("DESCRIPTION"), render: function (data, type, row) {
+                        return row[getPropertyName("DESCRIPTION")];
+                    },
+                    orderable: false
+                },
+                {
+                    "data": getPropertyName("AREA"), render: function (data, type, row) {
+                        return row[getPropertyName("AREA")];
+                    }
+                },
+                {
+                    "data": getPropertyName("ZONE"), render: function (data, type, row) {
+                        return row[getPropertyName("ZONE")];
+                    }
+                },
+                {
+                    "data": "CNT_LAND", render: function (data, type, row) {
+                        return row.CNT_LAND;
+                    },
+                    orderable: false
+                },   
+                {
+                    "data": "CNT_BUILDING", render: function (data, type, row) {
+                        return row.CNT_BUILDING;
+                    },
+                    orderable: false
+                },   
+                {
+                    "data": "CNT_VILLA", render: function (data, type, row) {
+                        return row.CNT_VILLA;
+                    }
+                },   
+                {
+                    "data": "CNT_UNIT", render: function (data, type, row) {
+                        return row.CNT_UNIT;
+                    },
+                    orderable: false
+                },        
+                {
+                    "data": getPropertyName("MASTER_PROJECT"), render: function (data, type, row) {
+                        return row[getPropertyName("MASTER_PROJECT")];
+                    }
+                }
+            ]
+        });
+       
+    },
+    getData() {
+        var filter = getRequestBody(document.forms.projectFilter, this.parameters);
+        this.bind(filter);
+    },
+    getExportFilter() {
+        var filter = getRequestBody(document.forms.projectFilter, this.parameters);
+        filter.P_TAKE = "-1";
+        filter.P_SKIP = "";
+        filter.P_SORT = this.sortOrder;
+        return {
+            parameters: filter, command: 'projects', labels: getExportHeader('#projectGrid')
+        };
+    },
+    init() {
+        this.initFilters();
+        //this.getData();
+
+        $('#projectGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>", 
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }
+        });
+    },
+    destroy() {
+        $('#projectGrid').DataTable().destroy();
+        $("#project_pAreaId").chosen("destroy");
+        $("#project_pFromDate,#project_pToDate").datepicker("destroy");
+        if (this.chart.instance) this.chart.instance.destroy();
+        this.chart.countSeries = [];
+    }
+};
+
+const lands = {
+    parameters: ["P_PROJECT","P_MASTER_PROJECT","P_LAND_TYPE_ID","P_AREA_ID","P_ZONE_ID","P_IS_FREE_HOLD","P_PROP_SB_TYPE_ID","P_TAKE","P_SKIP","P_SORT"],
+    chart: {
+        countSeries: []
+    },
+    form: document.forms.landFilter,
+    initFilters() {
+        GetAreaList(lang, function (data) {
+            var langAlias = lang == 'ar' ? 'ArabicName' : 'EnglishName';
+            var jsonObj = JSON.parse(data);
+            var sortedArr = jsonObj.Result.sort(sortByProperty(langAlias));
+            var plsSelect = $("#land_pAreaId option:first").html();
+            $("#land_pAreaId").chosen('destroy');
+            $("#land_pAreaId").empty();
+            $("#land_pAreaId").append($('<option/>', {
+                value: '',
+                text: plsSelect
+            }));
+            $("#land_pAreaId").append(sortedArr.map(function (item) {
+                var val = item.ID + ',' + item.MainAreaId;
+                var name = item.Title;
+                return $('<option/>', {
+                    value: item.AreaID,
+                    text: item[langAlias]
+                });
+            })).trigger("chosen:updated");
+            initialiseChosenDropdown("land_pAreaId");
+            $('#land_pAreaId_chosen').addClass('valid-validation form-select dropdown-chosen');
+        }); 
+
+        openDataApi.getData('projects-lookup', {}, (r) => {
+            var langAlias = lang == 'ar' ? 'NAME_AR' : 'NAME_EN';
+            var sortedArr = r.result.sort(sortByProperty(langAlias));
+            var plsSelect = $("#land_pProject option:first").html();
+            $("#land_pProject").chosen('destroy');
+            $("#land_pProject").empty();
+            $("#land_pProject").append($('<option/>', {
+                value: '',
+                text: plsSelect
+            }));
+            $("#land_pProject").append(sortedArr.map(function (item) {               
+               return $('<option/>', {
+                    value: item.ID,
+                    text: item[langAlias]
+                });
+            })).trigger("chosen:updated");
+            initialiseChosenDropdown("land_pProject");
+        }, (e) => { })
+      
+        //$("#land_pAreaId").chosen({
+        //    //rtl: true
+        //});
+
+        //$("#land_pProject").chosen({
+        //    //rtl: true
+        //});
+    },
+    bind(filter) {
+        var self = this;
+        $('#landGrid').DataTable().destroy();
+        $('#landGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>", 
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "serverSide": true,
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }, 
+            "ajax": function (data, callback, settings) {
+                if (!cacheVerified && AppInfo.featureGate.captchaEnabled && (!captcha || captcha == '')) {
+                    $('#' + googleCaptchaTab + 'invalidCaptcha').show().focus();
+                    return false;
+                }
+                $('#' + googleCaptchaTab + 'invalidCaptcha').hide();
+                $("#loading").show();
+                self.sortOrder = settings.columns[data.order[0].column].data + "_" + (data.order[0].dir).toLocaleUpperCase();
+                var f = { ...filter, P_TAKE: (data.length || 50) + "", P_SKIP: (data.start || 0) + "", P_SORT: self.sortOrder };
+
+                openDataApi.getData('lands', f,
+                    (r) => {
+                        var total = 0;
+                        $("#loading").hide();
+
+                        if (r.result && r.result.length) {
+                            total = r.result[0].TOTAL;
+                        }
+
+                        callback({
+                            data: r.result,
+                            recordsTotal: r.result.length,
+                            recordsFiltered: total
+                        });
+                    },
+                    (e) => {
+                        $("#loading").hide();
+                    }, captcha, !cacheVerified);
+                    //});
+            },
+            "columns": [
+                //{
+                //    "data": "PROPERTY_ID", render: function (data, type, row) {
+                //        return row.PROPERTY_ID;
+                //    }
+                //},
+                //{
+                //    "data": "LAND_NUMBER", render: function (data, type, row) {
+                //        return row.LAND_NUMBER;
+                //    },
+                //    orderable: false
+                //},
+                //{
+                //    "data": "LAND_SUB_NUMBER", render: function (data, type, row) {
+                //        return row.LAND_SUB_NUMBER;
+                //    },
+                //    orderable: false
+                //},
+                {
+                    "data": getPropertyName("LAND_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("LAND_TYPE")];
+                    }
+                },
+                {
+                    "data": getPropertyName("PROP_SUB_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("PROP_SUB_TYPE")];
+                    }
+                },
+                
+                {
+                    "data": "ACTUAL_AREA", render: function (data, type, row) {
+                        return row.ACTUAL_AREA ? (Number.parseFloat(row.ACTUAL_AREA).toFixed(2)) : null;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": getPropertyName("IS_OFFPLAN"), render: function (data, type, row) {
+                        return row[getPropertyName("IS_OFFPLAN")];
+                    }
+                },
+                {
+                    "data": "PRE_REGISTRATION_NUMBER", render: function (data, type, row) {
+                        return row.PRE_REGISTRATION_NUMBER;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": getPropertyName("IS_FREE_HOLD"), render: function (data, type, row) {
+                        return row[getPropertyName("IS_FREE_HOLD")];
+                    }
+                },
+                {
+                    "data": "DM_ZIP_CODE", render: function (data, type, row) {
+                        return row.DM_ZIP_CODE;
+                    },
+                    orderable: false
+                },
+                //{
+                //    "data": "MUNICIPALITY_NUMBER", render: function (data, type, row) {
+                //        return row.MUNICIPALITY_NUMBER;
+                //    },
+                //    orderable: false
+                //},     
+                //{
+                //    "data": "SEPARATED_FROM", render: function (data, type, row) {
+                //        return row.SEPARATED_FROM;
+                //    },
+                //    orderable: false
+                //},
+                //{
+                //    "data": "SEPARATED_REFERENCE", render: function (data, type, row) {
+                //        return row.SEPARATED_REFERENCE;
+                //    },
+                //    orderable: false
+                //},   
+                {
+                    "data": getPropertyName("MASTER_PROJECT"), render: function (data, type, row) {
+                        return row[getPropertyName("MASTER_PROJECT")];
+                    }
+                },
+                {
+                    "data": "PROJECT_NUMBER", render: function (data, type, row) {
+                        return row.PROJECT_NUMBER;
+                    }
+                },
+                {
+                    "data": getPropertyName("PROJECT"), render: function (data, type, row) {
+                        return row[getPropertyName("PROJECT")];
+                    }
+                },               
+                {
+                    "data": getPropertyName("AREA"), render: function (data, type, row) {
+                        return row[getPropertyName("AREA")];
+                    }
+                },
+                {
+                    "data": getPropertyName("ZONE"), render: function (data, type, row) {
+                        return row[getPropertyName("ZONE")];
+                    }
+                },
+            ]
+        });  
+    },
+    getData() {
+        var filter = getRequestBody(document.forms.landFilter, this.parameters);      
+        this.bind(filter);
+    },
+    getExportFilter() {
+        var filter = getRequestBody(document.forms.landFilter, this.parameters);
+        filter.P_TAKE = "-1";
+        filter.P_SKIP = "";
+        filter.P_SORT = this.sortOrder;
+        return {
+            parameters: filter, command: 'lands', labels: getExportHeader('#landGrid')
+        };
+    },
+    init() {
+        this.initFilters();
+        //this.getData();
+
+        $('#landGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>", 
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }
+        });
+    },
+    destroy() {
+        $('#landGrid').DataTable().destroy();
+        $("#land_pAreaId").chosen("destroy");        
+        if (this.chart.instance) this.chart.instance.destroy();
+        this.chart.countSeries = [];
+    }
+};
+
+const buildings = {
+    parameters: ["P_FROM_DATE","P_TO_DATE","P_IS_FREE_HOLD","P_AREA_ID","P_ZONE_ID","P_IS_LEASE_HOLD","P_IS_OFFPLAN","P_TAKE","P_SKIP","P_SORT"],
+    chart: {
+        countSeries: []
+    },
+    form: document.forms.buildingFilter,
+    initFilters() {
+        GetAreaList(lang, function (data) {
+            var langAlias = lang == 'ar' ? 'ArabicName' : 'EnglishName';
+            var jsonObj = JSON.parse(data);
+            var sortedArr = jsonObj.Result.sort(sortByProperty(langAlias));
+            var plsSelect = $("#building_pAreaId option:first").html();
+            $("#building_pAreaId").chosen('destroy');
+            $("#building_pAreaId").empty();
+            $("#building_pAreaId").append($('<option/>', {
+                value: '',
+                text: plsSelect
+            }));
+            $("#building_pAreaId").append(sortedArr.map(function (item) {
+                var val = item.ID + ',' + item.MainAreaId;
+                var name = item.Title;
+                return $('<option/>', {
+                    value: item.AreaID,
+                    text: item[langAlias]
+                });
+            })).trigger("chosen:updated");
+            initialiseChosenDropdown("building_pAreaId");
+            $('#building_pAreaId_chosen').addClass('valid-validation form-select dropdown-chosen');
+        });
+
+        initializeDatePicker(lang, "#building_pFromDate,#building_pToDate");
+       
+
+        //$("#building_pAreaId").chosen({
+        //    //rtl: true
+        //});
+    },
+    bind(filter) {
+        var self = this;
+        $('#buildingGrid').DataTable().destroy();
+        $('#buildingGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>", 
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "serverSide": true,
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }, 
+            "ajax": function (data, callback, settings) {
+                if (!cacheVerified && AppInfo.featureGate.captchaEnabled && (!captcha || captcha == '')) {
+                    $('#' + googleCaptchaTab + 'invalidCaptcha').show().focus();
+                    return false;
+                }
+                $('#' + googleCaptchaTab + 'invalidCaptcha').hide();
+                $("#loading").show();
+                self.sortOrder = settings.columns[data.order[0].column].data + "_" + (data.order[0].dir).toLocaleUpperCase();
+                var f = { ...filter, P_TAKE: (data.length || 50) + "", P_SKIP: (data.start || 0) + "", P_SORT: self.sortOrder };
+
+                openDataApi.getData('buildings', f,
+                    (r) => {
+                        var total = 0;
+                        $("#loading").hide();
+
+                        if (r.result && r.result.length) {
+                            total = r.result[0].TOTAL;
+                        }
+
+                        callback({
+                            data: r.result,
+                            recordsTotal: r.result.length,
+                            recordsFiltered: total
+                        });
+                    },
+                    (e) => {
+                        $("#loading").hide();
+                    }, captcha, !cacheVerified);
+                    //});
+            },
+            "columns": [
+                //{
+                //    "data": "PROPERTY_ID", render: function (data, type, row) {
+                //        return row.PROPERTY_ID;
+                //    }
+                //},
+                //{
+                //    "data": "BUILDING_NUMBER", render: function (data, type, row) {
+                //        return row.BUILDING_NUMBER;
+                //    },
+                //    orderable: false
+                //},
+                {
+                    "data": getPropertyName("PROP_SUB_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("PROP_SUB_TYPE")];
+                    }
+                },
+                {
+                    "data": "ACTUAL_AREA", render: function (data, type, row) {
+                        return row.ACTUAL_AREA ? (Number.parseFloat(row.ACTUAL_AREA).toFixed(2)) : null;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "COMMON_AREA", render: function (data, type, row) {
+                        return row.COMMON_AREA;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "ACTUAL_COMMON_AREA", render: function (data, type, row) {
+                        return row.ACTUAL_COMMON_AREA;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "BUILT_UP_AREA", render: function (data, type, row) {
+                        return row.BUILT_UP_AREA;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "BLD_LEVELS", render: function (data, type, row) {
+                        return row.BLD_LEVELS;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "SHOPS", render: function (data, type, row) {
+                        return row.SHOPS;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "FLATS", render: function (data, type, row) {
+                        return row.FLATS;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "OFFICES", render: function (data, type, row) {
+                        return row.OFFICES;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "SWIMMING_POOLS", render: function (data, type, row) {
+                        return row.SWIMMING_POOLS;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "ELEVATORS", render: function (data, type, row) {
+                        return row.ELEVATORS;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "CREATION_DATE", render: function (date) {
+                        return date ? moment(date).locale('en').format("DD/MM/YYYY") : null;
+                    },
+                    orderable: false
+                },    
+                {
+                    "data": getPropertyName("IS_OFFPLAN"), render: function (data, type, row) {
+                        return row[getPropertyName("IS_OFFPLAN")];
+                    }
+                },
+                {
+                    "data": "PRE_REGISTRATION_NUMBER", render: function (data, type, row) {
+                        return row.PRE_REGISTRATION_NUMBER;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": getPropertyName("IS_FREE_HOLD"), render: function (data, type, row) {
+                        return row[getPropertyName("IS_FREE_HOLD")];
+                    }
+                }, 
+                {
+                    "data": getPropertyName("IS_LEASE_HOLD"), render: function (data, type, row) {
+                        return row[getPropertyName("IS_LEASE_HOLD")];
+                    }
+                },
+                {
+                    "data": "FLOORS", render: function (data, type, row) {
+                        return row.FLOORS;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": getPropertyName("ROOMS"), render: function (data, type, row) {
+                        return row[getPropertyName("ROOMS")];
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "CAR_PARKS", render: function (data, type, row) {
+                        return row.CAR_PARKS;
+                    },
+                    orderable: false
+                },
+                //{
+                //    "data": "PARENT_PROPERTY_ID", render: function (data, type, row) {
+                //        return row.PARENT_PROPERTY_ID;
+                //    },
+                //    orderable: false
+                //},
+                {
+                    "data": "LAND_NUMBER", render: function (data, type, row) {
+                        return row.LAND_NUMBER;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "LAND_SUB_NUMBER", render: function (data, type, row) {
+                        return row.LAND_SUB_NUMBER;
+                    },
+                    orderable: false
+                },        
+                {
+                    "data": getPropertyName("LAND_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("LAND_TYPE")];
+                    }
+                },
+                {
+                    "data": getPropertyName("MASTER_PROJECT"), render: function (data, type, row) {
+                        return row[getPropertyName("MASTER_PROJECT")];
+                    }
+                },
+                {
+                    "data": "PROJECT_NUMBER", render: function (data, type, row) {
+                        return row.PROJECT_NUMBER;
+                    }
+                },
+                {
+                    "data": getPropertyName("PROJECT"), render: function (data, type, row) {
+                        return row[getPropertyName("PROJECT")];
+                    }
+                },
+                {
+                    "data": getPropertyName("AREA"), render: function (data, type, row) {
+                        return row[getPropertyName("AREA")];
+                    }
+                },
+                {
+                    "data": getPropertyName("ZONE"), render: function (data, type, row) {
+                        return row[getPropertyName("ZONE")];
+                    }
+                }
+            ]
+        });  
+    },
+    getData() {
+        var filter = getRequestBody(document.forms.buildingFilter, this.parameters);
+        this.bind(filter);
+    },
+    getExportFilter() {
+        var filter = getRequestBody(document.forms.buildingFilter, this.parameters);
+        filter.P_TAKE = "-1";
+        filter.P_SKIP = "";
+        filter.P_SORT = this.sortOrder;
+        return {
+            parameters: filter, command: 'buildings', labels: getExportHeader('#buildingGrid')
+        };
+    },
+    init() {
+        this.initFilters();
+        //this.getData();
+
+        $('#buildingGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>",
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }
+        });
+    },
+    destroy() {
+        $('#buildingGrid').DataTable().destroy();
+        $("#building_pAreaId").chosen("destroy");
+        $("#building_pFromDate,#building_pToDate").datepicker("destroy");
+    }
+};
+
+const units = {
+    parameters: ["P_AREA_ID","P_ZONE_ID","P_IS_FREE_HOLD","P_IS_LEASE_HOLD","P_IS_OFFPLAN","P_TAKE","P_SKIP","P_SORT" ],
+    chart: {
+        countSeries: []
+    },
+    form: document.forms.unitFilter,
+    initFilters() {
+        GetAreaList(lang, function (data) {
+            var langAlias = lang == 'ar' ? 'ArabicName' : 'EnglishName';
+            var jsonObj = JSON.parse(data);
+            var sortedArr = jsonObj.Result.sort(sortByProperty(langAlias));
+            var plsSelect = $("#unit_pAreaId option:first").html();
+            $("#unit_pAreaId").chosen('destroy');
+            $("#unit_pAreaId").empty();
+            $("#unit_pAreaId").append($('<option/>', {
+                value: '',
+                text: plsSelect
+            }));
+            $("#unit_pAreaId").append(sortedArr.map(function (item) {
+                var val = item.ID + ',' + item.MainAreaId;
+                var name = item.Title;
+                return $('<option/>', {
+                    value: item.AreaID,
+                    text: item[langAlias]
+                });
+            })).trigger("chosen:updated");
+            initialiseChosenDropdown("unit_pAreaId");
+            $('#unit_pAreaId_chosen').addClass('valid-validation form-select dropdown-chosen');
+        });
+
+        //$("#unit_pAreaId").chosen({
+        //    //rtl: true
+        //});
+    },
+    bind(filter) {
+        var self = this;
+        $('#unitGrid').DataTable().destroy();
+        $('#unitGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>",
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "serverSide": true,
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }, 
+            "ajax": function (data, callback, settings) {
+                if (!cacheVerified && AppInfo.featureGate.captchaEnabled && (!captcha || captcha == '')) {
+                    $('#' + googleCaptchaTab + 'invalidCaptcha').show().focus();
+                    return false;
+                }
+                $('#' + googleCaptchaTab + 'invalidCaptcha').hide();
+                $("#loading").show();
+                self.sortOrder = settings.columns[data.order[0].column].data + "_" + (data.order[0].dir).toLocaleUpperCase();
+                var f = { ...filter, P_TAKE: (data.length || 50) + "", P_SKIP: (data.start || 0) + "", P_SORT: self.sortOrder };
+
+                openDataApi.getData('units', f,
+                    (r) => {
+                        var total = 0;
+                        $("#loading").hide();
+
+                        if (r.result && r.result.length) {
+                            total = r.result[0].TOTAL;
+                        }
+
+                        callback({
+                            data: r.result,
+                            recordsTotal: r.result.length,
+                            recordsFiltered: total
+                        });
+                    },
+                    (e) => {
+                        $("#loading").hide();
+                    }, captcha, !cacheVerified);
+                    //});
+            },
+            "columns": [
+                //{
+                //    "data": "PROPERTY_ID", render: function (data, type, row) {
+                //        return row.PROPERTY_ID;
+                //    }
+                //},
+                {
+                    "data": "UNIT_NUMBER", render: function (data, type, row) {
+                        return row.UNIT_NUMBER;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": getPropertyName("PROP_SUB_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("PROP_SUB_TYPE")];
+                    }
+                },
+                {
+                    "data": "ACTUAL_AREA", render: function (data, type, row) {
+                        return row.ACTUAL_AREA ? (Number.parseFloat(row.ACTUAL_AREA).toFixed(2)) : null;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "BALCONY_AREA", render: function (data, type, row) {
+                        return row.BALCONY_AREA;
+                    },
+                    orderable: false
+                },               
+                {
+                    "data": "COMMON_AREA", render: function (data, type, row) {
+                        return row.COMMON_AREA;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "ACTUAL_COMMON_AREA", render: function (data, type, row) {
+                        return row.ACTUAL_COMMON_AREA;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "FLOOR", render: function (data, type, row) {
+                        return row.FLOOR;
+                    },
+                    orderable: false
+                },                
+                {
+                    "data": getPropertyName("ROOM"), render: function (data, type, row) {
+                        return row[getPropertyName("ROOM")];
+                    },
+                    orderable: false
+                },   
+                {
+                    "data": "PARKING_NUMBER", render: function (data, type, row) {
+                        return row.PARKING_NUMBER;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": getPropertyName("PAT"), render: function (data, type, row) {
+                        return row[getPropertyName("PAT")];
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "CREATION_DATE", render: function (date) {
+                        return date ? moment(date).locale('en').format("DD/MM/YYYY") : null;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": getPropertyName("IS_OFFPLAN"), render: function (data, type, row) {
+                        return row[getPropertyName("IS_OFFPLAN")];
+                    }
+                },
+                {
+                    "data": "PRE_REGISTRATION_NUMBER", render: function (data, type, row) {
+                        return row.PRE_REGISTRATION_NUMBER;
+                    },
+                    orderable: false
+                },  
+                {
+                    "data": getPropertyName("IS_FREE_HOLD"), render: function (data, type, row) {
+                        return row[getPropertyName("IS_FREE_HOLD")];
+                    }
+                },
+                {
+                    "data": getPropertyName("IS_LEASE_HOLD"), render: function (data, type, row) {
+                        return row[getPropertyName("IS_LEASE_HOLD")];
+                    }
+                }, 
+                //{
+                //    "data": "PARENT_PROPERTY_ID", render: function (data, type, row) {
+                //        return row.PARENT_PROPERTY_ID;
+                //    }
+                //},
+                {
+                    "data": "BUILDING_NUMBER", render: function (data, type, row) {
+                        return row.BUILDING_NUMBER;
+                    },
+                    orderable: false
+                }, 
+                {
+                    "data": getPropertyName("BUILDING"), render: function (data, type, row) {
+                        return row[getPropertyName("BUILDING")];
+                    }
+                }, 
+                //{
+                //    "data": "GRAND_PARENT_PROPERTY_ID", render: function (data, type, row) {
+                //        return row.GRAND_PARENT_PROPERTY_ID;
+                //    },
+                //    orderable: false
+                //},   
+                {
+                    "data": "LAND_NUMBER", render: function (data, type, row) {
+                        return row.LAND_NUMBER;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "LAND_SUB_NUMBER", render: function (data, type, row) {
+                        return row.LAND_SUB_NUMBER;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": getPropertyName("LAND_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("LAND_TYPE")];
+                    }
+                },   
+                {
+                    "data": "DM_ZIP_CODE", render: function (data, type, row) {
+                        return row.DM_ZIP_CODE;
+                    },
+                    orderable: false
+                },  
+                {
+                    "data": "MUNICIPALITY_NUMBER", render: function (data, type, row) {
+                        return row.MUNICIPALITY_NUMBER;
+                    },
+                    orderable: false
+                },                
+                {
+                    "data": getPropertyName("MASTER_PROJECT"), render: function (data, type, row) {
+                        return row[getPropertyName("MASTER_PROJECT")];
+                    }
+                },
+                {
+                    "data": "PROJECT_NUMBER", render: function (data, type, row) {
+                        return row.PROJECT_NUMBER;
+                    }
+                },
+                {
+                    "data": getPropertyName("PROJECT"), render: function (data, type, row) {
+                        return row[getPropertyName("PROJECT")];
+                    }
+                },         
+                {
+                    "data": getPropertyName("AREA"), render: function (data, type, row) {
+                        return row[getPropertyName("AREA")];
+                    }
+                },
+                {
+                    "data": getPropertyName("ZONE"), render: function (data, type, row) {
+                        return row[getPropertyName("ZONE")];
+                    }
+                },            
+               
+            ]
+        });
+    },
+    getData() {
+        var filter = getRequestBody(document.forms.unitFilter, this.parameters);
+        this.bind(filter);
+    },
+    getExportFilter() {
+        var filter = getRequestBody(document.forms.unitFilter, this.parameters);
+        filter.P_TAKE = "-1";
+        filter.P_SKIP = "";
+        filter.P_SORT = this.sortOrder;
+        return {
+            parameters: filter, command: 'units', labels: getExportHeader('#unitGrid')
+        };
+    },
+    init() {
+        this.initFilters();
+       // this.getData();
+
+        $('#unitGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>", 
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }
+        });
+    },
+    destroy() {
+        $('#unitGrid').DataTable().destroy();
+        $("#unit_pAreaId").chosen("destroy");
+    }
+};
+
+const brokers = {
+    parameters: ["P_GENDER","P_TAKE","P_SKIP","P_SORT"],
+    chart: {
+        countSeries: []
+    },
+    form: document.forms.brokerFilter,
+    initFilters() {       
+    },
+    bind(filter) {
+        var self = this;
+        $('#brokerGrid').DataTable().destroy();
+        $('#brokerGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>", 
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "serverSide": true,
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }, 
+            "ajax": function (data, callback, settings) {
+                if (!cacheVerified && AppInfo.featureGate.captchaEnabled && (!captcha || captcha == '')) {
+                    $('#' + googleCaptchaTab + 'invalidCaptcha').show().focus();
+                    return false;
+                }
+                $('#' + googleCaptchaTab + 'invalidCaptcha').hide();
+                $("#loading").show();
+                self.sortOrder = settings.columns[data.order[0].column].data + "_" + (data.order[0].dir).toLocaleUpperCase();
+                var f = { ...filter, P_TAKE: (data.length || 50) + "", P_SKIP: (data.start || 0) + "", P_SORT: self.sortOrder };
+
+                openDataApi.getData('brokers', f,
+                    (r) => {
+                        var total = 0;
+                        $("#loading").hide();
+
+                        if (r.result && r.result.length) {
+                            total = r.result[0].TOTAL;
+                        }
+
+                        callback({
+                            data: r.result,
+                            recordsTotal: r.result.length,
+                            recordsFiltered: total
+                        });
+                    },
+                    (e) => {
+                        $("#loading").hide();
+                    }, captcha, !cacheVerified);
+                    //});
+            },
+            "columns": [
+                //{
+                //    "data": "BROKER_ID", render: function (data, type, row) {
+                //        return row.BROKER_ID;
+                //    }
+                //},
+                {
+                    "data": "BROKER_NUMBER", render: function (data, type, row) {
+                        return row.BROKER_NUMBER;
+                    }
+                },
+                {
+                    "data": getPropertyName("BROKER"), render: function (data, type, row) {
+                        return row[getPropertyName("BROKER")];
+                    }
+                },
+                {
+                    "data": getPropertyName("GENDER"), render: function (data, type, row) {
+                        return row[getPropertyName("GENDER")];
+                    }
+                },
+                {
+                    "data": "LICENSE_START_DATE", render: function (date) {
+                        return date ? moment(date).locale('en').format("DD/MM/YYYY") : null;
+                    }
+                },
+                {
+                    "data": "LICENSE_END_DATE", render: function (date) {
+                        return date ? moment(date).locale('en').format("DD/MM/YYYY") : null;
+                    }
+                },
+                {
+                    "data": "WEBPAGE", render: function (data, type, row) {
+                        return row.WEBPAGE;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "PHONE", render: function (data, type, row) {
+                        return row.PHONE;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "FAX", render: function (data, type, row) {
+                        return row.FAX;
+                    },
+                    orderable: false
+                },
+                //{
+                //    "data": "REAL_ESTATE_ID", render: function (data, type, row) {
+                //        return row.REAL_ESTATE_ID;
+                //    },
+                //    orderable: false
+                //},
+                {
+                    "data": "REAL_ESTATE_NUMBER", render: function (data, type, row) {
+                        return row.REAL_ESTATE_NUMBER;
+                    }
+                },
+                {
+                    "data": getPropertyName("REAL_ESTATE"), render: function (data, type, row) {
+                        return row[getPropertyName("REAL_ESTATE")];
+                    }
+                },
+            ]
+        });
+    },
+    getData() {
+        var filter = getRequestBody(document.forms.brokerFilter, this.parameters);
+        this.bind(filter);
+    },
+    getExportFilter() {
+        var filter = getRequestBody(document.forms.brokerFilter, this.parameters);
+        filter.P_TAKE = "-1";
+        filter.P_SKIP = "";
+        filter.P_SORT = this.sortOrder;
+        return {
+            parameters: filter, command: 'brokers', labels: getExportHeader('#brokerGrid')
+        };
+    },
+    init() {
+        this.initFilters();
+        //this.getData();
+
+        $('#brokerGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>",
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }
+        });
+    },
+    destroy() {
+        $('#brokerGrid').DataTable().destroy();
+    }
+};
+
+const developers = {
+    parameters: ["P_FROM_DATE","P_TO_DATE","P_NAME","P_TAKE","P_SKIP","P_SORT"],
+    chart: {
+        countSeries: []
+    },
+    form: document.forms.developerFilter,
+    initFilters() {
+        initializeDatePicker(lang, "#developer_pFromDate,#developer_pToDate");
+    },
+    bind(filter) {
+        var self = this;
+        $('#developerGrid').DataTable().destroy();
+        $('#developerGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>", 
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "serverSide": true,
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }, 
+            "ajax": function (data, callback, settings) {
+                if (!cacheVerified && AppInfo.featureGate.captchaEnabled && (!captcha || captcha == '')) {
+                    $('#' + googleCaptchaTab + 'invalidCaptcha').show().focus();
+                    return false;
+                }
+                $('#' + googleCaptchaTab + 'invalidCaptcha').hide();
+                $("#loading").show();
+                self.sortOrder = settings.columns[data.order[0].column].data + "_" + (data.order[0].dir).toLocaleUpperCase();
+                var f = { ...filter, P_TAKE: (data.length || 50) + "", P_SKIP: (data.start || 0) + "", P_SORT: self.sortOrder };
+
+                openDataApi.getData('developers', f,
+                    (r) => {
+                        var total = 0;
+                        $("#loading").hide();
+
+                        if (r.result && r.result.length) {
+                            total = r.result[0].TOTAL;
+                        }
+
+                        callback({
+                            data: r.result,
+                            recordsTotal: r.result.length,
+                            recordsFiltered: total
+                        });
+                    },
+                    (e) => {
+                        $("#loading").hide();
+                    }, captcha, !cacheVerified);
+                    //});
+            },
+            "columns": [
+                //{
+                //    "data": "PARTICIPANT_ID", render: function (data, type, row) {
+                //        return row.PARTICIPANT_ID;
+                //    }
+                //},              
+                {
+                    "data": "DEVELOPER_NUMBER", render: function (data, type, row) {
+                        return row.DEVELOPER_NUMBER;
+                    }
+                },
+                {
+                    "data": getPropertyName("DEVELOPER"), render: function (data, type, row) {
+                        return row[getPropertyName("DEVELOPER")];
+                    }
+                },
+                {
+                    "data": "REGISTRATION_DATE", render: function (date) {
+                        return date ? moment(date).locale('en').format("DD/MM/YYYY") : null;
+                    }
+                },
+                {
+                    "data": getPropertyName("LICENSE_SOURCE"), render: function (data, type, row) {
+                        return row[getPropertyName("LICENSE_SOURCE")];
+                    }
+                },
+                {
+                    "data": getPropertyName("LICENSE_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("LICENSE_TYPE")];
+                    }
+                },
+                {
+                    "data": getPropertyName("LEGAL_STATUS"), render: function (data, type, row) {
+                        return row[getPropertyName("LEGAL_STATUS")];
+                    }
+                },
+                {
+                    "data": "WEBPAGE", render: function (data, type, row) {
+                        return row.WEBPAGE;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "PHONE", render: function (data, type, row) {
+                        return row.PHONE;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "FAX", render: function (data, type, row) {
+                        return row.FAX;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "LICENSE_NUMBER", render: function (data, type, row) {
+                        return row.LICENSE_NUMBER;
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "LICENSE_ISSUE_DATE", render: function (date) {
+                        return date ? moment(date).locale('en').format("DD/MM/YYYY") : null;
+                    }
+                },
+                {
+                    "data": "LICENSE_EXPIRY_DATE", render: function (date) {
+                        return date ? moment(date).locale('en').format("DD/MM/YYYY") : null;
+                    }
+                },   
+                {
+                    "data": "CHAMBER_OF_COMMERCE_NO", render: function (data, type, row) {
+                        return row.CHAMBER_OF_COMMERCE_NO;
+                    },
+                    orderable: false
+                },
+            ]
+        });
+    },
+    getData() {
+        var filter = getRequestBody(document.forms.developerFilter, this.parameters);
+        this.bind(filter);
+    },
+    getExportFilter() {
+        var filter = getRequestBody(document.forms.developerFilter, this.parameters);
+        filter.P_TAKE = "-1";
+        filter.P_SKIP = "";
+        filter.P_SORT = this.sortOrder;
+        return {
+            parameters: filter, command: 'developers', labels: getExportHeader('#developerGrid')
+        };
+    },
+    init() {
+        this.initFilters();
+       // this.getData();
+
+        $('#developerGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>", 
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }
+        });
+    },
+    destroy() {
+        $('#developerGrid').DataTable().destroy();
+        $("#developer_pFromDate,#developer_pToDate").datepicker("destroy");
+    }
+};
+
+const valuations = {
+    parameters: ["P_FROM_DATE","P_TO_DATE","P_AREA_ID","P_PROP_TYPE_ID","P_TAKE","P_SKIP","P_SORT" ],
+    chart: {
+        countSeries: []
+    },
+    form: document.forms.valuationFilter,
+    initFilters() {
+        GetAreaList(lang, function (data) {
+            var langAlias = lang == 'ar' ? 'ArabicName' : 'EnglishName';
+            var jsonObj = JSON.parse(data);
+            var sortedArr = jsonObj.Result.sort(sortByProperty(langAlias));
+            var plsSelect = $("#valuation_pAreaId option:first").html();
+            $("#valuation_pAreaId").chosen('destroy');
+            $("#valuation_pAreaId").empty();
+            $("#valuation_pAreaId").append($('<option/>', {
+                value: '',
+                text: plsSelect
+            }));
+            $("#valuation_pAreaId").append(sortedArr.map(function (item) {
+                var val = item.ID + ',' + item.MainAreaId;
+                var name = item.Title;
+                return $('<option/>', {
+                    value: item.AreaID,
+                    text: item[langAlias]
+                });
+            })).trigger("chosen:updated");
+            initialiseChosenDropdown("valuation_pAreaId");
+            $('#valuation_pAreaId_chosen').addClass('valid-validation form-select dropdown-chosen');
+        });
+
+        initializeDatePicker(lang, "#valuation_pFromDate,#valuation_pToDate");
+        var date = new Date();
+        $("#valuation_pFromDate").datepicker("setDate", new Date(date.getFullYear(), date.getMonth(), date.getDate() - 1));
+        $("#valuation_pToDate").datepicker("setDate", date)
+
+        //$("#valuation_pAreaId").chosen({
+        //    //rtl: true
+        //});
+    },
+    bind(filter) {
+        var self = this;
+        $('#valuationGrid').DataTable().destroy();
+        $('#valuationGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>",
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "serverSide": true,
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }, 
+            "ajax": function (data, callback, settings) {
+                if (!cacheVerified && AppInfo.featureGate.captchaEnabled && (!captcha || captcha == '')) {
+                    $('#' + googleCaptchaTab + 'invalidCaptcha').show().focus();
+                    return false;
+                }
+                $('#' + googleCaptchaTab + 'invalidCaptcha').hide();
+                $("#loading").show();
+                self.sortOrder = settings.columns[data.order[0].column].data + "_" + (data.order[0].dir).toLocaleUpperCase();
+                var f = { ...filter, P_TAKE: (data.length || 50) + "", P_SKIP: (data.start || 0) + "", P_SORT: self.sortOrder };
+
+                openDataApi.getData('valuations', f,
+                    (r) => {
+                        var total = 0;
+                        $("#loading").hide();
+
+                        if (r.result && r.result.length) {
+                            total = r.result[0].TOTAL;
+                        }
+
+                        callback({
+                            data: r.result,
+                            recordsTotal: r.result.length,
+                            recordsFiltered: total
+                        });
+                    },
+                    (e) => {
+                        $("#loading").hide();
+                    }, captcha, !cacheVerified);
+                    //});
+            },
+            "columns": [
+                //{
+                //    "data": "PROPERTY_ID", render: function (data, type, row) {
+                //        return row.PROPERTY_ID;
+                //    }
+                //},
+                {
+                    "data": "PROPERTY_TOTAL_VALUE", render: function (data, type, row) {
+                        return row.PROPERTY_TOTAL_VALUE;
+                    }
+                },
+                {
+                    "data": getPropertyName("AREA"), render: function (data, type, row) {
+                        return row[getPropertyName("AREA")];
+                    }
+                },
+                {
+                    "data": "ACTUAL_AREA", render: function (data, type, row) {
+                        return Number.parseFloat(row.ACTUAL_AREA).toFixed(2);
+                    },
+                    orderable: false
+                },
+                {
+                    "data": "PROCEDURE_YEAR", render: function (data, type, row) {
+                        return row.PROCEDURE_YEAR;
+                    }
+                },
+                {
+                    "data": "PROCEDURE_NUMBER", render: function (data, type, row) {
+                        return row.PROCEDURE_NUMBER;
+                    }
+                },
+                {
+                    "data": "INSTANCE_DATE", render: function (date) {
+                        return moment(date).locale('en').format("DD/MM/YYYY");
+                    }
+                },              
+                {
+                    "data": "ACTUAL_WORTH", render: function (data, type, row) {
+                        return Number.parseFloat(row.ACTUAL_WORTH).toFixed(2);
+                    },
+                    orderable: false
+                },                
+                //{
+                //    "data": "ROW_STATUS_CODE", render: function (data, type, row) {
+                //        return row.ROW_STATUS_CODE;
+                //    },
+                //    orderable: false
+                //},
+                {
+                    "data": "PROCEDURE_AREA", render: function (data, type, row) {
+                        return Number.parseFloat(row.PROCEDURE_AREA).toFixed(2);
+                    },
+                    orderable: false
+                },
+
+                {
+                    "data": getPropertyName("PROPERTY_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("PROPERTY_TYPE")];
+                    }
+                },
+                {
+                    "data": getPropertyName("PROP_SUB_TYPE"), render: function (data, type, row) {
+                        return row[getPropertyName("PROP_SUB_TYPE")];
+                    }
+                },
+                //{
+                //    "data": getPropertyName("MASTER_PROJECT"), render: function (data, type, row) {
+                //        return row[getPropertyName("MASTER_PROJECT")];
+                //    }
+                //},
+                //{
+                //    "data": getPropertyName("PROJECT"), render: function (data, type, row) {
+                //        return row[getPropertyName("PROJECT")];
+                //    }
+                //},
+            ]
+        });       
+    },
+    getData() {
+        var filter = getRequestBody(document.forms.valuationFilter, this.parameters);       
+        this.bind(filter);
+    },
+    getExportFilter() {
+        var filter = getRequestBody(document.forms.valuationFilter, this.parameters);       
+        filter.P_TAKE = "-1";
+        filter.P_SKIP = "";
+        filter.P_SORT = this.sortOrder;
+        return {
+            parameters: filter, command: 'valuations', labels: getExportHeader('#valuationGrid')
+        };
+    },
+    init() {
+        this.initFilters();
+        //this.getData();
+
+        $('#valuationGrid').DataTable({
+            //"scrollX": true,
+            pagingType: "simple_numbers",
+            dom: "<'table-responsive'rt>" + "<'dt-cfooter'i<'dt-fpl'pl>>", 
+            lengthMenu: [
+                [10, 25, 50, 100],
+                ["10 / " + dtlenghtLable, "25 / " + dtlenghtLable, "50 / " + dtlenghtLable, "100 / " + dtlenghtLable]
+            ],
+            "searching": false,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/" + (lang == "ar" ? "Arabic.json" : "English.json"),
+                lengthMenu: lang === 'ar' ? '_MENU_ <span class="sr-only">Ø¹Ø¯Ø¯ Ø§ÙØµÙÙÙ</span>' : '<span class="sr-only">Rows per page</span> _MENU_',
+                aria: {
+                    paginate: {
+                        previous: lang === 'ar' ? 'Ø§ÙØ³Ø§Ø¨Ù' : 'Previous',
+                        next: lang === 'ar' ? 'Ø§ÙØªØ§ÙÙ' : 'Next',
+                        first: lang === 'ar' ? 'Ø§ÙØ£ÙÙ' : 'First',
+                        last: lang === 'ar' ? 'Ø§ÙØ£Ø®ÙØ±' : 'Last',
+                    }
+                }
+            }
+        });
+    },
+    destroy() {
+        $('#valuationGrid').DataTable().destroy();
+        $("#valuation_pAreaId").chosen("destroy");
+        $("#valuation_pFromDate,#valuation_pToDate").datepicker("destroy");
+        if (this.chart.instance) this.chart.instance.destroy();
+        this.chart.countSeries = [];
+    }
+};
+
+var instance = null;
+function exportToExcel() {
+    $("#loading").show();
+    if (!instance || !instance.getExportFilter) return;
+    var details = instance.getExportFilter();
+
+    openDataApi.exportToExcel(details.command, details, () => {
+        $("#loading").hide();
+    });    
+}
+
+function exportToCsv() {
+    if (!instance || !instance.getExportFilter) return;
+    if (checkValidity(instance.form) === false) return;
+    $("#loading").show();    
+    var details = instance.getExportFilter();
+    openDataApi.exportToCsv(details.command, details, () => {
+        $("#loading").hide();
+    });  
+}
+function exportToPdf() {
+    $("#loading").show();
+    if (!instance || !instance.getExportFilter) return;
+    var details = instance.getExportFilter();
+
+    openDataApi.exportToPdf(details.command, details, () => {
+        $("#loading").hide();
+    });  
+}
+
+function initSection(section) {    
+    if (instance) instance.destroy();
+    instance = section;
+    if (instance.form) instance.form.classList.remove('was-validated');
+    instance.init();
+}
+
+$(document).ready(function () {
+
+    //$('[datepicker-greater-than]').bind('input', function () {
+    //    var to_confirm = $(this);
+    //    var less_than = $('#' + to_confirm.attr('datepicker-greater-than'));
+
+    //    var gt_value = to_confirm.datepicker('getDate'); 
+    //    var lt_value = less_than.datepicker('getDate');
+
+    //    if (gt_value >= lt_value)
+    //        this.setCustomValidity('Date should be greater than from date');
+    //    else
+    //        this.setCustomValidity('');
+    //});
+
+    lang = $('#curr-lang').val();
+    initSection(transactions);
+
+    $("form").on("submit", function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var isValid = true;
+
+        isValid = checkValidity(this);
+        
+        if (isValid) {
+            instance.getData();
+        }
+    });
+
+    $(".js-ExportXls").on("click", function () {
+        exportToExcel();
+    });
+    $(".js-ExportCsv").on("click", function () {
+        exportToCsv();
+    });
+    $(".js-ExportPdf").on("click", function () {
+        exportToPdf();
+    });
+
+    $("#transaction-tab").on("click", function () {
+        initSection(transactions);
+    });
+
+    $("#rent-tab").on("click", function () {
+        initSection(rents);
+    });
+
+    $("#project-tab").on("click", function () {
+        initSection(projects);
+    });
+
+    $("#land-tab").on("click", function () {
+        initSection(lands);
+    });
+
+    $("#building-tab").on("click", function () {
+        initSection(buildings);
+    });
+
+    $("#unit-tab").on("click", function () {
+        initSection(units);
+    });
+
+    $("#broker-tab").on("click", function () {
+        initSection(brokers);
+    });
+
+    $("#developer-tab").on("click", function () {
+        initSection(developers);
+    });
+
+    $("#valuation-tab").on("click", function () {
+        initSection(valuations);
+    });
+
+    $(document).on('change', '.open-data-control', function () {
+        setTimeout(function () {
+            cacheVerified = false;
+            captcha = '';
+            var tempCaptchaPair = [...captchaIdPairs].find(x => x.captchaId === googleCaptchaTab + 'google_captcha');
+            var currentTabWidgetId = tempCaptchaPair.widgetId;
+            grecaptcha.reset(currentTabWidgetId);
+        }, 0);
+    });
+
+    $(document).on('reset', 'form', function () {
+        // Delay to allow form to reset before updating Chosen
+        setTimeout(function () {
+            $(this).find('.dropdown-chosen').trigger('chosen:updated');
+        }.bind(this), 0); // Use .bind(this) to maintain form context
+    });
+
+});
