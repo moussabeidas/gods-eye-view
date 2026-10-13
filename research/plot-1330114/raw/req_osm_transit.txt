@@ -1,10 +1,336 @@
-406 text/html; charset=iso-8859-1
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html><head>
-<title>406 Not Acceptable</title>
-</head><body>
-<h1>Not Acceptable</h1>
-<p>An appropriate representation of the requested resource could not be found on this server.</p>
-<hr>
-<address>Apache/2.4.68 (Debian) Server at overpass-api.de Port 443</address>
-</body></html>
+200 application/json
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-13T07:01:36Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 3053504633,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 3053504635,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 3053504684,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 3055078453,
+  "tags": {
+    "highway": "bus_stop"
+  }
+},
+{
+  "type": "node",
+  "id": 3055219291,
+  "tags": {
+    "highway": "bus_stop"
+  }
+},
+{
+  "type": "node",
+  "id": 3953421159,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 3953421161,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Wuheida, Street 22",
+    "public_transport": "platform",
+    "route_ref": "C28"
+  }
+},
+{
+  "type": "node",
+  "id": 4961796162,
+  "tags": {
+    "highway": "bus_stop",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 4961796165,
+  "tags": {
+    "highway": "bus_stop",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5276020641,
+  "tags": {
+    "bench": "no",
+    "bus_routes": "43",
+    "highway": "bus_stop",
+    "name": "Abu Hail Metro Bus Stop B",
+    "name:en": "Abu Hail Metro Bus Stop B",
+    "operator": "RTA",
+    "passenger_information_display": "no",
+    "shelter": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6581397376,
+  "tags": {
+    "name": "النهدة",
+    "name:ar": "النهدة",
+    "name:de": "Al Nahda",
+    "name:en": "Al Nahda",
+    "name:fa": "نهده",
+    "name:ml": "അൽ-നഹ്ദ",
+    "network": "Dubai Metro",
+    "network:wikidata": "Q83787",
+    "network:wikipedia": "en:Dubai Metro",
+    "operator": "Roads & Transport Authority",
+    "operator:website": "https://www.rta.ae",
+    "operator:wikidata": "Q22101985",
+    "operator:wikipedia": "en:Roads and Transport Authority (Dubai)",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "14",
+    "station": "subway",
+    "subway": "yes",
+    "wikidata": "Q30006463",
+    "wikipedia": "en:Al Nahda (Dubai Metro)"
+  }
+},
+{
+  "type": "node",
+  "id": 6581397379,
+  "tags": {
+    "name": "الاستاد",
+    "name:ar": "الاستاد",
+    "name:en": "Stadium",
+    "name:fa": "ورزشگاه",
+    "name:ml": "സ്റ്റേഡിയം",
+    "network": "Dubai Metro",
+    "network:wikidata": "Q83787",
+    "network:wikipedia": "en:Dubai Metro",
+    "operator": "Roads & Transport Authority",
+    "operator:website": "https://www.rta.ae",
+    "operator:wikidata": "Q22101985",
+    "operator:wikipedia": "en:Roads and Transport Authority (Dubai)",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "15",
+    "station": "subway",
+    "subway": "yes",
+    "wikidata": "Q30006529",
+    "wikipedia": "en:Stadium (Dubai Metro)"
+  }
+},
+{
+  "type": "node",
+  "id": 6581397380,
+  "tags": {
+    "name": "أبو هيل",
+    "name:ar": "أبو هيل",
+    "name:en": "Abu Hail",
+    "name:fa": "ابو هیل",
+    "name:ml": "അബു ഹെയിൽ",
+    "network": "Dubai Metro",
+    "network:wikidata": "Q83787",
+    "network:wikipedia": "en:Dubai Metro",
+    "operator": "Roads & Transport Authority",
+    "operator:website": "https://www.rta.ae",
+    "operator:wikidata": "Q22101985",
+    "operator:wikipedia": "en:Roads and Transport Authority (Dubai)",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "17",
+    "station": "subway",
+    "subway": "yes",
+    "wikidata": "Q30006672",
+    "wikipedia": "en:Abu Hail (Dubai Metro)"
+  }
+},
+{
+  "type": "node",
+  "id": 6581397381,
+  "tags": {
+    "name": "القيادة",
+    "name:ar": "القيادة",
+    "name:de": "Al Qiyadah",
+    "name:en": "Al Qiyadah",
+    "name:fa": "قیاده",
+    "name:ml": "അൽ ഖിയാദ",
+    "network": "Dubai Metro",
+    "network:wikidata": "Q83787",
+    "network:wikipedia": "en:Dubai Metro",
+    "operator": "Roads & Transport Authority",
+    "operator:website": "https://www.rta.ae",
+    "operator:wikidata": "Q22101985",
+    "operator:wikipedia": "en:Roads and Transport Authority (Dubai)",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "16",
+    "station": "subway",
+    "subway": "yes",
+    "wikidata": "Q30006600",
+    "wikipedia": "en:Al Qiyadah (Dubai Metro)"
+  }
+},
+{
+  "type": "node",
+  "id": 6584833621,
+  "tags": {
+    "name": "أبو بكر الصديق",
+    "name:ar": "أبو بكر الصديق",
+    "name:en": "Abu Baker Al Siddique",
+    "name:fa": "ابوبکر صدیق",
+    "name:ml": "അബൂബക്കർ അൽ സിദ്ദിഖ്",
+    "network": "Dubai Metro",
+    "network:wikidata": "Q83787",
+    "network:wikipedia": "en:Dubai Metro",
+    "operator": "Roads & Transport Authority",
+    "operator:website": "https://www.rta.ae",
+    "operator:wikidata": "Q22101985",
+    "operator:wikipedia": "en:Roads and Transport Authority (Dubai)",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "18",
+    "station": "subway",
+    "subway": "yes",
+    "wikidata": "Q30006682",
+    "wikipedia": "en:Abu Baker Al Siddique (Dubai Metro)"
+  }
+},
+{
+  "type": "node",
+  "id": 6584833624,
+  "tags": {
+    "name": "صلاح الدين",
+    "name:ar": "صلاح الدين",
+    "name:en": "Salah Al Din",
+    "name:fa": "صلاح الدین",
+    "name:ml": "സലാഹ് അൽ ദിൻ",
+    "network": "Dubai Metro",
+    "network:wikidata": "Q83787",
+    "network:wikipedia": "en:Dubai Metro",
+    "operator:website": "https://www.rta.ae",
+    "operator:wikidata": "Q22101985",
+    "operator:wikipedia": "en:Roads and Transport Authority (Dubai)",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "19",
+    "station": "subway",
+    "subway": "yes",
+    "wikidata": "Q16335322",
+    "wikipedia": "en:Salah Al Din (Dubai Metro)"
+  }
+},
+{
+  "type": "node",
+  "id": 6584833643,
+  "tags": {
+    "name": "المنطقة الحرة بمطار دبي",
+    "name:ar": "المنطقة الحرة بمطار دبي",
+    "name:en": "Dubai Airport Free Zone",
+    "name:fa": "منطقه آزاد فرودگاه دبی",
+    "network": "Dubai Metro",
+    "network:wikidata": "Q83787",
+    "network:wikipedia": "en:Dubai Metro",
+    "operator": "Roads & Transport Authority",
+    "operator:website": "https://www.rta.ae",
+    "operator:wikidata": "Q22101985",
+    "operator:wikipedia": "en:Roads and Transport Authority (Dubai)",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "13",
+    "station": "subway",
+    "subway": "yes",
+    "wikidata": "Q30005182",
+    "wikipedia": "en:Dubai Airport Free Zone (Dubai Metro)"
+  }
+},
+{
+  "type": "node",
+  "id": 6588569794,
+  "tags": {
+    "name": "الرقة",
+    "name:ar": "الرقة",
+    "name:de": "Al Rigga",
+    "name:en": "Al Rigga",
+    "name:fa": "رقه",
+    "name:ml": "അൽ-റിഗ്ഗ",
+    "network": "Dubai Metro",
+    "network:wikidata": "Q83787",
+    "network:wikipedia": "en:Dubai Metro",
+    "operator": "Roads & Transport Authority",
+    "operator:website": "https://www.rta.ae",
+    "operator:wikidata": "Q22101985",
+    "operator:wikipedia": "en:Roads and Transport Authority (Dubai)",
+    "platforms": "2",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "17",
+    "station": "subway",
+    "subway": "yes",
+    "wikidata": "Q107132419",
+    "wikipedia": "en:Al Rigga (Dubai Metro)"
+  }
+},
+{
+  "type": "node",
+  "id": 6591495525,
+  "tags": {
+    "monorail": "yes",
+    "name": "كونكورس دي",
+    "name:ar": "كونكورس دي",
+    "name:en": "Concourse D",
+    "name:es": "Sala D",
+    "public_transport": "station",
+    "railway": "station",
+    "station": "monorail"
+  }
+},
+{
+  "type": "node",
+  "id": 10579334538,
+  "tags": {
+    "bench": "yes",
+    "bin": "yes",
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "Dubai Police, Planning & Development Department",
+    "network": "RTA",
+    "network:wikidata": "Q22101985",
+    "operator": "Roads and Transport Authority (Dubai)",
+    "public_transport": "platform",
+    "shelter": "yes"
+  }
+}
+
+  ]
+}

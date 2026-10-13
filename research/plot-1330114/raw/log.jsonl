@@ -1,10 +1,25 @@
-{"src": "probe", "plot": "1330114", "community": "133", "parcel": "0114", "area": "Hor Al Anz East", "steps": ["requests"], "t": 0.0}
-{"src": "http", "method": "GET", "url": "https://dubailand.gov.ae/scripts/LandStatusFunctions-1.0.2.js?v=11", "status": 200, "ctype": "text/javascript", "bytes": 46381, "t": 1.0}
-{"src": "http", "method": "GET", "url": "https://dubailand.gov.ae/umbraco/surface/LandStatus/GetAreaList", "status": 200, "ctype": "text/plain; charset=utf-8", "bytes": 25112, "t": 1.4}
-{"src": "http", "method": "GET", "url": "https://huggingface.co/api/datasets/lemoninabag/Sales", "status": 200, "ctype": "application/json; charset=utf-8", "bytes": 550, "t": 1.5}
-{"src": "http", "method": "GET", "url": "https://huggingface.co/api/datasets?search=dubai&limit=100", "status": 200, "ctype": "application/json; charset=utf-8", "bytes": 20104, "t": 1.6}
-{"src": "http", "method": "GET", "url": "https://huggingface.co/api/datasets?search=dld&limit=100", "status": 200, "ctype": "application/json; charset=utf-8", "bytes": 35512, "t": 1.7}
-{"src": "http", "method": "POST", "url": "https://overpass-api.de/api/interpreter", "status": 406, "ctype": "text/html; charset=iso-8859-1", "bytes": 371, "t": 2.5}
-{"src": "http", "method": "POST", "url": "https://overpass-api.de/api/interpreter", "status": 406, "ctype": "text/html; charset=iso-8859-1", "bytes": 371, "t": 2.9}
-{"src": "http", "method": "POST", "url": "https://overpass-api.de/api/interpreter", "status": 406, "ctype": "text/html; charset=iso-8859-1", "bytes": 371, "t": 3.4}
-{"src": "probe", "done": true, "t": 3.4}
+{"src": "probe", "plot": "1330114", "community": "133", "parcel": "0114", "area": "Hor Al Anz East", "steps": ["requests", "hf"], "t": 0.0}
+{"src": "http", "method": "POST", "url": "https://overpass-api.de/api/interpreter", "status": 200, "ctype": "application/json", "bytes": 486, "t": 2.1}
+{"src": "http", "method": "POST", "url": "https://overpass-api.de/api/interpreter", "status": 200, "ctype": "application/json", "bytes": 8504, "t": 5.8}
+{"src": "http", "method": "POST", "url": "https://overpass-api.de/api/interpreter", "status": 504, "ctype": "text/html; charset=utf-8", "bytes": 695, "t": 14.5}
+{"src": "http", "method": "GET", "url": "https://huggingface.co/api/datasets/dubairealestatedata/dubai-real-estate-sales-transactions/tree/main?recursive=true", "status": 200, "ctype": "application/json; charset=utf-8", "bytes": 1228, "t": 14.7}
+{"src": "hf", "file": "dubairealestatedata/dubai-real-estate-sales-transactions/dld_sales_transactions.csv", "rows": 1372277, "kept": 290, "t": 19.8}
+{"src": "hf", "file": "dubairealestatedata/dubai-real-estate-sales-transactions/dld_sales_transactions.parquet", "rows": 1372277, "kept": 290, "t": 23.6}
+{"src": "http", "method": "GET", "url": "https://huggingface.co/api/datasets/viewit-ai/full-dubai-pulse/tree/main?recursive=true", "status": 200, "ctype": "application/json; charset=utf-8", "bytes": 409, "t": 23.7}
+{"src": "hf", "file": "viewit-ai/full-dubai-pulse/Transactions_clean.csv", "rows": 1276960, "kept": 574, "t": 28.9}
+{"src": "http", "method": "GET", "url": "https://huggingface.co/api/datasets/datadubai/dubai-real-estate-dld/tree/main?recursive=true", "status": 200, "ctype": "application/json; charset=utf-8", "bytes": 1713, "t": 29.0}
+{"src": "hf", "file": "datadubai/dubai-real-estate-dld/data/areas.csv", "rows": 97, "kept": 0, "t": 29.3}
+{"src": "hf", "file": "datadubai/dubai-real-estate-dld/data/communities.csv", "rows": 111, "kept": 0, "t": 29.5}
+{"src": "hf", "file": "datadubai/dubai-real-estate-dld/data/community_bedrooms.csv", "rows": 418, "kept": 0, "t": 29.7}
+{"src": "hf", "file": "datadubai/dubai-real-estate-dld/data/community_monthly.csv", "rows": 5722, "kept": 0, "t": 30.0}
+{"src": "hf", "file": "datadubai/dubai-real-estate-dld/data/community_yearly.csv", "rows": 1403, "kept": 0, "t": 30.3}
+{"src": "hf", "file": "datadubai/dubai-real-estate-dld/data/developers.csv", "rows": 367, "kept": 0, "t": 30.5}
+{"src": "hf", "file": "datadubai/dubai-real-estate-dld/data/market_bedrooms.csv", "rows": 6, "kept": 0, "t": 30.7}
+{"src": "hf", "file": "datadubai/dubai-real-estate-dld/data/market_monthly.csv", "rows": 120, "kept": 0, "t": 30.9}
+{"src": "hf", "file": "datadubai/dubai-real-estate-dld/data/market_yearly.csv", "rows": 17, "kept": 0, "t": 31.1}
+{"src": "hf", "file": "datadubai/dubai-real-estate-dld/data/projects.csv", "rows": 770, "kept": 0, "t": 31.3}
+{"src": "hf", "file": "datadubai/dubai-real-estate-dld/data/rents_by_community.csv", "rows": 102, "kept": 0, "t": 31.5}
+{"src": "hf", "file": "datadubai/dubai-real-estate-dld/data/yields_by_community.csv", "rows": 75, "kept": 0, "t": 31.7}
+{"src": "http", "method": "GET", "url": "https://huggingface.co/api/datasets/lemoninabag/Sales/tree/main?recursive=true", "status": 200, "ctype": "application/json; charset=utf-8", "bytes": 394, "t": 31.8}
+{"src": "hf", "file": "lemoninabag/Sales/Sales.csv", "rows": 463530, "kept": 0, "t": 34.3}
+{"src": "probe", "done": true, "t": 34.3}
